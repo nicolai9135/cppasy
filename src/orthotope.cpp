@@ -1,14 +1,59 @@
-#include "global.hpp"
 #include "polytope.hpp"
+#include "orthotope.hpp"
 #include <iostream>
 #include <algorithm>
 
-std::deque<std::unique_ptr<polytope>> orthotope::split(splitting_heuristic splitting_heuristic_in)
+orthotope::orthotope(intervals bs, int d, std::vector<coordinate> sc, std::vector<coordinate> uc)
+{
+    boundaries = bs;
+    depth = d;
+    safe_coordinates = sc;
+    unsafe_coordinates = uc;
+}
+
+intervals orthotope::get_boundaries()
+{
+    return boundaries;
+}
+
+void orthotope::print()
+{
+    std::cout << "Printing Orthotope" << std::endl;
+
+    // print depth
+    std::cout << "    Depth: " << depth << std::endl; 
+    
+    // print boundaries
+    std::cout << "    Boundaries:" << std::endl;
+    int i = 0;
+    for(intervals::iterator it = boundaries.begin(); it != boundaries.end(); ++it)
+    {
+        i++;
+        std::cout << "        Dimension " << i << ":   " << "[" << it->first << ", " << it->second << "]" << std::endl;
+    }
+
+    // print safe samples
+
+    // print unsafe samples
+}
+
+z3::expr_vector orthotope::get_boundaries_z3(z3::context &ctx, z3::expr_vector &variable_names)
+{
+    z3::expr_vector res(ctx);
+    for (int i = 0; i < variable_names.size(); i++)
+    {
+        res.push_back(variable_names[i] >= this->get_boundaries()[i].first);
+        res.push_back(variable_names[i] <= this->get_boundaries()[i].second);
+    }
+    return res;
+}
+
+std::deque<std::unique_ptr<polytope>> orthotope::split(splitting_heuristic splitting_h)
 {
     std::vector<intervals> new_intervals_list;
     std::vector<std::pair<interval, interval>> intervals_bisected;
 
-    switch (splitting_heuristic_in)
+    switch (splitting_h)
     {
     case splitting_heuristic::bisect_all:
         intervals_bisected = bisect_all_intervals(this->boundaries);
@@ -28,6 +73,11 @@ std::deque<std::unique_ptr<polytope>> orthotope::split(splitting_heuristic split
     }
 
     return new_orthopes;
+}
+
+void orthotope::sample(sampling_heuristic sampling_h)
+{
+
 }
 
 std::vector<std::pair<interval, interval>> bisect_all_intervals(intervals intervals_in)

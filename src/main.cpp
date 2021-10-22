@@ -1,9 +1,9 @@
 /**
  * @file    main.cpp
- ***********************************************/
+ */
 
-#include "global.hpp"
 #include "polytope.hpp"
+#include "orthotope.hpp"
 
 // only for developement purposes
 void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque)

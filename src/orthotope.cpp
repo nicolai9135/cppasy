@@ -59,8 +59,8 @@ std::deque<std::unique_ptr<polytope>> orthotope::split(splitting_heuristic split
         intervals_bisected = bisect_all_intervals(this->boundaries);
         new_intervals_list = cartesian_product(intervals_bisected);
         break;
-    case splitting_heuristic::bisect_single:
-        break;
+    // case splitting_heuristic::bisect_single:
+        // break;
     default:
         break;
     }

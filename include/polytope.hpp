@@ -6,11 +6,45 @@
 #include <memory>
 #include <z3++.h>
 
+/**
+ * Used to store points \f$x \in \mathbb{R}^n, n \in \mathbb{N}\f$. The 
+ * dimension \f$n\f$ is the length of the vector. `z3::expr` allows precise
+ * calculations.
+ */
 using coordinate = std::vector<z3::expr>;
+
+/**
+ * Used to store an interval \f$[x,y] \subset \mathbb{R}\f$. `z3::expr` allows 
+ * precise calculations.
+ */
 using interval = std::pair<z3::expr, z3::expr>;
 using intervals = std::vector<interval>;
-enum splitting_heuristic { bisect_all, bisect_single };
-enum sampling_heuristic { corners };
+
+/**
+ * List of heuristics that can be used to split one #polytope into multiple
+ * new ones.
+ */
+enum splitting_heuristic 
+{
+    /**
+     * Bisects all a #polytope in all dimensions. Using this heuristic on an
+     * \f$n\f$-dimensional #polytope will thus result in \f$2^n\f$ new 
+     * #polytope s.
+     */
+    bisect_all
+    // bisect_single
+};
+
+/**
+ * List of heuristics that can be used to take samples within a #polytope .
+ */
+enum sampling_heuristic 
+{
+    /**
+     * Samples are taken on the vertices of the #polytope
+     */
+    vertices
+};
 
 /**
  * The purpose of this tool is to perform parameter synthesis in a user-provided

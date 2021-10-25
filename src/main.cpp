@@ -2,6 +2,7 @@
  * @file    main.cpp
  */
 
+#include "argument_parser.hpp"
 #include "polytope.hpp"
 #include "orthotope.hpp"
 
@@ -16,8 +17,10 @@ void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque)
 }
 
 
-int main()
+int main(int argc, char * argv[])
 {
+    options user_input = parse_arguments(argc, argv);
+
     // TODO: make input dependent
     const int max_depth = 3;
 
@@ -101,6 +104,8 @@ int main()
         // delete processed element
         unknown_areas.pop_front();
     }
+
+    /*
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;
@@ -113,6 +118,7 @@ int main()
     std::cout << "UNKNOWN areas" << std::endl;
     std::cout << "=============" << std::endl;
     print_and_delete(unknown_areas);
+    */
 
     return 0;
 }

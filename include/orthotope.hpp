@@ -35,10 +35,10 @@ private:
 
     /**
      * Takes ::intervals and bisects them. Used by #split .
-     * @param ::intervals to split
+     * @param intervals_in ::intervals to split
      * @return `pair`s of two equally sized ::interval s for every input ::interval
      */
-    std::vector<std::pair<interval, interval>> bisect_all_intervals(intervals);
+    std::vector<std::pair<interval, interval>> bisect_all_intervals(intervals intervals_in);
 
 public:
     /**

@@ -108,7 +108,7 @@ public:
     virtual std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h) = 0;
 
     /**
-     * takes samples at different ::coordinate s within the #polytope and stores
+     * Takes samples at different ::coordinate s within the #polytope and stores
      * them in #safe_coordinates for #unsafe_coordinates
      * @sideeffect extends #safe_coordinates and/or #unsafe_coordinates
      * @param sampling_h #sampling_heuristic to be used

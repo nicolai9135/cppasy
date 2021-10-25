@@ -19,7 +19,7 @@ void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque)
 int main()
 {
     // TODO: make input dependent
-    const int max_depth = 4;
+    const int max_depth = 3;
 
     // init z3 "framework"
 
@@ -101,7 +101,6 @@ int main()
         // delete processed element
         unknown_areas.pop_front();
     }
-
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;

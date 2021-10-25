@@ -80,7 +80,7 @@ void orthotope::sample(sampling_heuristic sampling_h)
 
 }
 
-std::vector<std::pair<interval, interval>> bisect_all_intervals(intervals intervals_in)
+std::vector<std::pair<interval, interval>> orthotope::bisect_all_intervals(intervals intervals_in)
 {
     std::vector<std::pair<interval, interval>> intervals_bisected;
     for(intervals::iterator it = intervals_in.begin(); it != intervals_in.end(); ++it)
@@ -94,7 +94,7 @@ std::vector<std::pair<interval, interval>> bisect_all_intervals(intervals interv
     return intervals_bisected;
 }
 
-void cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::vector<std::pair<interval, interval>>  intervals_bisected, int index)
+void orthotope::cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::vector<std::pair<interval, interval>>  intervals_bisected, int index)
 {
     std::pair<interval, interval> interval_bisected = intervals_bisected[index];
 
@@ -117,7 +117,7 @@ void cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::ve
     stack.pop_back();
 }
 
-std::vector<intervals> cartesian_product(std::vector<std::pair<interval, interval>> intervals_bisected)
+std::vector<intervals> orthotope::cartesian_product(std::vector<std::pair<interval, interval>> intervals_bisected)
 {
     std::vector<intervals> accum;
 

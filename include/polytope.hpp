@@ -77,6 +77,7 @@ protected:
     std::vector<coordinate> unsafe_coordinates;
 
 public:
+    virtual ~polytope() = default;
     int get_depth();
     void set_depth(int d);
     std::vector<coordinate> get_safe_coordinates();

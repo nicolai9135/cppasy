@@ -2,6 +2,11 @@
 #define ARGUMENT_PARSER
 
 #include <string>
+#include <exception>
+
+class help : public std::exception
+{
+};
 
 /**
  * Struct to store the user's arguments.
@@ -16,7 +21,8 @@ struct options
     /**
      * File containing the variable names and initial intervals.
      */
-    std::string variable_file;
+
+    // std::string variable_file;
 
     /**
      * File containing the formula to be evaluated.

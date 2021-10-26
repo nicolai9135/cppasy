@@ -19,25 +19,39 @@ void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque)
 
 int main(int argc, char * argv[])
 {
-    options user_input = parse_arguments(argc, argv);
+    options user_input;
 
-    // TODO: make input dependent
-    const int max_depth = 3;
+    try
+    {
+        user_input = parse_arguments(argc, argv);
+    }
+    catch(help &e)
+    {
+        return 1;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
+    catch(...)
+    {
+        std::cerr << "Exception of unknown type!" << std::endl;
+        return 1;
+    }
 
     // init z3 "framework"
 
     // create global context
     z3::context ctx;
-
     
     // TODO: do this generic and input_dependent
     z3::expr_vector variable_names(ctx);
     variable_names.push_back(ctx.real_const("x"));
     variable_names.push_back(ctx.real_const("y"));
 
-
     // read formula
-    z3::expr_vector formula_vector = ctx.parse_file("smt2_input/example.smt2");
+    z3::expr_vector formula_vector = ctx.parse_file(user_input.formula_file.c_str());
 
     // transform vector into expression
     z3::expr formula = mk_and(formula_vector);
@@ -70,7 +84,7 @@ int main(int argc, char * argv[])
         std::unique_ptr<polytope>& current_polytope = unknown_areas.front();
 
         // end calculation if maximal depth is reached
-        if (current_polytope->get_depth() >= max_depth) break;
+        if (current_polytope->get_depth() >= user_input.max_depth) break;
 
         // get boundaries of the polytope in Z3 format
         z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3(ctx, variable_names);
@@ -105,7 +119,6 @@ int main(int argc, char * argv[])
         unknown_areas.pop_front();
     }
 
-    /*
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;
@@ -118,7 +131,6 @@ int main(int argc, char * argv[])
     std::cout << "UNKNOWN areas" << std::endl;
     std::cout << "=============" << std::endl;
     print_and_delete(unknown_areas);
-    */
 
     return 0;
 }

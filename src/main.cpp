@@ -36,7 +36,6 @@ int main(int argc, char * argv[])
 
     synthesis_queues res = parameter_synthesis(user_input);
 
-    /*
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;
@@ -49,8 +48,6 @@ int main(int argc, char * argv[])
     std::cout << "UNKNOWN areas" << std::endl;
     std::cout << "=============" << std::endl;
     print_and_delete(res.unknown_areas);
-    */
-
     
     return 0;
 }

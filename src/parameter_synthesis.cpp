@@ -82,7 +82,7 @@ synthesis_queues parameter_synthesis(options user_input)
         sq.unknown_areas.pop_front();
     }
 
-
+    /*
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;
@@ -95,6 +95,7 @@ synthesis_queues parameter_synthesis(options user_input)
     std::cout << "UNKNOWN areas" << std::endl;
     std::cout << "=============" << std::endl;
     print_and_delete(sq.unknown_areas);
+    */
 
     return sq;
 }

@@ -18,7 +18,7 @@ struct synthesis_queues
 /**
  * Central function of this tool, performs parameter synthesis.
  * @param user_input result of #parse_arguments
- * @return struct with queues containing areas specified as safe/unsafe/unknown
+ * @return #synthesis_queues with 3 queues containing areas specified as safe/unsafe/unknown, respectively
  */
 synthesis_queues parameter_synthesis(options user_input);
 

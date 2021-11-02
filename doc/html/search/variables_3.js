@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unsafe_5fcoordinates_53',['unsafe_coordinates',['../classpolytope.html#acd9b75601458246716814f9b6c101c3e',1,'polytope']]]
+  ['max_5fdepth_91',['max_depth',['../structoptions.html#ad419d3d04a45fb03ceef339850c65606',1,'options']]]
 ];

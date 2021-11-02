@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['interval_11',['interval',['../polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d',1,'polytope.hpp']]],
-  ['intervals_12',['intervals',['../polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68',1,'polytope.hpp']]]
+  ['formula_5ffile_11',['formula_file',['../structoptions.html#a82726ba3655fecc64147830146d941d4',1,'options']]]
 ];

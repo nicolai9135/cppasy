@@ -73,8 +73,6 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">orthotope.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -83,94 +81,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="orthotope_8hpp_source.html">orthotope.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a2a7262229ce270e17e5321d60d11cebb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>, <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="orthotope_8cpp.html#a2a7262229ce270e17e5321d60d11cebb">bisect_all_intervals</a> (<a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a> intervals_in)</td></tr>
-<tr class="separator:a2a7262229ce270e17e5321d60d11cebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1ad0446dce6185efb70394b7bcc6426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="orthotope_8cpp.html#af1ad0446dce6185efb70394b7bcc6426">cartesian_recursion</a> (std::vector&lt; <a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a> &gt; &amp;accum, <a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a> stack, std::vector&lt; std::pair&lt; <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>, <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a> &gt;&gt; intervals_bisected, int index)</td></tr>
-<tr class="separator:af1ad0446dce6185efb70394b7bcc6426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80cc76e6e0146e4e829d935decacf7b1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="orthotope_8cpp.html#a80cc76e6e0146e4e829d935decacf7b1">cartesian_product</a> (std::vector&lt; std::pair&lt; <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>, <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a> &gt;&gt; intervals_bisected)</td></tr>
-<tr class="separator:a80cc76e6e0146e4e829d935decacf7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a2a7262229ce270e17e5321d60d11cebb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a7262229ce270e17e5321d60d11cebb">&#9670;&nbsp;</a></span>bisect_all_intervals()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>, <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>&gt; &gt; bisect_all_intervals </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a>&#160;</td>
-          <td class="paramname"><em>intervals_in</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a80cc76e6e0146e4e829d935decacf7b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80cc76e6e0146e4e829d935decacf7b1">&#9670;&nbsp;</a></span>cartesian_product()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a>&gt; cartesian_product </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::pair&lt; <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>, <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a> &gt;&gt;&#160;</td>
-          <td class="paramname"><em>intervals_bisected</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af1ad0446dce6185efb70394b7bcc6426"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1ad0446dce6185efb70394b7bcc6426">&#9670;&nbsp;</a></span>cartesian_recursion()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cartesian_recursion </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>accum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a>&#160;</td>
-          <td class="paramname"><em>stack</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::pair&lt; <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>, <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a> &gt;&gt;&#160;</td>
-          <td class="paramname"><em>intervals_bisected</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

@@ -18,9 +18,10 @@ struct synthesis_queues
 /**
  * Central function of this tool, performs parameter synthesis.
  * @param user_input result of #parse_arguments
+ * @param ctx global `z3::context`
  * @return #synthesis_queues with 3 queues containing areas specified as safe/unsafe/unknown, respectively
  */
-synthesis_queues parameter_synthesis(options user_input);
+synthesis_queues parameter_synthesis(options user_input, z3::context &ctx);
 
 // only for developement purposes
 void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque);

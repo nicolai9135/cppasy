@@ -9,13 +9,11 @@ void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque)
     }
 }
 
-synthesis_queues parameter_synthesis(options user_input)
+synthesis_queues parameter_synthesis(options user_input, z3::context &ctx)
 {
     synthesis_queues sq;
-    // init z3 "framework"
 
-    // create global context
-    z3::context ctx;
+    // init z3 "framework"
     
     // TODO: handle user_input.variable_boundaries
     z3::expr_vector variable_names(ctx);
@@ -81,21 +79,6 @@ synthesis_queues parameter_synthesis(options user_input)
         // delete processed element
         sq.unknown_areas.pop_front();
     }
-
-    /*
-    // print queues
-    std::cout << "SAFE areas" << std::endl;
-    std::cout << "==========" << std::endl;
-    print_and_delete(sq.safe_areas);
-
-    std::cout << "UNSAFE areas" << std::endl;
-    std::cout << "============" << std::endl;
-    print_and_delete(sq.unsafe_areas);
-
-    std::cout << "UNKNOWN areas" << std::endl;
-    std::cout << "=============" << std::endl;
-    print_and_delete(sq.unknown_areas);
-    */
 
     return sq;
 }

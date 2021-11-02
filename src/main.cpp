@@ -34,7 +34,10 @@ int main(int argc, char * argv[])
         return 1;
     }
 
-    synthesis_queues res = parameter_synthesis(user_input);
+    // create global context
+    z3::context ctx;
+
+    synthesis_queues res = parameter_synthesis(user_input, ctx);
 
     // print queues
     std::cout << "SAFE areas" << std::endl;

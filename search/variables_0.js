@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['depth_53',['depth',['../classpolytope.html#a1a7d54c3e731b9edc86256bf8f4a46bb',1,'polytope']]]
+  ['boundaries_87',['boundaries',['../classorthotope.html#a12c164169443fa939d7f6724e3d05699',1,'orthotope']]],
+  ['boundaries_5ffile_88',['boundaries_file',['../structoptions.html#a65888208e15777ae770da301b15cb74a',1,'options']]]
 ];

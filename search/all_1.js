@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['cartesian_5fproduct_2',['cartesian_product',['../orthotope_8hpp.html#abbb9ffd24234c8cca90d0488ae158c14',1,'cartesian_product(std::vector&lt; std::pair&lt; interval, interval &gt;&gt;):&#160;orthotope.cpp'],['../orthotope_8cpp.html#a80cc76e6e0146e4e829d935decacf7b1',1,'cartesian_product(std::vector&lt; std::pair&lt; interval, interval &gt;&gt; intervals_bisected):&#160;orthotope.cpp']]],
-  ['cartesian_5frecursion_3',['cartesian_recursion',['../orthotope_8hpp.html#aebcd4b338a2b2f35ac0a5dbab1d4a5a2',1,'cartesian_recursion(std::vector&lt; intervals &gt; &amp;, intervals, std::vector&lt; std::pair&lt; interval, interval &gt;&gt;, int):&#160;orthotope.cpp'],['../orthotope_8cpp.html#af1ad0446dce6185efb70394b7bcc6426',1,'cartesian_recursion(std::vector&lt; intervals &gt; &amp;accum, intervals stack, std::vector&lt; std::pair&lt; interval, interval &gt;&gt; intervals_bisected, int index):&#160;orthotope.cpp']]],
-  ['coordinate_4',['coordinate',['../polytope_8hpp.html#a76620ade75625ee95a1671edbb16f66f',1,'polytope.hpp']]]
+  ['bisect_5fall_2',['bisect_all',['../polytope_8hpp.html#ab5d381824846c5cd6b5abb7b98e00f26a0b38109ba4b9d0b99bf79490796adc02',1,'polytope.hpp']]],
+  ['bisect_5fall_5fintervals_3',['bisect_all_intervals',['../classorthotope.html#a6dc999ad2b68b47f12568708a6d07590',1,'orthotope']]],
+  ['boundaries_4',['boundaries',['../classorthotope.html#a12c164169443fa939d7f6724e3d05699',1,'orthotope']]],
+  ['boundaries_5ffile_5',['boundaries_file',['../structoptions.html#a65888208e15777ae770da301b15cb74a',1,'options']]]
 ];

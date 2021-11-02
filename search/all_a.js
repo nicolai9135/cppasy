@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['vertices_30',['vertices',['../polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0ac0dbd5830269063a27eac71a7a937941',1,'polytope.hpp']]]
+  ['options_24',['options',['../structoptions.html',1,'']]],
+  ['orthotope_25',['orthotope',['../classorthotope.html',1,'orthotope'],['../classorthotope.html#a774111cd2cfd1cabb5b560e081b71473',1,'orthotope::orthotope()']]],
+  ['orthotope_2ecpp_26',['orthotope.cpp',['../orthotope_8cpp.html',1,'']]],
+  ['orthotope_2ehpp_27',['orthotope.hpp',['../orthotope_8hpp.html',1,'']]]
 ];

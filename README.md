@@ -4,7 +4,15 @@ cppasy is a C++ parameter synthesis tool derived from [PaSyPy](https://github.co
 
 ## Feature Overview
 
-## Build
+## CMake Build
+
+To build this project, execute the following in the main directory
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ cmake --build .
+```
 
 ## Usage
 

@@ -11,3 +11,7 @@ find_package(Z3 REQUIRED)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 add_subdirectory(src)
+
+target_compile_options(cppasy PRIVATE
+    $<$<CXX_COMPILER_ID:GNU>:
+        -Werror -pedantic-errors -Wall -Wextra -Wconversion -Wsign-conversion>)

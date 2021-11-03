@@ -36,7 +36,7 @@ private:
      * @param intervals_bisected Sets (pairs) of which the cartesian product should be taken
      * @param index used to access a certain "factor" of the cartesian product
      */
-    void cartesian_recursion(std::vector<intervals>& accum, intervals stack, std::vector<std::pair<interval, interval>> intervals_bisected, int index);
+    void cartesian_recursion(std::vector<intervals>& accum, intervals stack, std::vector<std::pair<interval, interval>> intervals_bisected, long unsigned int index);
 
     /**
      * Takes the cartesian product over pairs of ::interval s. Used by #split .

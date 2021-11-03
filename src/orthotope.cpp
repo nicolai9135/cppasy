@@ -41,10 +41,10 @@ void orthotope::print_sub()
 z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names)
 {
     z3::expr_vector res(ctx);
-    for (int i = 0; i < variable_names.size(); i++)
+    for (unsigned int i = 0; i < variable_names.size(); i++)
     {
-        res.push_back(variable_names[i] >= this->get_boundaries()[i].first);
-        res.push_back(variable_names[i] <= this->get_boundaries()[i].second);
+        res.push_back(variable_names[(int) i] >= this->get_boundaries()[i].first);
+        res.push_back(variable_names[(int) i] <= this->get_boundaries()[i].second);
     }
     return res;
 }
@@ -86,7 +86,7 @@ std::vector<std::pair<interval, interval>> orthotope::bisect_all_intervals(inter
     return intervals_bisected;
 }
 
-void orthotope::cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::vector<std::pair<interval, interval>>  intervals_bisected, int index)
+void orthotope::cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::vector<std::pair<interval, interval>>  intervals_bisected, long unsigned int index)
 {
     std::pair<interval, interval> interval_bisected = intervals_bisected[index];
 

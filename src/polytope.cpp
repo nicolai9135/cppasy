@@ -42,5 +42,11 @@ std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitt
 
 void polytope::sample(sampling_heuristic sampling_h)
 {
-
+    switch (sampling_h)
+    {
+    case sampling_heuristic::vertices:
+        break;
+    default:
+        break;
+    }
 }

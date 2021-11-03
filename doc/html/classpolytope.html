@@ -72,6 +72,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classpolytope-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">polytope Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -95,20 +96,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afc20b8101eab7a44a3423938b258dec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40e2d3ffabcd1eeb57a6d588d39efb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#ae40e2d3ffabcd1eeb57a6d588d39efb7">get_depth</a> ()</td></tr>
 <tr class="separator:ae40e2d3ffabcd1eeb57a6d588d39efb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a537fbb7dab5daeb5858d4265e4930471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a537fbb7dab5daeb5858d4265e4930471">set_depth</a> (int d)</td></tr>
-<tr class="separator:a537fbb7dab5daeb5858d4265e4930471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f60da63bb41d33fd8158b75e7b51ca6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="polytope_8hpp.html#a76620ade75625ee95a1671edbb16f66f">coordinate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a7f60da63bb41d33fd8158b75e7b51ca6">get_safe_coordinates</a> ()</td></tr>
 <tr class="separator:a7f60da63bb41d33fd8158b75e7b51ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ebb676a8a5f001dbbfc5ee1b38272e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="polytope_8hpp.html#a76620ade75625ee95a1671edbb16f66f">coordinate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a33ebb676a8a5f001dbbfc5ee1b38272e">get_unsafe_coordinates</a> ()</td></tr>
 <tr class="separator:a33ebb676a8a5f001dbbfc5ee1b38272e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e8848691102e8fea31413b6ef130c80"><td class="memItemLeft" align="right" valign="top">virtual z3::expr_vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a9e8848691102e8fea31413b6ef130c80">get_boundaries_z3</a> (z3::context &amp;ctx, z3::expr_vector &amp;variable_names)=0</td></tr>
-<tr class="separator:a9e8848691102e8fea31413b6ef130c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81289018b1d66dc9874d51bd0f8c84a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a81289018b1d66dc9874d51bd0f8c84a3">print</a> ()=0</td></tr>
-<tr class="separator:a81289018b1d66dc9874d51bd0f8c84a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0634c17bdf08886862eb5b69580e91"><td class="memItemLeft" align="right" valign="top">virtual std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#aac0634c17bdf08886862eb5b69580e91">split</a> (<a class="el" href="polytope_8hpp.html#ab5d381824846c5cd6b5abb7b98e00f26">splitting_heuristic</a> splitting_h)=0</td></tr>
-<tr class="separator:aac0634c17bdf08886862eb5b69580e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a449519639f0ecd831808f30538a85330"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a449519639f0ecd831808f30538a85330">sample</a> (<a class="el" href="polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0">sampling_heuristic</a> sampling_h)=0</td></tr>
-<tr class="separator:a449519639f0ecd831808f30538a85330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1fd4aa33ffd4e82bf57bb268dad69d6"><td class="memItemLeft" align="right" valign="top">z3::expr_vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#ac1fd4aa33ffd4e82bf57bb268dad69d6">get_boundaries_z3</a> (z3::context &amp;ctx, z3::expr_vector &amp;variable_names)</td></tr>
+<tr class="separator:ac1fd4aa33ffd4e82bf57bb268dad69d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab148a73f8bedd2f76fc3d33228339861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#ab148a73f8bedd2f76fc3d33228339861">print</a> ()</td></tr>
+<tr class="separator:ab148a73f8bedd2f76fc3d33228339861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55989aabbc831329755a6d778848f11"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#ae55989aabbc831329755a6d778848f11">split</a> (<a class="el" href="polytope_8hpp.html#ab5d381824846c5cd6b5abb7b98e00f26">splitting_heuristic</a> splitting_h)</td></tr>
+<tr class="separator:ae55989aabbc831329755a6d778848f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63824e4c23432e0a8b8ce46ad52cc5a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a63824e4c23432e0a8b8ce46ad52cc5a8">sample</a> (<a class="el" href="polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0">sampling_heuristic</a> sampling_h)</td></tr>
+<tr class="separator:a63824e4c23432e0a8b8ce46ad52cc5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -118,6 +117,15 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a805f71c754e38bcefffa4cac532142e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd9b75601458246716814f9b6c101c3e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="polytope_8hpp.html#a76620ade75625ee95a1671edbb16f66f">coordinate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#acd9b75601458246716814f9b6c101c3e">unsafe_coordinates</a></td></tr>
 <tr class="separator:acd9b75601458246716814f9b6c101c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1f9e5dfb2047972eb9840419f48e28e1"><td class="memItemLeft" align="right" valign="top">virtual z3::expr_vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a1f9e5dfb2047972eb9840419f48e28e1">get_boundaries_z3_sub</a> (z3::context &amp;ctx, z3::expr_vector &amp;variable_names)=0</td></tr>
+<tr class="separator:a1f9e5dfb2047972eb9840419f48e28e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc1e693ecc822b1bd2c629fce466590"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a7bc1e693ecc822b1bd2c629fce466590">print_sub</a> ()=0</td></tr>
+<tr class="separator:a7bc1e693ecc822b1bd2c629fce466590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e43c6737479d028e886245a671d5ab"><td class="memItemLeft" align="right" valign="top">virtual std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a19e43c6737479d028e886245a671d5ab">split_bisect_all</a> ()=0</td></tr>
+<tr class="separator:a19e43c6737479d028e886245a671d5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The purpose of this tool is to perform parameter synthesis in a user-provided region. To do so, the initial region is splitted multiple times into smaller regions. <a class="el" href="classpolytope.html">polytope</a> is the class to represent one of these regions, resp. </p>
@@ -148,8 +156,44 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9e8848691102e8fea31413b6ef130c80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e8848691102e8fea31413b6ef130c80">&#9670;&nbsp;</a></span>get_boundaries_z3()</h2>
+<a id="ac1fd4aa33ffd4e82bf57bb268dad69d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1fd4aa33ffd4e82bf57bb268dad69d6">&#9670;&nbsp;</a></span>get_boundaries_z3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">z3::expr_vector polytope::get_boundaries_z3 </td>
+          <td>(</td>
+          <td class="paramtype">z3::context &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">z3::expr_vector &amp;&#160;</td>
+          <td class="paramname"><em>variable_names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This Function is a wrapper around <a class="el" href="classpolytope.html#a1f9e5dfb2047972eb9840419f48e28e1">get_boundaries_z3_sub</a> . The shape of a <a class="el" href="classpolytope.html">polytope</a> is defined through the set its boundaries. The representation of a <a class="el" href="classpolytope.html">polytope</a>'s boudaries is dependent on its shape and surfaces. This function takes the <a class="el" href="classpolytope.html">polytope</a> dependent boundary representation and puts them into <code>z3</code> format. A <code>z3</code> representation is necessary for the solver to ensure that a solver only consideres coordinates within the boundaries of a <a class="el" href="classpolytope.html">polytope</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td><code>z3::context</code> in which the expressions should be defined </td></tr>
+    <tr><td class="paramname">variable_names</td><td>list of names of the free variables </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>z3</code> representation of the <a class="el" href="classpolytope.html">polytope</a>'s boundaries </dd></dl>
+
+</div>
+</div>
+<a id="a1f9e5dfb2047972eb9840419f48e28e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9e5dfb2047972eb9840419f48e28e1">&#9670;&nbsp;</a></span>get_boundaries_z3_sub()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +202,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual z3::expr_vector polytope::get_boundaries_z3 </td>
+          <td class="memname">virtual z3::expr_vector polytope::get_boundaries_z3_sub </td>
           <td>(</td>
           <td class="paramtype">z3::context &amp;&#160;</td>
           <td class="paramname"><em>ctx</em>, </td>
@@ -177,20 +221,12 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The shape of a <a class="el" href="classpolytope.html">polytope</a> is defined through the set its boundaries. The representation of a <a class="el" href="classpolytope.html">polytope</a>'s boudaries is dependent on its shape and surfaces. This function takes the <a class="el" href="classpolytope.html">polytope</a> dependent boundary representation and puts them into <code>z3</code> format. A <code>z3</code> representation is necessary for the solver to ensure that a solver only consideres coordinates within the boundaries of a <a class="el" href="classpolytope.html">polytope</a>. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ctx</td><td><code>z3::context</code> in which the expressions should be defined </td></tr>
-    <tr><td class="paramname">variable_names</td><td>list of names of the free variables </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>z3</code> representation of the <a class="el" href="classpolytope.html">polytope</a>'s boundaries </dd></dl>
 
-<p>Implemented in <a class="el" href="classorthotope.html#a029322648b1a6c6e709e78c1e34dd6a2">orthotope</a>.</p>
+<p>Implemented in <a class="el" href="classorthotope.html#a80076f2d5c49e21b7c7e9c9f4abf14d2">orthotope</a>.</p>
 
 </div>
 </div>
@@ -245,8 +281,26 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a81289018b1d66dc9874d51bd0f8c84a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81289018b1d66dc9874d51bd0f8c84a3">&#9670;&nbsp;</a></span>print()</h2>
+<a id="ab148a73f8bedd2f76fc3d33228339861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab148a73f8bedd2f76fc3d33228339861">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void polytope::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wrapper for <a class="el" href="classpolytope.html#a7bc1e693ecc822b1bd2c629fce466590">print_sub</a> . Prints all attributes of a <a class="el" href="classpolytope.html">polytope</a>. Mainly for develepement purposes </p>
+
+</div>
+</div>
+<a id="a7bc1e693ecc822b1bd2c629fce466590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc1e693ecc822b1bd2c629fce466590">&#9670;&nbsp;</a></span>print_sub()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +309,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void polytope::print </td>
+          <td class="memname">virtual void polytope::print_sub </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -263,38 +317,29 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Prints all attributes of a <a class="el" href="classpolytope.html">polytope</a>. Mainly for develepement purposes </p>
 
-<p>Implemented in <a class="el" href="classorthotope.html#aedd2272b26bac8a92ce95cc75a64d1b1">orthotope</a>.</p>
+<p>Implemented in <a class="el" href="classorthotope.html#af87c00ac43cd11f3e9278c91d87d4f68">orthotope</a>.</p>
 
 </div>
 </div>
-<a id="a449519639f0ecd831808f30538a85330"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a449519639f0ecd831808f30538a85330">&#9670;&nbsp;</a></span>sample()</h2>
+<a id="a63824e4c23432e0a8b8ce46ad52cc5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63824e4c23432e0a8b8ce46ad52cc5a8">&#9670;&nbsp;</a></span>sample()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void polytope::sample </td>
+          <td class="memname">void polytope::sample </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0">sampling_heuristic</a>&#160;</td>
           <td class="paramname"><em>sampling_h</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Takes samples at different <a class="el" href="polytope_8hpp.html#a76620ade75625ee95a1671edbb16f66f">coordinate</a> s within the <a class="el" href="classpolytope.html">polytope</a> and stores them in <a class="el" href="classpolytope.html#a805f71c754e38bcefffa4cac532142e8">safe_coordinates</a> for <a class="el" href="classpolytope.html#acd9b75601458246716814f9b6c101c3e">unsafe_coordinates</a> </p><dl class="section user"><dt>Side Effects</dt><dd>extends <a class="el" href="classpolytope.html#a805f71c754e38bcefffa4cac532142e8">safe_coordinates</a> and/or <a class="el" href="classpolytope.html#acd9b75601458246716814f9b6c101c3e">unsafe_coordinates</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -304,50 +349,22 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classorthotope.html#a01e16db16dd324d385af6d6b9495b70e">orthotope</a>.</p>
-
 </div>
 </div>
-<a id="a537fbb7dab5daeb5858d4265e4930471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a537fbb7dab5daeb5858d4265e4930471">&#9670;&nbsp;</a></span>set_depth()</h2>
+<a id="ae55989aabbc831329755a6d778848f11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae55989aabbc831329755a6d778848f11">&#9670;&nbsp;</a></span>split()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void polytope::set_depth </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>d</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aac0634c17bdf08886862eb5b69580e91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac0634c17bdf08886862eb5b69580e91">&#9670;&nbsp;</a></span>split()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::deque&lt;std::unique_ptr&lt;<a class="el" href="classpolytope.html">polytope</a>&gt; &gt; polytope::split </td>
+          <td class="memname">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt; polytope::split </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="polytope_8hpp.html#ab5d381824846c5cd6b5abb7b98e00f26">splitting_heuristic</a>&#160;</td>
           <td class="paramname"><em>splitting_h</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Splits <code>this</code> <a class="el" href="classpolytope.html">polytope</a> into multiple new polytopes depending on the provided <a class="el" href="polytope_8hpp.html#ab5d381824846c5cd6b5abb7b98e00f26">splitting_heuristic</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -356,7 +373,33 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classorthotope.html#a4437ff4938f4648417e9e7b4d5b4229f">orthotope</a>.</p>
+</div>
+</div>
+<a id="a19e43c6737479d028e886245a671d5ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19e43c6737479d028e886245a671d5ab">&#9670;&nbsp;</a></span>split_bisect_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::deque&lt;std::unique_ptr&lt;<a class="el" href="classpolytope.html">polytope</a>&gt; &gt; polytope::split_bisect_all </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Calles by <a class="el" href="classpolytope.html#ae55989aabbc831329755a6d778848f11">split</a> if <a class="el" href="polytope_8hpp.html#ab5d381824846c5cd6b5abb7b98e00f26">splitting_heuristic</a> <code>bisect_all</code> passed. See <a class="el" href="polytope_8hpp.html#ab5d381824846c5cd6b5abb7b98e00f26">splitting_heuristic</a> for details. </p>
+
+<p>Implemented in <a class="el" href="classorthotope.html#ac7c4046dc984b85a726a74812cfb7eba">orthotope</a>.</p>
 
 </div>
 </div>

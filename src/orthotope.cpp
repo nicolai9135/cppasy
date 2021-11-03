@@ -43,6 +43,7 @@ z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vect
     z3::expr_vector res(ctx);
     for (unsigned int i = 0; i < variable_names.size(); i++)
     {
+        // WARNING: conversion from unsigned int to int dangerous if #vars to big!!!
         res.push_back(variable_names[(int) i] >= this->get_boundaries()[i].first);
         res.push_back(variable_names[(int) i] <= this->get_boundaries()[i].second);
     }

@@ -93,14 +93,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac61e37f03b80e8163bf04c9b2a3134ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsynthesis__queues.html">synthesis_queues</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameter__synthesis_8hpp.html#ac61e37f03b80e8163bf04c9b2a3134ae">parameter_synthesis</a> (<a class="el" href="structoptions.html">options</a> user_input)</td></tr>
-<tr class="separator:ac61e37f03b80e8163bf04c9b2a3134ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa6731c2c8b8e2f0c730e2f72d75b2c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameter__synthesis_8hpp.html#afa6731c2c8b8e2f0c730e2f72d75b2c2">print_and_delete</a> (std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt;&gt; &amp;my_deque)</td></tr>
-<tr class="separator:afa6731c2c8b8e2f0c730e2f72d75b2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae323399f875e6ad29a8135f62e55d514"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsynthesis__queues.html">synthesis_queues</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameter__synthesis_8hpp.html#ae323399f875e6ad29a8135f62e55d514">parameter_synthesis</a> (<a class="el" href="structoptions.html">options</a> user_input, z3::context &amp;ctx)</td></tr>
+<tr class="separator:ae323399f875e6ad29a8135f62e55d514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1291ea754ea069fc92b60922184c6d96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameter__synthesis_8hpp.html#a1291ea754ea069fc92b60922184c6d96">print_deque</a> (std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt;&gt; &amp;my_deque)</td></tr>
+<tr class="separator:a1291ea754ea069fc92b60922184c6d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac61e37f03b80e8163bf04c9b2a3134ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac61e37f03b80e8163bf04c9b2a3134ae">&#9670;&nbsp;</a></span>parameter_synthesis()</h2>
+<a id="ae323399f875e6ad29a8135f62e55d514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae323399f875e6ad29a8135f62e55d514">&#9670;&nbsp;</a></span>parameter_synthesis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,14 +109,25 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="structsynthesis__queues.html">synthesis_queues</a> parameter_synthesis </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structoptions.html">options</a>&#160;</td>
-          <td class="paramname"><em>user_input</em></td><td>)</td>
+          <td class="paramname"><em>user_input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">z3::context &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Central function of this tool, performs parameter synthesis. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">user_input</td><td>result of <a class="el" href="argument__parser_8cpp.html#af68dcf17b5e82c768051091818f5adeb">parse_arguments</a> </td></tr>
+    <tr><td class="paramname">ctx</td><td>global <code>z3::context</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -124,14 +135,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afa6731c2c8b8e2f0c730e2f72d75b2c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa6731c2c8b8e2f0c730e2f72d75b2c2">&#9670;&nbsp;</a></span>print_and_delete()</h2>
+<a id="a1291ea754ea069fc92b60922184c6d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1291ea754ea069fc92b60922184c6d96">&#9670;&nbsp;</a></span>print_deque()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void print_and_delete </td>
+          <td class="memname">void print_deque </td>
           <td>(</td>
           <td class="paramtype">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>my_deque</em></td><td>)</td>

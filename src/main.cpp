@@ -42,15 +42,15 @@ int main(int argc, char * argv[])
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;
-    print_and_delete(res.safe_areas);
+    print_deque(res.safe_areas);
 
     std::cout << "UNSAFE areas" << std::endl;
     std::cout << "============" << std::endl;
-    print_and_delete(res.unsafe_areas);
+    print_deque(res.unsafe_areas);
 
     std::cout << "UNKNOWN areas" << std::endl;
     std::cout << "=============" << std::endl;
-    print_and_delete(res.unknown_areas);
+    print_deque(res.unknown_areas);
     
     return 0;
 }

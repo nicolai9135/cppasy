@@ -53,6 +53,17 @@ enum sampling_heuristic
  */
 class polytope
 {
+private:
+    // used by public wrapper functions
+    virtual z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) = 0;
+    virtual void print_sub() = 0;
+
+    /**
+     * Calles by #split if #splitting_heuristic `bisect_all` passed. See 
+     * #splitting_heuristic for details.
+     */
+    virtual std::deque<std::unique_ptr<polytope>> split_bisect_all() = 0;
+
 protected:
     /**
      * This number represents the progress of the algorithm and is used to abort 
@@ -79,11 +90,11 @@ protected:
 public:
     virtual ~polytope() = default;
     int get_depth();
-    void set_depth(int d);
     std::vector<coordinate> get_safe_coordinates();
     std::vector<coordinate> get_unsafe_coordinates();
 
     /**
+     * This Function is a wrapper around #get_boundaries_z3_sub .
      * The shape of a #polytope is defined through the set its boundaries. The
      * representation of a #polytope's boudaries is dependent on its shape and
      * surfaces. This function takes the #polytope dependent boundary
@@ -94,19 +105,20 @@ public:
      * @param variable_names list of names of the free variables
      * @return `z3` representation of the #polytope's boundaries
      */
-    virtual z3::expr_vector get_boundaries_z3(z3::context &ctx, z3::expr_vector &variable_names) = 0;
+    z3::expr_vector get_boundaries_z3(z3::context &ctx, z3::expr_vector &variable_names);
 
     /**
+     * Wrapper for #print_sub . 
      * Prints all attributes of a #polytope. Mainly for develepement purposes
      */
-    virtual void print() = 0;
+    void print();
 
     /**
      * Splits `this` #polytope into multiple new polytopes depending on the
      * provided #splitting_heuristic.
      * @param splitting_h #splitting_heuristic to be used
      */
-    virtual std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h) = 0;
+    std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h);
 
     /**
      * Takes samples at different ::coordinate s within the #polytope and stores
@@ -114,7 +126,7 @@ public:
      * @sideeffect extends #safe_coordinates and/or #unsafe_coordinates
      * @param sampling_h #sampling_heuristic to be used
      */
-    virtual void sample(sampling_heuristic sampling_h) = 0;
+    void sample(sampling_heuristic sampling_h);
 };
 
 #endif

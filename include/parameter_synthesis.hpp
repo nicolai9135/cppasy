@@ -24,6 +24,6 @@ struct synthesis_queues
 synthesis_queues parameter_synthesis(options user_input, z3::context &ctx);
 
 // only for developement purposes
-void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque);
+void print_deque(std::deque<std::unique_ptr<polytope>> &my_deque);
 
 #endif

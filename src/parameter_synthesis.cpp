@@ -1,11 +1,10 @@
 #include "parameter_synthesis.hpp"
 
-void print_and_delete(std::deque<std::unique_ptr<polytope>> &my_deque)
+void print_deque(std::deque<std::unique_ptr<polytope>> &my_deque)
 {
-    while (!my_deque.empty())
+    for (const auto &p : my_deque)
     {
-        my_deque.front()->print();
-        my_deque.pop_front();
+        p->print();
     }
 }
 

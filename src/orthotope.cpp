@@ -16,7 +16,7 @@ intervals orthotope::get_boundaries()
     return boundaries;
 }
 
-void orthotope::print()
+void orthotope::print_sub()
 {
     std::cout << "Printing Orthotope" << std::endl;
 
@@ -26,10 +26,11 @@ void orthotope::print()
     // print boundaries
     std::cout << "    Boundaries:" << std::endl;
     int i = 0;
-    for(intervals::iterator it = boundaries.begin(); it != boundaries.end(); ++it)
+
+    for(const auto &it : boundaries)
     {
         i++;
-        std::cout << "        Dimension " << i << ":   " << "[" << it->first << ", " << it->second << "]" << std::endl;
+        std::cout << "        Dimension " << i << ":   " << "[" << it.first << ", " << it.second << "]" << std::endl;
     }
 
     // print safe samples
@@ -37,7 +38,7 @@ void orthotope::print()
     // print unsafe samples
 }
 
-z3::expr_vector orthotope::get_boundaries_z3(z3::context &ctx, z3::expr_vector &variable_names)
+z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names)
 {
     z3::expr_vector res(ctx);
     for (int i = 0; i < variable_names.size(); i++)
@@ -48,36 +49,27 @@ z3::expr_vector orthotope::get_boundaries_z3(z3::context &ctx, z3::expr_vector &
     return res;
 }
 
-std::deque<std::unique_ptr<polytope>> orthotope::split(splitting_heuristic splitting_h)
+
+std::deque<std::unique_ptr<polytope>> orthotope::intervals_to_orthotopes(std::vector<intervals> intervals_list)
 {
-    std::vector<intervals> new_intervals_list;
-    std::vector<std::pair<interval, interval>> intervals_bisected;
-
-    switch (splitting_h)
-    {
-    case splitting_heuristic::bisect_all:
-        intervals_bisected = bisect_all_intervals(this->boundaries);
-        new_intervals_list = cartesian_product(intervals_bisected);
-        break;
-    // case splitting_heuristic::bisect_single:
-        // break;
-    default:
-        break;
-    }
-
     std::deque<std::unique_ptr<polytope>> new_orthopes;
-
-    for (std::vector<intervals>::iterator it = new_intervals_list.begin(); it != new_intervals_list.end(); it++)
+    for (const auto &it : intervals_list)
     {
-        new_orthopes.push_back(std::unique_ptr<polytope>(new orthotope(*it, this->depth + 1)));
+        new_orthopes.push_back(std::unique_ptr<polytope>(new orthotope(it, this->depth + 1)));
     }
 
     return new_orthopes;
 }
 
-void orthotope::sample(sampling_heuristic sampling_h)
+std::deque<std::unique_ptr<polytope>> orthotope::split_bisect_all()
 {
+    // bisect all intervals
+    std::vector<std::pair<interval, interval>> intervals_bisected = bisect_all_intervals(this->boundaries);
 
+    // list of intervals for new orthotopes
+    std::vector<intervals> new_intervals_list = cartesian_product(intervals_bisected);
+
+    return intervals_to_orthotopes(new_intervals_list);
 }
 
 std::vector<std::pair<interval, interval>> orthotope::bisect_all_intervals(intervals intervals_in)

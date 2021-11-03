@@ -18,6 +18,18 @@ private:
     intervals boundaries;
 
     /**
+     * Transforms #boundaries into `z3` constraints.
+     * @param ctx `z3::context` in which the expressions should be defined
+     * @param variable_names list of names of the free variables
+     * @return `z3` representation of #boundaries
+     */
+    z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) override;
+
+    void print_sub() override;
+
+    std::deque<std::unique_ptr<polytope>> split_bisect_all() override;
+
+    /**
      * Recursive helper function for #cartesian_product
      * @param accum Current version of the cartesian product to return in the end
      * @param stack Current version of the current element in the cartesian product
@@ -40,6 +52,8 @@ private:
      */
     std::vector<std::pair<interval, interval>> bisect_all_intervals(intervals intervals_in);
 
+    std::deque<std::unique_ptr<polytope>> intervals_to_orthotopes(std::vector<intervals> intervals_list);
+
 public:
     /**
      * Constructor.
@@ -51,24 +65,6 @@ public:
     orthotope(intervals bs, int d, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
 
     intervals get_boundaries();
-
-    /**
-     * Transforms #boundaries into `z3` constraints.
-     * @param ctx `z3::context` in which the expressions should be defined
-     * @param variable_names list of names of the free variables
-     * @return `z3` representation of #boundaries
-     */
-    virtual z3::expr_vector get_boundaries_z3(z3::context &ctx, z3::expr_vector &variable_names) override;
-
-    void print() override;
-
-    /**
-     * See polytope::split() for a functional description. This (the 
-     * #orthotope's) implementation heavily relies on #bisect_all and 
-     * #cartesian_product.
-     */
-    std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_heuristic_in) override;
-    void sample(sampling_heuristic sampling_h) override;
 };
 
 #endif

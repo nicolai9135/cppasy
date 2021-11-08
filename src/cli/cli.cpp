@@ -34,23 +34,9 @@ int main(int argc, char * argv[])
         return 1;
     }
 
-    // create global context
-    z3::context ctx;
+    synthesis* s = new synthesis(user_input);
+    s->execute();
+    s->print_all_areas();
 
-    synthesis_queues res = parameter_synthesis(user_input, ctx);
-
-    // print queues
-    std::cout << "SAFE areas" << std::endl;
-    std::cout << "==========" << std::endl;
-    print_deque(res.safe_areas);
-
-    std::cout << "UNSAFE areas" << std::endl;
-    std::cout << "============" << std::endl;
-    print_deque(res.unsafe_areas);
-
-    std::cout << "UNKNOWN areas" << std::endl;
-    std::cout << "=============" << std::endl;
-    print_deque(res.unknown_areas);
-    
     return 0;
 }

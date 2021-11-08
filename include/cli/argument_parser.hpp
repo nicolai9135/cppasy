@@ -4,6 +4,8 @@
 #include <string>
 #include <exception>
 
+#include "parameter_synthesis.hpp"
+
 /**
  * Exception to handle `$ cppasy --help` option
  */
@@ -20,27 +22,6 @@ class no_input_file : public std::exception
     {
         return "No input file provided";
     }
-};
-
-/**
- * Struct to store the user's arguments.
- */
-struct options
-{
-    /**
-     * File containing the formula to be evaluated.
-     */
-    std::string formula_file;
-
-    /**
-     * Maximal depth. See polytope::depth for details.
-     */
-    int max_depth;
-
-    /**
-     * File containing the variable names and initial intervals.
-     */
-    std::string boundaries_file;
 };
 
 /**

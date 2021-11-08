@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unknown_5fareas_100',['unknown_areas',['../structsynthesis__queues.html#a794129e724752cc90bd0de200310c682',1,'synthesis_queues']]],
-  ['unsafe_5fareas_101',['unsafe_areas',['../structsynthesis__queues.html#aa97103cba5ef69b90263ed68f757afc8',1,'synthesis_queues']]],
-  ['unsafe_5fcoordinates_102',['unsafe_coordinates',['../classpolytope.html#acd9b75601458246716814f9b6c101c3e',1,'polytope']]]
+  ['safe_5fareas_141',['safe_areas',['../classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6',1,'synthesis']]],
+  ['safe_5fcoordinates_142',['safe_coordinates',['../classpolytope.html#a805f71c754e38bcefffa4cac532142e8',1,'polytope']]],
+  ['synthesis_5foptions_143',['synthesis_options',['../classsynthesis.html#a7869863c28e20cb817e9367fdb590fd1',1,'synthesis']]]
 ];

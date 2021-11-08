@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_53',['what',['../classno__input__file.html#a046f392e35e5dcf7ec44152ad3140f0c',1,'no_input_file']]]
+  ['vertices_73',['vertices',['../polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0ac0dbd5830269063a27eac71a7a937941',1,'polytope.hpp']]]
 ];

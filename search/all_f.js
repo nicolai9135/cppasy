@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['vertices_52',['vertices',['../polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0ac0dbd5830269063a27eac71a7a937941',1,'polytope.hpp']]]
+  ['unknown_5fareas_70',['unknown_areas',['../classsynthesis.html#a54806b1fe20407f49198809b0eade2ec',1,'synthesis']]],
+  ['unsafe_5fareas_71',['unsafe_areas',['../classsynthesis.html#a61a063756305e80cec313b33ce1a5603',1,'synthesis']]],
+  ['unsafe_5fcoordinates_72',['unsafe_coordinates',['../classpolytope.html#acd9b75601458246716814f9b6c101c3e',1,'polytope']]]
 ];

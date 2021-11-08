@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['synthesis_5fqueues_60',['synthesis_queues',['../structsynthesis__queues.html',1,'']]]
+  ['options_81',['options',['../structoptions.html',1,'']]],
+  ['orthotope_82',['orthotope',['../classorthotope.html',1,'']]]
 ];

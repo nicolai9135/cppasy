@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cppasy: /home/nicolai/RWTH/master/master_thesis/cppasy/include/parameter_synthesis.hpp Source File</title>
+<title>cppasy: /home/nicolai/RWTH/master/master_thesis/cppasy/include/logic/parameter_synthesis.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_701344d99a520edc46b3f16735b55bde.html">logic</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,33 +80,57 @@ $(function() {
 <a href="parameter__synthesis_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PARAMETER_SYNTHESIS</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PARAMETER_SYNTHESIS</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="argument__parser_8hpp.html">argument_parser.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="polytope_8hpp.html">polytope.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="orthotope_8hpp.html">orthotope.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structsynthesis__queues.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsynthesis__queues.html">synthesis_queues</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structsynthesis__queues.html#a1064ed146eb22a5a8ba7ab071593e533">   13</a></span>&#160;    std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; <a class="code" href="structsynthesis__queues.html#a1064ed146eb22a5a8ba7ab071593e533">safe_areas</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structsynthesis__queues.html#aa97103cba5ef69b90263ed68f757afc8">   14</a></span>&#160;    std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; <a class="code" href="structsynthesis__queues.html#aa97103cba5ef69b90263ed68f757afc8">unsafe_areas</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structsynthesis__queues.html#a794129e724752cc90bd0de200310c682">   15</a></span>&#160;    std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; <a class="code" href="structsynthesis__queues.html#a794129e724752cc90bd0de200310c682">unknown_areas</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="structsynthesis__queues.html">synthesis_queues</a> <a class="code" href="parameter__synthesis_8hpp.html#ae323399f875e6ad29a8135f62e55d514">parameter_synthesis</a>(<a class="code" href="structoptions.html">options</a> user_input, z3::context &amp;ctx);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// only for developement purposes</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="parameter__synthesis_8hpp.html#a1291ea754ea069fc92b60922184c6d96">print_deque</a>(std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; &amp;my_deque);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aargument__parser_8hpp_html"><div class="ttname"><a href="argument__parser_8hpp.html">argument_parser.hpp</a></div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="polytope_8hpp.html">polytope.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="orthotope_8hpp.html">orthotope.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structoptions.html">   10</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structoptions.html">options</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structoptions.html#a82726ba3655fecc64147830146d941d4">   15</a></span>&#160;    std::string <a class="code" href="structoptions.html#a82726ba3655fecc64147830146d941d4">formula_file</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structoptions.html#ad419d3d04a45fb03ceef339850c65606">   20</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structoptions.html#ad419d3d04a45fb03ceef339850c65606">max_depth</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structoptions.html#a65888208e15777ae770da301b15cb74a">   25</a></span>&#160;    std::string <a class="code" href="structoptions.html#a65888208e15777ae770da301b15cb74a">boundaries_file</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classsynthesis.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsynthesis.html">synthesis</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">   37</a></span>&#160;    std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; <a class="code" href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">safe_areas</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">   42</a></span>&#160;    std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; <a class="code" href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">unsafe_areas</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">   47</a></span>&#160;    std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; <a class="code" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsynthesis.html#a4507ca154ee87606e5ef2cf2144e7262">print_deque</a>(std::deque&lt;std::unique_ptr&lt;polytope&gt;&gt; &amp;my_deque);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classsynthesis.html#a7869863c28e20cb817e9367fdb590fd1">   58</a></span>&#160;    <a class="code" href="structoptions.html">options</a> <a class="code" href="classsynthesis.html#a7869863c28e20cb817e9367fdb590fd1">synthesis_options</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classsynthesis.html#a4de6bbef51659a9cee1c7ef89360e971">   63</a></span>&#160;    z3::context <a class="code" href="classsynthesis.html#a4de6bbef51659a9cee1c7ef89360e971">ctx</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classsynthesis.html#ac629cdcf8e878a670b5d121be50004e7">synthesis</a>(<a class="code" href="structoptions.html">options</a> o);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsynthesis.html#adf6d068a0b13d7b9b072d5c7db2e3b0a">execute</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsynthesis.html#a71d77ae3b89f066aa2cd79d1a1e8d306">print_all_areas</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclasssynthesis_html"><div class="ttname"><a href="classsynthesis.html">synthesis</a></div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:32</div></div>
+<div class="ttc" id="aclasssynthesis_html_a4507ca154ee87606e5ef2cf2144e7262"><div class="ttname"><a href="classsynthesis.html#a4507ca154ee87606e5ef2cf2144e7262">synthesis::print_deque</a></div><div class="ttdeci">void print_deque(std::deque&lt; std::unique_ptr&lt; polytope &gt;&gt; &amp;my_deque)</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.cpp:3</div></div>
+<div class="ttc" id="aclasssynthesis_html_a4de6bbef51659a9cee1c7ef89360e971"><div class="ttname"><a href="classsynthesis.html#a4de6bbef51659a9cee1c7ef89360e971">synthesis::ctx</a></div><div class="ttdeci">z3::context ctx</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:63</div></div>
+<div class="ttc" id="aclasssynthesis_html_a52452d05ae3859eb650cc4861a6f8cf6"><div class="ttname"><a href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">synthesis::safe_areas</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; polytope &gt; &gt; safe_areas</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:37</div></div>
+<div class="ttc" id="aclasssynthesis_html_a54806b1fe20407f49198809b0eade2ec"><div class="ttname"><a href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">synthesis::unknown_areas</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; polytope &gt; &gt; unknown_areas</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:47</div></div>
+<div class="ttc" id="aclasssynthesis_html_a61a063756305e80cec313b33ce1a5603"><div class="ttname"><a href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">synthesis::unsafe_areas</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; polytope &gt; &gt; unsafe_areas</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:42</div></div>
+<div class="ttc" id="aclasssynthesis_html_a71d77ae3b89f066aa2cd79d1a1e8d306"><div class="ttname"><a href="classsynthesis.html#a71d77ae3b89f066aa2cd79d1a1e8d306">synthesis::print_all_areas</a></div><div class="ttdeci">void print_all_areas()</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.cpp:16</div></div>
+<div class="ttc" id="aclasssynthesis_html_a7869863c28e20cb817e9367fdb590fd1"><div class="ttname"><a href="classsynthesis.html#a7869863c28e20cb817e9367fdb590fd1">synthesis::synthesis_options</a></div><div class="ttdeci">options synthesis_options</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:58</div></div>
+<div class="ttc" id="aclasssynthesis_html_ac629cdcf8e878a670b5d121be50004e7"><div class="ttname"><a href="classsynthesis.html#ac629cdcf8e878a670b5d121be50004e7">synthesis::synthesis</a></div><div class="ttdeci">synthesis(options o)</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.cpp:11</div></div>
+<div class="ttc" id="aclasssynthesis_html_adf6d068a0b13d7b9b072d5c7db2e3b0a"><div class="ttname"><a href="classsynthesis.html#adf6d068a0b13d7b9b072d5c7db2e3b0a">synthesis::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.cpp:32</div></div>
 <div class="ttc" id="aorthotope_8hpp_html"><div class="ttname"><a href="orthotope_8hpp.html">orthotope.hpp</a></div></div>
-<div class="ttc" id="aparameter__synthesis_8hpp_html_a1291ea754ea069fc92b60922184c6d96"><div class="ttname"><a href="parameter__synthesis_8hpp.html#a1291ea754ea069fc92b60922184c6d96">print_deque</a></div><div class="ttdeci">void print_deque(std::deque&lt; std::unique_ptr&lt; polytope &gt;&gt; &amp;my_deque)</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.cpp:3</div></div>
-<div class="ttc" id="aparameter__synthesis_8hpp_html_ae323399f875e6ad29a8135f62e55d514"><div class="ttname"><a href="parameter__synthesis_8hpp.html#ae323399f875e6ad29a8135f62e55d514">parameter_synthesis</a></div><div class="ttdeci">synthesis_queues parameter_synthesis(options user_input, z3::context &amp;ctx)</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.cpp:11</div></div>
 <div class="ttc" id="apolytope_8hpp_html"><div class="ttname"><a href="polytope_8hpp.html">polytope.hpp</a></div></div>
-<div class="ttc" id="astructoptions_html"><div class="ttname"><a href="structoptions.html">options</a></div><div class="ttdef"><b>Definition:</b> argument_parser.hpp:29</div></div>
-<div class="ttc" id="astructsynthesis__queues_html"><div class="ttname"><a href="structsynthesis__queues.html">synthesis_queues</a></div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:12</div></div>
-<div class="ttc" id="astructsynthesis__queues_html_a1064ed146eb22a5a8ba7ab071593e533"><div class="ttname"><a href="structsynthesis__queues.html#a1064ed146eb22a5a8ba7ab071593e533">synthesis_queues::safe_areas</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; polytope &gt; &gt; safe_areas</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:13</div></div>
-<div class="ttc" id="astructsynthesis__queues_html_a794129e724752cc90bd0de200310c682"><div class="ttname"><a href="structsynthesis__queues.html#a794129e724752cc90bd0de200310c682">synthesis_queues::unknown_areas</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; polytope &gt; &gt; unknown_areas</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:15</div></div>
-<div class="ttc" id="astructsynthesis__queues_html_aa97103cba5ef69b90263ed68f757afc8"><div class="ttname"><a href="structsynthesis__queues.html#aa97103cba5ef69b90263ed68f757afc8">synthesis_queues::unsafe_areas</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; polytope &gt; &gt; unsafe_areas</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:14</div></div>
+<div class="ttc" id="astructoptions_html"><div class="ttname"><a href="structoptions.html">options</a></div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:11</div></div>
+<div class="ttc" id="astructoptions_html_a65888208e15777ae770da301b15cb74a"><div class="ttname"><a href="structoptions.html#a65888208e15777ae770da301b15cb74a">options::boundaries_file</a></div><div class="ttdeci">std::string boundaries_file</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:25</div></div>
+<div class="ttc" id="astructoptions_html_a82726ba3655fecc64147830146d941d4"><div class="ttname"><a href="structoptions.html#a82726ba3655fecc64147830146d941d4">options::formula_file</a></div><div class="ttdeci">std::string formula_file</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:15</div></div>
+<div class="ttc" id="astructoptions_html_ad419d3d04a45fb03ceef339850c65606"><div class="ttname"><a href="structoptions.html#ad419d3d04a45fb03ceef339850c65606">options::max_depth</a></div><div class="ttdeci">int max_depth</div><div class="ttdef"><b>Definition:</b> parameter_synthesis.hpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

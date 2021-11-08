@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['formula_5ffile_96',['formula_file',['../structoptions.html#a82726ba3655fecc64147830146d941d4',1,'options']]]
+  ['depth_138',['depth',['../classpolytope.html#a1a7d54c3e731b9edc86256bf8f4a46bb',1,'polytope']]]
 ];

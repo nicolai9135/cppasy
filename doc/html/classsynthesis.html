@@ -83,10 +83,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac629cdcf8e878a670b5d121be50004e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#ac629cdcf8e878a670b5d121be50004e7">synthesis</a> (<a class="el" href="structoptions.html">options</a> o)</td></tr>
-<tr class="separator:ac629cdcf8e878a670b5d121be50004e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2026f3ce7cf746fb911284b11067d1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#ad2026f3ce7cf746fb911284b11067d1d">synthesis</a> (<a class="el" href="structcli__options.html">cli_options</a> o)</td></tr>
+<tr class="separator:ad2026f3ce7cf746fb911284b11067d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf6d068a0b13d7b9b072d5c7db2e3b0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#adf6d068a0b13d7b9b072d5c7db2e3b0a">execute</a> ()</td></tr>
 <tr class="separator:adf6d068a0b13d7b9b072d5c7db2e3b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30cf91dfa742af58b40fa7e4440fcaa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a30cf91dfa742af58b40fa7e4440fcaa2">continue_synthesis</a> (unsigned int increment)</td></tr>
+<tr class="separator:a30cf91dfa742af58b40fa7e4440fcaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d77ae3b89f066aa2cd79d1a1e8d306"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a71d77ae3b89f066aa2cd79d1a1e8d306">print_all_areas</a> ()</td></tr>
 <tr class="separator:a71d77ae3b89f066aa2cd79d1a1e8d306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -103,16 +105,24 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a61a063756305e80cec313b33ce1a5603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54806b1fe20407f49198809b0eade2ec"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a></td></tr>
 <tr class="separator:a54806b1fe20407f49198809b0eade2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7869863c28e20cb817e9367fdb590fd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structoptions.html">options</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a7869863c28e20cb817e9367fdb590fd1">synthesis_options</a></td></tr>
-<tr class="separator:a7869863c28e20cb817e9367fdb590fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4de6bbef51659a9cee1c7ef89360e971"><td class="memItemLeft" align="right" valign="top">z3::context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a4de6bbef51659a9cee1c7ef89360e971">ctx</a></td></tr>
 <tr class="separator:a4de6bbef51659a9cee1c7ef89360e971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf856c3f0fcc906561f15e813000bf47"><td class="memItemLeft" align="right" valign="top">z3::expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#acf856c3f0fcc906561f15e813000bf47">formula</a></td></tr>
+<tr class="separator:acf856c3f0fcc906561f15e813000bf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b56c2fda01e6d3d44e71140b1d2640"><td class="memItemLeft" align="right" valign="top">z3::expr_vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a19b56c2fda01e6d3d44e71140b1d2640">variable_names</a></td></tr>
+<tr class="separator:a19b56c2fda01e6d3d44e71140b1d2640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b54c010b7ab2cb440665215a492edfe"><td class="memItemLeft" align="right" valign="top">z3::solver&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a1b54c010b7ab2cb440665215a492edfe">solver_pos</a></td></tr>
+<tr class="separator:a1b54c010b7ab2cb440665215a492edfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6357aa2723ebcd08f56c10f09c3dad7e"><td class="memItemLeft" align="right" valign="top">z3::solver&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a6357aa2723ebcd08f56c10f09c3dad7e">solver_neg</a></td></tr>
+<tr class="separator:a6357aa2723ebcd08f56c10f09c3dad7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31822e4d754b267b07fe680d43948b46"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a31822e4d754b267b07fe680d43948b46">max_depth</a></td></tr>
+<tr class="separator:a31822e4d754b267b07fe680d43948b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class to perform paramenter synthesis and store neccessary data </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac629cdcf8e878a670b5d121be50004e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac629cdcf8e878a670b5d121be50004e7">&#9670;&nbsp;</a></span>synthesis()</h2>
+<a id="ad2026f3ce7cf746fb911284b11067d1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2026f3ce7cf746fb911284b11067d1d">&#9670;&nbsp;</a></span>synthesis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,17 +130,35 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">synthesis::synthesis </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structoptions.html">options</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structcli__options.html">cli_options</a>&#160;</td>
           <td class="paramname"><em>o</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor. Initializes <a class="el" href="classsynthesis.html#a7869863c28e20cb817e9367fdb590fd1">synthesis_options</a> with o. </p>
+<p>Constructor. Initializes all private members according to <a class="el" href="structcli__options.html">cli_options</a> . </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a30cf91dfa742af58b40fa7e4440fcaa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30cf91dfa742af58b40fa7e4440fcaa2">&#9670;&nbsp;</a></span>continue_synthesis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void synthesis::continue_synthesis </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>increment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adf6d068a0b13d7b9b072d5c7db2e3b0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf6d068a0b13d7b9b072d5c7db2e3b0a">&#9670;&nbsp;</a></span>execute()</h2>
 
@@ -145,7 +173,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Central function of this tool, performs parameter synthesis according to <a class="el" href="classsynthesis.html#a7869863c28e20cb817e9367fdb590fd1">synthesis_options</a> . </p><dl class="section user"><dt>Side Effects</dt><dd>repeatedly pops an element from <a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a> and (1) appends it to <a class="el" href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">safe_areas</a> OR (2) appends it to <a class="el" href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">unsafe_areas</a> OR (3) splits it and appends the new areas to <a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a> again. </dd></dl>
+<p>Central function of this tool, performs parameter synthesis. </p><dl class="section user"><dt>Side Effects</dt><dd>repeatedly pops an element from <a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a> and (1) appends it to <a class="el" href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">safe_areas</a> OR (2) appends it to <a class="el" href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">unsafe_areas</a> OR (3) splits it and appends the new areas to <a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a> again. </dd></dl>
 
 </div>
 </div>
@@ -218,6 +246,52 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="acf856c3f0fcc906561f15e813000bf47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf856c3f0fcc906561f15e813000bf47">&#9670;&nbsp;</a></span>formula</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">z3::expr synthesis::formula</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Formula to perform parameter synthesis on. </p>
+
+</div>
+</div>
+<a id="a31822e4d754b267b07fe680d43948b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31822e4d754b267b07fe680d43948b46">&#9670;&nbsp;</a></span>max_depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int synthesis::max_depth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>depth up to which the synthesis should be performed </p>
+
+</div>
+</div>
 <a id="a52452d05ae3859eb650cc4861a6f8cf6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52452d05ae3859eb650cc4861a6f8cf6">&#9670;&nbsp;</a></span>safe_areas</h2>
 
@@ -237,12 +311,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>queue containing all areas wich are already identified as safe </p>
+<p>Queue containing all areas wich are already identified as safe. </p>
 
 </div>
 </div>
-<a id="a7869863c28e20cb817e9367fdb590fd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7869863c28e20cb817e9367fdb590fd1">&#9670;&nbsp;</a></span>synthesis_options</h2>
+<a id="a6357aa2723ebcd08f56c10f09c3dad7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6357aa2723ebcd08f56c10f09c3dad7e">&#9670;&nbsp;</a></span>solver_neg</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +325,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structoptions.html">options</a> synthesis::synthesis_options</td>
+          <td class="memname">z3::solver synthesis::solver_neg</td>
         </tr>
       </table>
   </td>
@@ -260,7 +334,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="structoptions.html">options</a> struct to store synthesis settings. </p>
+<p>Solver to check whether ((not) <a class="el" href="classsynthesis.html#acf856c3f0fcc906561f15e813000bf47">formula</a>) has a solution within a given <a class="el" href="classpolytope.html">polytope</a>. </p>
+
+</div>
+</div>
+<a id="a1b54c010b7ab2cb440665215a492edfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b54c010b7ab2cb440665215a492edfe">&#9670;&nbsp;</a></span>solver_pos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">z3::solver synthesis::solver_pos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Solver to check whether <a class="el" href="classsynthesis.html#acf856c3f0fcc906561f15e813000bf47">formula</a> has a solution within a given <a class="el" href="classpolytope.html">polytope</a>. </p>
 
 </div>
 </div>
@@ -283,7 +380,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>queue containing all areas wich are not idetified yet </p>
+<p>Queue containing all areas wich are not idetified yet. </p>
 
 </div>
 </div>
@@ -306,7 +403,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>queue containing all areas wich are already identified as unsafe </p>
+<p>Queue containing all areas wich are already identified as unsafe. </p>
+
+</div>
+</div>
+<a id="a19b56c2fda01e6d3d44e71140b1d2640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19b56c2fda01e6d3d44e71140b1d2640">&#9670;&nbsp;</a></span>variable_names</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">z3::expr_vector synthesis::variable_names</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Names of the variables. Necessary to refine boundaries. </p>
 
 </div>
 </div>

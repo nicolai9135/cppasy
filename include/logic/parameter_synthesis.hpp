@@ -89,8 +89,7 @@ public:
      */
     synthesis(cli_options o);
     /**
-     * Central function of this tool, performs parameter synthesis according to
-     * #synthesis_options .
+     * Central function of this tool, performs parameter synthesis.
      * @sideeffect repeatedly pops an element from #unknown_areas and (1) 
      * appends it to #safe_areas OR (2) appends it to #unsafe_areas OR (3)
      * splits it and appends the new areas to #unknown_areas again.

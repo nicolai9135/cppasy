@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['formula_5ffile_139',['formula_file',['../structoptions.html#a82726ba3655fecc64147830146d941d4',1,'options']]]
+  ['formula_144',['formula',['../classsynthesis.html#acf856c3f0fcc906561f15e813000bf47',1,'synthesis']]],
+  ['formula_5ffile_145',['formula_file',['../structcli__options.html#aabf0bef1b883a761847771ce81e8fadb',1,'cli_options']]]
 ];

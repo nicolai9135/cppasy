@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['depth_15',['depth',['../classpolytope.html#a1a7d54c3e731b9edc86256bf8f4a46bb',1,'polytope']]]
+  ['depth_17',['depth',['../classpolytope.html#aaa406cfe544b53b7e6a66b768134e719',1,'polytope']]]
 ];

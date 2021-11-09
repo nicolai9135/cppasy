@@ -3,15 +3,15 @@
 #include <boost/program_options.hpp>
 #include <iostream>
 
-options parse_arguments(int argc, char* argv[])
+cli_options parse_arguments(int argc, char* argv[])
 {
-    options res;
+    cli_options res;
 
     // visible options
     boost::program_options::options_description visible("Allowed options");
     visible.add_options()
         ("help,h", "produce help message")
-        ("max-depth", boost::program_options::value<int>()->default_value(3), "set maximal depth")
+        ("max-depth", boost::program_options::value<unsigned int>()->default_value(1), "set maximal depth")
         ("boundaries-file", boost::program_options::value<std::string>(), ".txt file containing a list of all variables and their boundaries")
     ;
 
@@ -53,8 +53,8 @@ options parse_arguments(int argc, char* argv[])
 
     if (vm.count("max-depth")) 
     {
-        res.max_depth = vm["max-depth"].as<int>();
-        std::cout << "Maximal depth was set to " << vm["max-depth"].as<int>() << std::endl;
+        res.max_depth = vm["max-depth"].as<unsigned int>();
+        std::cout << "Maximal depth was set to " << vm["max-depth"].as<unsigned int>() << std::endl;
     } 
 
     if (vm.count("boundaries-file"))

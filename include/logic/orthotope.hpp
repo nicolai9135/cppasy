@@ -62,7 +62,7 @@ public:
      * @param sc #safe_coordinates within the new #boundaries
      * @param uc #unsafe_coordinates within the new #boundaries
      */
-    orthotope(intervals bs, int d, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
+    orthotope(intervals bs, unsigned int d, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
 
     intervals get_boundaries();
 };

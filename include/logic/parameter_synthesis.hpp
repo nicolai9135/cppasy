@@ -7,7 +7,7 @@
 /**
  * Struct to store the user's arguments.
  */
-struct options
+struct cli_options
 {
     /**
      * File containing the formula to be evaluated.
@@ -17,7 +17,7 @@ struct options
     /**
      * Maximal depth. See polytope::depth for details.
      */
-    int max_depth;
+    unsigned int max_depth;
 
     /**
      * File containing the variable names and initial intervals.
@@ -32,17 +32,17 @@ class synthesis
 {
 private:
     /**
-     * queue containing all areas wich are already identified as safe
+     * Queue containing all areas wich are already identified as safe.
      */
     std::deque<std::unique_ptr<polytope>> safe_areas;
 
     /**
-     * queue containing all areas wich are already identified as unsafe
+     * Queue containing all areas wich are already identified as unsafe.
      */
     std::deque<std::unique_ptr<polytope>> unsafe_areas;
 
     /**
-     * queue containing all areas wich are not idetified yet
+     * Queue containing all areas wich are not idetified yet.
      */
     std::deque<std::unique_ptr<polytope>> unknown_areas;
 
@@ -53,21 +53,41 @@ private:
     void print_deque(std::deque<std::unique_ptr<polytope>> &my_deque);
 
     /**
-     * #options struct to store synthesis settings.
-     */
-    options synthesis_options;
-
-    /**
      * `z3::context` to store all formulas, variables, ...
      */
     z3::context ctx;
 
+    /**
+     * Formula to perform parameter synthesis on.
+     */
+    z3::expr formula;
+
+    /**
+     * Names of the variables. Necessary to refine boundaries.
+     */
+    z3::expr_vector variable_names;
+
+    /**
+     * Solver to check whether #formula has a solution within a given #polytope.
+     */
+    z3::solver solver_pos;
+
+    /**
+     * Solver to check whether ((not) #formula) has a solution within a given 
+     * #polytope.
+     */
+    z3::solver solver_neg;
+
+    /**
+     * depth up to which the synthesis should be performed
+     */
+    unsigned int max_depth;
+
 public:
     /**
-     * Constructor. Initializes #synthesis_options with o.
+     * Constructor. Initializes all private members according to #cli_options .
      */
-
-    synthesis(options o);
+    synthesis(cli_options o);
     /**
      * Central function of this tool, performs parameter synthesis according to
      * #synthesis_options .
@@ -76,6 +96,11 @@ public:
      * splits it and appends the new areas to #unknown_areas again.
      */
     void execute();
+
+    /**
+     * 
+     */
+    void continue_synthesis(unsigned int increment);
 
     /**
      * Prints #safe_areas, #unsafe_areas and #unknown_areas into the terminal.

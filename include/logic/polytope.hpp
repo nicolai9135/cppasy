@@ -71,7 +71,7 @@ protected:
      * taken to come to this point. What #depth is actually representing is 
      * dependent (1) the concrete #polytope used (2) the splitting heuristic. 
      */
-    int depth; 
+    unsigned int depth; 
 
     /**
      * Vector of ::coordinate s within the #polytope which have already 
@@ -89,7 +89,7 @@ protected:
 
 public:
     virtual ~polytope() = default;
-    int get_depth();
+    unsigned int get_depth();
     std::vector<coordinate> get_safe_coordinates();
     std::vector<coordinate> get_unsafe_coordinates();
 

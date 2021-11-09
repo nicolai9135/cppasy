@@ -10,7 +10,7 @@
 int main(int argc, char * argv[])
 {
     // struct to store user input
-    options user_input;
+    cli_options user_input;
 
     // try to parse command line arguments
     try
@@ -36,6 +36,10 @@ int main(int argc, char * argv[])
 
     synthesis* s = new synthesis(user_input);
     s->execute();
+    s->print_all_areas();
+    s->continue_synthesis(1);
+    s->print_all_areas();
+    s->continue_synthesis(1);
     s->print_all_areas();
 
     return 0;

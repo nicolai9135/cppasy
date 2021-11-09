@@ -3,7 +3,7 @@
 #include <iostream>
 #include <algorithm>
 
-orthotope::orthotope(intervals bs, int d, std::vector<coordinate> sc, std::vector<coordinate> uc)
+orthotope::orthotope(intervals bs, unsigned int d, std::vector<coordinate> sc, std::vector<coordinate> uc)
 {
     boundaries = bs;
     depth = d;

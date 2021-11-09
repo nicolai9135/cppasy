@@ -26,11 +26,11 @@ class no_input_file : public std::exception
 
 /**
  * This function parses the provided arguments using `boost::program_options`
- * and returns a fitting struct #options.
+ * and returns a fitting struct #cli_options.
  * @param argc number of arguments
  * @param argv[] `char*` containig the input
- * @return #options containing all information provided
+ * @return #cli_options containing all information provided
  */
-options parse_arguments(int argc, char* argv[]);
+cli_options parse_arguments(int argc, char* argv[]);
 
 #endif

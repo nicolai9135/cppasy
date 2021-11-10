@@ -2,6 +2,9 @@ add_executable(gui
     gui.cpp
     cppasy_app.cpp
     main_frame.cpp
+    plot_frame.cpp
+    preferences_frame.cpp
+    variables_frame.cpp
     ../logic/polytope.cpp
     ../logic/orthotope.cpp
     ../logic/parameter_synthesis.cpp

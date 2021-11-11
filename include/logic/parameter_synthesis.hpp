@@ -44,6 +44,16 @@ struct gui_options
      * Something containing the initial boundaries
      */
     std::string boundaries_file;
+
+    /**
+     * Variable to print on the x-axies
+     */
+    std::string var_x = "x";
+
+    /**
+     * Variable to print on the y-axies
+     */
+    std::string var_y = "y";
 };
 
 /**
@@ -145,6 +155,7 @@ public:
     void print_all_areas();
 
     areas *get_synthesis_areas_ptr();
+    z3::expr_vector get_variable_names();
 };
 
 #endif

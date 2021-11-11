@@ -5,7 +5,7 @@
 #include "variables_frame.hpp"
 
 main_frame::main_frame()
-  : wxFrame(NULL, wxID_ANY, "cppasy")
+  : wxFrame(NULL, wxID_ANY, "cppasy", wxDefaultPosition, wxSize(750, 750))
 {
     // create file menu
     menu_file = new wxMenu;
@@ -47,6 +47,7 @@ main_frame::main_frame()
     // textctrl->AppendText("Red text\n");
     // textctrl->SetDefaultStyle(wxTextAttr(wxFONTFAMILY_TELETYPE));
     // textctrl->AppendText("doesnt look like teletype\n");
+    Center();
 }
 
 void main_frame::OnExit(wxCommandEvent& event)

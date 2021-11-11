@@ -130,3 +130,8 @@ areas *synthesis::get_synthesis_areas_ptr()
 {
     return &synthesis_areas;
 }
+
+z3::expr_vector synthesis::get_variable_names()
+{
+    return variable_names;
+}

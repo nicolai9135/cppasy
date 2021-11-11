@@ -19,10 +19,32 @@ synthesis::synthesis(cli_options o)
     variable_names.push_back(ctx.real_const("x"));
     variable_names.push_back(ctx.real_const("y"));
     intervals boundaries = {{ctx.real_val(0), ctx.real_val(2)}, {ctx.real_val(0), ctx.real_val(2)}};
-    unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));
+    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));
 
     // read formula and transform vector into expression
     z3::expr_vector formula_vector = ctx.parse_file(o.formula_file.c_str());
+    formula = mk_and(formula_vector);
+
+    // initialize solvers
+    solver_pos.add(formula);
+    solver_neg.add(!formula);
+}
+
+synthesis::synthesis(gui_options o)
+  : formula(ctx),
+    variable_names(ctx),
+    solver_pos(ctx),
+    solver_neg(ctx),
+    max_depth(o.max_depth)
+{
+    // create initial unknown area (initial depth: 1) -- TODO: make this dependent on o.boundaries file!
+    variable_names.push_back(ctx.real_const("x"));
+    variable_names.push_back(ctx.real_const("y"));
+    intervals boundaries = {{ctx.real_val(0), ctx.real_val(2)}, {ctx.real_val(0), ctx.real_val(2)}};
+    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));
+
+    // read formula and transform vector into expression
+    z3::expr_vector formula_vector = ctx.parse_string(o.formula_str.c_str());
     formula = mk_and(formula_vector);
 
     // initialize solvers
@@ -35,15 +57,15 @@ void synthesis::print_all_areas()
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;
-    print_deque(safe_areas);
+    print_deque(synthesis_areas.safe_areas);
 
     std::cout << "UNSAFE areas" << std::endl;
     std::cout << "============" << std::endl;
-    print_deque(unsafe_areas);
+    print_deque(synthesis_areas.unsafe_areas);
 
     std::cout << "UNKNOWN areas" << std::endl;
     std::cout << "=============" << std::endl;
-    print_deque(unknown_areas);
+    print_deque(synthesis_areas.unknown_areas);
 }
 
 void synthesis::execute()
@@ -53,10 +75,10 @@ void synthesis::execute()
     solver_neg.push();
 
     // main loop
-    while (!unknown_areas.empty())
+    while (!synthesis_areas.unknown_areas.empty())
     {
         // get first polytope in queue
-        std::unique_ptr<polytope>& current_polytope = unknown_areas.front();
+        std::unique_ptr<polytope>& current_polytope = synthesis_areas.unknown_areas.front();
 
         // end calculation if maximal depth is reached
         if (current_polytope->get_depth() >= max_depth) break;
@@ -77,24 +99,24 @@ void synthesis::execute()
                 std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(bisect_all);
 
                 // append new areas to unknown areas
-                unknown_areas.insert(unknown_areas.end(), std::make_move_iterator(new_polytopes.begin()), std::make_move_iterator(new_polytopes.end()));
+                synthesis_areas.unknown_areas.insert(synthesis_areas.unknown_areas.end(), std::make_move_iterator(new_polytopes.begin()), std::make_move_iterator(new_polytopes.end()));
             }
             else
             {
-                safe_areas.push_back(std::move(current_polytope));
+                synthesis_areas.safe_areas.push_back(std::move(current_polytope));
             }
             solver_neg.pop();
             solver_neg.push();
         }
         else
         {
-            unsafe_areas.push_back(std::move(current_polytope));
+            synthesis_areas.unsafe_areas.push_back(std::move(current_polytope));
         }
         solver_pos.pop();
         solver_pos.push();
         
         // delete processed element
-        unknown_areas.pop_front();
+        synthesis_areas.unknown_areas.pop_front();
     }
 }
 
@@ -102,4 +124,9 @@ void synthesis::continue_synthesis(unsigned int increment)
 {
     max_depth += increment;
     execute();
+}
+
+areas *synthesis::get_synthesis_areas_ptr()
+{
+    return &synthesis_areas;
 }

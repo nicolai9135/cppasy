@@ -5,7 +5,7 @@
 #include "orthotope.hpp"
 
 /**
- * Struct to store the user's arguments.
+ * Struct to store the user's arguments when using the CLI.
  */
 struct cli_options
 {
@@ -26,11 +26,31 @@ struct cli_options
 };
 
 /**
- * class to perform paramenter synthesis and store neccessary data
+ * Struct to store the user's arguments when using the GUI.
  */
-class synthesis
+struct gui_options
 {
-private:
+    /**
+     * `std::string` containing the formula.
+     */
+    std::string formula_str;
+
+    /**
+     * Maximal depth. See polytope::depth for details.
+     */
+    unsigned int max_depth = 3;
+
+    /**
+     * Something containing the initial boundaries
+     */
+    std::string boundaries_file;
+};
+
+/**
+ * struct containing safe, unsafe and unknown areas
+ */
+struct areas
+{
     /**
      * Queue containing all areas wich are already identified as safe.
      */
@@ -45,6 +65,18 @@ private:
      * Queue containing all areas wich are not idetified yet.
      */
     std::deque<std::unique_ptr<polytope>> unknown_areas;
+};
+
+/**
+ * class to perform paramenter synthesis and store neccessary data
+ */
+class synthesis
+{
+private:
+    /**
+     * #areas for a specific synthesis
+     */
+    areas synthesis_areas;
 
     /**
      * Helper function for #print_all_areas calling #polytope::print() for every
@@ -88,6 +120,12 @@ public:
      * Constructor. Initializes all private members according to #cli_options .
      */
     synthesis(cli_options o);
+
+    /**
+     * Constructor. Initializes all private members according to #gui_options .
+     */
+    synthesis(gui_options o);
+
     /**
      * Central function of this tool, performs parameter synthesis.
      * @sideeffect repeatedly pops an element from #unknown_areas and (1) 
@@ -105,6 +143,8 @@ public:
      * Prints #safe_areas, #unsafe_areas and #unknown_areas into the terminal.
      */
     void print_all_areas();
+
+    areas *get_synthesis_areas_ptr();
 };
 
 #endif

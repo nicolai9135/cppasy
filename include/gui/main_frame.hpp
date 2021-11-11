@@ -7,9 +7,14 @@
     #include <wx/wx.h>
 #endif
 
+#include "parameter_synthesis.hpp"
+
 class main_frame : public wxFrame
 {
 private:
+    // user options
+    gui_options user_settings;
+    
     // file menu actions
     void OnExit(wxCommandEvent& event);
 

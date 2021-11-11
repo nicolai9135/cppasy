@@ -37,6 +37,10 @@ main_frame::main_frame()
     Bind(wxEVT_MENU, &main_frame::OnExecute, this, wxID_EXECUTE);
 
     textctrl = new wxTextCtrl(this, -1, wxT(""), wxPoint(-1, -1), wxSize(400, 400), wxTE_MULTILINE);
+    textctrl->AppendText("(declare-const x Real)\n");
+    textctrl->AppendText("(declare-const y Real)\n");
+    textctrl->AppendText("(assert (> y x))\n");
+    textctrl->AppendText("(assert (< x 1))\n");
 
     // TODO: make teletype work!!!
     // textctrl->SetDefaultStyle(wxTextAttr(*wxRED));
@@ -65,6 +69,10 @@ void main_frame::OnVariables(wxCommandEvent& event)
 
 void main_frame::OnExecute(wxCommandEvent& event)
 {
-    plot_frame *plot_f = new plot_frame();
+    // get input from formula
+    wxString wx_formula = textctrl->GetValue();
+    user_settings.formula_str = wx_formula.ToStdString();
+
+    plot_frame *plot_f = new plot_frame(user_settings);
     plot_f->Show(true);
 }

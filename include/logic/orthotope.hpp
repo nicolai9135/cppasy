@@ -3,6 +3,13 @@
 
 #include "polytope.hpp"
 
+// For compilers that support precompilation, includes "wx/wx.h".
+#include <wx/wxprec.h>
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
+
 /**
  * Subclass of #polytope, represents all polytopes with orthogonal edges only.
  * Formally, an #orthotope (or hyperrectangle or box) is the cartesian product
@@ -26,6 +33,8 @@ private:
     z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) override;
 
     void print_sub() override;
+
+    void draw_wxWidgets_sub(wxDC *dc, unsigned int index_x, unsigned int index_y) override;
 
     std::deque<std::unique_ptr<polytope>> split_bisect_all() override;
 

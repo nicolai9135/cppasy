@@ -6,6 +6,12 @@
 #include <memory>
 #include <z3++.h>
 
+// For compilers that support precompilation, includes "wx/wx.h".
+#include <wx/wxprec.h>
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
 /**
  * Used to store points \f$x \in \mathbb{R}^n, n \in \mathbb{N}\f$. The 
  * dimension \f$n\f$ is the length of the vector. `z3::expr` allows precise
@@ -57,6 +63,7 @@ private:
     // used by public wrapper functions
     virtual z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) = 0;
     virtual void print_sub() = 0;
+    virtual void draw_wxWidgets_sub(wxDC *dc, unsigned int index_x, unsigned int index_y) = 0;
 
     /**
      * Calles by #split if #splitting_heuristic `bisect_all` passed. See 
@@ -127,6 +134,8 @@ public:
      * @param sampling_h #sampling_heuristic to be used
      */
     void sample(sampling_heuristic sampling_h);
+
+    void draw_wxWidgets(wxDC *dc, unsigned int index_x, unsigned int index_y);
 };
 
 #endif

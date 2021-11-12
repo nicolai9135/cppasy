@@ -1,16 +1,17 @@
-
-#include <wx/dcsvg.h>
 #include "plot_frame.hpp"
 #include "polytope.hpp"
 
 plot_frame::plot_frame(gui_options o)
-  : wxFrame(NULL, wxID_ANY, "Plot", wxDefaultPosition, wxSize(500, 500)),
+  : wxFrame(NULL, wxID_ANY, "Plot"),
     s(o),
-    var_x(o.var_x),
-    var_y(o.var_y),
-    width_x(2),
-    width_y(2)
+    x_name(o.x_name),
+    y_name(o.y_name),
+    x_width(2),
+    y_width(2),
+    x_offset(0),
+    y_offset(0)
 {
+    this->SetClientSize(wxSize(400,400));
     s.execute();
     s.print_all_areas();
 
@@ -24,8 +25,22 @@ plot_frame::plot_frame(gui_options o)
 
 void plot_frame::OnPaint(wxPaintEvent& event)
 {
+    wxSize wx_size = this->GetClientSize();
+    int x_frame_size = wx_size.GetWidth();
+    int y_frame_size = wx_size.GetHeight();
+
+    double x_scalar = x_frame_size / x_width;
+    double y_scalar = y_frame_size / y_width;
+
+    std::cout << x_scalar << y_scalar << std::endl;
+
     // plot in frame
     wxPaintDC *dc = new wxPaintDC(this);
+    // dc->SetLogicalScale (x_scalar, y_scalar);
+    dc->SetLogicalScale (100, 100);
+    // dc->SetLogicalOrigin(-x_offset, y_width-y_offset);
+    dc->SetLogicalOrigin(0, 4);
+    dc->SetAxisOrientation(true, true);
     plot(dc);
 }
 
@@ -33,13 +48,15 @@ void plot_frame::plot(wxDC *dc)
 {
     std::cout << "arrived in plot function" << std::endl;
 
-    unsigned int index_x = get_index(var_x);
+
+
+    unsigned int index_x = get_index(x_name);
     std::cout << index_x << std::endl;
-    unsigned int index_y = get_index(var_y);
+    unsigned int index_y = get_index(y_name);
     std::cout << index_y << std::endl;
 
-    plot_deque(dc, s.get_synthesis_areas_ptr()->unsafe_areas, wxColor(87, 171, 39), index_x, index_y);
-    plot_deque(dc, s.get_synthesis_areas_ptr()->unknown_areas, wxColor(87, 171, 39), index_x, index_y);
+    plot_deque(dc, s.get_synthesis_areas_ptr()->unsafe_areas, wxColor(204, 7, 30), index_x, index_y);
+    plot_deque(dc, s.get_synthesis_areas_ptr()->unknown_areas, wxColor(255, 255, 255), index_x, index_y);
     plot_deque(dc, s.get_synthesis_areas_ptr()->safe_areas, wxColor(87, 171, 39), index_x, index_y);
 }
 
@@ -57,21 +74,7 @@ void plot_frame::plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &are
 
     for (const auto &p : area_deque)
     {
-        // intervals boundaries = p->get_boundaries();
-        double x_begin_scaled = 0;
-        double x_end_scaled = 100;
-        double y_begin_scaled = 0;
-        double y_end_scaled = 100;
-
-        const wxRealPoint top_left_real = wxRealPoint(x_begin_scaled, y_end_scaled);
-        const wxRealPoint bottom_right_real = wxRealPoint(x_end_scaled, y_begin_scaled);
-
-        const wxPoint top_left = wxPoint(top_left_real);
-        const wxPoint bottom_right = wxPoint(bottom_right_real);
-
-        const wxRect rectangle = wxRect(top_left, bottom_right);
-
-        dc->DrawRectangle(rectangle);
+        p->draw_wxWidgets(dc, index_x, index_y);
     }
 }
 
@@ -79,15 +82,17 @@ unsigned int plot_frame::get_index(std::string var)
 {
     unsigned int i = 0;
 
-    for (const auto &v : s.get_variable_names())
+    for (const auto &candidate : s.get_variable_names())
     {
-        // v.get_string() not working. fix!
-        if (v.get_string() == var)
+        std::stringstream ss_candidate;
+        ss_candidate << candidate;
+        std::string s_candidate = ss_candidate.str();
+        if (s_candidate == var)
         {
             return i;
         }
         i++;
     }
-    // TODO: THROW ERROR!!!!!
+    // TODO: THROW ERROR, a fitting candidate should always be found!!!!!
     return 0;
 }

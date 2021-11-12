@@ -13,10 +13,12 @@ class plot_frame : public wxFrame
 {
 private:
     synthesis s;
-    std::string var_x;
-    std::string var_y;
-    double width_x;
-    double width_y;
+    std::string x_name;
+    std::string y_name;
+    double x_width;
+    double y_width;
+    double x_offset;
+    double y_offset;
     void plot(wxDC *dc);
     void plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color, unsigned int index_x, unsigned int index_y);
     unsigned int get_index(std::string var);

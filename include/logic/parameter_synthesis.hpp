@@ -48,12 +48,12 @@ struct gui_options
     /**
      * Variable to print on the x-axies
      */
-    std::string var_x = "x";
+    std::string x_name = "x";
 
     /**
      * Variable to print on the y-axies
      */
-    std::string var_y = "y";
+    std::string y_name = "y";
 };
 
 /**

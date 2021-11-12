@@ -27,6 +27,11 @@ void polytope::print()
     print_sub();
 }
 
+void polytope::draw_wxWidgets(wxDC *dc, unsigned int index_x, unsigned int index_y)
+{
+    draw_wxWidgets_sub(dc, index_x, index_y);
+}
+
 std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitting_h)
 {
     switch (splitting_h)

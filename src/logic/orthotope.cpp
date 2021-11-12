@@ -122,3 +122,23 @@ std::vector<intervals> orthotope::cartesian_product(std::vector<std::pair<interv
         std::reverse(it->begin(), it->end());
     return accum;
 }
+
+void orthotope::draw_wxWidgets_sub(wxDC *dc, unsigned int index_x, unsigned int index_y)
+{
+    std::cout << "arrived in orthotope draw func" << std::endl;
+
+    double x_begin_scaled = 0.5;
+    double x_end_scaled = 1.5;
+    double y_begin_scaled = 0.5;
+    double y_end_scaled = 1.5;
+
+    const wxRealPoint top_left_real = wxRealPoint(x_begin_scaled, y_end_scaled);
+    const wxRealPoint bottom_right_real = wxRealPoint(x_end_scaled, y_begin_scaled);
+
+    const wxPoint top_left = wxPoint(top_left_real);
+    const wxPoint bottom_right = wxPoint(bottom_right_real);
+
+    const wxRect rectangle = wxRect(top_left, bottom_right);
+
+    dc->DrawRectangle(rectangle);
+}

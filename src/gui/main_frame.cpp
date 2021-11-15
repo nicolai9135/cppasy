@@ -71,8 +71,12 @@ void main_frame::OnVariables(wxCommandEvent& event)
 void main_frame::OnExecute(wxCommandEvent& event)
 {
     // get input from formula
-    wxString wx_formula = textctrl->GetValue();
-    user_settings.formula_str = wx_formula.ToStdString();
+    user_settings.formula_str = textctrl->GetValue().ToStdString();
+
+    user_settings.max_depth = 8;
+    user_settings.x_name = "x";
+    user_settings.y_name = "y";
+    user_settings.initial_intervals = {{"0", "2"}, {"0", "2"}};
 
     plot_frame *plot_f = new plot_frame(user_settings);
     plot_f->Show(true);

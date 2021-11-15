@@ -7,20 +7,19 @@
     #include <wx/wx.h>
 #endif
 
+#include "polytope.hpp"
 #include "parameter_synthesis.hpp"
+
+double string_to_double(std::string s);
 
 class plot_frame : public wxFrame
 {
 private:
     synthesis s;
-    std::string x_name;
-    std::string y_name;
-    double x_width;
-    double y_width;
-    double x_offset;
-    double y_offset;
+    axis x_axis;
+    axis y_axis;
     void plot(wxDC *dc);
-    void plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color, unsigned int index_x, unsigned int index_y);
+    void plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color);
     unsigned int get_index(std::string var);
 public:
     plot_frame(gui_options o);

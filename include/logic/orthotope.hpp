@@ -34,7 +34,7 @@ private:
 
     void print_sub() override;
 
-    void draw_wxWidgets_sub(wxDC *dc, unsigned int index_x, unsigned int index_y) override;
+    void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
 
     std::deque<std::unique_ptr<polytope>> split_bisect_all() override;
 

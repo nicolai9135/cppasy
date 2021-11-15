@@ -52,6 +52,15 @@ enum sampling_heuristic
     vertices
 };
 
+struct axis
+{
+    std::string name;
+    unsigned int index;
+    double width;
+    double scalar;
+    double offset;
+};
+
 /**
  * The purpose of this tool is to perform parameter synthesis in a user-provided
  * region. To do so, the initial region is splitted multiple times into smaller
@@ -63,7 +72,7 @@ private:
     // used by public wrapper functions
     virtual z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) = 0;
     virtual void print_sub() = 0;
-    virtual void draw_wxWidgets_sub(wxDC *dc, unsigned int index_x, unsigned int index_y) = 0;
+    virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
 
     /**
      * Calles by #split if #splitting_heuristic `bisect_all` passed. See 
@@ -135,7 +144,7 @@ public:
      */
     void sample(sampling_heuristic sampling_h);
 
-    void draw_wxWidgets(wxDC *dc, unsigned int index_x, unsigned int index_y);
+    void draw_wxWidgets(wxDC *dc, axis x_axis, axis y_axis);
 };
 
 #endif

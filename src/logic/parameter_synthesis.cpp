@@ -40,7 +40,16 @@ synthesis::synthesis(gui_options o)
     // create initial unknown area (initial depth: 1) -- TODO: make this dependent on o.boundaries file!
     variable_names.push_back(ctx.real_const("x"));
     variable_names.push_back(ctx.real_const("y"));
-    intervals boundaries = {{ctx.real_val(0), ctx.real_val(2)}, {ctx.real_val(0), ctx.real_val(2)}};
+
+    // transform initial string-intervals from options into z3-intervals
+    intervals boundaries;
+    for(const auto &interval_string : o.initial_intervals)
+    {
+        interval current = {ctx.real_val(interval_string.first.c_str()), ctx.real_val(interval_string.second.c_str())};
+        boundaries.push_back(current);
+    }
+    
+    // use initial boundaries to create first (unknown) orthotope
     synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));
 
     // read formula and transform vector into expression

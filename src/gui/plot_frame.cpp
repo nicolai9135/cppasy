@@ -1,17 +1,28 @@
 #include "plot_frame.hpp"
-#include "polytope.hpp"
 
 plot_frame::plot_frame(gui_options o)
-  : wxFrame(NULL, wxID_ANY, "Plot"),
-    s(o),
-    x_name(o.x_name),
-    y_name(o.y_name),
-    x_width(2),
-    y_width(2),
-    x_offset(0),
-    y_offset(0)
+  : wxFrame(NULL, wxID_ANY, "Plot")
+  , s(o)
 {
+    // initialize x-axis (constructor difficult because of include dependency graph...)
+    x_axis.name = o.x_name;
+    x_axis.index = get_index(x_axis.name);
+    double x_interval_begin = string_to_double(o.initial_intervals[x_axis.index].first);
+    double x_interval_end = string_to_double(o.initial_intervals[x_axis.index].second);
+    x_axis.width = x_interval_end - x_interval_begin;
+    x_axis.offset = x_interval_begin;
+
+    // initialize x-axis
+    y_axis.name = o.y_name;
+    y_axis.index = get_index(y_axis.name);
+    double y_interval_begin = string_to_double(o.initial_intervals[y_axis.index].first);
+    double y_interval_end = string_to_double(o.initial_intervals[y_axis.index].second);
+    y_axis.width = y_interval_end - y_interval_begin;
+    y_axis.offset = y_interval_begin;
+    
     this->SetClientSize(wxSize(400,400));
+
+    // perform synthesis
     s.execute();
     s.print_all_areas();
 
@@ -25,56 +36,52 @@ plot_frame::plot_frame(gui_options o)
 
 void plot_frame::OnPaint(wxPaintEvent& event)
 {
+    // get window size
     wxSize wx_size = this->GetClientSize();
-    int x_frame_size = wx_size.GetWidth();
-    int y_frame_size = wx_size.GetHeight();
+    int x_plot_size = wx_size.GetWidth();
+    int y_plot_size = wx_size.GetHeight();
 
-    double x_scalar = x_frame_size / x_width;
-    double y_scalar = y_frame_size / y_width;
+    // calculate multiplication factor for plotting
+    x_axis.scalar = x_plot_size / x_axis.width;
+    y_axis.scalar = y_plot_size / y_axis.width;
 
-    std::cout << x_scalar << y_scalar << std::endl;
-
-    // plot in frame
+    // create new dc
     wxPaintDC *dc = new wxPaintDC(this);
-    // dc->SetLogicalScale (x_scalar, y_scalar);
-    dc->SetLogicalScale (100, 100);
-    // dc->SetLogicalOrigin(-x_offset, y_width-y_offset);
-    dc->SetLogicalOrigin(0, 4);
+
+    // reset origin to bottom left corner of the window
+    dc->SetLogicalOrigin(0, y_plot_size);
+    // -x_offset, y_width-y_offset
+
+    // adjust axis orientation
+    // default by wxWidgets: (true, false) -> usual coordinate system: (true, true)
     dc->SetAxisOrientation(true, true);
+
     plot(dc);
 }
 
 void plot_frame::plot(wxDC *dc)
 {
-    std::cout << "arrived in plot function" << std::endl;
-
-
-
-    unsigned int index_x = get_index(x_name);
-    std::cout << index_x << std::endl;
-    unsigned int index_y = get_index(y_name);
-    std::cout << index_y << std::endl;
-
-    plot_deque(dc, s.get_synthesis_areas_ptr()->unsafe_areas, wxColor(204, 7, 30), index_x, index_y);
-    plot_deque(dc, s.get_synthesis_areas_ptr()->unknown_areas, wxColor(255, 255, 255), index_x, index_y);
-    plot_deque(dc, s.get_synthesis_areas_ptr()->safe_areas, wxColor(87, 171, 39), index_x, index_y);
+    plot_deque(dc, s.get_synthesis_areas_ptr()->unsafe_areas, wxColor(204, 7, 30));
+    plot_deque(dc, s.get_synthesis_areas_ptr()->unknown_areas, wxColor(255, 255, 255));
+    plot_deque(dc, s.get_synthesis_areas_ptr()->safe_areas, wxColor(87, 171, 39));
 }
 
-void plot_frame::plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color, unsigned int index_x, unsigned int index_y)
+void plot_frame::plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color)
 {
     // no borders
-    wxPen p;
-    p.SetWidth(0);
-    dc->SetPen(p);
+    // wxPen p;
+    // p.SetWidth(0);
+    // dc->SetPen(p);
 
     // set fill color
     wxBrush b;
     b.SetColour(color);
     dc->SetBrush(b);
 
+    // iterate over polytopes of the current queue to draw them
     for (const auto &p : area_deque)
     {
-        p->draw_wxWidgets(dc, index_x, index_y);
+        p->draw_wxWidgets(dc, x_axis, y_axis);
     }
 }
 
@@ -95,4 +102,13 @@ unsigned int plot_frame::get_index(std::string var)
     }
     // TODO: THROW ERROR, a fitting candidate should always be found!!!!!
     return 0;
+}
+
+double string_to_double(std::string s)
+{
+    z3::context ctx;
+    const char* s_as_char = s.c_str();
+    z3::expr s_as_z3 = ctx.real_val(s_as_char);
+    double s_as_double = s_as_z3.as_double();
+    return s_as_double;
 }

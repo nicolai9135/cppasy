@@ -38,22 +38,22 @@ struct gui_options
     /**
      * Maximal depth. See polytope::depth for details.
      */
-    unsigned int max_depth = 3;
-
-    /**
-     * Something containing the initial boundaries
-     */
-    std::string boundaries_file;
+    unsigned int max_depth;
 
     /**
      * Variable to print on the x-axies
      */
-    std::string x_name = "x";
+    std::string x_name;
 
     /**
      * Variable to print on the y-axies
      */
-    std::string y_name = "y";
+    std::string y_name;
+
+    /**
+     * initial intervals
+     */
+    std::vector<std::pair<std::string, std::string>> initial_intervals;
 };
 
 /**

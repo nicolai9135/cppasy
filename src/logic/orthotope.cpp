@@ -123,20 +123,28 @@ std::vector<intervals> orthotope::cartesian_product(std::vector<std::pair<interv
     return accum;
 }
 
-void orthotope::draw_wxWidgets_sub(wxDC *dc, unsigned int index_x, unsigned int index_y)
+void orthotope::draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis)
 {
-    std::cout << "arrived in orthotope draw func" << std::endl;
+    // std::cout << "arrived in orthotope draw func" << std::endl;
 
-    double x_begin_scaled = 0.5;
-    double x_end_scaled = 1.5;
-    double y_begin_scaled = 0.5;
-    double y_end_scaled = 1.5;
+    double x_begin_scaled = boundaries[x_axis.index].first.as_double() * x_axis.scalar;
+    double x_end_scaled = boundaries[x_axis.index].second.as_double() * x_axis.scalar;
+    double y_begin_scaled = boundaries[y_axis.index].first.as_double() * y_axis.scalar;
+    double y_end_scaled = boundaries[y_axis.index].second.as_double() * y_axis.scalar;
 
     const wxRealPoint top_left_real = wxRealPoint(x_begin_scaled, y_end_scaled);
+    // std::cout << "REAL: top left x:" << top_left_real.x << std::endl;
+    // std::cout << "REAL: top left y:" << top_left_real.y << std::endl;
     const wxRealPoint bottom_right_real = wxRealPoint(x_end_scaled, y_begin_scaled);
+    // std::cout << "REAL: bottom right x:" << bottom_right_real.x << std::endl;
+    // std::cout << "REAL: bottom right y:" << bottom_right_real.y << std::endl;
 
     const wxPoint top_left = wxPoint(top_left_real);
+    // std::cout << "top left x:" << top_left.x << std::endl;
+    // std::cout << "top left y:" << top_left.y << std::endl;
     const wxPoint bottom_right = wxPoint(bottom_right_real);
+    // std::cout << "bottom right x:" << bottom_right.x << std::endl;
+    // std::cout << "bottom right y:" << bottom_right.y << std::endl;
 
     const wxRect rectangle = wxRect(top_left, bottom_right);
 

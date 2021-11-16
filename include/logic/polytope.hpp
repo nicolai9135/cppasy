@@ -57,6 +57,8 @@ struct axis
     bool is_x_axis;
     std::string name;
     unsigned int index;
+    // needed when axis itself is printed
+    int extra_space;
     double width;
     double scalar;
     double offset;

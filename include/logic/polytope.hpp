@@ -54,6 +54,7 @@ enum sampling_heuristic
 
 struct axis
 {
+    bool is_x_axis;
     std::string name;
     unsigned int index;
     double width;

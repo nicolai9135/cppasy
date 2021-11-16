@@ -132,10 +132,10 @@ void orthotope::draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis)
     double y_begin_scaled = boundaries[y_axis.index].first.as_double() * y_axis.scalar;
     double y_end_scaled = boundaries[y_axis.index].second.as_double() * y_axis.scalar;
 
-    const wxRealPoint top_left_real = wxRealPoint(x_begin_scaled, y_end_scaled);
+    const wxRealPoint top_left_real = wxRealPoint(x_begin_scaled, -y_end_scaled);
     // std::cout << "REAL: top left x:" << top_left_real.x << std::endl;
     // std::cout << "REAL: top left y:" << top_left_real.y << std::endl;
-    const wxRealPoint bottom_right_real = wxRealPoint(x_end_scaled, y_begin_scaled);
+    const wxRealPoint bottom_right_real = wxRealPoint(x_end_scaled, -y_begin_scaled);
     // std::cout << "REAL: bottom right x:" << bottom_right_real.x << std::endl;
     // std::cout << "REAL: bottom right y:" << bottom_right_real.y << std::endl;
 

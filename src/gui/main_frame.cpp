@@ -76,7 +76,7 @@ void main_frame::OnExecute(wxCommandEvent& event)
     user_settings.max_depth = 8;
     user_settings.x_name = "x";
     user_settings.y_name = "y";
-    user_settings.initial_intervals = {{"0", "2"}, {"0", "2"}};
+    user_settings.initial_intervals = {{"-1", "2"}, {"-1", "2"}};
 
     plot_frame *plot_f = new plot_frame(user_settings);
     plot_f->Show(true);

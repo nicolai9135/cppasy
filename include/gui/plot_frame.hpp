@@ -18,8 +18,15 @@ private:
     synthesis s;
     axis x_axis;
     axis y_axis;
+    int margin = 75;
+    int button_space = 100;
+    int x_plot_size_init = 400;
+    int y_plot_size_init = 400;
+    int x_plot_size_min = 100;
+    int y_plot_size_min = 100;
     void plot(wxDC *dc);
     void plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color);
+    void plot_axis(wxDC *dc, unsigned int min_tick_dist, axis a);
     unsigned int get_index(std::string var);
 public:
     plot_frame(gui_options o);

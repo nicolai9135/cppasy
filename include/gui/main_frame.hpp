@@ -12,8 +12,6 @@
 class main_frame : public wxFrame
 {
 private:
-    // user options
-    gui_options user_settings;
     
     // file menu actions
     void OnExit(wxCommandEvent& event);
@@ -25,6 +23,9 @@ private:
 
 public:
     main_frame();
+
+    // user options
+    gui_options user_settings;
 
     wxMenu *menu_file;
     wxMenu *menu_synthesis;

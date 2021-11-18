@@ -1,5 +1,5 @@
-#ifndef VARIABLES_FRAME
-#define VARIABLES_FRAME
+#ifndef VARIABLES_DIALOG
+#define VARIABLES_DIALOG
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
@@ -7,11 +7,13 @@
     #include <wx/wx.h>
 #endif
 
-class variables_frame : public wxFrame
+#include "main_frame.hpp"
+
+class variables_dialog : public wxDialog
 {
 private:
 public:
-    variables_frame();
+    variables_dialog(main_frame *m);
 };
 
 #endif

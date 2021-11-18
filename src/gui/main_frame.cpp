@@ -2,7 +2,7 @@
 #include "main_frame.hpp"
 #include "plot_frame.hpp"
 #include "preferences_frame.hpp"
-#include "variables_frame.hpp"
+#include "variables_dialog.hpp"
 #include "smtlib_parse.hpp"
 
 main_frame::main_frame()
@@ -65,8 +65,8 @@ void main_frame::OnPreferences(wxCommandEvent& event)
 
 void main_frame::OnVariables(wxCommandEvent& event)
 {
-    variables_frame *var_f = new variables_frame();
-    var_f->Show(true);
+    variables_dialog *d = new variables_dialog(this);
+    d->ShowModal();
 }
 
 void main_frame::OnExecute(wxCommandEvent& event)

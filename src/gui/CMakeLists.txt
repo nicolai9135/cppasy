@@ -4,7 +4,7 @@ add_executable(gui
     main_frame.cpp
     plot_frame.cpp
     preferences_frame.cpp
-    variables_frame.cpp
+    variables_dialog.cpp
     ../logic/polytope.cpp
     ../logic/orthotope.cpp
     ../logic/parameter_synthesis.cpp

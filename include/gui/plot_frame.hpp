@@ -20,6 +20,8 @@ private:
     axis y_axis;
     int margin = 50;
     int button_space = 100;
+    int button_width = 100;
+    int button_height = 30;
     int x_plot_size_init = 400;
     int y_plot_size_init = 400;
     int x_plot_size_min = 100;

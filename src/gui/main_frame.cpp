@@ -3,6 +3,7 @@
 #include "plot_frame.hpp"
 #include "preferences_frame.hpp"
 #include "variables_frame.hpp"
+#include "smtlib_parse.hpp"
 
 main_frame::main_frame()
   : wxFrame(NULL, wxID_ANY, "cppasy", wxDefaultPosition, wxSize(750, 750))
@@ -72,11 +73,12 @@ void main_frame::OnExecute(wxCommandEvent& event)
 {
     // get input from formula
     user_settings.formula_str = textctrl->GetValue().ToStdString();
+    user_settings.variable_names = get_variable_names(user_settings.formula_str);
 
-    user_settings.max_depth = 8;
+    user_settings.max_depth = 5;
     user_settings.x_name = "x";
     user_settings.y_name = "y";
-    user_settings.initial_intervals = {{"-1", "2"}, {"-1", "2"}};
+    user_settings.initial_intervals = {{"-1", "2"}, {"-1", "2"}, {"-1", "2"}};
 
     plot_frame *plot_f = new plot_frame(user_settings);
     plot_f->Show(true);

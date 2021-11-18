@@ -3,6 +3,7 @@
 
 #include "polytope.hpp"
 #include "orthotope.hpp"
+#include <set>
 
 /**
  * Struct to store the user's arguments when using the CLI.
@@ -49,6 +50,11 @@ struct gui_options
      * Variable to print on the y-axies
      */
     std::string y_name;
+
+    /**
+     * set containing the names of all variables used in the formula
+     */
+    std::set<std::string> variable_names;
 
     /**
      * initial intervals

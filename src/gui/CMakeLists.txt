@@ -8,6 +8,7 @@ add_executable(gui
     ../logic/polytope.cpp
     ../logic/orthotope.cpp
     ../logic/parameter_synthesis.cpp
+    ../parse/smtlib_parse.cpp
 )
 
 target_link_libraries(gui ${Z3_LIBRARIES})
@@ -17,4 +18,5 @@ target_include_directories(gui PUBLIC
     "${PROJECT_BINARY_DIR}"
     "${PROJECT_SOURCE_DIR}/include/logic"
     "${PROJECT_SOURCE_DIR}/include/gui"
+    "${PROJECT_SOURCE_DIR}/include/parse"
 )

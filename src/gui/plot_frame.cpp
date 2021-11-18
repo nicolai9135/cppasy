@@ -28,6 +28,8 @@ plot_frame::plot_frame(gui_options o)
     y_axis.is_x_axis = false;
     y_axis.extra_space = 60;
 
+
+
     resume = new wxButton(this, id_resume, _T("Resume"));
 
     this->SetClientSize(wxSize(x_plot_size_min + 2*margin + y_axis.extra_space, y_plot_size_min + 2*margin + button_space + x_axis.extra_space));
@@ -58,11 +60,10 @@ void plot_frame::OnPaint(wxPaintEvent& event)
     int frame_width = wx_size.GetWidth();
     int frame_height = wx_size.GetHeight();
 
-    int button_width = 100;
-    int button_height = 30;
     resume->SetSize(button_width, button_height);
     int y_button = frame_height - button_space + (button_space - button_height)/2 ;
-    resume->SetPosition(wxPoint(0, y_button));
+    int x_button = (frame_width-button_width)/2;
+    resume->SetPosition(wxPoint(x_button, y_button));
 
     int x_plot_size = frame_width - 2*margin - y_axis.extra_space;
     int y_plot_size = frame_height - 2*margin - button_space - x_axis.extra_space;
@@ -75,13 +76,20 @@ void plot_frame::OnPaint(wxPaintEvent& event)
     // create new dc
     wxPaintDC *dc = new wxPaintDC(this);
 
-    // reset origin to bottom left corner of the window
+    // reset origin to bottom left corner of the plot
     dc->SetLogicalOrigin(- margin - y_axis.extra_space + (x_axis.offset * x_axis.scalar), - (y_plot_size + margin + (y_axis.offset * y_axis.scalar)));
-    // -x_offset, y_width-y_offset
+
+    // plot axis
+    plot_axis(dc, 50, x_axis);
+    // add axis labels
+    dc->DrawText(x_axis.name, (x_axis.offset + x_axis.width/2) * x_axis.scalar, - y_axis.offset*y_axis.scalar + 50);
+
+    // plot axis
+    plot_axis(dc, 50, y_axis);
+    // add axis labels
+    dc->DrawText(y_axis.name, x_axis.offset * x_axis.scalar - y_axis.extra_space - 20, - (y_axis.offset + y_axis.width/2)*y_axis.scalar -10);
 
     plot(dc);
-    plot_axis(dc, 50, x_axis);
-    plot_axis(dc, 50, y_axis);
 }
 
 void plot_frame::plot_axis(wxDC *dc, unsigned int min_tick_dist, axis a)
@@ -174,9 +182,9 @@ void plot_frame::plot(wxDC *dc)
 void plot_frame::plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color)
 {
     // no borders
-    // wxPen p;
-    // p.SetWidth(0);
-    // dc->SetPen(p);
+    wxPen p;
+    p.SetWidth(0);
+    dc->SetPen(p);
 
     // set fill color
     wxBrush b;
@@ -221,4 +229,7 @@ double string_to_double(std::string s)
 void plot_frame::OnResume(wxCommandEvent& event)
 {
     std::cout << "button clicked" << std::endl;
+    s.continue_synthesis(1);
+    Refresh();
+    Update();
 }

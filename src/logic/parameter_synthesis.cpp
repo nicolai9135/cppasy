@@ -37,17 +37,20 @@ synthesis::synthesis(gui_options o)
     solver_neg(ctx),
     max_depth(o.max_depth)
 {
-    // create initial unknown area (initial depth: 1) -- TODO: make this dependent on o.boundaries file!
-    variable_names.push_back(ctx.real_const("x"));
-    variable_names.push_back(ctx.real_const("y"));
+    for(auto const &variable_name : o.variable_names)
+    {
+        variable_names.push_back(ctx.real_const(variable_name.c_str()));
+    }
 
-    // transform initial string-intervals from options into z3-intervals
     intervals boundaries;
+    // transform initial string-intervals from options into z3-intervals
     for(const auto &interval_string : o.initial_intervals)
     {
         interval current = {ctx.real_val(interval_string.first.c_str()), ctx.real_val(interval_string.second.c_str())};
         boundaries.push_back(current);
     }
+    
+
     
     // use initial boundaries to create first (unknown) orthotope
     synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));

@@ -14,6 +14,8 @@ class variables_dialog : public wxDialog
 private:
 public:
     variables_dialog(main_frame *m);
+    void OnSave(wxCommandEvent& event);
+
 };
 
 #endif

@@ -3,6 +3,7 @@
 
 #include "polytope.hpp"
 #include "orthotope.hpp"
+#include <string>
 #include <set>
 
 /**

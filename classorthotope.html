@@ -113,6 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae55989aabbc831329755a6d778848f11 inherit pub_methods_classpolytope"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63824e4c23432e0a8b8ce46ad52cc5a8 inherit pub_methods_classpolytope"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a63824e4c23432e0a8b8ce46ad52cc5a8">sample</a> (<a class="el" href="polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0">sampling_heuristic</a> sampling_h)</td></tr>
 <tr class="separator:a63824e4c23432e0a8b8ce46ad52cc5a8 inherit pub_methods_classpolytope"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12fff0e80c2e721f18ee79231ad236e5 inherit pub_methods_classpolytope"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a12fff0e80c2e721f18ee79231ad236e5">draw_wxWidgets</a> (wxDC *dc, <a class="el" href="structaxis.html">axis</a> x_axis, <a class="el" href="structaxis.html">axis</a> y_axis)</td></tr>
+<tr class="separator:a12fff0e80c2e721f18ee79231ad236e5 inherit pub_methods_classpolytope"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -120,6 +122,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a80076f2d5c49e21b7c7e9c9f4abf14d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af87c00ac43cd11f3e9278c91d87d4f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classorthotope.html#af87c00ac43cd11f3e9278c91d87d4f68">print_sub</a> () override</td></tr>
 <tr class="separator:af87c00ac43cd11f3e9278c91d87d4f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a12a0df520cb78ac0dfd0d5d8f078b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classorthotope.html#a9a12a0df520cb78ac0dfd0d5d8f078b9">draw_wxWidgets_sub</a> (wxDC *dc, <a class="el" href="structaxis.html">axis</a> x_axis, <a class="el" href="structaxis.html">axis</a> y_axis) override</td></tr>
+<tr class="separator:a9a12a0df520cb78ac0dfd0d5d8f078b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7c4046dc984b85a726a74812cfb7eba"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classorthotope.html#ac7c4046dc984b85a726a74812cfb7eba">split_bisect_all</a> () override</td></tr>
 <tr class="separator:ac7c4046dc984b85a726a74812cfb7eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b8885eae985d9c673dc67143ac3c64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classorthotope.html#a40b8885eae985d9c673dc67143ac3c64">cartesian_recursion</a> (std::vector&lt; <a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a> &gt; &amp;accum, <a class="el" href="polytope_8hpp.html#a0c760cd8caaea4affbf24bb7d3845c68">intervals</a> stack, std::vector&lt; std::pair&lt; <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a>, <a class="el" href="polytope_8hpp.html#a64b774a95bd0fcdba315faef80f2988d">interval</a> &gt;&gt; intervals_bisected, long unsigned int index)</td></tr>
@@ -319,6 +323,58 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9a12a0df520cb78ac0dfd0d5d8f078b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a12a0df520cb78ac0dfd0d5d8f078b9">&#9670;&nbsp;</a></span>draw_wxWidgets_sub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void orthotope::draw_wxWidgets_sub </td>
+          <td>(</td>
+          <td class="paramtype">wxDC *&#160;</td>
+          <td class="paramname"><em>dc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structaxis.html">axis</a>&#160;</td>
+          <td class="paramname"><em>x_axis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structaxis.html">axis</a>&#160;</td>
+          <td class="paramname"><em>y_axis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Draws the given <a class="el" href="structaxis.html">axis</a> on the given device context </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dc</td><td>device context to draw the axis </td></tr>
+    <tr><td class="paramname">x_axis</td><td>x-axis to draw </td></tr>
+    <tr><td class="paramname">y_axis</td><td>y-axis to draw </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classpolytope.html#a37f94ffae39a948be8ad05d91c5e1415">polytope</a>.</p>
 
 </div>
 </div>

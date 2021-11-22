@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7epolytope_80',['~polytope',['../classpolytope.html#afc20b8101eab7a44a3423938b258dec2',1,'polytope']]]
+  ['x_5fname_81',['x_name',['../structgui__options.html#a265fd9551f8d8f56d35bdf962c2fd179',1,'gui_options']]]
 ];

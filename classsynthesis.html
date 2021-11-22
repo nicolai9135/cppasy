@@ -85,12 +85,18 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2026f3ce7cf746fb911284b11067d1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#ad2026f3ce7cf746fb911284b11067d1d">synthesis</a> (<a class="el" href="structcli__options.html">cli_options</a> o)</td></tr>
 <tr class="separator:ad2026f3ce7cf746fb911284b11067d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac63675e03c09ef5b468278aaf9492450"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#ac63675e03c09ef5b468278aaf9492450">synthesis</a> (<a class="el" href="structgui__options.html">gui_options</a> o)</td></tr>
+<tr class="separator:ac63675e03c09ef5b468278aaf9492450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf6d068a0b13d7b9b072d5c7db2e3b0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#adf6d068a0b13d7b9b072d5c7db2e3b0a">execute</a> ()</td></tr>
 <tr class="separator:adf6d068a0b13d7b9b072d5c7db2e3b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30cf91dfa742af58b40fa7e4440fcaa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a30cf91dfa742af58b40fa7e4440fcaa2">continue_synthesis</a> (unsigned int increment)</td></tr>
 <tr class="separator:a30cf91dfa742af58b40fa7e4440fcaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d77ae3b89f066aa2cd79d1a1e8d306"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a71d77ae3b89f066aa2cd79d1a1e8d306">print_all_areas</a> ()</td></tr>
 <tr class="separator:a71d77ae3b89f066aa2cd79d1a1e8d306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3dd280c7e345163217724c9799177e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structareas.html">areas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#aa3dd280c7e345163217724c9799177e9">get_synthesis_areas_ptr</a> ()</td></tr>
+<tr class="separator:aa3dd280c7e345163217724c9799177e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1424259d34ac9c19e656657a9d9f9059"><td class="memItemLeft" align="right" valign="top">z3::expr_vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a1424259d34ac9c19e656657a9d9f9059">get_variable_names</a> ()</td></tr>
+<tr class="separator:a1424259d34ac9c19e656657a9d9f9059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -99,12 +105,8 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a52452d05ae3859eb650cc4861a6f8cf6"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">safe_areas</a></td></tr>
-<tr class="separator:a52452d05ae3859eb650cc4861a6f8cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61a063756305e80cec313b33ce1a5603"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">unsafe_areas</a></td></tr>
-<tr class="separator:a61a063756305e80cec313b33ce1a5603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54806b1fe20407f49198809b0eade2ec"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a></td></tr>
-<tr class="separator:a54806b1fe20407f49198809b0eade2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d1f16a735b778befda47e383e11914"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structareas.html">areas</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#ae8d1f16a735b778befda47e383e11914">synthesis_areas</a></td></tr>
+<tr class="separator:ae8d1f16a735b778befda47e383e11914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4de6bbef51659a9cee1c7ef89360e971"><td class="memItemLeft" align="right" valign="top">z3::context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#a4de6bbef51659a9cee1c7ef89360e971">ctx</a></td></tr>
 <tr class="separator:a4de6bbef51659a9cee1c7ef89360e971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf856c3f0fcc906561f15e813000bf47"><td class="memItemLeft" align="right" valign="top">z3::expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsynthesis.html#acf856c3f0fcc906561f15e813000bf47">formula</a></td></tr>
@@ -122,7 +124,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>class to perform paramenter synthesis and store neccessary data </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad2026f3ce7cf746fb911284b11067d1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2026f3ce7cf746fb911284b11067d1d">&#9670;&nbsp;</a></span>synthesis()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2026f3ce7cf746fb911284b11067d1d">&#9670;&nbsp;</a></span>synthesis() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,6 +139,25 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Constructor. Initializes all private members according to <a class="el" href="structcli__options.html">cli_options</a> . </p>
+
+</div>
+</div>
+<a id="ac63675e03c09ef5b468278aaf9492450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac63675e03c09ef5b468278aaf9492450">&#9670;&nbsp;</a></span>synthesis() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synthesis::synthesis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgui__options.html">gui_options</a>&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor. Initializes all private members according to <a class="el" href="structgui__options.html">gui_options</a>. </p>
 
 </div>
 </div>
@@ -173,7 +194,41 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Central function of this tool, performs parameter synthesis. </p><dl class="section user"><dt>Side Effects</dt><dd>repeatedly pops an element from <a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a> and (1) appends it to <a class="el" href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">safe_areas</a> OR (2) appends it to <a class="el" href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">unsafe_areas</a> OR (3) splits it and appends the new areas to <a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a> again. </dd></dl>
+<p>Central function of this tool, performs parameter synthesis. </p><dl class="section user"><dt>Side Effects</dt><dd>repeatedly pops an element from <a class="el" href="structareas.html#a5e560684195a5c809073cc7fd1ab6f02">areas::unknown_areas</a> and (1) appends it to <a class="el" href="structareas.html#a407cdc25dcdf9d529a1333dc2ff82ac2">areas::safe_areas</a> OR (2) appends it to <a class="el" href="structareas.html#a773c10b4632f7c8bc71427b11edf6fe6">areas::unsafe_areas</a> OR (3) splits it and appends the new areas to <a class="el" href="structareas.html#a5e560684195a5c809073cc7fd1ab6f02">areas::unknown_areas</a> again. </dd></dl>
+
+</div>
+</div>
+<a id="aa3dd280c7e345163217724c9799177e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3dd280c7e345163217724c9799177e9">&#9670;&nbsp;</a></span>get_synthesis_areas_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structareas.html">areas</a> * synthesis::get_synthesis_areas_ptr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1424259d34ac9c19e656657a9d9f9059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1424259d34ac9c19e656657a9d9f9059">&#9670;&nbsp;</a></span>get_variable_names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">z3::expr_vector synthesis::get_variable_names </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -191,7 +246,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Prints <a class="el" href="classsynthesis.html#a52452d05ae3859eb650cc4861a6f8cf6">safe_areas</a>, <a class="el" href="classsynthesis.html#a61a063756305e80cec313b33ce1a5603">unsafe_areas</a> and <a class="el" href="classsynthesis.html#a54806b1fe20407f49198809b0eade2ec">unknown_areas</a> into the terminal. </p>
+<p>Prints <a class="el" href="structareas.html#a407cdc25dcdf9d529a1333dc2ff82ac2">areas::safe_areas</a>, <a class="el" href="structareas.html#a773c10b4632f7c8bc71427b11edf6fe6">areas::unsafe_areas</a> and <a class="el" href="structareas.html#a5e560684195a5c809073cc7fd1ab6f02">areas::unknown_areas</a> into the terminal. </p>
 
 </div>
 </div>
@@ -292,29 +347,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a52452d05ae3859eb650cc4861a6f8cf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52452d05ae3859eb650cc4861a6f8cf6">&#9670;&nbsp;</a></span>safe_areas</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::deque&lt;std::unique_ptr&lt;<a class="el" href="classpolytope.html">polytope</a>&gt; &gt; synthesis::safe_areas</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Queue containing all areas wich are already identified as safe. </p>
-
-</div>
-</div>
 <a id="a6357aa2723ebcd08f56c10f09c3dad7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6357aa2723ebcd08f56c10f09c3dad7e">&#9670;&nbsp;</a></span>solver_neg</h2>
 
@@ -361,8 +393,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a54806b1fe20407f49198809b0eade2ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54806b1fe20407f49198809b0eade2ec">&#9670;&nbsp;</a></span>unknown_areas</h2>
+<a id="ae8d1f16a735b778befda47e383e11914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d1f16a735b778befda47e383e11914">&#9670;&nbsp;</a></span>synthesis_areas</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +403,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::deque&lt;std::unique_ptr&lt;<a class="el" href="classpolytope.html">polytope</a>&gt; &gt; synthesis::unknown_areas</td>
+          <td class="memname"><a class="el" href="structareas.html">areas</a> synthesis::synthesis_areas</td>
         </tr>
       </table>
   </td>
@@ -380,30 +412,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Queue containing all areas wich are not idetified yet. </p>
-
-</div>
-</div>
-<a id="a61a063756305e80cec313b33ce1a5603"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61a063756305e80cec313b33ce1a5603">&#9670;&nbsp;</a></span>unsafe_areas</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::deque&lt;std::unique_ptr&lt;<a class="el" href="classpolytope.html">polytope</a>&gt; &gt; synthesis::unsafe_areas</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Queue containing all areas wich are already identified as unsafe. </p>
+<p><a class="el" href="structareas.html">areas</a> for a specific synthesis </p>
 
 </div>
 </div>

@@ -108,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae55989aabbc831329755a6d778848f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63824e4c23432e0a8b8ce46ad52cc5a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a63824e4c23432e0a8b8ce46ad52cc5a8">sample</a> (<a class="el" href="polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0">sampling_heuristic</a> sampling_h)</td></tr>
 <tr class="separator:a63824e4c23432e0a8b8ce46ad52cc5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12fff0e80c2e721f18ee79231ad236e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a12fff0e80c2e721f18ee79231ad236e5">draw_wxWidgets</a> (wxDC *dc, <a class="el" href="structaxis.html">axis</a> x_axis, <a class="el" href="structaxis.html">axis</a> y_axis)</td></tr>
+<tr class="separator:a12fff0e80c2e721f18ee79231ad236e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -124,6 +126,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a1f9e5dfb2047972eb9840419f48e28e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc1e693ecc822b1bd2c629fce466590"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a7bc1e693ecc822b1bd2c629fce466590">print_sub</a> ()=0</td></tr>
 <tr class="separator:a7bc1e693ecc822b1bd2c629fce466590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f94ffae39a948be8ad05d91c5e1415"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a37f94ffae39a948be8ad05d91c5e1415">draw_wxWidgets_sub</a> (wxDC *dc, <a class="el" href="structaxis.html">axis</a> x_axis, <a class="el" href="structaxis.html">axis</a> y_axis)=0</td></tr>
+<tr class="separator:a37f94ffae39a948be8ad05d91c5e1415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19e43c6737479d028e886245a671d5ab"><td class="memItemLeft" align="right" valign="top">virtual std::deque&lt; std::unique_ptr&lt; <a class="el" href="classpolytope.html">polytope</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolytope.html#a19e43c6737479d028e886245a671d5ab">split_bisect_all</a> ()=0</td></tr>
 <tr class="separator:a19e43c6737479d028e886245a671d5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -156,6 +160,92 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a12fff0e80c2e721f18ee79231ad236e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12fff0e80c2e721f18ee79231ad236e5">&#9670;&nbsp;</a></span>draw_wxWidgets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void polytope::draw_wxWidgets </td>
+          <td>(</td>
+          <td class="paramtype">wxDC *&#160;</td>
+          <td class="paramname"><em>dc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structaxis.html">axis</a>&#160;</td>
+          <td class="paramname"><em>x_axis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structaxis.html">axis</a>&#160;</td>
+          <td class="paramname"><em>y_axis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draws the given <a class="el" href="structaxis.html">axis</a> on the given device context </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dc</td><td>device context to draw the axis </td></tr>
+    <tr><td class="paramname">x_axis</td><td>x-axis to draw </td></tr>
+    <tr><td class="paramname">y_axis</td><td>y-axis to draw </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a37f94ffae39a948be8ad05d91c5e1415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f94ffae39a948be8ad05d91c5e1415">&#9670;&nbsp;</a></span>draw_wxWidgets_sub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void polytope::draw_wxWidgets_sub </td>
+          <td>(</td>
+          <td class="paramtype">wxDC *&#160;</td>
+          <td class="paramname"><em>dc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structaxis.html">axis</a>&#160;</td>
+          <td class="paramname"><em>x_axis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structaxis.html">axis</a>&#160;</td>
+          <td class="paramname"><em>y_axis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classorthotope.html#a9a12a0df520cb78ac0dfd0d5d8f078b9">orthotope</a>.</p>
+
+</div>
+</div>
 <a id="ac1fd4aa33ffd4e82bf57bb268dad69d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1fd4aa33ffd4e82bf57bb268dad69d6">&#9670;&nbsp;</a></span>get_boundaries_z3()</h2>
 

@@ -73,21 +73,26 @@ $(function() {
 <div class="title">cppasy </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_nicolai_RWTH_master_master_thesis_cppasy_README"></a> cppasy is a C++ parameter synthesis tool derived from <a href="https://github.com/awiegel/PaSyPy">PaSyPy</a>. For a detailed description of this project our <a href="link/to/master_thesis">publication</a></p>
+<div class="textblock"><p><a class="anchor" id="md__home_nicolai_RWTH_master_master_thesis_cppasy_README"></a> cppasy is a C++ parameter synthesis tool derived from <a href="https://github.com/awiegel/PaSyPy">PaSyPy</a>. For a detailed description of this project, read our <a href="link/to/master_thesis">publication</a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Feature Overview</h1>
 <h1><a class="anchor" id="autotoc_md2"></a>
 CMake Build</h1>
-<p>To build this project, execute the following in the main directory </p><div class="fragment"><div class="line">$ mkdir build</div>
+<p>To build this project, execute the following in the root directory of this project </p><div class="fragment"><div class="line">$ mkdir build</div>
 <div class="line">$ cd build</div>
 <div class="line">$ cmake ..</div>
-<div class="line">$ cmake --build .</div>
+<div class="line">$ cmake --build . [--target &lt;target&gt;]</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Usage</h1>
-<p>Execute <code>cppasy --help</code> for usage information. We recommend reading our <a href="link/to/master_thesis">publication</a> for a detailed description of the tool.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
+GUI</h2>
+<p>To use the GUI, simply execute <code>$ ./gui</code>. To understand available options, we recommend reading the <a href="link/to/master_thesis">publication</a>.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+CLI</h2>
+<p>To use the CLI, execute <code>$ ./cli</code>. Execute <code>$ ./cli --help</code> for information on possible arguments. To understand available options, we recommend reading the <a href="link/to/master_thesis">publication</a>.</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Documentation</h1>
-<p>The documentation of this project is hosted <a href="https://nicolai9135.github.io/cppasy/">here</a> </p>
+<p>The documentation of this project is hosted <a href="https://nicolai9135.github.io/cppasy/">here</a>. Note, that the GUI is missing a documentation as the code it is not expected to be used by anyone else than <a href="https://github.com/nicolai9135">myself</a>. If you want to substantially change the GUI, I recommend <a href="https://en.wikipedia.org/wiki/WxWidgets#Criticism">abandoning <code>wxWidgets</code></a> and using a different library. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

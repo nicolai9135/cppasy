@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['id_5fhelp_5fsmt2_161',['id_help_smt2',['../cppasy__app_8hpp.html#a06fc87d81c62e9abb8790b6e5713c55ba86c82069ed8b80c4a925f8dde46d9bca',1,'cppasy_app.hpp']]],
-  ['id_5fvariables_162',['id_variables',['../cppasy__app_8hpp.html#a06fc87d81c62e9abb8790b6e5713c55baedec2effe9f6039bc788af2417ec8696',1,'cppasy_app.hpp']]]
+  ['vertices_168',['vertices',['../polytope_8hpp.html#ad6d3559842cefd6e8218341ad408e3b0ac0dbd5830269063a27eac71a7a937941',1,'polytope.hpp']]]
 ];

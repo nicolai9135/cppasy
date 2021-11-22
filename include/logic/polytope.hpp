@@ -147,6 +147,12 @@ public:
      */
     void sample(sampling_heuristic sampling_h);
 
+    /**
+     * Draws the given #axis on the given device context
+     * @param dc device context to draw the axis
+     * @param x_axis x-axis to draw
+     * @param y_axis y-axis to draw
+     */
     void draw_wxWidgets(wxDC *dc, axis x_axis, axis y_axis);
 };
 

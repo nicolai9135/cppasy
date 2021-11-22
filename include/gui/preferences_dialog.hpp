@@ -20,7 +20,6 @@ private:
 public:
     preferences_dialog(main_frame *m);
     void OnSave(wxCommandEvent& event);
-
 };
 
 #endif

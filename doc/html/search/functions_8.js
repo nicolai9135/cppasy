@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['sample_133',['sample',['../classpolytope.html#a63824e4c23432e0a8b8ce46ad52cc5a8',1,'polytope']]],
-  ['split_134',['split',['../classpolytope.html#ae55989aabbc831329755a6d778848f11',1,'polytope']]],
-  ['split_5fbisect_5fall_135',['split_bisect_all',['../classorthotope.html#ac7c4046dc984b85a726a74812cfb7eba',1,'orthotope::split_bisect_all()'],['../classpolytope.html#a19e43c6737479d028e886245a671d5ab',1,'polytope::split_bisect_all()']]],
-  ['synthesis_136',['synthesis',['../classsynthesis.html#ad2026f3ce7cf746fb911284b11067d1d',1,'synthesis']]]
+  ['parse_5farguments_124',['parse_arguments',['../argument__parser_8hpp.html#a8e8e5bb76f12019fc9308d86f31c7582',1,'parse_arguments(int argc, char *argv[]):&#160;argument_parser.cpp'],['../argument__parser_8cpp.html#a8e8e5bb76f12019fc9308d86f31c7582',1,'parse_arguments(int argc, char *argv[]):&#160;argument_parser.cpp']]],
+  ['print_125',['print',['../classpolytope.html#ab148a73f8bedd2f76fc3d33228339861',1,'polytope']]],
+  ['print_5fall_5fareas_126',['print_all_areas',['../classsynthesis.html#a71d77ae3b89f066aa2cd79d1a1e8d306',1,'synthesis']]],
+  ['print_5fdeque_127',['print_deque',['../classsynthesis.html#a4507ca154ee87606e5ef2cf2144e7262',1,'synthesis']]],
+  ['print_5fsub_128',['print_sub',['../classorthotope.html#af87c00ac43cd11f3e9278c91d87d4f68',1,'orthotope::print_sub()'],['../classpolytope.html#a7bc1e693ecc822b1bd2c629fce466590',1,'polytope::print_sub()']]]
 ];

@@ -15,8 +15,6 @@ public:
 
 enum
 {
-    id_variables,
-    id_help_smt2,
     id_resume
 };
 #endif

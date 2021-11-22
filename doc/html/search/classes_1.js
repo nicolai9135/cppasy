@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['help_83',['help',['../classhelp.html',1,'']]]
+  ['cli_5foptions_86',['cli_options',['../structcli__options.html',1,'']]]
 ];

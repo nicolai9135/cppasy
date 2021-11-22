@@ -34,6 +34,12 @@ private:
 
     void print_sub() override;
 
+    /**
+     * Draws the given #axis on the given device context
+     * @param dc device context to draw the axis
+     * @param x_axis x-axis to draw
+     * @param y_axis y-axis to draw
+     */
     void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
 
     std::deque<std::unique_ptr<polytope>> split_bisect_all() override;

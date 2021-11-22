@@ -18,15 +18,14 @@ private:
 
     // synthesis menu actions
     void OnPreferences(wxCommandEvent& event);
-    void OnVariables(wxCommandEvent& event);
     void OnExecute(wxCommandEvent& event);
 
 public:
     main_frame();
+
     void set_defaults();
     void set_defaults_if_necessary();
 
-    // user options
     gui_options user_settings;
 
     wxMenu *menu_file;

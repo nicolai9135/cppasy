@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_5fframe_84',['main_frame',['../classmain__frame.html',1,'']]]
+  ['gui_5foptions_87',['gui_options',['../structgui__options.html',1,'']]]
 ];

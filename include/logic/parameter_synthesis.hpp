@@ -146,9 +146,10 @@ public:
 
     /**
      * Central function of this tool, performs parameter synthesis.
-     * @sideeffect repeatedly pops an element from #unknown_areas and (1) 
-     * appends it to #safe_areas OR (2) appends it to #unsafe_areas OR (3)
-     * splits it and appends the new areas to #unknown_areas again.
+     * @sideeffect repeatedly pops an element from #areas::unknown_areas and (1)
+     * appends it to #areas::safe_areas OR (2) appends it to 
+     * #areas::unsafe_areas OR (3) splits it and appends the new areas to 
+     * #areas::unknown_areas again.
      */
     void execute();
 
@@ -158,7 +159,8 @@ public:
     void continue_synthesis(unsigned int increment);
 
     /**
-     * Prints #safe_areas, #unsafe_areas and #unknown_areas into the terminal.
+     * Prints #areas::safe_areas, #areas::unsafe_areas and #areas::unknown_areas
+     * into the terminal.
      */
     void print_all_areas();
 

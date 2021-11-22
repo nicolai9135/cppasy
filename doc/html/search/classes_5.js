@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['polytope_87',['polytope',['../classpolytope.html',1,'']]]
+  ['orthotope_90',['orthotope',['../classorthotope.html',1,'']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['max_5fdepth_146',['max_depth',['../structcli__options.html#a5aa0af6b62d6823b4108b46fe500ab03',1,'cli_options::max_depth()'],['../classsynthesis.html#a31822e4d754b267b07fe680d43948b46',1,'synthesis::max_depth()']]]
+  ['formula_140',['formula',['../classsynthesis.html#acf856c3f0fcc906561f15e813000bf47',1,'synthesis']]],
+  ['formula_5ffile_141',['formula_file',['../structcli__options.html#aabf0bef1b883a761847771ce81e8fadb',1,'cli_options']]],
+  ['formula_5fstr_142',['formula_str',['../structgui__options.html#a1e928154f5496f11f8a8a5e62efcd182',1,'gui_options']]]
 ];

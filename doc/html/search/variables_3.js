@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['formula_144',['formula',['../classsynthesis.html#acf856c3f0fcc906561f15e813000bf47',1,'synthesis']]],
-  ['formula_5ffile_145',['formula_file',['../structcli__options.html#aabf0bef1b883a761847771ce81e8fadb',1,'cli_options']]]
+  ['extra_5fspace_139',['extra_space',['../structaxis.html#a3a88b70a34485c6ae43cb24aa4788a90',1,'axis']]]
 ];

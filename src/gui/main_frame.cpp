@@ -45,6 +45,9 @@ main_frame::main_frame()
     // textctrl->SetDefaultStyle(wxTextAttr(wxFONTFAMILY_TELETYPE));
     // textctrl->AppendText("doesnt look like teletype\n");
 
+    // formula is directly read from the textctrl, not from a file
+    user_settings.formula_as_file = 0;
+
     Center();
 }
 

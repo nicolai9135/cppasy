@@ -32,7 +32,7 @@ private:
     unsigned int get_index(std::string var);
 public:
     wxButton *resume;
-    plot_frame(gui_options o);
+    plot_frame(options o);
     void OnPaint(wxPaintEvent& event);
     void OnResume(wxCommandEvent& event);
 };

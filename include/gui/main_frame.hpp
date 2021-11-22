@@ -26,7 +26,7 @@ public:
     void set_defaults();
     void set_defaults_if_necessary();
 
-    gui_options user_settings;
+    options user_settings;
 
     wxMenu *menu_file;
     wxMenu *menu_synthesis;

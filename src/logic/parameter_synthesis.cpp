@@ -30,7 +30,7 @@ synthesis::synthesis(cli_options o)
     solver_neg.add(!formula);
 }
 
-synthesis::synthesis(gui_options o)
+synthesis::synthesis(options o)
   : formula(ctx),
     variable_names(ctx),
     solver_pos(ctx),
@@ -50,14 +50,19 @@ synthesis::synthesis(gui_options o)
         boundaries.push_back(current);
     }
     
-
-    
     // use initial boundaries to create first (unknown) orthotope
     synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));
 
     // read formula and transform vector into expression
-    z3::expr_vector formula_vector = ctx.parse_string(o.formula_str.c_str());
-    formula = mk_and(formula_vector);
+    if (o.formula_as_file)
+    {
+        std::cout << "read file" << std::endl;
+    }
+    else
+    {
+        z3::expr_vector formula_vector = ctx.parse_string(o.formula_str.c_str());
+        formula = mk_and(formula_vector);
+    }
 
     // initialize solvers
     solver_pos.add(formula);

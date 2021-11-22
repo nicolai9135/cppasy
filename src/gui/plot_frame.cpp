@@ -4,7 +4,7 @@
 #include <stdlib.h>     /* abs */
 #include <iomanip>
 
-plot_frame::plot_frame(gui_options o)
+plot_frame::plot_frame(options o)
   : wxFrame(NULL, wxID_ANY, "Plot")
   , s(o)
 {

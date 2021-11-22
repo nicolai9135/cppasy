@@ -31,8 +31,14 @@ struct cli_options
 /**
  * Struct to store the user's arguments when using the GUI.
  */
-struct gui_options
+struct options
 {
+    /**
+     * Specify whether #formula_str contains the file path to the formula or
+     * the formula itself
+     */
+    bool formula_as_file;
+
     /**
      * `std::string` containing the formula.
      */
@@ -140,9 +146,9 @@ public:
     synthesis(cli_options o);
 
     /**
-     * Constructor. Initializes all private members according to #gui_options.
+     * Constructor. Initializes all private members according to #options.
      */
-    synthesis(gui_options o);
+    synthesis(options o);
 
     /**
      * Central function of this tool, performs parameter synthesis.

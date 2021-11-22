@@ -1,8 +1,7 @@
 #include "cppasy_app.hpp"
 #include "main_frame.hpp"
 #include "plot_frame.hpp"
-#include "preferences_frame.hpp"
-#include "variables_dialog.hpp"
+#include "preferences_dialog.hpp"
 #include "smtlib_parse.hpp"
 
 main_frame::main_frame()
@@ -14,9 +13,7 @@ main_frame::main_frame()
 
     // create synthesis menu
     menu_synthesis = new wxMenu;
-    menu_synthesis->Append(wxID_PREFERENCES);
-    menu_synthesis->AppendSeparator();
-    menu_synthesis->Append(id_variables, "Variable Boundaries...", "Set initial variable boundaries (default: [0,1])");
+    menu_synthesis->Append(wxID_PREFERENCES, "Preferences...");
     menu_synthesis->AppendSeparator();
     menu_synthesis->Append(wxID_EXECUTE);
 
@@ -34,7 +31,6 @@ main_frame::main_frame()
 
     // synthesis binds
     Bind(wxEVT_MENU, &main_frame::OnPreferences, this, wxID_PREFERENCES);
-    Bind(wxEVT_MENU, &main_frame::OnVariables, this, id_variables);
     Bind(wxEVT_MENU, &main_frame::OnExecute, this, wxID_EXECUTE);
 
     textctrl = new wxTextCtrl(this, -1, wxT(""), wxPoint(-1, -1), wxSize(400, 400), wxTE_MULTILINE);
@@ -48,6 +44,7 @@ main_frame::main_frame()
     // textctrl->AppendText("Red text\n");
     // textctrl->SetDefaultStyle(wxTextAttr(wxFONTFAMILY_TELETYPE));
     // textctrl->AppendText("doesnt look like teletype\n");
+
     Center();
 }
 
@@ -57,29 +54,65 @@ void main_frame::OnExit(wxCommandEvent& event)
 }
 
 // synthesis
+
 void main_frame::OnPreferences(wxCommandEvent& event)
 {
-    preferences_frame *pref_f = new preferences_frame();
-    pref_f->Show(true);
-}
-
-void main_frame::OnVariables(wxCommandEvent& event)
-{
-    variables_dialog *d = new variables_dialog(this);
-    d->ShowModal();
+    try
+    {
+        set_defaults_if_necessary();
+        preferences_dialog *d = new preferences_dialog(this);
+        d->ShowModal();
+    }
+    catch(const std::exception& e)
+    {
+        wxLogMessage("stmlib Input invalid!");
+    }
+    
 }
 
 void main_frame::OnExecute(wxCommandEvent& event)
 {
+    try
+    {
+        set_defaults_if_necessary();
+        plot_frame *plot_f = new plot_frame(user_settings);
+        plot_f->Show(true);
+    }
+    catch(...)
+    {
+        wxLogMessage("Input invalid! Reason could be preferences or smtlib input.");
+    }
+}
+
+void main_frame::set_defaults_if_necessary()
+{
     // get input from formula
+    std::string current_input = textctrl->GetValue().ToStdString();
+
+    // user settings have valid values w.r.t. current input (nothing changed since last save)
+    if (current_input != user_settings.formula_str)
+    {
+        set_defaults();
+    }
+}
+
+void main_frame::set_defaults()
+{
+    // set max depth
+    user_settings.max_depth = 0;
+
+    // read text and set it to formula
     user_settings.formula_str = textctrl->GetValue().ToStdString();
+
+    // get variable names from formula
     user_settings.variable_names = get_variable_names(user_settings.formula_str);
 
-    user_settings.max_depth = 5;
-    user_settings.x_name = "x";
-    user_settings.y_name = "y";
-    user_settings.initial_intervals = {{"-1", "2"}, {"-1", "2"}, {"-1", "2"}};
-
-    plot_frame *plot_f = new plot_frame(user_settings);
-    plot_f->Show(true);
+    // set intial intervals and axis names
+    user_settings.initial_intervals = {};
+    for(const auto &variable_name : user_settings.variable_names)
+    {
+        user_settings.initial_intervals.push_back({variable_name, "-1", "2"});
+    }
+    user_settings.x_name = std::get<0>(user_settings.initial_intervals[0]);
+    user_settings.y_name = std::get<0>(user_settings.initial_intervals[1]);
 }

@@ -3,8 +3,7 @@ add_executable(gui
     cppasy_app.cpp
     main_frame.cpp
     plot_frame.cpp
-    preferences_frame.cpp
-    variables_dialog.cpp
+    preferences_dialog.cpp
     ../logic/polytope.cpp
     ../logic/orthotope.cpp
     ../logic/parameter_synthesis.cpp

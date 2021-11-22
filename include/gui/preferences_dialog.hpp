@@ -9,11 +9,16 @@
 
 #include "main_frame.hpp"
 
-class variables_dialog : public wxDialog
+class preferences_dialog : public wxDialog
 {
 private:
+    std::vector<std::tuple<wxStaticText*, wxTextCtrl*, wxTextCtrl*>> interval_settings;
+    wxChoice *x_axis_choice;
+    wxChoice *y_axis_choice;
+    wxTextCtrl *depth_ctrl;
+    main_frame *m;
 public:
-    variables_dialog(main_frame *m);
+    preferences_dialog(main_frame *m);
     void OnSave(wxCommandEvent& event);
 
 };

@@ -46,7 +46,7 @@ synthesis::synthesis(gui_options o)
     // transform initial string-intervals from options into z3-intervals
     for(const auto &interval_string : o.initial_intervals)
     {
-        interval current = {ctx.real_val(interval_string.first.c_str()), ctx.real_val(interval_string.second.c_str())};
+        interval current = {ctx.real_val(std::get<1>(interval_string).c_str()), ctx.real_val(std::get<2>(interval_string).c_str())};
         boundaries.push_back(current);
     }
     

@@ -23,6 +23,8 @@ private:
 
 public:
     main_frame();
+    void set_defaults();
+    void set_defaults_if_necessary();
 
     // user options
     gui_options user_settings;

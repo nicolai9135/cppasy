@@ -8,6 +8,7 @@ add_executable(cli
 
 target_link_libraries(cli ${Boost_LIBRARIES})
 target_link_libraries(cli ${Z3_LIBRARIES})
+target_link_libraries(cli ${wxWidgets_LIBRARIES})
 
 target_include_directories(cli PUBLIC
     "${PROJECT_BINARY_DIR}"

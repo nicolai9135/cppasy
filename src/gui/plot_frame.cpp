@@ -11,8 +11,8 @@ plot_frame::plot_frame(gui_options o)
     // initialize x-axis (constructor difficult because of include dependency graph...)
     x_axis.name = o.x_name;
     x_axis.index = get_index(x_axis.name);
-    double x_interval_begin = string_to_double(o.initial_intervals[x_axis.index].first);
-    double x_interval_end = string_to_double(o.initial_intervals[x_axis.index].second);
+    double x_interval_begin = string_to_double(std::get<1>(o.initial_intervals[x_axis.index]));
+    double x_interval_end = string_to_double(std::get<2>(o.initial_intervals[x_axis.index]));
     x_axis.width = x_interval_end - x_interval_begin;
     x_axis.offset = x_interval_begin;
     x_axis.is_x_axis = true;
@@ -21,8 +21,8 @@ plot_frame::plot_frame(gui_options o)
     // initialize x-axis
     y_axis.name = o.y_name;
     y_axis.index = get_index(y_axis.name);
-    double y_interval_begin = string_to_double(o.initial_intervals[y_axis.index].first);
-    double y_interval_end = string_to_double(o.initial_intervals[y_axis.index].second);
+    double y_interval_begin = string_to_double(std::get<1>(o.initial_intervals[y_axis.index]));
+    double y_interval_end = string_to_double(std::get<2>(o.initial_intervals[y_axis.index]));
     y_axis.width = y_interval_end - y_interval_begin;
     y_axis.offset = y_interval_begin;
     y_axis.is_x_axis = false;
@@ -42,7 +42,7 @@ plot_frame::plot_frame(gui_options o)
 
     // perform synthesis
     s.execute();
-    s.print_all_areas();
+    // s.print_all_areas();
 
     Bind(wxEVT_PAINT, &plot_frame::OnPaint, this);
     Bind(wxEVT_BUTTON, &plot_frame::OnResume, this);
@@ -228,7 +228,7 @@ double string_to_double(std::string s)
 
 void plot_frame::OnResume(wxCommandEvent& event)
 {
-    std::cout << "button clicked" << std::endl;
+    // std::cout << "button clicked" << std::endl;
     s.continue_synthesis(1);
     Refresh();
     Update();

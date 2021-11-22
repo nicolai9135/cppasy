@@ -5,6 +5,7 @@
 #include "orthotope.hpp"
 #include <string>
 #include <set>
+#include <tuple>
 
 /**
  * Struct to store the user's arguments when using the CLI.
@@ -58,9 +59,9 @@ struct gui_options
     std::set<std::string> variable_names;
 
     /**
-     * initial intervals
+     * 3-tuple (variable, begin, end) with initial intervals
      */
-    std::vector<std::pair<std::string, std::string>> initial_intervals;
+    std::vector<std::tuple<std::string, std::string, std::string>> initial_intervals;
 };
 
 /**
@@ -139,7 +140,7 @@ public:
     synthesis(cli_options o);
 
     /**
-     * Constructor. Initializes all private members according to #gui_options .
+     * Constructor. Initializes all private members according to #gui_options.
      */
     synthesis(gui_options o);
 

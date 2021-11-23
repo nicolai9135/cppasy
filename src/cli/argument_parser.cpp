@@ -1,11 +1,17 @@
 #include "argument_parser.hpp"
+#include "smtlib_parse.hpp"
+#include "parse_boundaries.hpp"
 
 #include <boost/program_options.hpp>
 #include <iostream>
+#include <filesystem>
 
-cli_options parse_arguments(int argc, char* argv[])
+options parse_arguments(int argc, char* argv[])
 {
-    cli_options res;
+    options res;
+
+    // using the cli, formula_str contains the name of the file!
+    res.formula_as_file = true;
 
     // visible options
     boost::program_options::options_description visible("Allowed options");
@@ -42,25 +48,77 @@ cli_options parse_arguments(int argc, char* argv[])
 
     boost::program_options::notify(vm);    
 
+    // handle formula file
     if (vm.count("formula-file"))
     {
-        res.formula_file = vm["formula-file"].as<std::string>();
+        // get formula-file string
+        res.formula_str = vm["formula-file"].as<std::string>();
+
+        // chech whether specified string is a valid file
+        if (!std::filesystem::is_regular_file(res.formula_str))
+        {
+            throw invalid_formula_path();
+        }
+        
+        // get variable names
+        try
+        {
+            res.variable_names = find_variable_names(res.formula_str, res.formula_as_file);
+        }
+        catch(const std::exception& e)
+        {
+            throw invalid_formula_file();
+        }
     }
     else
     {
         throw no_input_file();
     }
 
+    // handle boundaries file
+    if (vm.count("boundaries-file"))
+    {
+        // get boundaries-file string
+        std::string boundaries_file = vm["boundaries-file"].as<std::string>();
+
+        // chech whether specified string is a valid file
+        if (!std::filesystem::is_regular_file(boundaries_file))
+        {
+            throw invalid_boundaries_path();
+        }
+
+        // get boundaries from file
+        res.initial_intervals = parse_boundaries(boundaries_file);
+
+        // check consistency of boundaries-file and formula-file
+        for(const auto &ii : res.initial_intervals)
+        {
+            if(!res.variable_names.contains(std::get<0>(ii)))
+            {
+                throw too_many_intervals();
+            }
+        }
+        if(res.variable_names.size() > res.initial_intervals.size())
+        {
+            throw interval_missing();
+        }
+    }
+    // set boundaries to default values
+    else
+    {
+        res.initial_intervals = {};
+        for(const auto &variable_name : res.variable_names)
+        {
+            res.initial_intervals.push_back({variable_name, "-1", "2"});
+        }
+    }
+
+    // handle max-depth option
     if (vm.count("max-depth")) 
     {
         res.max_depth = vm["max-depth"].as<unsigned int>();
         std::cout << "Maximal depth was set to " << vm["max-depth"].as<unsigned int>() << std::endl;
     } 
-
-    if (vm.count("boundaries-file"))
-    {
-        res.boundaries_file = vm["boundaries-file"].as<std::string>();
-    }
 
     return res;
 }

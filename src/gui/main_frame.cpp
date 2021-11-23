@@ -108,7 +108,7 @@ void main_frame::set_defaults()
     user_settings.formula_str = textctrl->GetValue().ToStdString();
 
     // get variable names from formula
-    user_settings.variable_names = get_variable_names(user_settings.formula_str);
+    user_settings.variable_names = find_variable_names(user_settings.formula_str, user_settings.formula_as_file);
 
     // set intial intervals and axis names
     user_settings.initial_intervals = {};

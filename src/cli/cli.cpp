@@ -10,7 +10,7 @@
 int main(int argc, char * argv[])
 {
     // struct to store user input
-    cli_options user_input;
+    options user_input;
 
     // try to parse command line arguments
     try

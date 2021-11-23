@@ -8,28 +8,6 @@ void synthesis::print_deque(std::deque<std::unique_ptr<polytope>> &my_deque)
     }
 }
 
-synthesis::synthesis(cli_options o)
-  : formula(ctx),
-    variable_names(ctx),
-    solver_pos(ctx),
-    solver_neg(ctx),
-    max_depth(o.max_depth)
-{
-    // create initial unknown area (initial depth: 1) -- TODO: make this dependent on o.boundaries file!
-    variable_names.push_back(ctx.real_const("x"));
-    variable_names.push_back(ctx.real_const("y"));
-    intervals boundaries = {{ctx.real_val(0), ctx.real_val(2)}, {ctx.real_val(0), ctx.real_val(2)}};
-    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));
-
-    // read formula and transform vector into expression
-    z3::expr_vector formula_vector = ctx.parse_file(o.formula_file.c_str());
-    formula = mk_and(formula_vector);
-
-    // initialize solvers
-    solver_pos.add(formula);
-    solver_neg.add(!formula);
-}
-
 synthesis::synthesis(options o)
   : formula(ctx),
     variable_names(ctx),
@@ -56,7 +34,8 @@ synthesis::synthesis(options o)
     // read formula and transform vector into expression
     if (o.formula_as_file)
     {
-        std::cout << "read file" << std::endl;
+        z3::expr_vector formula_vector = ctx.parse_file(o.formula_str.c_str());
+        formula = mk_and(formula_vector);
     }
     else
     {

@@ -20,7 +20,62 @@ class no_input_file : public std::exception
 {
     virtual const char* what() const throw()
     {
-        return "No input file provided";
+        return "No formula file (.smt2) provided";
+    }
+};
+
+/**
+ * Exception for the case in which the formula file is invalid.
+ */
+class invalid_formula_file : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Formula file (.smt2) invalid.";
+    }
+};
+
+/**
+ * Exception in case an interval is missing
+ */
+class interval_missing : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Boundaries file invalid. It is missing an interval for at least one variable used by the formula file";
+    }
+};
+
+/**
+ * Exception in case too many intervals were provided
+ */
+class too_many_intervals : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Boundaries file invalid. You have provided intervals for at least one unused variable";
+    }
+};
+
+/**
+ * Exception in case the specified formula-file does not exist 
+ */
+class invalid_formula_path : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Invalid file path. The specified formula-file is not a regular file.";
+    }
+};
+
+/**
+ * Exception in case the specified formula-file does not exist 
+ */
+class invalid_boundaries_path : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Invalid file path. The specified boundaries-file is not a regular file.";
     }
 };
 
@@ -31,6 +86,6 @@ class no_input_file : public std::exception
  * @param argv[] `char*` containig the input
  * @return #cli_options containing all information provided
  */
-cli_options parse_arguments(int argc, char* argv[]);
+options parse_arguments(int argc, char* argv[]);
 
 #endif

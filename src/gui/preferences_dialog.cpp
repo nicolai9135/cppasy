@@ -11,9 +11,6 @@ preferences_dialog::preferences_dialog(main_frame *m)
     // hbox: contains gridsizer to add margins
     wxBoxSizer *hbox = new wxBoxSizer(wxVERTICAL);
 
-    m->user_settings.formula_str = m->textctrl->GetValue().ToStdString();
-    m->user_settings.variable_names = get_variable_names(m->user_settings.formula_str);
-
     // rows, cols, vgap, hgap
     wxFlexGridSizer *fgs = new wxFlexGridSizer((int) m->user_settings.variable_names.size()+1, 3, 9, 25);
 

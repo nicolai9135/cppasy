@@ -8,24 +8,17 @@
 #include <tuple>
 
 /**
- * Struct to store the user's arguments when using the CLI.
+ * possible interval inconsistencies
  */
-struct cli_options
+enum interval_error
 {
     /**
-     * File containing the formula to be evaluated.
+     * if either upper or lower boundary is not specified
      */
-    std::string formula_file;
+    not_specified,
 
-    /**
-     * Maximal depth. See polytope::depth for details.
-     */
-    unsigned int max_depth;
-
-    /**
-     * File containing the variable names and initial intervals.
-     */
-    std::string boundaries_file;
+    no_interval,
+    not_a_number
 };
 
 /**
@@ -68,6 +61,10 @@ struct options
      * 3-tuple (variable, begin, end) with initial intervals
      */
     std::vector<std::tuple<std::string, std::string, std::string>> initial_intervals;
+
+    /**
+     * Performs different checks on #initial_intervals. TODO: describe which
+     */
 };
 
 /**
@@ -140,10 +137,6 @@ private:
     unsigned int max_depth;
 
 public:
-    /**
-     * Constructor. Initializes all private members according to #cli_options .
-     */
-    synthesis(cli_options o);
 
     /**
      * Constructor. Initializes all private members according to #options.

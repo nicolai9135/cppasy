@@ -102,7 +102,7 @@ void main_frame::set_defaults_if_necessary()
 void main_frame::set_defaults()
 {
     // set max depth
-    user_settings.max_depth = 0;
+    user_settings.max_depth = 5;
 
     // read text and set it to formula
     user_settings.formula_str = textctrl->GetValue().ToStdString();

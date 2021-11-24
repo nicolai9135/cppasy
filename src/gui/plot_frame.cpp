@@ -182,9 +182,9 @@ void plot_frame::plot(wxDC *dc)
 void plot_frame::plot_deque(wxDC *dc, std::deque<std::unique_ptr<polytope>> &area_deque, wxColour color)
 {
     // no borders
-    wxPen p;
-    p.SetWidth(0);
-    dc->SetPen(p);
+    // wxPen p;
+    // p.SetWidth(0);
+    // dc->SetPen(p);
 
     // set fill color
     wxBrush b;

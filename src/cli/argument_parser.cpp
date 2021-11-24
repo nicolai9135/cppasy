@@ -18,7 +18,7 @@ options parse_arguments(int argc, char* argv[])
     visible.add_options()
         ("help,h", "produce help message")
         ("max-depth", boost::program_options::value<unsigned int>()->default_value(1), "set maximal depth")
-        ("boundaries-file", boost::program_options::value<std::string>(), ".txt file containing a list of all variables and their boundaries")
+        ("boundaries-file", boost::program_options::value<std::string>(), "text file containing a list of all variables and their boundaries. The file should contain lines of the from '<variable-name> <lower-bound> <upper-bound>'")
     ;
 
     // hidden options

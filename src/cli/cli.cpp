@@ -25,7 +25,8 @@ int main(int argc, char * argv[])
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
-        std::cout << "execute '$ cppasy --help' for usage information" << std::endl;
+        std::cout << "execute '$ ./cli --help' for usage information" << std::endl;
+    
         return 1;
     }
     catch(...)

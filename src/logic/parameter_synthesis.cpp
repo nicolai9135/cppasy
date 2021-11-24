@@ -131,3 +131,41 @@ z3::expr_vector synthesis::get_variable_names()
 {
     return variable_names;
 }
+
+void options::sanity_check_intervals()
+{
+    z3::context ctx_sanity;
+    z3::solver s_sanity(ctx_sanity);
+
+    for(const auto &ii : initial_intervals)
+    {
+        std::string name = std::get<0>(ii);
+        std::string lower = std::get<2>(ii);
+        z3::expr z3_lower(ctx_sanity);
+        std::string upper = std::get<1>(ii);
+        z3::expr z3_upper(ctx_sanity);
+        
+        // error comes earlier somehow :(, this does not work
+        try
+        {
+            z3_lower = ctx_sanity.real_val(lower.c_str());
+            z3_upper = ctx_sanity.real_val(upper.c_str());
+        }
+        catch(...)
+        {
+            std::cout << "im here" << std::endl;
+            throw not_a_number();
+        }
+
+        if ( (lower=="") || (upper=="") )
+        {
+            throw boundary_missing();
+        }
+        
+        s_sanity.add(z3_lower > z3_upper);
+        if (s_sanity.check())
+        {
+            throw not_an_interval();
+        }
+    }
+}

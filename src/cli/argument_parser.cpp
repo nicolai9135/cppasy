@@ -102,6 +102,7 @@ options parse_arguments(int argc, char* argv[])
         {
             throw interval_missing();
         }
+        res.sanity_check_intervals();
     }
     // set boundaries to default values
     else

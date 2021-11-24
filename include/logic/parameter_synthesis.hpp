@@ -6,19 +6,39 @@
 #include <string>
 #include <set>
 #include <tuple>
+#include <exception>
 
 /**
- * possible interval inconsistencies
+ * Exception in case the a given string is not convertible into a number
  */
-enum interval_error
+class not_a_number : public std::exception
 {
-    /**
-     * if either upper or lower boundary is not specified
-     */
-    not_specified,
+    virtual const char* what() const throw()
+    {
+        return "Invalid boundary. The string you passed is not convertible into a real number. The string may be of the form [num]*[.[num]*][E[+|-][num]+] or, if it represents a rational, [num]* / [num]*.";
+    }
+};
 
-    no_interval,
-    not_a_number
+/**
+ * Exception in case lower bound > upper bound
+ */
+class not_an_interval : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Invalid interval. (lower bound) > (upper bound)";
+    }
+};
+
+/**
+ * Exception in case an interval was not fully specified
+ */
+class boundary_missing : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Boundary missing. You must bound all intervals";
+    }
 };
 
 /**
@@ -63,8 +83,12 @@ struct options
     std::vector<std::tuple<std::string, std::string, std::string>> initial_intervals;
 
     /**
-     * Performs different checks on #initial_intervals. TODO: describe which
+     * Performs different checks on #initial_intervals.
+     * \throws not_a_number
+     * \throws not_an_interval
+     * \throws boundary_missing
      */
+    void sanity_check_intervals();
 };
 
 /**

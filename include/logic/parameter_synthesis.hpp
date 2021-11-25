@@ -15,7 +15,7 @@ class not_a_number : public std::exception
 {
     virtual const char* what() const throw()
     {
-        return "Invalid boundary. The string you passed is not convertible into a real number. The string may be of the form [num]*[.[num]*][E[+|-][num]+] or, if it represents a rational, [num]* / [num]*.";
+        return "Invalid boundary. A string you passed is not convertible into a real number. The string may be of the form [num]*[.[num]*][E[+|-][num]+] or, if it represents a rational, [num]* / [num]*.";
     }
 };
 

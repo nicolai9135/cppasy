@@ -77,6 +77,8 @@ void preferences_dialog::OnSave(wxCommandEvent& event)
     }
     m->user_settings.x_name = std::get<0>(m->user_settings.initial_intervals[x_axis_choice->GetSelection()]);
     m->user_settings.y_name = std::get<0>(m->user_settings.initial_intervals[y_axis_choice->GetSelection()]);
+
+    // check whetehr max_depth is an integer
     try
     {
         m->user_settings.max_depth = std::stoi(depth_ctrl->GetValue().ToStdString());
@@ -86,5 +88,17 @@ void preferences_dialog::OnSave(wxCommandEvent& event)
         wxLogMessage("Depth input invalid!");
         return;
     }
+
+    // perform sanity checks on initial intervals
+    try
+    {
+        m->user_settings.sanity_check_intervals();
+    }
+    catch(const std::exception& e)
+    {
+        wxLogMessage(e.what());
+        return;
+    }
+    
     Close(true);
 }

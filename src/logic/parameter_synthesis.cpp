@@ -79,17 +79,15 @@ void synthesis::execute()
         // end calculation if maximal depth is reached
         if (current_polytope->get_depth() >= max_depth) break;
 
-        // get boundaries of the polytope in Z3 format
+        // get boundaries of the polytope in Z3 format and add them to pos solver
         z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3(ctx, variable_names);
-
-        // add boundaries of current polytope to pos solver
         solver_pos.add(boundaries_z3);
 
-        if (solver_pos.check())
+        if (!current_polytope->get_safe_coordinates().empty() || solver_pos.check())
         {
             // add boundaries of current box to neg solver
             solver_neg.add(boundaries_z3);
-            if (solver_neg.check())
+            if (!current_polytope->get_unsafe_coordinates().empty() || solver_neg.check())
             {
                 // split current polytope
                 std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(bisect_all);

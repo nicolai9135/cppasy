@@ -232,4 +232,6 @@ void plot_frame::OnResume(wxCommandEvent& event)
     s.continue_synthesis(1);
     Refresh();
     Update();
+    s.print_all_areas();
+ 
 }

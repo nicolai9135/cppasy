@@ -140,6 +140,11 @@ private:
     z3::expr formula;
 
     /**
+     * Negated formula: needed for sanity check of simplification
+     */
+    z3::expr formula_neg;
+
+    /**
      * Names of the variables. Necessary to refine boundaries.
      */
     z3::expr_vector variable_names;

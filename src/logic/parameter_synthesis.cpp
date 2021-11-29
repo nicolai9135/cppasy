@@ -10,6 +10,7 @@ void synthesis::print_deque(std::deque<std::unique_ptr<polytope>> &my_deque)
 
 synthesis::synthesis(options o)
   : formula(ctx),
+    formula_neg(ctx),
     variable_names(ctx),
     solver_pos(ctx),
     solver_neg(ctx),
@@ -42,6 +43,7 @@ synthesis::synthesis(options o)
         z3::expr_vector formula_vector = ctx.parse_string(o.formula_str.c_str());
         formula = mk_and(formula_vector);
     }
+    // formula_neg = (!formula);
 
     // initialize solvers
     solver_pos.add(formula);

@@ -53,6 +53,7 @@ z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vect
 
 std::deque<std::unique_ptr<polytope>> orthotope::intervals_to_orthotopes(std::vector<intervals> intervals_list)
 {
+    // TODO: go through samples and add them to the resp. polytope
     std::deque<std::unique_ptr<polytope>> new_orthopes;
     for (const auto &it : intervals_list)
     {
@@ -112,39 +113,31 @@ void orthotope::cartesian_recursion(std::vector<intervals> &accum, intervals sta
 
 std::vector<intervals> orthotope::cartesian_product(std::vector<std::pair<interval, interval>> intervals_bisected)
 {
+    // unfortunately the cartesian product function I use does the product the other way around...
+    std::reverse(intervals_bisected.begin(), intervals_bisected.end());
     std::vector<intervals> accum;
 
     intervals stack;
 
     if (intervals_bisected.size() > 0)
         cartesian_recursion(accum, stack, intervals_bisected, intervals_bisected.size() - 1);
-    for(std::vector<intervals>::iterator it = accum.begin(); it != accum.end(); ++it)
-        std::reverse(it->begin(), it->end());
+    // for(std::vector<intervals>::iterator it = accum.begin(); it != accum.end(); ++it)
+    //     std::reverse(it->begin(), it->end());
     return accum;
 }
 
 void orthotope::draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis)
 {
-    // std::cout << "arrived in orthotope draw func" << std::endl;
-
     double x_begin_scaled = boundaries[x_axis.index].first.as_double() * x_axis.scalar;
     double x_end_scaled = boundaries[x_axis.index].second.as_double() * x_axis.scalar;
     double y_begin_scaled = boundaries[y_axis.index].first.as_double() * y_axis.scalar;
     double y_end_scaled = boundaries[y_axis.index].second.as_double() * y_axis.scalar;
 
     const wxRealPoint top_left_real = wxRealPoint(x_begin_scaled, -y_end_scaled);
-    // std::cout << "REAL: top left x:" << top_left_real.x << std::endl;
-    // std::cout << "REAL: top left y:" << top_left_real.y << std::endl;
     const wxRealPoint bottom_right_real = wxRealPoint(x_end_scaled, -y_begin_scaled);
-    // std::cout << "REAL: bottom right x:" << bottom_right_real.x << std::endl;
-    // std::cout << "REAL: bottom right y:" << bottom_right_real.y << std::endl;
 
     const wxPoint top_left = wxPoint(top_left_real);
-    // std::cout << "top left x:" << top_left.x << std::endl;
-    // std::cout << "top left y:" << top_left.y << std::endl;
     const wxPoint bottom_right = wxPoint(bottom_right_real);
-    // std::cout << "bottom right x:" << bottom_right.x << std::endl;
-    // std::cout << "bottom right y:" << bottom_right.y << std::endl;
 
     const wxRect rectangle = wxRect(top_left, bottom_right);
 

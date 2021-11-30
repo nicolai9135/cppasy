@@ -9,6 +9,8 @@
     #include <wx/wx.h>
 #endif
 
+#include <boost/dynamic_bitset.hpp>
+
 /**
  * split_info contains the list of cuts wich are done to create the new 
  * orthotopes. The first element of the pair is the dimension, the second is
@@ -81,6 +83,8 @@ private:
      * @return new #orthotope s 
      */
     std::deque<std::unique_ptr<polytope>> generate_orthotopes(cut_list cuts);
+
+    std::vector<boost::dynamic_bitset<>> generate_bitmasks(unsigned int no_cuts);
 
 public:
     /**

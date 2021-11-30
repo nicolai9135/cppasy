@@ -2,7 +2,7 @@
 #include "orthotope.hpp"
 #include <iostream>
 #include <algorithm>
-#include <bitset>
+#include <cmath>
 
 orthotope::orthotope(intervals bs, unsigned int d, std::vector<coordinate> sc, std::vector<coordinate> uc)
 {
@@ -74,6 +74,12 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
     std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, safe_coordinates);
     std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, unsafe_coordinates);
 
+    std::vector<boost::dynamic_bitset<>> bitmasks = generate_bitmasks(cuts.size());
+    for(const auto &mask : bitmasks)
+    {
+        std::cout << mask << std::endl;
+    }
+
     // generate new orthotopes
     std::deque<std::unique_ptr<polytope>> new_orthopes;
     for (const auto &new_boundary : new_boundaries)
@@ -87,6 +93,24 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
 std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list cuts, std::vector<coordinate> &coordinates)
 {
     return {};
+}
+
+std::vector<boost::dynamic_bitset<>> orthotope::generate_bitmasks(unsigned int no_cuts)
+{
+    int mask_length = pow(2, no_cuts);
+    std::vector<boost::dynamic_bitset<>> bitmasks(no_cuts, boost::dynamic_bitset<>(mask_length));
+
+    for(int i = 0; i < mask_length; i++)
+    {
+        boost::dynamic_bitset<> current(no_cuts, i);
+        for(int j = 0; j < no_cuts; j++)
+        {
+            bitmasks[j][i] = current[j];
+        }
+    }
+
+    std::reverse(bitmasks.begin(), bitmasks.end());
+    return bitmasks;
 }
 
 std::vector<intervals> orthotope::generate_new_boundaries(cut_list cuts)

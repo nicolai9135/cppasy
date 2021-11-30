@@ -58,8 +58,25 @@ private:
     std::vector<intervals> cartesian_product(std::vector<intervals> sequences);
 
     /**
+     * Generates a list of intervals. each element of this list contains the
+     * boundaries for exactely one new orthotope.
+     * @param cuts specifies where to cut/split the current polytope
+     * @return new boundaries
+     */
+    std::vector<intervals> generate_new_boundaries(cut_list cuts);
+
+    /**
+     * Takes the coordinates and splits them according to cuts. Thereby it
+     * assigns them to their new #orthotope s
+     * @param cuts specifies where the current polytope is going to be split
+     * @param coordinates list of coordinates to be split
+     * @return list of coordinates for every new #orthotope
+     */
+    std::vector<std::vector<coordinate>> split_coordinates(cut_list cuts, std::vector<coordinate> &coordinates);
+
+    /**
      * Takes the list of cuts and uses uses it to cut #this into 
-     * 2^(cuts.size()) new #orthotope s
+     * 2^(cuts.size()) new #orthotope s. Uses #generate_new_boundaries
      * @param cuts defines which dimensions to cut at which positions
      * @return new #orthotope s 
      */

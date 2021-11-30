@@ -68,33 +68,48 @@ std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic s
 
 std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts)
 {
-    // initialize new boundaries with the old ones
-    std::vector<intervals> new_boundaries;
-    for(const auto &b : boundaries)
-    {
-        new_boundaries.push_back({b});
-    }
+    // generate list of new boundaries through cutting current intervals
+    std::vector<intervals> new_boundaries = generate_new_boundaries(cuts);
+    
+    std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, safe_coordinates);
+    std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, unsafe_coordinates);
 
-    // iterate over the cuts to cut the specified intervals
-    for(const auto &cut : cuts)
-    {
-        unsigned int dimension = cut.first;
-        interval front = { boundaries[dimension].first, cut.second };
-        interval back = { cut.second, boundaries[dimension].second };
-        new_boundaries[dimension] = {front, back};
-    }
-
-    // build cartesian product over the new boundaries to get list of all new
-    // orthotope boundaries
-    std::vector<intervals> new_boundaries_complete = cartesian_product(new_boundaries);
-
+    // generate new orthotopes
     std::deque<std::unique_ptr<polytope>> new_orthopes;
-    for (const auto &new_boundary : new_boundaries_complete)
+    for (const auto &new_boundary : new_boundaries)
     {
         new_orthopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundary, this->depth + 1)));
     }
 
     return new_orthopes;
+}
+
+std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list cuts, std::vector<coordinate> &coordinates)
+{
+    return {};
+}
+
+std::vector<intervals> orthotope::generate_new_boundaries(cut_list cuts)
+{
+    // initialize new boundaries with the old ones
+    std::vector<intervals> new_boundaries_per_dimension;
+    for(const auto &b : boundaries)
+    {
+        new_boundaries_per_dimension.push_back({b});
+    }
+
+    // make cuts in the specified dimensions
+    for(const auto &cut : cuts)
+    {
+        unsigned int dimension = cut.first;
+        interval front = { boundaries[dimension].first, cut.second };
+        interval back = { cut.second, boundaries[dimension].second };
+        new_boundaries_per_dimension[dimension] = {front, back};
+    }
+
+    // build cartesian product over the new boundaries to get list of all new
+    // orthotope boundaries
+    return cartesian_product(new_boundaries_per_dimension);
 }
 
 cut_list orthotope::split_bisect_all()

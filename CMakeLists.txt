@@ -17,7 +17,8 @@ add_subdirectory(src)
 
 target_compile_options(cli PRIVATE
     $<$<CXX_COMPILER_ID:GNU>:
-        -Werror -pedantic-errors -Wall -Wextra -Wconversion -Wsign-conversion>)
+        -pedantic-errors -Wall -Wextra -Wconversion -Wsign-conversion>)
+#        -Werror -pedantic-errors -Wall -Wextra -Wconversion -Wsign-conversion>)
 
 target_compile_options(gui PRIVATE
     $<$<CXX_COMPILER_ID:GNU>:

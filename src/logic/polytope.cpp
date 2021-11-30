@@ -32,17 +32,10 @@ void polytope::draw_wxWidgets(wxDC *dc, axis x_axis, axis y_axis)
     draw_wxWidgets_sub(dc, x_axis, y_axis);
 }
 
+
 std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitting_h)
 {
-    switch (splitting_h)
-    {
-    case splitting_heuristic::bisect_all:
-        return split_bisect_all();
-        break;
-    default:
-        return {};
-        break;
-    }
+    return split_sub(splitting_h);
 }
 
 void polytope::sample(sampling_heuristic sampling_h)

@@ -2,6 +2,7 @@
 #include "orthotope.hpp"
 #include <iostream>
 #include <algorithm>
+#include <bitset>
 
 orthotope::orthotope(intervals bs, unsigned int d, std::vector<coordinate> sc, std::vector<coordinate> uc)
 {
@@ -50,81 +51,90 @@ z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vect
     return res;
 }
 
-
-std::deque<std::unique_ptr<polytope>> orthotope::intervals_to_orthotopes(std::vector<intervals> intervals_list)
+std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic splitting_h)
 {
-    // TODO: go through samples and add them to the resp. polytope
-    std::deque<std::unique_ptr<polytope>> new_orthopes;
-    for (const auto &it : intervals_list)
+    cut_list cuts;
+    switch (splitting_h)
     {
-        new_orthopes.push_back(std::unique_ptr<polytope>(new orthotope(it, this->depth + 1)));
+    case splitting_heuristic::bisect_all:
+        cuts = split_bisect_all();
+        break;
+    default:
+        return {};
+        break;
+    }
+    return generate_orthotopes(cuts);
+}
+
+std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts)
+{
+    // initialize new boundaries with the old ones
+    std::vector<intervals> new_boundaries;
+    for(const auto &b : boundaries)
+    {
+        new_boundaries.push_back({b});
+    }
+
+    // iterate over the cuts to cut the specified intervals
+    for(const auto &cut : cuts)
+    {
+        unsigned int dimension = cut.first;
+        interval front = { boundaries[dimension].first, cut.second };
+        interval back = { cut.second, boundaries[dimension].second };
+        new_boundaries[dimension] = {front, back};
+    }
+
+    // build cartesian product over the new boundaries to get list of all new
+    // orthotope boundaries
+    std::vector<intervals> new_boundaries_complete = cartesian_product(new_boundaries);
+
+    std::deque<std::unique_ptr<polytope>> new_orthopes;
+    for (const auto &new_boundary : new_boundaries_complete)
+    {
+        new_orthopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundary, this->depth + 1)));
     }
 
     return new_orthopes;
 }
 
-std::deque<std::unique_ptr<polytope>> orthotope::split_bisect_all()
+cut_list orthotope::split_bisect_all()
 {
+    cut_list cuts;
     // bisect all intervals
-    std::vector<std::pair<interval, interval>> intervals_bisected = bisect_all_intervals(this->boundaries);
-
-    // list of intervals for new orthotopes
-    std::vector<intervals> new_intervals_list = cartesian_product(intervals_bisected);
-
-    return intervals_to_orthotopes(new_intervals_list);
-}
-
-std::vector<std::pair<interval, interval>> orthotope::bisect_all_intervals(intervals intervals_in)
-{
-    std::vector<std::pair<interval, interval>> intervals_bisected;
-    for(intervals::iterator it = intervals_in.begin(); it != intervals_in.end(); ++it)
+    for(unsigned int dim; dim < boundaries.size(); dim++)
     {
-        z3::expr mid = (it->second + it->first)/2;
-        z3::expr mid_simplified = mid.simplify();
-        interval front = { it->first, mid_simplified };
-        interval back = { mid_simplified, it->second };
-        intervals_bisected.push_back({front, back});
+        z3::expr mid = (boundaries[dim].first + boundaries[dim].second)/2;
+        cuts.push_back({dim, mid.simplify()});
     }
-    return intervals_bisected;
+    return cuts;
 }
 
-void orthotope::cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::vector<std::pair<interval, interval>>  intervals_bisected, long unsigned int index)
+void orthotope::cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::vector<intervals> sequences, long unsigned int index)
 {
-    std::pair<interval, interval> interval_bisected = intervals_bisected[index];
-
-    // for first element
-    stack.push_back(interval_bisected.first);
-    if (index == 0)
-        accum.push_back(stack);
-    else
-        cartesian_recursion(accum, stack, intervals_bisected, index - 1);
-    stack.pop_back();
-
-    // for second element
-    stack.push_back(interval_bisected.second);
-    if (index == 0)
+    intervals sequence = sequences[index];
+    for (interval i : sequence)
     {
-        accum.push_back(stack);
+        stack.push_back(i);
+        if (index == 0)
+            accum.push_back(stack);
+        else
+            cartesian_recursion(accum, stack, sequences, index - 1);
+        stack.pop_back();
     }
-    else
-        cartesian_recursion(accum, stack, intervals_bisected, index - 1);
-    stack.pop_back();
 }
 
-std::vector<intervals> orthotope::cartesian_product(std::vector<std::pair<interval, interval>> intervals_bisected)
+std::vector<intervals> orthotope::cartesian_product(std::vector<intervals> sequences)
 {
-    // unfortunately the cartesian product function I use does the product the other way around...
-    std::reverse(intervals_bisected.begin(), intervals_bisected.end());
+    // the cartesian product function takes the product the other way around...
+    std::reverse(sequences.begin(), sequences.end());
+
     std::vector<intervals> accum;
-
     intervals stack;
-
-    if (intervals_bisected.size() > 0)
-        cartesian_recursion(accum, stack, intervals_bisected, intervals_bisected.size() - 1);
-    // for(std::vector<intervals>::iterator it = accum.begin(); it != accum.end(); ++it)
-    //     std::reverse(it->begin(), it->end());
+    if (sequences.size() > 0)
+        cartesian_recursion(accum, stack, sequences, sequences.size() - 1);
     return accum;
 }
+
 
 void orthotope::draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis)
 {

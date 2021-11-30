@@ -9,6 +9,12 @@
     #include <wx/wx.h>
 #endif
 
+/**
+ * split_info contains the list of cuts wich are done to create the new 
+ * orthotopes. The first element of the pair is the dimension, the second is
+ * the value at which the orthotope is cut.
+ */
+using cut_list = std::vector<std::pair<unsigned int, z3::expr>>;
 
 /**
  * Subclass of #polytope, represents all polytopes with orthogonal edges only.
@@ -24,50 +30,40 @@ private:
      */
     intervals boundaries;
 
-    /**
-     * Transforms #boundaries into `z3` constraints.
-     * @param ctx `z3::context` in which the expressions should be defined
-     * @param variable_names list of names of the free variables
-     * @return `z3` representation of #boundaries
-     */
+    // implementations of virtual #polytope functions
     z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) override;
-
     void print_sub() override;
+    void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
+    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h) override;
 
     /**
-     * Draws the given #axis on the given device context
-     * @param dc device context to draw the axis
-     * @param x_axis x-axis to draw
-     * @param y_axis y-axis to draw
-     */
-    void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
-
-    std::deque<std::unique_ptr<polytope>> split_bisect_all() override;
+     * see ::splitting_heuristic for details
+     */ 
+    cut_list split_bisect_all();
 
     /**
      * Recursive helper function for #cartesian_product
      * @param accum Current version of the cartesian product to return in the end
      * @param stack Current version of the current element in the cartesian product
-     * @param intervals_bisected Sets (pairs) of which the cartesian product should be taken
+     * @param sequences Sets of which the cartesian product should be taken
      * @param index used to access a certain "factor" of the cartesian product
      */
-    void cartesian_recursion(std::vector<intervals>& accum, intervals stack, std::vector<std::pair<interval, interval>> intervals_bisected, long unsigned int index);
+    void cartesian_recursion(std::vector<intervals> &accum, intervals stack, std::vector<intervals> sequences, long unsigned int index);
 
     /**
      * Takes the cartesian product over pairs of ::interval s. Used by #split .
      * @param intervals_bisected pairs over which the cartesian product should be taken
      * @return `vector` of ::intervals (#boundaries of the new #orthotope s)
      */
-    std::vector<intervals> cartesian_product(std::vector<std::pair<interval, interval>> intervals_bisected);
+    std::vector<intervals> cartesian_product(std::vector<intervals> sequences);
 
     /**
-     * Takes ::intervals and bisects them. Used by #split .
-     * @param intervals_in ::intervals to split
-     * @return `pair`s of two equally sized ::interval s for every input ::interval
+     * Takes the list of cuts and uses uses it to cut #this into 
+     * 2^(cuts.size()) new #orthotope s
+     * @param cuts defines which dimensions to cut at which positions
+     * @return new #orthotope s 
      */
-    std::vector<std::pair<interval, interval>> bisect_all_intervals(intervals intervals_in);
-
-    std::deque<std::unique_ptr<polytope>> intervals_to_orthotopes(std::vector<intervals> intervals_list);
+    std::deque<std::unique_ptr<polytope>> generate_orthotopes(cut_list cuts);
 
 public:
     /**

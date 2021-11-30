@@ -76,12 +76,7 @@ private:
     virtual z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) = 0;
     virtual void print_sub() = 0;
     virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
-
-    /**
-     * Calles by #split if #splitting_heuristic `bisect_all` passed. See 
-     * #splitting_heuristic for details.
-     */
-    virtual std::deque<std::unique_ptr<polytope>> split_bisect_all() = 0;
+    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h) = 0;
 
 protected:
     /**

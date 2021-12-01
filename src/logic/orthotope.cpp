@@ -60,7 +60,6 @@ std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic s
         cuts = split_bisect_all();
         break;
     default:
-        return {};
         break;
     }
     return generate_orthotopes(cuts);
@@ -70,15 +69,23 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
 {
     // generate list of new boundaries through cutting current intervals
     std::vector<intervals> new_boundaries = generate_new_boundaries(cuts);
-    
-    std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, safe_coordinates);
-    std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, unsafe_coordinates);
 
     std::vector<boost::dynamic_bitset<>> bitmasks = generate_bitmasks(cuts.size());
+    std::vector<boost::dynamic_bitset<>> bitmasks_flipped = flip_bitmasks(bitmasks);
+    /*
     for(const auto &mask : bitmasks)
     {
         std::cout << mask << std::endl;
     }
+    for(const auto &mask : bitmasks_flipped)
+    {
+        std::cout << mask << std::endl;
+    }
+    */
+    
+    std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, safe_coordinates);
+    std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, unsafe_coordinates);
+
 
     // generate new orthotopes
     std::deque<std::unique_ptr<polytope>> new_orthopes;
@@ -90,20 +97,72 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
     return new_orthopes;
 }
 
-std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list cuts, std::vector<coordinate> &coordinates)
+std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped, std::vector<coordinate> &coordinates)
 {
+    unsigned int cut_count = cuts.size();
+    unsigned int new_orthotopes_count = pow(2, cuts.size());
+    std::vector<std::vector<coordinate>> res(new_orthotopes_count);
+
+    for(const auto &coord : coordinates)
+    {
+        // orthotope_membership[i] indicats whether coord is within the
+        // boundaries of the ith new orthotope 
+        boost::dynamic_bitset<> orthotope_membership(new_orthotopes_count);
+        orthotope_membership.set();
+
+        for (unsigned int current_cut; current_cut<cut_count; current_cut++)
+        {
+            z3::expr comp_ss = (coord[cuts[current_cut].first] < cuts[current_cut].second);
+            z3::expr comp_eq = (coord[cuts[current_cut].first] == cuts[current_cut].second);
+            z3::expr simple_comp_ss = comp_ss.simplify();
+            z3::expr simple_comp_eq = comp_eq.simplify();
+
+            // sanity check simplification:
+            z3::expr comp_ss_neg = (!comp_ss);
+            z3::expr comp_eq_neg = (!comp_eq);
+            z3::expr simple_comp_ss_neg = comp_ss_neg.simplify();
+            z3::expr simple_comp_eq_neg = comp_eq_neg.simplify();
+            if ((simple_comp_ss.is_true() == simple_comp_ss_neg.is_true()) || (simple_comp_eq.is_true() == simple_comp_eq_neg.is_true()))
+            {
+                std::cout << "simplify did not work on this coordinate :(. Implement solver handling here!" << std::endl;
+            }
+            
+            // actual comparison
+            if (simple_comp_ss)
+            {
+                orthotope_membership = (orthotope_membership & bitmasks[current_cut]);
+            }
+            else if (!simple_comp_eq)
+            {
+                
+                orthotope_membership = (orthotope_membership & bitmasks_flipped[current_cut]);
+            }
+        }
+    }
     return {};
 }
 
-std::vector<boost::dynamic_bitset<>> orthotope::generate_bitmasks(unsigned int no_cuts)
-{
-    int mask_length = pow(2, no_cuts);
-    std::vector<boost::dynamic_bitset<>> bitmasks(no_cuts, boost::dynamic_bitset<>(mask_length));
 
-    for(int i = 0; i < mask_length; i++)
+std::vector<boost::dynamic_bitset<>> orthotope::flip_bitmasks(std::vector<boost::dynamic_bitset<>> &bitmasks)
+{
+    std::vector<boost::dynamic_bitset<>> res = bitmasks;
+    for(auto &mask : res)
     {
-        boost::dynamic_bitset<> current(no_cuts, i);
-        for(int j = 0; j < no_cuts; j++)
+        mask.flip();
+    }
+    return res;
+}
+
+std::vector<boost::dynamic_bitset<>> orthotope::generate_bitmasks(unsigned int cut_count)
+{
+    // Magic is happening here...
+    unsigned int new_orthotopes_count = pow(2, cut_count);
+    std::vector<boost::dynamic_bitset<>> bitmasks(cut_count, boost::dynamic_bitset<>(new_orthotopes_count));
+
+    for(int i = 0; i < new_orthotopes_count; i++)
+    {
+        boost::dynamic_bitset<> current(cut_count, i);
+        for(int j = 0; j < cut_count; j++)
         {
             bitmasks[j][i] = current[j];
         }

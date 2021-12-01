@@ -74,7 +74,14 @@ private:
      * @param coordinates list of coordinates to be split
      * @return list of coordinates for every new #orthotope
      */
-    std::vector<std::vector<coordinate>> split_coordinates(cut_list cuts, std::vector<coordinate> &coordinates);
+    std::vector<std::vector<coordinate>> split_coordinates(cut_list &cuts, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped, std::vector<coordinate> &coordinates);
+
+    /**
+     * Flips a given vector of bitmasks
+     * @param bitmasks bitmasks to flip
+     * @return flipped bitmasks
+     */
+    std::vector<boost::dynamic_bitset<>> flip_bitmasks(std::vector<boost::dynamic_bitset<>> &bitmasks);
 
     /**
      * Takes the list of cuts and uses uses it to cut #this into 
@@ -84,7 +91,7 @@ private:
      */
     std::deque<std::unique_ptr<polytope>> generate_orthotopes(cut_list cuts);
 
-    std::vector<boost::dynamic_bitset<>> generate_bitmasks(unsigned int no_cuts);
+    std::vector<boost::dynamic_bitset<>> generate_bitmasks(unsigned int cut_count);
 
 public:
     /**

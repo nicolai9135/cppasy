@@ -3,6 +3,7 @@
 #include <math.h> // log10, floor
 #include <stdlib.h>     /* abs */
 #include <iomanip>
+#include <chrono>
 
 plot_frame::plot_frame(options o)
   : wxFrame(NULL, wxID_ANY, "Plot")
@@ -38,10 +39,14 @@ plot_frame::plot_frame(options o)
     
     this->SetClientSize(wxSize(x_plot_size_init + 2*margin + y_axis.extra_space, y_plot_size_init + 2*margin + button_space + x_axis.extra_space));
 
-    //
-
+    //measure time
+    std::chrono::steady_clock::time_point begin_exec = std::chrono::steady_clock::now();
     // perform synthesis
     s.execute();
+    std::chrono::steady_clock::time_point end_exec = std::chrono::steady_clock::now();
+    std::cout << "exec time = " << std::chrono::duration_cast<std::chrono::seconds>(end_exec - begin_exec).count() << "[s]" << std::endl;
+    std::cout << "          = " << std::chrono::duration_cast<std::chrono::milliseconds>(end_exec - begin_exec).count() << "[ms]" << std::endl;
+
     // s.print_all_areas();
 
     Bind(wxEVT_PAINT, &plot_frame::OnPaint, this);
@@ -229,7 +234,12 @@ double string_to_double(std::string s)
 void plot_frame::OnResume(wxCommandEvent& event)
 {
     // std::cout << "button clicked" << std::endl;
+    std::chrono::steady_clock::time_point begin_resume = std::chrono::steady_clock::now();
     s.continue_synthesis(1);
+    std::chrono::steady_clock::time_point end_resume = std::chrono::steady_clock::now();
+    std::cout << "resume time = " << std::chrono::duration_cast<std::chrono::seconds>(end_resume - begin_resume).count() << "[s]" << std::endl;
+    std::cout << "            = " << std::chrono::duration_cast<std::chrono::milliseconds>(end_resume - begin_resume).count() << "[ms]" << std::endl;
     Refresh();
     Update();
+    //s.print_all_areas();
 }

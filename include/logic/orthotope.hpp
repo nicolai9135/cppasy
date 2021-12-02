@@ -36,12 +36,24 @@ private:
     z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) override;
     void print_sub() override;
     void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
-    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h) override;
+    std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h) override;
+    void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names) override;
+
 
     /**
      * see ::splitting_heuristic for details
      */ 
     cut_list split_bisect_all();
+
+    /**
+     * see ::sampling_heuristic for details
+     */ 
+    void sample_vertices_plus(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names);
+
+    /**
+     * see ::sampling_heuristic for details
+     */ 
+    void sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names);
 
     /**
      * Recursive helper function for #cartesian_product

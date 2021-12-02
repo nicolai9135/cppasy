@@ -35,8 +35,28 @@ void orthotope::print_sub()
     }
 
     // print safe samples
+    std::cout << "    Safe Coordinates:" << std::endl;
+    for(const auto &coord : safe_coordinates)
+    {
+        std::cout << "        [";
+        for (const auto &val : coord)
+        {
+            std::cout << val << ", ";
+        }
+        std::cout << "]" << std::endl;
+    }
 
     // print unsafe samples
+    std::cout << "    Unsafe Coordinates:" << std::endl;
+    for(const auto &coord : unsafe_coordinates)
+    {
+        std::cout << "        [";
+        for (const auto &val : coord)
+        {
+            std::cout << val << ", ";
+        }
+        std::cout << "]" << std::endl;
+    }
 }
 
 z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names)
@@ -70,13 +90,16 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
     // generate list of new boundaries through cutting current intervals
     std::vector<intervals> new_boundaries = generate_new_boundaries(cuts);
 
-    std::vector<boost::dynamic_bitset<>> bitmasks = generate_bitmasks(cuts.size());
-    std::vector<boost::dynamic_bitset<>> bitmasks_flipped = flip_bitmasks(bitmasks);
-    /*
+    std::vector<boost::dynamic_bitset<>> bitmasks_flipped = generate_bitmasks(cuts.size());
+    std::vector<boost::dynamic_bitset<>> bitmasks = flip_bitmasks(bitmasks_flipped);
+    
+    /* debug...
+    std::cout << "bitmasks:" << std::endl;
     for(const auto &mask : bitmasks)
     {
         std::cout << mask << std::endl;
     }
+    std::cout << "bitmasks flipped:" << std::endl;
     for(const auto &mask : bitmasks_flipped)
     {
         std::cout << mask << std::endl;
@@ -86,10 +109,28 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
     std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, safe_coordinates);
     std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, unsafe_coordinates);
 
+    /* debug...
+    std::cout << "safe coordinates splitted" << std::endl;
+    for(const auto &orth : new_safe_coordinates)
+    {
+        std::cout << "    new orthotope" << std::endl;
+        for(const auto &coord: orth)
+        {
+            std::cout << "      ";
+            for(const auto &val : coord)
+            {
+                std::cout << val << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+    */
+
     std::deque<std::unique_ptr<polytope>> new_orthotopes;
     for (unsigned int new_orthotope_index = 0; new_orthotope_index<new_boundaries.size(); new_orthotope_index++)
     {
         new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], this->depth + 1, new_safe_coordinates[new_orthotope_index], new_unsafe_coordinates[new_orthotope_index])));
+        // new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], this->depth + 1)));
     }
 
     return new_orthotopes;
@@ -97,12 +138,22 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
 
 std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped, std::vector<coordinate> &coordinates)
 {
+    // std::cout << "arrived in split coordinates" << std::endl;
     unsigned int cut_count = cuts.size();
     unsigned int new_orthotopes_count = pow(2, cuts.size());
     std::vector<std::vector<coordinate>> res(new_orthotopes_count);
 
     for(const auto &coord : coordinates)
     {
+        /* debug 
+        std::cout << "    coordinate ";
+        for (const auto &val : coord)
+        {
+            std::cout << val << " ";
+        }
+        std::cout << std::endl;
+        */
+
         // orthotope_membership[i] indicats whether coord is within the
         // boundaries of the ith new orthotope 
         boost::dynamic_bitset<> orthotope_membership(new_orthotopes_count);
@@ -111,12 +162,18 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
         orthotope_membership.set();
 
         // iterate through cuts and filter out unsuitable orthotopes
-        for (unsigned int current_cut; current_cut<cut_count; current_cut++)
+        for (unsigned int current_cut = 0; current_cut<cut_count; current_cut++)
         {
+            // std::cout << "      cut dimension " << cuts[current_cut].first << std::endl;
+            // std::cout << "        membership before cut " << orthotope_membership << std::endl;
             z3::expr comp_ss = (coord[cuts[current_cut].first] < cuts[current_cut].second);
             z3::expr comp_eq = (coord[cuts[current_cut].first] == cuts[current_cut].second);
             z3::expr simple_comp_ss = comp_ss.simplify();
             z3::expr simple_comp_eq = comp_eq.simplify();
+            // std::cout << "        comp ss " << comp_ss << std::endl;
+            // std::cout << "        simple comp ss " << simple_comp_ss << std::endl;
+            // std::cout << "        comp eq " << comp_eq << std::endl;
+            // std::cout << "        simple comp eq " << simple_comp_eq << std::endl;
 
             // sanity check simplification:
             z3::expr comp_ss_neg = (!comp_ss);
@@ -129,18 +186,26 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
             }
             
             // actual comparison to filter unsuitable orthotopes
-            if (simple_comp_ss)
+            if (simple_comp_ss.is_true())
             {
+                // std::cout << "          is smaller than cut before:  " << orthotope_membership << std::endl;
+                // std::cout << "          is smaller than cut bitmask: " << bitmasks[current_cut] << std::endl;
                 orthotope_membership = (orthotope_membership & bitmasks[current_cut]);
+                // std::cout << "          is smaller than cut after :  " << orthotope_membership << std::endl;
             }
-            else if (!simple_comp_eq)
+            else if (!simple_comp_eq.is_true())
             {
+                // std::cout << "          is greater than cut before:  " << orthotope_membership << std::endl;
+                // std::cout << "          is greater than cut bitmask: " << bitmasks[current_cut] << std::endl;
                 orthotope_membership = (orthotope_membership & bitmasks_flipped[current_cut]);
+                // std::cout << "          is greater than cut after :  " << orthotope_membership << std::endl;
             }
+            // std::cout << "        membership after cut " << orthotope_membership << std::endl;
         }
+        // std::cout << "      final orthotope membership indicator" << orthotope_membership << std::endl;
 
         // Add coordinate to suitbale orthotopes
-        for (unsigned int current_orthotope; current_orthotope<new_orthotopes_count; current_orthotope++)
+        for (unsigned int current_orthotope = 0; current_orthotope<new_orthotopes_count; current_orthotope++)
         {
             if (orthotope_membership[current_orthotope])
             {
@@ -175,8 +240,8 @@ std::vector<boost::dynamic_bitset<>> orthotope::generate_bitmasks(unsigned int c
             bitmasks[j][i] = current[j];
         }
     }
-
     std::reverse(bitmasks.begin(), bitmasks.end());
+
     return bitmasks;
 }
 
@@ -241,6 +306,61 @@ std::vector<intervals> orthotope::cartesian_product(std::vector<intervals> seque
     return accum;
 }
 
+void orthotope::sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
+{
+    switch (sampling_h)
+    {
+    case sampling_heuristic::vertices_plus:
+        sample_vertices_plus(ctx, formula, variable_names);
+        break;
+    case sampling_heuristic::center:
+        sample_center(ctx, formula, variable_names);
+        break;
+    default:
+        break;
+    }
+}
+
+void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
+{
+    z3::expr_vector dest(ctx);
+    for (const auto &boundary : boundaries)
+    {
+        dest.push_back((boundary.first+boundary.second)/2);
+    }
+
+    z3::expr formula_substituted = formula.substitute(variable_names, dest);
+    z3::expr simple = formula_substituted.simplify();
+
+    // sanity check!
+    z3::expr formula_neg = (!formula_substituted);
+    z3::expr simple_neg = formula_neg.simplify();
+    if (simple.is_true() == simple_neg.is_true())
+    {
+        std::cout << "this should not happen - sample not simplifyable!" << std::endl;
+    }
+    else // sanity check passed
+    {
+        coordinate c;
+        for(const auto &val : dest)
+        {
+            c.push_back(val);
+        }
+        if (simple.is_true())
+        {
+            safe_coordinates.push_back(c);
+        }
+        else
+        {
+            unsafe_coordinates.push_back(c);
+        }
+    }
+}
+
+void orthotope::sample_vertices_plus(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
+{
+
+}
 
 void orthotope::draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis)
 {

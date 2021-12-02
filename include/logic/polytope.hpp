@@ -49,7 +49,8 @@ enum sampling_heuristic
     /**
      * Samples are taken on the vertices of the #polytope
      */
-    vertices
+    vertices_plus,
+    center
 };
 
 struct axis
@@ -77,6 +78,7 @@ private:
     virtual void print_sub() = 0;
     virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
     virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h) = 0;
+    virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names) = 0;
 
 protected:
     /**
@@ -140,7 +142,7 @@ public:
      * @sideeffect extends #safe_coordinates and/or #unsafe_coordinates
      * @param sampling_h #sampling_heuristic to be used
      */
-    void sample(sampling_heuristic sampling_h);
+    void sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names);
 
     /**
      * Draws the given #axis on the given device context
@@ -149,6 +151,15 @@ public:
      * @param y_axis y-axis to draw
      */
     void draw_wxWidgets(wxDC *dc, axis x_axis, axis y_axis);
+
+    /**
+     * The model corresponds to a coordinate. This coordinate is appended to 
+     * either #safe_coordinates or #unsafe_coordinates.
+     * @sideeffect appends the coordinate to #safe_coordinates or #unsafe_coordinates
+     * @param m model/coordinate to safe
+     * @param is_safe indicator whether the coordinate fulfills the formula or not
+     */
+    void save_model(z3::model m, bool is_safe, z3::expr_vector &variable_names);
 };
 
 #endif

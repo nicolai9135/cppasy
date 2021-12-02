@@ -38,13 +38,24 @@ std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitt
     return split_sub(splitting_h);
 }
 
-void polytope::sample(sampling_heuristic sampling_h)
+void polytope::sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
 {
-    switch (sampling_h)
+    sample_sub(sampling_h, ctx, formula, variable_names);
+}
+
+void polytope::save_model(z3::model m, bool is_safe, z3::expr_vector &variable_names)
+{
+    coordinate c;
+    for (const auto &var : variable_names)
     {
-    case sampling_heuristic::vertices:
-        break;
-    default:
-        break;
+        c.push_back(m.get_const_interp(var.decl()));
+    }
+    if (is_safe)
+    {
+        safe_coordinates.push_back(c);
+    }
+    else
+    {
+        unsafe_coordinates.push_back(c);
     }
 }

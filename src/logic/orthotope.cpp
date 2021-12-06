@@ -4,10 +4,11 @@
 #include <algorithm>
 #include <cmath>
 
-orthotope::orthotope(intervals bs, unsigned int d, std::vector<coordinate> sc, std::vector<coordinate> uc)
+orthotope::orthotope(intervals bs, unsigned int d, execution_time *t_s, std::vector<coordinate> sc, std::vector<coordinate> uc)
 {
     boundaries = bs;
     depth = d;
+    t = t_s;
     safe_coordinates = sc;
     unsafe_coordinates = uc;
 }
@@ -73,6 +74,9 @@ z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vect
 
 std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic splitting_h)
 {
+#if EVAL > 0
+    auto polytope_splitting_begin = std::chrono::steady_clock::now();
+#endif
     cut_list cuts;
     switch (splitting_h)
     {
@@ -82,11 +86,18 @@ std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic s
     default:
         break;
     }
+#if EVAL > 0
+    auto polytope_splitting_end = std::chrono::steady_clock::now();
+    t->polytope_splitting += (polytope_splitting_end - polytope_splitting_begin);
+#endif
     return generate_orthotopes(cuts);
 }
 
 std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts)
 {
+#if EVAL > 0
+    auto polytope_splitting_begin = std::chrono::steady_clock::now();
+#endif
     // generate list of new boundaries through cutting current intervals
     std::vector<intervals> new_boundaries = generate_new_boundaries(cuts);
 
@@ -129,10 +140,14 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
     std::deque<std::unique_ptr<polytope>> new_orthotopes;
     for (unsigned int new_orthotope_index = 0; new_orthotope_index<new_boundaries.size(); new_orthotope_index++)
     {
-        new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], this->depth + 1, new_safe_coordinates[new_orthotope_index], new_unsafe_coordinates[new_orthotope_index])));
+        new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, t, new_safe_coordinates[new_orthotope_index], new_unsafe_coordinates[new_orthotope_index])));
         // new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], this->depth + 1)));
     }
 
+#if EVAL > 0
+    auto polytope_splitting_end = std::chrono::steady_clock::now();
+    t->polytope_splitting += (polytope_splitting_end - polytope_splitting_begin);
+#endif
     return new_orthotopes;
 }
 

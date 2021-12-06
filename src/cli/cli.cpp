@@ -16,6 +16,7 @@ int main(int argc, char * argv[])
     try
     {
         user_input = parse_arguments(argc, argv);
+        user_input.use_save_model = true;
     }
     // if --help is passed, abort execution
     catch(const help &e)
@@ -36,11 +37,17 @@ int main(int argc, char * argv[])
     }
 
     synthesis* s = new synthesis(user_input);
+
+#if EVAL > 0
+    auto total_begin = std::chrono::steady_clock::now();
+#endif
     s->execute();
-    s->print_all_areas();
-    s->continue_synthesis(1);
-    s->print_all_areas();
-    s->continue_synthesis(1);
+#if EVAL > 0
+    auto total_end = std::chrono::steady_clock::now();
+    s->t.total += (total_end - total_begin);
+    std::cout << "Execution Time = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.total).count() << "[s]" << std::endl;
+    std::cout << "               = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.total).count() << "[ms]" << std::endl;
+#endif
     s->print_all_areas();
 
     return 0;

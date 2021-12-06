@@ -18,4 +18,5 @@ target_include_directories(gui PUBLIC
     "${PROJECT_SOURCE_DIR}/include/logic"
     "${PROJECT_SOURCE_DIR}/include/gui"
     "${PROJECT_SOURCE_DIR}/include/parse"
+    "${PROJECT_SOURCE_DIR}/include/evaluation"
 )

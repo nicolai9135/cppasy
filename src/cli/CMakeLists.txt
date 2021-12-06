@@ -19,4 +19,5 @@ target_include_directories(cli PUBLIC
     "${PROJECT_SOURCE_DIR}/include/cli"
     "${PROJECT_SOURCE_DIR}/include/logic"
     "${PROJECT_SOURCE_DIR}/include/parse"
+    "${PROJECT_SOURCE_DIR}/include/evaluation"
 )

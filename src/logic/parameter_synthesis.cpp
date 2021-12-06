@@ -9,12 +9,13 @@ void synthesis::print_deque(std::deque<std::unique_ptr<polytope>> &my_deque)
 }
 
 synthesis::synthesis(options o)
-  : formula(ctx),
-    formula_neg(ctx),
-    variable_names(ctx),
-    solver_pos(ctx),
-    solver_neg(ctx),
-    max_depth(o.max_depth)
+  : formula(ctx)
+  , formula_neg(ctx)
+  , variable_names(ctx)
+  , solver_pos(ctx)
+  , solver_neg(ctx)
+  , max_depth(o.max_depth)
+  , use_save_model(o.use_save_model)
 {
     for(auto const &variable_name : o.variable_names)
     {
@@ -39,7 +40,7 @@ synthesis::synthesis(options o)
     // uc.push_back({ctx.real_val("1.5"), ctx.real_val("0.5")});
     // synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, sc, uc)));
 
-    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1)));
+    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, &t)));
 
 
     // read formula and transform vector into expression
@@ -91,31 +92,26 @@ void synthesis::execute()
         // end calculation if maximal depth is reached
         if (current_polytope->get_depth() >= max_depth) break;
 
+        // do sampling
         current_polytope->sample(center, ctx, formula, variable_names);
 
-        // get boundaries of the polytope in Z3 format and add them to pos solver
+        // prepare solver
         z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3(ctx, variable_names);
         solver_pos.add(boundaries_z3);
-        bool solver_pos_used = 0;
 
-        if ((!current_polytope->get_safe_coordinates().empty()) || (solver_pos_used = solver_pos.check()))
+        // check whether there is a unsafe coordinate whithin the current polytope
+        bool safe_coordinate_exists = current_polytope->coordinate_exists(solver_pos, safe, use_save_model, variable_names);
+
+        if (safe_coordinate_exists)
         {
-            if (solver_pos_used)
-            {
-                current_polytope->save_model(solver_pos.get_model(), true, variable_names);
-            }
-
             // add boundaries of current box to neg solver
             solver_neg.add(boundaries_z3);
-            bool solver_neg_used = 0;
 
-            if ((!current_polytope->get_unsafe_coordinates().empty()) || (solver_neg_used = solver_neg.check()))
+            // check whether there is a safe coordinate whithin the current polytope
+            bool unsafe_coordinate_exists = current_polytope->coordinate_exists(solver_neg, unsafe, use_save_model, variable_names);
+
+            if (unsafe_coordinate_exists)
             {
-                if (solver_neg_used)
-                {
-                    current_polytope->save_model(solver_neg.get_model(), false, variable_names);
-                }
-
                 // split current polytope
                 std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(bisect_all);
 

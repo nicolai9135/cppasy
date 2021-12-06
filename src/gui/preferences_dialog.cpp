@@ -47,7 +47,7 @@ preferences_dialog::preferences_dialog(main_frame *m)
     y_axis_choice = new wxChoice(this, -1, wxDefaultPosition, wxDefaultSize, wx_variable_choices);
     y_axis_choice->SetSelection(1);
     depth_ctrl = new wxTextCtrl(this, -1);
-    depth_ctrl->AppendText("5");
+    depth_ctrl->AppendText("12");
 
     axis_and_depth->Add(new wxStaticText(this, -1, "x-Axis"));
     axis_and_depth->Add(x_axis_choice);

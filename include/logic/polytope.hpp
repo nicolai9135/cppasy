@@ -1,6 +1,7 @@
 #ifndef POLYTOPE
 #define POLYTOPE
 
+#include "time_measurements.hpp"
 #include <vector>
 #include <deque>
 #include <memory>
@@ -53,6 +54,12 @@ enum sampling_heuristic
     center
 };
 
+enum area_class
+{
+    safe,
+    unsafe
+};
+
 struct axis
 {
     bool is_x_axis;
@@ -102,6 +109,8 @@ protected:
      * ``solver_neg.check()`` on this #polytope is not necessary anymore.
      */
     std::vector<coordinate> unsafe_coordinates;
+
+    execution_time *t;
 
 public:
     virtual ~polytope() = default;
@@ -157,9 +166,11 @@ public:
      * either #safe_coordinates or #unsafe_coordinates.
      * @sideeffect appends the coordinate to #safe_coordinates or #unsafe_coordinates
      * @param m model/coordinate to safe
-     * @param is_safe indicator whether the coordinate fulfills the formula or not
+     * @param ac indicator whether the m is a model for solver_pos or solver_neg
      */
-    void save_model(z3::model m, bool is_safe, z3::expr_vector &variable_names);
+    void save_model(z3::model m, area_class ac, z3::expr_vector &variable_names);
+
+    bool coordinate_exists(z3::solver &s, area_class ac, bool use_save_model, z3::expr_vector &variable_names);
 };
 
 #endif

@@ -39,13 +39,24 @@ plot_frame::plot_frame(options o)
     
     this->SetClientSize(wxSize(x_plot_size_init + 2*margin + y_axis.extra_space, y_plot_size_init + 2*margin + button_space + x_axis.extra_space));
 
-    //measure time
-    std::chrono::steady_clock::time_point begin_exec = std::chrono::steady_clock::now();
-    // perform synthesis
+#if EVAL > 0
+    auto total_begin = std::chrono::steady_clock::now();
+#endif
     s.execute();
-    std::chrono::steady_clock::time_point end_exec = std::chrono::steady_clock::now();
-    std::cout << "exec time = " << std::chrono::duration_cast<std::chrono::seconds>(end_exec - begin_exec).count() << "[s]" << std::endl;
-    std::cout << "          = " << std::chrono::duration_cast<std::chrono::milliseconds>(end_exec - begin_exec).count() << "[ms]" << std::endl;
+#if EVAL > 0
+    auto total_end = std::chrono::steady_clock::now();
+    s.t.total += (total_end - total_begin);
+    std::cout << "Execution Time                = " << std::chrono::duration_cast<std::chrono::seconds>(s.t.total).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s.t.total).count() << "[ms]" << std::endl;
+    std::cout << "    Solving Time              = " << std::chrono::duration_cast<std::chrono::seconds>(s.t.solving).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s.t.solving).count() << "[ms]" << std::endl;
+    std::cout << "    Model Saving Time         = " << std::chrono::duration_cast<std::chrono::seconds>(s.t.model_saving).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s.t.model_saving).count() << "[ms]" << std::endl;
+    std::cout << "    Sampling Time             = " << std::chrono::duration_cast<std::chrono::seconds>(s.t.sampling).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s.t.sampling).count() << "[ms]" << std::endl;
+    std::cout << "    Polytope Splitting Time   = " << std::chrono::duration_cast<std::chrono::seconds>(s.t.polytope_splitting).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s.t.polytope_splitting).count() << "[ms]" << std::endl;
+#endif
 
     // s.print_all_areas();
 
@@ -234,11 +245,7 @@ double string_to_double(std::string s)
 void plot_frame::OnResume(wxCommandEvent& event)
 {
     // std::cout << "button clicked" << std::endl;
-    std::chrono::steady_clock::time_point begin_resume = std::chrono::steady_clock::now();
     s.continue_synthesis(1);
-    std::chrono::steady_clock::time_point end_resume = std::chrono::steady_clock::now();
-    std::cout << "resume time = " << std::chrono::duration_cast<std::chrono::seconds>(end_resume - begin_resume).count() << "[s]" << std::endl;
-    std::cout << "            = " << std::chrono::duration_cast<std::chrono::milliseconds>(end_resume - begin_resume).count() << "[ms]" << std::endl;
     Refresh();
     Update();
     //s.print_all_areas();

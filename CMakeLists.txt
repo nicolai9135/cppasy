@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.10)
 # set project name
 project(cppasy)
 
+add_compile_definitions(EVAL=1)
+
 find_package(Boost 1.75 COMPONENTS program_options REQUIRED) 
 
 find_package(Z3 REQUIRED)

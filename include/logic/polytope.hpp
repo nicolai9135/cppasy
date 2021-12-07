@@ -6,6 +6,7 @@
 #include <deque>
 #include <memory>
 #include <z3++.h>
+#include <unordered_map>
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
@@ -42,16 +43,25 @@ enum splitting_heuristic
     // bisect_single
 };
 
-/**
- * List of heuristics that can be used to take samples within a #polytope .
- */
+static std::unordered_map<std::string, splitting_heuristic> const splitting_map =
+{
+    {"bisect_all", splitting_heuristic::bisect_all}
+};
+
+/** List of heuristics that can be used to take samples within a #polytope . */
 enum sampling_heuristic 
 {
-    /**
-     * Samples are taken on the vertices of the #polytope
-     */
-    vertices_plus,
+    /** Samples are taken on the vertices of the #polytope */
+    // vertices_plus,
+    no_sampling,
     center
+};
+
+static std::unordered_map<std::string, sampling_heuristic> const sampling_map =
+{
+    // {"vertices_plus", sampling_heuristic::vertices_plus},
+    {"center", sampling_heuristic::center},
+    {"no_sampling", sampling_heuristic::no_sampling}
 };
 
 enum area_class
@@ -84,7 +94,7 @@ private:
     virtual z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) = 0;
     virtual void print_sub() = 0;
     virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
-    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h) = 0;
+    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples) = 0;
     virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names) = 0;
 
 protected:
@@ -143,7 +153,7 @@ public:
      * provided #splitting_heuristic.
      * @param splitting_h #splitting_heuristic to be used
      */
-    std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h);
+    std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h, bool use_split_samples);
 
     /**
      * Takes samples at different ::coordinate s within the #polytope and stores

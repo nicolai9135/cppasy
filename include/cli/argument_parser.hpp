@@ -6,16 +6,12 @@
 
 #include "parameter_synthesis.hpp"
 
-/**
- * Exception to handle `$ cppasy --help` option
- */
+/** Exception to handle `$ cppasy --help` option */
 class help : public std::exception
 {
 };
 
-/**
- * Exception for the case in which no input file was provided.
- */
+/** Exception for the case in which no input file was provided. */
 class no_input_file : public std::exception
 {
     virtual const char* what() const throw()
@@ -24,9 +20,7 @@ class no_input_file : public std::exception
     }
 };
 
-/**
- * Exception for the case in which the formula file is invalid.
- */
+/** Exception for the case in which the formula file is invalid.*/
 class invalid_formula_file : public std::exception
 {
     virtual const char* what() const throw()
@@ -35,9 +29,7 @@ class invalid_formula_file : public std::exception
     }
 };
 
-/**
- * Exception in case an interval is missing
- */
+/** Exception in case an interval is missing. */
 class interval_missing : public std::exception
 {
     virtual const char* what() const throw()
@@ -46,9 +38,7 @@ class interval_missing : public std::exception
     }
 };
 
-/**
- * Exception in case too many intervals were provided
- */
+/** Exception in case too many intervals were provided.*/
 class too_many_intervals : public std::exception
 {
     virtual const char* what() const throw()
@@ -57,9 +47,7 @@ class too_many_intervals : public std::exception
     }
 };
 
-/**
- * Exception in case the specified formula-file does not exist 
- */
+/** Exception in case the specified formula-file does not exist.*/
 class invalid_formula_path : public std::exception
 {
     virtual const char* what() const throw()
@@ -68,14 +56,30 @@ class invalid_formula_path : public std::exception
     }
 };
 
-/**
- * Exception in case the specified formula-file does not exist 
- */
+/** Exception in case the specified formula-file does not exist */
 class invalid_boundaries_path : public std::exception
 {
     virtual const char* what() const throw()
     {
         return "Invalid file path. The specified boundaries-file is not a regular file.";
+    }
+};
+
+/** Exception in case the specified sampling heuristic does not exist */
+class invalid_sampling_heuristic : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Invalid sampling heuristic. There is no sampling heuristic with the given name";
+    }
+};
+
+/** Exception in case the specified splitting heuristic does not exist */
+class invalid_splitting_heuristic : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Invalid splitting heuristic. There is no splitting heuristic with the given name";
     }
 };
 

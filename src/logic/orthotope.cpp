@@ -72,7 +72,7 @@ z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vect
     return res;
 }
 
-std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic splitting_h)
+std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic splitting_h, bool use_split_samples)
 {
 #if EVAL > 0
     auto polytope_splitting_begin = std::chrono::steady_clock::now();
@@ -90,58 +90,35 @@ std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic s
     auto polytope_splitting_end = std::chrono::steady_clock::now();
     t->polytope_splitting += (polytope_splitting_end - polytope_splitting_begin);
 #endif
-    return generate_orthotopes(cuts);
+    return generate_orthotopes(cuts, use_split_samples);
 }
 
-std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts)
+std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts, bool use_split_samples)
 {
 #if EVAL > 0
     auto polytope_splitting_begin = std::chrono::steady_clock::now();
 #endif
     // generate list of new boundaries through cutting current intervals
     std::vector<intervals> new_boundaries = generate_new_boundaries(cuts);
+    std::deque<std::unique_ptr<polytope>> new_orthotopes;
 
-    std::vector<boost::dynamic_bitset<>> bitmasks_flipped = generate_bitmasks(cuts.size());
-    std::vector<boost::dynamic_bitset<>> bitmasks = flip_bitmasks(bitmasks_flipped);
-    
-    /* debug...
-    std::cout << "bitmasks:" << std::endl;
-    for(const auto &mask : bitmasks)
+    if(use_split_samples)
     {
-        std::cout << mask << std::endl;
-    }
-    std::cout << "bitmasks flipped:" << std::endl;
-    for(const auto &mask : bitmasks_flipped)
-    {
-        std::cout << mask << std::endl;
-    }
-    */
-    
-    std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, safe_coordinates);
-    std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, unsafe_coordinates);
-
-    /* debug...
-    std::cout << "safe coordinates splitted" << std::endl;
-    for(const auto &orth : new_safe_coordinates)
-    {
-        std::cout << "    new orthotope" << std::endl;
-        for(const auto &coord: orth)
+        std::vector<boost::dynamic_bitset<>> bitmasks_flipped = generate_bitmasks(cuts.size());
+        std::vector<boost::dynamic_bitset<>> bitmasks = flip_bitmasks(bitmasks_flipped);
+        std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, safe_coordinates);
+        std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, unsafe_coordinates);
+        for (unsigned int new_orthotope_index = 0; new_orthotope_index<new_boundaries.size(); new_orthotope_index++)
         {
-            std::cout << "      ";
-            for(const auto &val : coord)
-            {
-                std::cout << val << " ";
-            }
-            std::cout << std::endl;
+            new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, t, new_safe_coordinates[new_orthotope_index], new_unsafe_coordinates[new_orthotope_index])));
         }
     }
-    */
-
-    std::deque<std::unique_ptr<polytope>> new_orthotopes;
-    for (unsigned int new_orthotope_index = 0; new_orthotope_index<new_boundaries.size(); new_orthotope_index++)
+    else
     {
-        new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, t, new_safe_coordinates[new_orthotope_index], new_unsafe_coordinates[new_orthotope_index])));
-        // new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], this->depth + 1)));
+        for (unsigned int new_orthotope_index = 0; new_orthotope_index<new_boundaries.size(); new_orthotope_index++)
+        {
+            new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, t)));
+        }
     }
 
 #if EVAL > 0
@@ -325,9 +302,9 @@ void orthotope::sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::
 {
     switch (sampling_h)
     {
-    case sampling_heuristic::vertices_plus:
-        sample_vertices_plus(ctx, formula, variable_names);
-        break;
+    // case sampling_heuristic::vertices_plus:
+    //     sample_vertices_plus(ctx, formula, variable_names);
+    //     break;
     case sampling_heuristic::center:
         sample_center(ctx, formula, variable_names);
         break;

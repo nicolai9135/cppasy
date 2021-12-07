@@ -32,9 +32,9 @@ void polytope::draw_wxWidgets(wxDC *dc, axis x_axis, axis y_axis)
     draw_wxWidgets_sub(dc, x_axis, y_axis);
 }
 
-std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitting_h)
+std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitting_h, bool use_split_samples)
 {
-    return split_sub(splitting_h);
+    return split_sub(splitting_h, use_split_samples);
 }
 
 void polytope::sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)

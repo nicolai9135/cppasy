@@ -1,6 +1,7 @@
 #include "argument_parser.hpp"
 #include "smtlib_parse.hpp"
 #include "parse_boundaries.hpp"
+#include "polytope.hpp"
 
 #include <boost/program_options.hpp>
 #include <iostream>
@@ -17,8 +18,12 @@ options parse_arguments(int argc, char* argv[])
     boost::program_options::options_description visible("Allowed options");
     visible.add_options()
         ("help,h", "produce help message")
-        ("max-depth", boost::program_options::value<unsigned int>()->default_value(1), "set maximal depth")
         ("boundaries-file", boost::program_options::value<std::string>(), "text file containing a list of all variables and their boundaries. The file should contain lines of the from '<variable-name> <lower-bound> <upper-bound>'")
+        ("max-depth", boost::program_options::value<unsigned int>()->default_value(1), "set maximal depth")
+        ("splitting-heuristic", boost::program_options::value<std::string>()->default_value("bisect_all"), "Choose a splitting heuristic if you want to use sampling. Options are 'bisect_all'")
+        ("sampling-heuristic", boost::program_options::value<std::string>()->default_value("no_sampling"), "Choose a sampling heuristic if you want to use sampling. Options are 'center'")
+        ("split-samples", "also split samples when splitting orthotopes")
+        ("save-model", "Save models found by solver. Only usefull if split-samples enabled!")
     ;
 
     // hidden options
@@ -120,6 +125,54 @@ options parse_arguments(int argc, char* argv[])
         res.max_depth = vm["max-depth"].as<unsigned int>();
         std::cout << "Maximal depth was set to " << vm["max-depth"].as<unsigned int>() << std::endl;
     } 
+
+    // handle splitting-heuristic option
+    if (vm.count("splitting-heuristic"))
+    {
+        std::string splitting_heuristic_str = vm["splitting-heuristic"].as<std::string>();
+        auto it = splitting_map.find(splitting_heuristic_str);
+        if(it != splitting_map.end())
+        {
+            res.splitting_h = it->second;
+        }
+        else
+        {
+            throw invalid_splitting_heuristic();
+        }
+    }
+
+    // handle sampling-heuristic option
+    if (vm.count("sampling-heuristic"))
+    {
+        std::string sampling_heuristic_str = vm["sampling-heuristic"].as<std::string>();
+        auto it = sampling_map.find(sampling_heuristic_str);
+        if(it != sampling_map.end())
+        {
+            res.sampling_h = it->second;
+        }
+        else
+        {
+            throw invalid_sampling_heuristic();
+        }
+    }
+
+    if (vm.count("split-samples")) 
+    {
+        res.use_split_samples = true;
+    }
+    else
+    {
+        res.use_split_samples = false;
+    }
+
+    if (vm.count("save-model")) 
+    {
+        res.use_save_model = true;
+    }
+    else
+    {
+        res.use_save_model = false;
+    }
 
     return res;
 }

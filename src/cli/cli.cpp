@@ -16,7 +16,6 @@ int main(int argc, char * argv[])
     try
     {
         user_input = parse_arguments(argc, argv);
-        user_input.use_save_model = true;
     }
     // if --help is passed, abort execution
     catch(const help &e)
@@ -45,10 +44,18 @@ int main(int argc, char * argv[])
 #if EVAL > 0
     auto total_end = std::chrono::steady_clock::now();
     s->t.total += (total_end - total_begin);
-    std::cout << "Execution Time = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.total).count() << "[s]" << std::endl;
-    std::cout << "               = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.total).count() << "[ms]" << std::endl;
+    std::cout << "Execution Time                = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.total).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.total).count() << "[ms]" << std::endl;
+    std::cout << "    Solving Time              = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.solving).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.solving).count() << "[ms]" << std::endl;
+    std::cout << "    Model Saving Time         = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.model_saving).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.model_saving).count() << "[ms]" << std::endl;
+    std::cout << "    Sampling Time             = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.sampling).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.sampling).count() << "[ms]" << std::endl;
+    std::cout << "    Polytope Splitting Time   = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.polytope_splitting).count() << "[s]" << std::endl;
+    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.polytope_splitting).count() << "[ms]" << std::endl;
 #endif
-    s->print_all_areas();
+    // s->print_all_areas();
 
     return 0;
 }

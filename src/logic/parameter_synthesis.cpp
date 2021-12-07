@@ -16,6 +16,9 @@ synthesis::synthesis(options o)
   , solver_neg(ctx)
   , max_depth(o.max_depth)
   , use_save_model(o.use_save_model)
+  , use_split_samples(o.use_split_samples)
+  , sampling_h(o.sampling_h)
+  , splitting_h(o.splitting_h)
 {
     for(auto const &variable_name : o.variable_names)
     {
@@ -93,7 +96,7 @@ void synthesis::execute()
         if (current_polytope->get_depth() >= max_depth) break;
 
         // do sampling
-        current_polytope->sample(center, ctx, formula, variable_names);
+        current_polytope->sample(sampling_h, ctx, formula, variable_names);
 
         // prepare solver
         z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3(ctx, variable_names);
@@ -113,7 +116,7 @@ void synthesis::execute()
             if (unsafe_coordinate_exists)
             {
                 // split current polytope
-                std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(bisect_all);
+                std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(splitting_h, use_split_samples);
 
                 // append new areas to unknown areas
                 synthesis_areas.unknown_areas.insert(synthesis_areas.unknown_areas.end(), std::make_move_iterator(new_polytopes.begin()), std::make_move_iterator(new_polytopes.end()));

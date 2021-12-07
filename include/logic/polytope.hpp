@@ -6,7 +6,9 @@
 #include <deque>
 #include <memory>
 #include <z3++.h>
-#include <unordered_map>
+#include <boost/bimap.hpp>
+#include <boost/assign.hpp>
+
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
@@ -43,10 +45,11 @@ enum splitting_heuristic
     // bisect_single
 };
 
-static std::unordered_map<std::string, splitting_heuristic> const splitting_map =
-{
-    {"bisect_all", splitting_heuristic::bisect_all}
-};
+typedef boost::bimap<std::string, splitting_heuristic> splitting_bimap_type;
+
+const splitting_bimap_type splitting_bimap =
+    boost::assign::list_of< splitting_bimap_type::relation >
+        ("bisect_all", splitting_heuristic::bisect_all);
 
 /** List of heuristics that can be used to take samples within a #polytope . */
 enum sampling_heuristic 
@@ -57,12 +60,19 @@ enum sampling_heuristic
     center
 };
 
-static std::unordered_map<std::string, sampling_heuristic> const sampling_map =
-{
-    // {"vertices_plus", sampling_heuristic::vertices_plus},
-    {"center", sampling_heuristic::center},
-    {"no_sampling", sampling_heuristic::no_sampling}
-};
+typedef boost::bimap<std::string, sampling_heuristic> sampling_bimap_type;
+
+const sampling_bimap_type sampling_bimap =
+    boost::assign::list_of< sampling_bimap_type::relation >
+        ("no_sampling", sampling_heuristic::no_sampling)
+        ("center", sampling_heuristic::center);
+
+// static std::unordered_map<std::string, sampling_heuristic> const sampling_map =
+// {
+//     // {"vertices_plus", sampling_heuristic::vertices_plus},
+//     {"no_sampling", sampling_heuristic::no_sampling},
+//     {"center", sampling_heuristic::center}
+// };
 
 enum area_class
 {

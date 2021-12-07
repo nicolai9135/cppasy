@@ -130,8 +130,8 @@ options parse_arguments(int argc, char* argv[])
     if (vm.count("splitting-heuristic"))
     {
         std::string splitting_heuristic_str = vm["splitting-heuristic"].as<std::string>();
-        auto it = splitting_map.find(splitting_heuristic_str);
-        if(it != splitting_map.end())
+        auto it = splitting_bimap.left.find(splitting_heuristic_str);
+        if(it != splitting_bimap.left.end())
         {
             res.splitting_h = it->second;
         }
@@ -145,8 +145,8 @@ options parse_arguments(int argc, char* argv[])
     if (vm.count("sampling-heuristic"))
     {
         std::string sampling_heuristic_str = vm["sampling-heuristic"].as<std::string>();
-        auto it = sampling_map.find(sampling_heuristic_str);
-        if(it != sampling_map.end())
+        auto it = sampling_bimap.left.find(sampling_heuristic_str);
+        if(it != sampling_bimap.left.end())
         {
             res.sampling_h = it->second;
         }

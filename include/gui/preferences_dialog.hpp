@@ -15,6 +15,10 @@ private:
     std::vector<std::tuple<wxStaticText*, wxTextCtrl*, wxTextCtrl*>> interval_settings;
     wxChoice *x_axis_choice;
     wxChoice *y_axis_choice;
+    wxChoice *splitting_choice;
+    wxChoice *sampling_choice;
+    wxChoice *split_samples_choice;
+    wxChoice *save_model_choice;
     wxTextCtrl *depth_ctrl;
     main_frame *m;
 public:

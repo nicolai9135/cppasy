@@ -40,12 +40,12 @@ std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitt
 void polytope::sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
 {
 #if EVAL > 0
-    auto sampling_begin = std::chrono::steady_clock::now();
+    auto sampling_time_begin = std::chrono::steady_clock::now();
 #endif
     sample_sub(sampling_h, ctx, formula, variable_names);
 #if EVAL > 0
-    auto sampling_end = std::chrono::steady_clock::now();
-    t->sampling += (sampling_end - sampling_begin);
+    auto sampling_time_end = std::chrono::steady_clock::now();
+    eval->sampling_time += (sampling_time_end - sampling_time_begin);
 #endif
 }
 
@@ -84,13 +84,14 @@ bool polytope::coordinate_exists(z3::solver &s, area_class ac, bool use_save_mod
     if (no_sample_exists)
     {
 #if EVAL > 0
-        auto solving_begin = std::chrono::steady_clock::now();
+        eval->solver_count++;
+        auto solving_time_begin = std::chrono::steady_clock::now();
 #endif
         solver_result = s.check();
 #if EVAL > 0
-        auto solving_end = std::chrono::steady_clock::now();
-        t->solving += (solving_end - solving_begin);
-        auto model_saving_begin = std::chrono::steady_clock::now();
+        auto solving_time_end = std::chrono::steady_clock::now();
+        eval->solving_time += (solving_time_end - solving_time_begin);
+        auto model_saving_time_begin = std::chrono::steady_clock::now();
 #endif
         if(use_save_model)
         {
@@ -100,10 +101,20 @@ bool polytope::coordinate_exists(z3::solver &s, area_class ac, bool use_save_mod
             }
         }
 #if EVAL > 0
-        auto model_saving_end = std::chrono::steady_clock::now();
-        t->model_saving += (model_saving_end - model_saving_begin);
+        auto model_saving_time_end = std::chrono::steady_clock::now();
+        eval->model_saving_time += (model_saving_time_end - model_saving_time_begin);
+        if(!solver_result)
+        {
+            eval->solver_count_necessary++;
+        }
 #endif
     }
+#if EVAL > 0
+    else
+    {
+        eval->skip_solver_count++;
+    }
+#endif
 
     return (!no_sample_exists || solver_result);
 }

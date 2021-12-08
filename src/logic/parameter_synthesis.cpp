@@ -43,7 +43,7 @@ synthesis::synthesis(options o)
     // uc.push_back({ctx.real_val("1.5"), ctx.real_val("0.5")});
     // synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, sc, uc)));
 
-    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, &t)));
+    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, &eval)));
 
 
     // read formula and transform vector into expression

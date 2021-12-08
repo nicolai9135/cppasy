@@ -3,7 +3,7 @@
 
 #include "polytope.hpp"
 #include "orthotope.hpp"
-#include "time_measurements.hpp"
+#include "evaluation.hpp"
 #include <string>
 #include <set>
 #include <tuple>
@@ -131,7 +131,9 @@ public:
     void print_all_areas();
     areas *get_synthesis_areas_ptr();
     z3::expr_vector get_variable_names();
-    execution_time t;
+#if EVAL > 0
+    evaluation eval;
+#endif
 };
 
 #endif

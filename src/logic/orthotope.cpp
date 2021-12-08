@@ -4,11 +4,11 @@
 #include <algorithm>
 #include <cmath>
 
-orthotope::orthotope(intervals bs, unsigned int d, execution_time *t_s, std::vector<coordinate> sc, std::vector<coordinate> uc)
+orthotope::orthotope(intervals bs, unsigned int d, evaluation *eval_synthesis, std::vector<coordinate> sc, std::vector<coordinate> uc)
 {
     boundaries = bs;
     depth = d;
-    t = t_s;
+    eval = eval_synthesis;
     safe_coordinates = sc;
     unsafe_coordinates = uc;
 }
@@ -75,7 +75,7 @@ z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vect
 std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic splitting_h, bool use_split_samples)
 {
 #if EVAL > 0
-    auto polytope_splitting_begin = std::chrono::steady_clock::now();
+    auto polytope_splitting_cut_time_begin = std::chrono::steady_clock::now();
 #endif
     cut_list cuts;
     switch (splitting_h)
@@ -87,8 +87,8 @@ std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic s
         break;
     }
 #if EVAL > 0
-    auto polytope_splitting_end = std::chrono::steady_clock::now();
-    t->polytope_splitting += (polytope_splitting_end - polytope_splitting_begin);
+    auto polytope_splitting_cut_time_end = std::chrono::steady_clock::now();
+    eval->polytope_splitting_cut_time += (polytope_splitting_cut_time_end - polytope_splitting_cut_time_begin);
 #endif
     return generate_orthotopes(cuts, use_split_samples);
 }
@@ -96,55 +96,82 @@ std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic s
 std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts, bool use_split_samples)
 {
 #if EVAL > 0
-    auto polytope_splitting_begin = std::chrono::steady_clock::now();
+    auto polytope_splitting_generate_time_begin = std::chrono::steady_clock::now();
+#endif
+#if EVAL > 1
+    auto polytope_splitting_generate_boundaries_time_begin = std::chrono::steady_clock::now();
 #endif
     // generate list of new boundaries through cutting current intervals
     std::vector<intervals> new_boundaries = generate_new_boundaries(cuts);
+#if EVAL > 1
+    auto polytope_splitting_generate_boundaries_time_end = std::chrono::steady_clock::now();
+    eval->polytope_splitting_generate_boundaries_time += (polytope_splitting_generate_boundaries_time_end - polytope_splitting_generate_boundaries_time_begin);
+#endif
+
     std::deque<std::unique_ptr<polytope>> new_orthotopes;
 
     if(use_split_samples)
     {
+#if EVAL > 1
+        auto polytope_splitting_generate_sc_time_begin = std::chrono::steady_clock::now();
+#endif
+#if EVAL > 1
+    auto polytope_splitting_generate_sc_bm_time_begin = std::chrono::steady_clock::now();
+#endif
         std::vector<boost::dynamic_bitset<>> bitmasks_flipped = generate_bitmasks(cuts.size());
         std::vector<boost::dynamic_bitset<>> bitmasks = flip_bitmasks(bitmasks_flipped);
+#if EVAL > 1
+    auto polytope_splitting_generate_sc_bm_time_end = std::chrono::steady_clock::now();
+    eval->polytope_splitting_generate_sc_bm_time += (polytope_splitting_generate_sc_bm_time_end - polytope_splitting_generate_sc_bm_time_begin);
+#endif
         std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, safe_coordinates);
         std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, unsafe_coordinates);
+#if EVAL > 1
+        auto polytope_splitting_generate_sc_time_end = std::chrono::steady_clock::now();
+        eval->polytope_splitting_generate_sc_time += (polytope_splitting_generate_sc_time_end - polytope_splitting_generate_sc_time_begin);
+#endif
+#if EVAL > 1
+        auto polytope_splitting_generate_newq_time_begin = std::chrono::steady_clock::now();
+#endif
         for (unsigned int new_orthotope_index = 0; new_orthotope_index<new_boundaries.size(); new_orthotope_index++)
         {
-            new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, t, new_safe_coordinates[new_orthotope_index], new_unsafe_coordinates[new_orthotope_index])));
+            new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, eval, new_safe_coordinates[new_orthotope_index], new_unsafe_coordinates[new_orthotope_index])));
         }
+#if EVAL > 1
+        auto polytope_splitting_generate_newq_time_end = std::chrono::steady_clock::now();
+        eval->polytope_splitting_generate_newq_time += (polytope_splitting_generate_newq_time_end - polytope_splitting_generate_newq_time_begin);
+#endif
     }
     else
     {
+#if EVAL > 1
+        auto polytope_splitting_generate_newq_time_begin = std::chrono::steady_clock::now();
+#endif
         for (unsigned int new_orthotope_index = 0; new_orthotope_index<new_boundaries.size(); new_orthotope_index++)
         {
-            new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, t)));
+            new_orthotopes.push_back(std::unique_ptr<polytope>(new orthotope(new_boundaries[new_orthotope_index], depth + 1, eval)));
         }
+#if EVAL > 1
+        auto polytope_splitting_generate_newq_time_end = std::chrono::steady_clock::now();
+        eval->polytope_splitting_generate_newq_time += (polytope_splitting_generate_newq_time_end - polytope_splitting_generate_newq_time_begin);
+#endif
     }
 
 #if EVAL > 0
-    auto polytope_splitting_end = std::chrono::steady_clock::now();
-    t->polytope_splitting += (polytope_splitting_end - polytope_splitting_begin);
+    auto polytope_splitting_generate_time_end = std::chrono::steady_clock::now();
+    eval->polytope_splitting_generate_time += (polytope_splitting_generate_time_end - polytope_splitting_generate_time_begin);
 #endif
     return new_orthotopes;
 }
 
 std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped, std::vector<coordinate> &coordinates)
 {
-    // std::cout << "arrived in split coordinates" << std::endl;
     unsigned int cut_count = cuts.size();
     unsigned int new_orthotopes_count = pow(2, cuts.size());
     std::vector<std::vector<coordinate>> res(new_orthotopes_count);
 
     for(const auto &coord : coordinates)
     {
-        /* debug 
-        std::cout << "    coordinate ";
-        for (const auto &val : coord)
-        {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-        */
 
         // orthotope_membership[i] indicats whether coord is within the
         // boundaries of the ith new orthotope 
@@ -156,17 +183,18 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
         // iterate through cuts and filter out unsuitable orthotopes
         for (unsigned int current_cut = 0; current_cut<cut_count; current_cut++)
         {
-            // std::cout << "      cut dimension " << cuts[current_cut].first << std::endl;
-            // std::cout << "        membership before cut " << orthotope_membership << std::endl;
+#if EVAL > 1
+            auto polytope_splitting_generate_sc_simp_time_begin = std::chrono::steady_clock::now();
+#endif
             z3::expr comp_ss = (coord[cuts[current_cut].first] < cuts[current_cut].second);
             z3::expr comp_eq = (coord[cuts[current_cut].first] == cuts[current_cut].second);
             z3::expr simple_comp_ss = comp_ss.simplify();
             z3::expr simple_comp_eq = comp_eq.simplify();
-            // std::cout << "        comp ss " << comp_ss << std::endl;
-            // std::cout << "        simple comp ss " << simple_comp_ss << std::endl;
-            // std::cout << "        comp eq " << comp_eq << std::endl;
-            // std::cout << "        simple comp eq " << simple_comp_eq << std::endl;
-
+#if EVAL > 1
+            auto polytope_splitting_generate_sc_simp_time_end = std::chrono::steady_clock::now();
+            eval->polytope_splitting_generate_sc_simp_time += (polytope_splitting_generate_sc_simp_time_end - polytope_splitting_generate_sc_simp_time_begin);
+            auto polytope_splitting_generate_sc_sanity_time_begin = std::chrono::steady_clock::now();
+#endif
             // sanity check simplification:
             z3::expr comp_ss_neg = (!comp_ss);
             z3::expr comp_eq_neg = (!comp_eq);
@@ -174,28 +202,30 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
             z3::expr simple_comp_eq_neg = comp_eq_neg.simplify();
             if ((simple_comp_ss.is_true() == simple_comp_ss_neg.is_true()) || (simple_comp_eq.is_true() == simple_comp_eq_neg.is_true()))
             {
-                std::cout << "simplify did not work on this coordinate :(. Implement solver handling here!" << std::endl;
+                throw simplification_impossible();
             }
-            
+#if EVAL > 1
+            auto polytope_splitting_generate_sc_sanity_time_end = std::chrono::steady_clock::now();
+            eval->polytope_splitting_generate_sc_sanity_time += (polytope_splitting_generate_sc_sanity_time_end - polytope_splitting_generate_sc_sanity_time_begin);
+            auto polytope_splitting_generate_sc_comp_time_begin = std::chrono::steady_clock::now();
+#endif
             // actual comparison to filter unsuitable orthotopes
             if (simple_comp_ss.is_true())
             {
-                // std::cout << "          is smaller than cut before:  " << orthotope_membership << std::endl;
-                // std::cout << "          is smaller than cut bitmask: " << bitmasks[current_cut] << std::endl;
                 orthotope_membership = (orthotope_membership & bitmasks[current_cut]);
-                // std::cout << "          is smaller than cut after :  " << orthotope_membership << std::endl;
             }
             else if (!simple_comp_eq.is_true())
             {
-                // std::cout << "          is greater than cut before:  " << orthotope_membership << std::endl;
-                // std::cout << "          is greater than cut bitmask: " << bitmasks[current_cut] << std::endl;
                 orthotope_membership = (orthotope_membership & bitmasks_flipped[current_cut]);
-                // std::cout << "          is greater than cut after :  " << orthotope_membership << std::endl;
             }
-            // std::cout << "        membership after cut " << orthotope_membership << std::endl;
+#if EVAL > 1
+            auto polytope_splitting_generate_sc_comp_time_end = std::chrono::steady_clock::now();
+            eval->polytope_splitting_generate_sc_comp_time += (polytope_splitting_generate_sc_comp_time_end - polytope_splitting_generate_sc_comp_time_begin);
+#endif
         }
-        // std::cout << "      final orthotope membership indicator" << orthotope_membership << std::endl;
-
+#if EVAL > 1
+        auto polytope_splitting_generate_sc_insert_time_begin = std::chrono::steady_clock::now();
+#endif
         // Add coordinate to suitbale orthotopes
         for (unsigned int current_orthotope = 0; current_orthotope<new_orthotopes_count; current_orthotope++)
         {
@@ -204,6 +234,10 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
                 res[current_orthotope].push_back(coord);
             }
         }
+#if EVAL > 1
+        auto polytope_splitting_generate_sc_insert_time_end = std::chrono::steady_clock::now();
+        eval->polytope_splitting_generate_sc_insert_time += (polytope_splitting_generate_sc_insert_time_end - polytope_splitting_generate_sc_insert_time_begin);
+#endif
     }
     return res;
 }
@@ -315,38 +349,76 @@ void orthotope::sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::
 
 void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
 {
+
+#if EVAL > 1
+    auto sampling_creation_time_begin = std::chrono::steady_clock::now();
+#endif
     z3::expr_vector dest(ctx);
     for (const auto &boundary : boundaries)
     {
         dest.push_back((boundary.first+boundary.second)/2);
     }
+#if EVAL > 1
+    auto sampling_creation_time_end = std::chrono::steady_clock::now();
+    eval->sampling_creation_time += (sampling_creation_time_end - sampling_creation_time_begin);
+#endif
 
+    // substitution
+#if EVAL > 1
+    auto sampling_substitution_time_begin = std::chrono::steady_clock::now();
+#endif
     z3::expr formula_substituted = formula.substitute(variable_names, dest);
+#if EVAL > 1
+    auto sampling_substitution_time_end = std::chrono::steady_clock::now();
+    eval->sampling_substitution_time += (sampling_substitution_time_end - sampling_substitution_time_begin);
+#endif
+
+    // simplification
+#if EVAL > 1
+    auto sampling_simplification_time_begin = std::chrono::steady_clock::now();
+#endif
     z3::expr simple = formula_substituted.simplify();
+#if EVAL > 1
+    auto sampling_simplification_time_end = std::chrono::steady_clock::now();
+    eval->sampling_simplification_time += (sampling_simplification_time_end - sampling_simplification_time_begin);
+#endif
 
     // sanity check!
+#if EVAL > 1
+    auto sampling_sanity_time_begin = std::chrono::steady_clock::now();
+#endif
     z3::expr formula_neg = (!formula_substituted);
     z3::expr simple_neg = formula_neg.simplify();
     if (simple.is_true() == simple_neg.is_true())
     {
-        std::cout << "this should not happen - sample not simplifyable!" << std::endl;
+        throw simplification_impossible();
     }
-    else // sanity check passed
+#if EVAL > 1
+    auto sampling_sanity_time_end = std::chrono::steady_clock::now();
+    eval->sampling_sanity_time += (sampling_sanity_time_end - sampling_sanity_time_begin);
+#endif
+
+    // insertion
+#if EVAL > 1
+    auto sampling_insertion_time_begin = std::chrono::steady_clock::now();
+#endif
+    coordinate c;
+    for(const auto &val : dest)
     {
-        coordinate c;
-        for(const auto &val : dest)
-        {
-            c.push_back(val);
-        }
-        if (simple.is_true())
-        {
-            safe_coordinates.push_back(c);
-        }
-        else
-        {
-            unsafe_coordinates.push_back(c);
-        }
+        c.push_back(val);
     }
+    if (simple.is_true())
+    {
+        safe_coordinates.push_back(c);
+    }
+    else
+    {
+        unsafe_coordinates.push_back(c);
+    }
+#if EVAL > 1
+    auto sampling_insertion_time_end = std::chrono::steady_clock::now();
+    eval->sampling_insertion_time += (sampling_insertion_time_end - sampling_insertion_time_begin);
+#endif
 }
 
 void orthotope::sample_vertices_plus(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)

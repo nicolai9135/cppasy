@@ -6,6 +6,7 @@ add_executable(cli
     ../logic/parameter_synthesis.cpp
     ../parse/smtlib_parse.cpp
     ../parse/parse_boundaries.cpp
+    ../evaluation/evaluation.cpp
 )
 
 target_link_libraries(cli ${Boost_LIBRARIES})

@@ -38,22 +38,13 @@ int main(int argc, char * argv[])
     synthesis* s = new synthesis(user_input);
 
 #if EVAL > 0
-    auto total_begin = std::chrono::steady_clock::now();
+    auto total_time_begin = std::chrono::steady_clock::now();
 #endif
     s->execute();
 #if EVAL > 0
-    auto total_end = std::chrono::steady_clock::now();
-    s->t.total += (total_end - total_begin);
-    std::cout << "Execution Time                = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.total).count() << "[s]" << std::endl;
-    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.total).count() << "[ms]" << std::endl;
-    std::cout << "    Solving Time              = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.solving).count() << "[s]" << std::endl;
-    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.solving).count() << "[ms]" << std::endl;
-    std::cout << "    Model Saving Time         = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.model_saving).count() << "[s]" << std::endl;
-    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.model_saving).count() << "[ms]" << std::endl;
-    std::cout << "    Sampling Time             = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.sampling).count() << "[s]" << std::endl;
-    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.sampling).count() << "[ms]" << std::endl;
-    std::cout << "    Polytope Splitting Time   = " << std::chrono::duration_cast<std::chrono::seconds>(s->t.polytope_splitting).count() << "[s]" << std::endl;
-    std::cout << "                              = " << std::chrono::duration_cast<std::chrono::milliseconds>(s->t.polytope_splitting).count() << "[ms]" << std::endl;
+    auto total_time_end = std::chrono::steady_clock::now();
+    s->eval.total_time += (total_time_end - total_time_begin);
+    s->eval.print();
 #endif
     // s->print_all_areas();
 

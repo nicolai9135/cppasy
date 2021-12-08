@@ -1,13 +1,14 @@
 #ifndef POLYTOPE
 #define POLYTOPE
 
-#include "time_measurements.hpp"
+#include "evaluation.hpp"
 #include <vector>
 #include <deque>
 #include <memory>
 #include <z3++.h>
 #include <boost/bimap.hpp>
 #include <boost/assign.hpp>
+#include <exception>
 
 
 // For compilers that support precompilation, includes "wx/wx.h".
@@ -29,6 +30,15 @@ using coordinate = std::vector<z3::expr>;
  */
 using interval = std::pair<z3::expr, z3::expr>;
 using intervals = std::vector<interval>;
+
+/** Exception in case simplification is not possible*/
+class simplification_impossible : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Simplification on this input is not possible. Choose 'no_sampling' and turn off 'split_samples'!";
+    }
+};
 
 /**
  * List of heuristics that can be used to split one #polytope into multiple
@@ -130,8 +140,6 @@ protected:
      */
     std::vector<coordinate> unsafe_coordinates;
 
-    execution_time *t;
-
 public:
     virtual ~polytope() = default;
     unsigned int get_depth();
@@ -191,6 +199,10 @@ public:
     void save_model(z3::model m, area_class ac, z3::expr_vector &variable_names);
 
     bool coordinate_exists(z3::solver &s, area_class ac, bool use_save_model, z3::expr_vector &variable_names);
+
+#if EVAL > 0
+    evaluation *eval;
+#endif
 };
 
 #endif

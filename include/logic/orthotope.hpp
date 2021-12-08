@@ -110,11 +110,11 @@ public:
      * Constructor.
      * @param bs ::intervals defining the new #boundaries of the #orthotope
      * @param d depth of the #orthotope to create
-     * @param t pointer to #parameter_synthesis::t
+     * @param eval_synthesis pointer to #parameter_synthesis::eval
      * @param sc #safe_coordinates within the new #boundaries
      * @param uc #unsafe_coordinates within the new #boundaries
      */
-    orthotope(intervals bs, unsigned int d, execution_time *t_s, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
+    orthotope(intervals bs, unsigned int d, evaluation *eval_synthesis, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
 
     intervals get_boundaries();
 };

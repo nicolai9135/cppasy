@@ -8,6 +8,7 @@ add_executable(gui
     ../logic/orthotope.cpp
     ../logic/parameter_synthesis.cpp
     ../parse/smtlib_parse.cpp
+    ../evaluation/evaluation.cpp
 )
 
 target_link_libraries(gui ${Z3_LIBRARIES})

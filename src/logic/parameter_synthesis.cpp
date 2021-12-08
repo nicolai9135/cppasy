@@ -14,6 +14,7 @@ synthesis::synthesis(options o)
   , variable_names(ctx)
   , solver_pos(ctx)
   , solver_neg(ctx)
+  , total_volume(ctx)
   , max_depth(o.max_depth)
   , use_save_model(o.use_save_model)
   , use_split_samples(o.use_split_samples)
@@ -33,18 +34,11 @@ synthesis::synthesis(options o)
         boundaries.push_back(current);
     }
     
-    // use initial boundaries to create first (unknown) orthotope
-    // std::vector<coordinate> sc = {};
-    // std::vector<coordinate> uc = {};
-    // sc.push_back({ctx.real_val("0.5"), ctx.real_val("1")});
-    // sc.push_back({ctx.real_val("0.5"), ctx.real_val("1.5")});
-    // uc.push_back({ctx.real_val("1"), ctx.real_val("0.75")});
-    // uc.push_back({ctx.real_val("0.5"), ctx.real_val("0.5")});
-    // uc.push_back({ctx.real_val("1.5"), ctx.real_val("0.5")});
-    // synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, sc, uc)));
-
     synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, &eval)));
 
+    // get total volume of the inital polytope
+    total_volume = synthesis_areas.unknown_areas.back()->get_volume(ctx);
+    total_volume = total_volume.simplify();
 
     // read formula and transform vector into expression
     if (o.formula_as_file)
@@ -195,4 +189,27 @@ void options::sanity_check_intervals()
             throw not_an_interval();
         }
     }
+}
+
+double synthesis::get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_deque)
+{
+    // get area of polytopes in deque
+    z3::expr sum = ctx.real_val("0");
+    for (const auto &p : my_deque)
+    {
+        sum = sum + p->get_volume(ctx);
+    }
+    z3::expr area_percentage = sum / total_volume;
+    area_percentage = area_percentage.simplify();
+    return area_percentage.as_double();
+}
+
+void synthesis::print_percentages()
+{
+    std::cout << std::endl;
+    std::cout <<   "    Areas" << std::endl;
+    std::cout <<   "    -----" << std::endl;
+    std::cout <<   "      Unknown:  " << get_area_percentage(synthesis_areas.unknown_areas) << "%" << std::endl;
+    std::cout <<   "      Safe:     " << get_area_percentage(synthesis_areas.safe_areas) << "%" << std::endl;
+    std::cout <<   "      Unsafe:   " << get_area_percentage(synthesis_areas.unsafe_areas) << "%" << std::endl;
 }

@@ -47,6 +47,7 @@ plot_frame::plot_frame(options o)
     auto total_time_end = std::chrono::steady_clock::now();
     s.eval.total_time += (total_time_end - total_time_begin);
     s.eval.print();
+    s.print_percentages();
 #endif
 
     // s.print_all_areas();
@@ -237,6 +238,7 @@ void plot_frame::OnResume(wxCommandEvent& event)
 {
     // std::cout << "button clicked" << std::endl;
     s.continue_synthesis(1);
+    s.print_percentages();
     Refresh();
     Update();
     //s.print_all_areas();

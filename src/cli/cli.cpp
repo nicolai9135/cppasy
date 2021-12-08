@@ -45,6 +45,7 @@ int main(int argc, char * argv[])
     auto total_time_end = std::chrono::steady_clock::now();
     s->eval.total_time += (total_time_end - total_time_begin);
     s->eval.print();
+    s->print_percentages();
 #endif
     // s->print_all_areas();
 

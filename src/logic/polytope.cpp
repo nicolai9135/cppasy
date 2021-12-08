@@ -118,3 +118,8 @@ bool polytope::coordinate_exists(z3::solver &s, area_class ac, bool use_save_mod
 
     return (!no_sample_exists || solver_result);
 }
+
+z3::expr polytope::get_volume(z3::context &ctx)
+{
+    return get_volume_sub(ctx);
+}

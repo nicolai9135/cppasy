@@ -38,6 +38,7 @@ private:
     void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
     std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples) override;
     void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names) override;
+    z3::expr get_volume_sub(z3::context &ctx) override;
 
 
     /**

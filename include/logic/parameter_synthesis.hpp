@@ -103,6 +103,8 @@ private:
     z3::solver solver_pos;
     /** Solver to check whether ((not) #formula) has a solution within a given #polytope. */
     z3::solver solver_neg;
+    /** Total volume of the initial intervals */
+    z3::expr total_volume;
     /** Indicates whether a model should be saved */
     bool use_save_model;
     /** Indicates whether the samples should be splitted when the orthotope is */
@@ -113,6 +115,7 @@ private:
     splitting_heuristic splitting_h;
     /** depth up to which the synthesis should be performed */
     unsigned int max_depth;
+
 
 public:
     /** Constructor. Initializes all private members according to #options.*/
@@ -131,9 +134,10 @@ public:
     void print_all_areas();
     areas *get_synthesis_areas_ptr();
     z3::expr_vector get_variable_names();
-#if EVAL > 0
+    double get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_deque);
+    void print_percentages();
+
     evaluation eval;
-#endif
 };
 
 #endif

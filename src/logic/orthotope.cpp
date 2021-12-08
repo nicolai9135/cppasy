@@ -426,6 +426,17 @@ void orthotope::sample_vertices_plus(z3::context &ctx, z3::expr &formula, z3::ex
 
 }
 
+z3::expr orthotope::get_volume_sub(z3::context &ctx)
+{
+    z3::expr res = ctx.real_val("1");
+    for (const auto &interval : boundaries)
+    {
+        z3::expr interval_length = interval.second-interval.first;
+        res = res * interval_length;
+    }
+    return res;
+}
+
 void orthotope::draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis)
 {
     double x_begin_scaled = boundaries[x_axis.index].first.as_double() * x_axis.scalar;

@@ -9,6 +9,8 @@ struct evaluation
     unsigned int solver_count = 0;
     unsigned int solver_count_necessary = 0;
     unsigned int skip_solver_count = 0;
+    unsigned int simplify_sample_count = 0;
+    unsigned int simplify_split_count = 0;
 
     std::chrono::duration<long, std::ratio<1, 1000000000>> total_time = std::chrono::seconds(0);
     std::chrono::duration<long, std::ratio<1, 1000000000>> solving_time = std::chrono::seconds(0);

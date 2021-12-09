@@ -193,6 +193,7 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
 #if EVAL > 1
             auto polytope_splitting_generate_sc_simp_time_end = std::chrono::steady_clock::now();
             eval->polytope_splitting_generate_sc_simp_time += (polytope_splitting_generate_sc_simp_time_end - polytope_splitting_generate_sc_simp_time_begin);
+            eval->simplify_split_count += 2;
 #endif
 #ifdef SAFE
 #if EVAL > 1
@@ -387,6 +388,7 @@ void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vect
 #if EVAL > 1
     auto sampling_simplification_time_end = std::chrono::steady_clock::now();
     eval->sampling_simplification_time += (sampling_simplification_time_end - sampling_simplification_time_begin);
+    eval->simplify_sample_count++;
 #endif
 
     // sanity check!

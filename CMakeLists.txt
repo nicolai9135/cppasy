@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 project(cppasy)
 
 add_compile_definitions(EVAL=2)
+# add_compile_definitions(SAFE)
 
 find_package(Boost 1.75 COMPONENTS program_options REQUIRED) 
 

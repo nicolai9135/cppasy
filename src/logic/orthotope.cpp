@@ -193,6 +193,9 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
 #if EVAL > 1
             auto polytope_splitting_generate_sc_simp_time_end = std::chrono::steady_clock::now();
             eval->polytope_splitting_generate_sc_simp_time += (polytope_splitting_generate_sc_simp_time_end - polytope_splitting_generate_sc_simp_time_begin);
+#endif
+#ifdef SAFE
+#if EVAL > 1
             auto polytope_splitting_generate_sc_sanity_time_begin = std::chrono::steady_clock::now();
 #endif
             // sanity check simplification:
@@ -207,6 +210,9 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
 #if EVAL > 1
             auto polytope_splitting_generate_sc_sanity_time_end = std::chrono::steady_clock::now();
             eval->polytope_splitting_generate_sc_sanity_time += (polytope_splitting_generate_sc_sanity_time_end - polytope_splitting_generate_sc_sanity_time_begin);
+#endif
+#endif
+#if EVAL > 1
             auto polytope_splitting_generate_sc_comp_time_begin = std::chrono::steady_clock::now();
 #endif
             // actual comparison to filter unsuitable orthotopes
@@ -384,6 +390,7 @@ void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vect
 #endif
 
     // sanity check!
+#ifdef SAFE
 #if EVAL > 1
     auto sampling_sanity_time_begin = std::chrono::steady_clock::now();
 #endif
@@ -396,6 +403,7 @@ void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vect
 #if EVAL > 1
     auto sampling_sanity_time_end = std::chrono::steady_clock::now();
     eval->sampling_sanity_time += (sampling_sanity_time_end - sampling_sanity_time_begin);
+#endif
 #endif
 
     // insertion

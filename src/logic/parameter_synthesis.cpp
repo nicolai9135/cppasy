@@ -56,6 +56,9 @@ synthesis::synthesis(options o)
     // initialize solvers
     solver_pos.add(formula);
     solver_neg.add(!formula);
+#ifndef SAFE
+    std::cout << "WARNING: SAFETY DEACTIVATED! THIS MAY LEAD TO INCOORECT OUTPUT! Only deactivate this feature if you know what you are doing. To enable safty, recompile with setting the 'SAFE'-compile-definition" << std::endl << std::endl;
+#endif
 }
 
 void synthesis::print_all_areas()

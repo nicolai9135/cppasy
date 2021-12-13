@@ -36,7 +36,7 @@ private:
     z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) override;
     void print_sub() override;
     void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
-    std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples) override;
+    std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped) override;
     void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples) override;
     z3::expr get_volume_sub(z3::context &ctx) override;
 
@@ -86,12 +86,6 @@ private:
      */
     std::vector<std::vector<coordinate>> split_coordinates(cut_list &cuts, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped, std::vector<coordinate> &coordinates);
 
-    /**
-     * Flips a given vector of bitmasks
-     * @param bitmasks bitmasks to flip
-     * @return flipped bitmasks
-     */
-    std::vector<boost::dynamic_bitset<>> flip_bitmasks(std::vector<boost::dynamic_bitset<>> &bitmasks);
 
     /**
      * Takes the list of cuts and uses uses it to cut #this into 
@@ -99,9 +93,7 @@ private:
      * @param cuts defines which dimensions to cut at which positions
      * @return new #orthotope s 
      */
-    std::deque<std::unique_ptr<polytope>> generate_orthotopes(cut_list cuts, bool use_split_samples);
-
-    std::vector<boost::dynamic_bitset<>> generate_bitmasks(unsigned int cut_count);
+    std::deque<std::unique_ptr<polytope>> generate_orthotopes(cut_list cuts, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped);
 
 public:
     /**

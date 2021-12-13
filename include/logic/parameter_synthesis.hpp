@@ -9,6 +9,7 @@
 #include <tuple>
 #include <exception>
 #include <chrono>
+#include <boost/dynamic_bitset.hpp>
 
 /** Exception in case the a given string is not convertible into a number */
 class not_a_number : public std::exception
@@ -37,6 +38,15 @@ class boundary_missing : public std::exception
     }
 };
 
+/** Exception in case an interval was not fully specified */
+class no_split_samples_support : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "Unfortunately, the splitting heuristic you chose does not support 'split-samples'.";
+    }
+};
+
 /** Struct to store the user's arguments when using the GUI. */
 struct options
 {
@@ -62,6 +72,7 @@ struct options
     sampling_heuristic sampling_h;
     /** splitting heuristic to be used */
     splitting_heuristic splitting_h;
+ 
     /**
      * Performs different checks on #initial_intervals.
      * \throws not_a_number
@@ -115,7 +126,9 @@ private:
     splitting_heuristic splitting_h;
     /** depth up to which the synthesis should be performed */
     unsigned int max_depth;
-
+    /** bitmasks used when splitting coordinates */
+    std::vector<boost::dynamic_bitset<>> bitmasks;
+    std::vector<boost::dynamic_bitset<>> bitmasks_flipped;
 
 public:
     /** Constructor. Initializes all private members according to #options.*/
@@ -136,6 +149,15 @@ public:
     z3::expr_vector get_variable_names();
     double get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_deque);
     void print_percentages();
+
+    /**
+     * Flips a given vector of bitmasks
+     * @param bitmasks bitmasks to flip
+     * @return flipped bitmasks
+     */
+    std::vector<boost::dynamic_bitset<>> flip_bitmasks(std::vector<boost::dynamic_bitset<>> &bitmasks);
+
+    std::vector<boost::dynamic_bitset<>> generate_bitmasks(splitting_heuristic splitting_h);
 
     evaluation eval;
 };

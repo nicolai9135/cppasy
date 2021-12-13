@@ -9,6 +9,7 @@
 #include <boost/bimap.hpp>
 #include <boost/assign.hpp>
 #include <exception>
+#include <boost/dynamic_bitset.hpp>
 
 
 // For compilers that support precompilation, includes "wx/wx.h".
@@ -117,7 +118,7 @@ private:
     virtual z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) = 0;
     virtual void print_sub() = 0;
     virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
-    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples) = 0;
+    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped) = 0;
     virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples) = 0;
     virtual z3::expr get_volume_sub(z3::context &ctx) = 0;
 
@@ -177,7 +178,7 @@ public:
      * provided #splitting_heuristic.
      * @param splitting_h #splitting_heuristic to be used
      */
-    std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h, bool use_split_samples);
+    std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped);
 
     /**
      * Takes samples at different ::coordinate s within the #polytope and stores

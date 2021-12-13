@@ -74,7 +74,7 @@ z3::expr_vector orthotope::get_boundaries_z3_sub(z3::context &ctx, z3::expr_vect
     return res;
 }
 
-std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic splitting_h, bool use_split_samples)
+std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic splitting_h, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped)
 {
 #if EVAL > 0
     auto polytope_splitting_cut_time_begin = std::chrono::steady_clock::now();
@@ -95,10 +95,10 @@ std::deque<std::unique_ptr<polytope>> orthotope::split_sub(splitting_heuristic s
     auto polytope_splitting_cut_time_end = std::chrono::steady_clock::now();
     eval->polytope_splitting_cut_time += (polytope_splitting_cut_time_end - polytope_splitting_cut_time_begin);
 #endif
-    return generate_orthotopes(cuts, use_split_samples);
+    return generate_orthotopes(cuts, use_split_samples, bitmasks, bitmasks_flipped);
 }
 
-std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts, bool use_split_samples)
+std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cuts, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped)
 {
 #if EVAL > 0
     auto polytope_splitting_generate_time_begin = std::chrono::steady_clock::now();
@@ -118,15 +118,6 @@ std::deque<std::unique_ptr<polytope>> orthotope::generate_orthotopes(cut_list cu
     {
 #if EVAL > 1
         auto polytope_splitting_generate_sc_time_begin = std::chrono::steady_clock::now();
-#endif
-#if EVAL > 1
-    auto polytope_splitting_generate_sc_bm_time_begin = std::chrono::steady_clock::now();
-#endif
-        std::vector<boost::dynamic_bitset<>> bitmasks_flipped = generate_bitmasks(cuts.size());
-        std::vector<boost::dynamic_bitset<>> bitmasks = flip_bitmasks(bitmasks_flipped);
-#if EVAL > 1
-    auto polytope_splitting_generate_sc_bm_time_end = std::chrono::steady_clock::now();
-    eval->polytope_splitting_generate_sc_bm_time += (polytope_splitting_generate_sc_bm_time_end - polytope_splitting_generate_sc_bm_time_begin);
 #endif
         std::vector<std::vector<coordinate>> new_safe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, safe_coordinates);
         std::vector<std::vector<coordinate>> new_unsafe_coordinates = split_coordinates(cuts, bitmasks, bitmasks_flipped, unsafe_coordinates);
@@ -174,6 +165,7 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
     unsigned int new_orthotopes_count = pow(2, cuts.size());
     std::vector<std::vector<coordinate>> res(new_orthotopes_count);
 
+    // iterate over given list of coordinates
     for(const auto &coord : coordinates)
     {
 
@@ -253,34 +245,6 @@ std::vector<std::vector<coordinate>> orthotope::split_coordinates(cut_list &cuts
     return res;
 }
 
-std::vector<boost::dynamic_bitset<>> orthotope::flip_bitmasks(std::vector<boost::dynamic_bitset<>> &bitmasks)
-{
-    std::vector<boost::dynamic_bitset<>> res = bitmasks;
-    for(auto &mask : res)
-    {
-        mask.flip();
-    }
-    return res;
-}
-
-std::vector<boost::dynamic_bitset<>> orthotope::generate_bitmasks(unsigned int cut_count)
-{
-    // Magic is happening here...
-    unsigned int new_orthotopes_count = pow(2, cut_count);
-    std::vector<boost::dynamic_bitset<>> bitmasks(cut_count, boost::dynamic_bitset<>(new_orthotopes_count));
-
-    for(long unsigned int i = 0; i < new_orthotopes_count; i++)
-    {
-        boost::dynamic_bitset<> current(cut_count, i);
-        for(long unsigned int j = 0; j < cut_count; j++)
-        {
-            bitmasks[j][i] = current[j];
-        }
-    }
-    std::reverse(bitmasks.begin(), bitmasks.end());
-
-    return bitmasks;
-}
 
 std::vector<intervals> orthotope::generate_new_boundaries(cut_list cuts)
 {

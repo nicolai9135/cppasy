@@ -56,6 +56,10 @@ synthesis::synthesis(options o)
     // initialize solvers
     solver_pos.add(formula);
     solver_neg.add(!formula);
+
+    bitmasks_flipped = generate_bitmasks(splitting_h);
+    bitmasks = flip_bitmasks(bitmasks_flipped);
+
 #ifndef SAFE
     std::cout << "WARNING: SAFETY DEACTIVATED! THIS MAY LEAD TO INCOORECT OUTPUT! Only deactivate this feature if you know what you are doing. To enable safty, recompile with setting the 'SAFE'-compile-definition" << std::endl << std::endl;
 #endif
@@ -113,7 +117,7 @@ void synthesis::execute()
             if (unsafe_coordinate_exists)
             {
                 // split current polytope
-                std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(splitting_h, use_split_samples);
+                std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(splitting_h, use_split_samples, bitmasks, bitmasks_flipped);
 
                 // append new areas to unknown areas
                 synthesis_areas.unknown_areas.insert(synthesis_areas.unknown_areas.end(), std::make_move_iterator(new_polytopes.begin()), std::make_move_iterator(new_polytopes.end()));
@@ -192,6 +196,50 @@ void options::sanity_check_intervals()
             throw not_an_interval();
         }
     }
+}
+
+std::vector<boost::dynamic_bitset<>> synthesis::flip_bitmasks(std::vector<boost::dynamic_bitset<>> &bitmasks)
+{
+    std::vector<boost::dynamic_bitset<>> res = bitmasks;
+    for(auto &mask : res)
+    {
+        mask.flip();
+    }
+    return res;
+}
+
+std::vector<boost::dynamic_bitset<>> synthesis::generate_bitmasks(splitting_heuristic splitting_h)
+{
+    unsigned int cut_count;
+
+    switch (splitting_h)
+    {
+    case splitting_heuristic::bisect_all:
+        cut_count = variable_names.size();
+        break;
+    case splitting_heuristic::bisect_single:
+        cut_count = 1;
+        break;
+    default:
+        throw no_split_samples_support();
+        break;
+    }
+
+    // Magic is happening here...
+    unsigned int new_orthotopes_count = pow(2, cut_count);
+    std::vector<boost::dynamic_bitset<>> bitmasks(cut_count, boost::dynamic_bitset<>(new_orthotopes_count));
+
+    for(long unsigned int i = 0; i < new_orthotopes_count; i++)
+    {
+        boost::dynamic_bitset<> current(cut_count, i);
+        for(long unsigned int j = 0; j < cut_count; j++)
+        {
+            bitmasks[j][i] = current[j];
+        }
+    }
+    std::reverse(bitmasks.begin(), bitmasks.end());
+
+    return bitmasks;
 }
 
 double synthesis::get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_deque)

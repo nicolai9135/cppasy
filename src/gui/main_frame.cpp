@@ -3,6 +3,7 @@
 #include "plot_frame.hpp"
 #include "preferences_dialog.hpp"
 #include "smtlib_parse.hpp"
+#include "polytope.hpp"
 
 main_frame::main_frame()
   : wxFrame(NULL, wxID_ANY, "cppasy", wxDefaultPosition, wxSize(750, 750))
@@ -119,8 +120,8 @@ void main_frame::set_defaults()
     user_settings.x_name = std::get<0>(user_settings.initial_intervals[0]);
     user_settings.y_name = std::get<0>(user_settings.initial_intervals[1]);
 
-    user_settings.splitting_h = bisect_all;
-    user_settings.sampling_h = no_sampling;
+    user_settings.splitting_h = splitting_heuristic::bisect_all;
+    user_settings.sampling_h = sampling_heuristic::no_sampling;
     user_settings.use_save_model = false;
     user_settings.use_split_samples = false;
 }

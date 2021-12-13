@@ -1,8 +1,6 @@
 #ifndef PARAMETER_SYNTHESIS
 #define PARAMETER_SYNTHESIS
 
-#include "polytope.hpp"
-#include "orthotope.hpp"
 #include "evaluation.hpp"
 #include <string>
 #include <set>
@@ -10,6 +8,13 @@
 #include <exception>
 #include <chrono>
 #include <boost/dynamic_bitset.hpp>
+#include <z3++.h>
+
+// forward declarations
+class polytope;
+enum class splitting_heuristic;
+enum class sampling_heuristic;
+
 
 /** Exception in case the a given string is not convertible into a number */
 class not_a_number : public std::exception
@@ -146,8 +151,23 @@ public:
     /** Prints #areas::safe_areas, #areas::unsafe_areas and #areas::unknown_areas into the terminal. */
     void print_all_areas();
     areas *get_synthesis_areas_ptr();
-    z3::expr_vector get_variable_names();
+    // z3::expr_vector get_variable_names();
     double get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_deque);
+
+
+    z3::expr& get_formula();
+    z3::context& get_ctx();
+    const z3::expr_vector& get_variable_names();
+    z3::solver& get_solver_pos();
+    z3::solver& get_solver_neg();
+    bool get_use_save_model();
+    bool get_use_split_samples();
+    sampling_heuristic get_sampling_h();
+    splitting_heuristic get_splitting_h();
+    const std::vector<boost::dynamic_bitset<>>& get_bitmasks();
+    const std::vector<boost::dynamic_bitset<>>& get_bitmasks_flipped();
+
+
     void print_percentages();
 
     /**

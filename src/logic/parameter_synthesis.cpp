@@ -1,4 +1,6 @@
 #include "parameter_synthesis.hpp"
+#include "polytope.hpp"
+#include "orthotope.hpp"
 
 void synthesis::print_deque(std::deque<std::unique_ptr<polytope>> &my_deque)
 {
@@ -34,10 +36,10 @@ synthesis::synthesis(options o)
         boundaries.push_back(current);
     }
     
-    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 0, &eval)));
+    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 0, this)));
 
     // get total volume of the inital polytope
-    total_volume = synthesis_areas.unknown_areas.back()->get_volume(ctx);
+    total_volume = synthesis_areas.unknown_areas.back()->get_volume();
     total_volume = total_volume.simplify();
 
     // read formula and transform vector into expression
@@ -97,14 +99,14 @@ void synthesis::execute()
         if (current_polytope->get_depth() >= max_depth) break;
 
         // do sampling
-        current_polytope->sample(sampling_h, ctx, formula, variable_names, splitting_h, use_split_samples);
+        current_polytope->sample();
 
         // prepare solver
-        z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3(ctx, variable_names);
+        z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3();
         solver_pos.add(boundaries_z3);
 
         // check whether there is a unsafe coordinate whithin the current polytope
-        bool safe_coordinate_exists = current_polytope->coordinate_exists(solver_pos, safe, use_save_model, variable_names);
+        bool safe_coordinate_exists = current_polytope->coordinate_exists(safe);
 
         if (safe_coordinate_exists)
         {
@@ -112,12 +114,12 @@ void synthesis::execute()
             solver_neg.add(boundaries_z3);
 
             // check whether there is a safe coordinate whithin the current polytope
-            bool unsafe_coordinate_exists = current_polytope->coordinate_exists(solver_neg, unsafe, use_save_model, variable_names);
+            bool unsafe_coordinate_exists = current_polytope->coordinate_exists(unsafe);
 
             if (unsafe_coordinate_exists)
             {
                 // split current polytope
-                std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split(splitting_h, use_split_samples, bitmasks, bitmasks_flipped);
+                std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split();
 
                 // append new areas to unknown areas
                 synthesis_areas.unknown_areas.insert(synthesis_areas.unknown_areas.end(), std::make_move_iterator(new_polytopes.begin()), std::make_move_iterator(new_polytopes.end()));
@@ -152,10 +154,10 @@ areas *synthesis::get_synthesis_areas_ptr()
     return &synthesis_areas;
 }
 
-z3::expr_vector synthesis::get_variable_names()
-{
-    return variable_names;
-}
+// z3::expr_vector synthesis::get_variable_names()
+// {
+//     return variable_names;
+// }
 
 void options::sanity_check_intervals()
 {
@@ -248,7 +250,7 @@ double synthesis::get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_
     z3::expr sum = ctx.real_val("0");
     for (const auto &p : my_deque)
     {
-        sum = sum + p->get_volume(ctx);
+        sum = sum + p->get_volume();
     }
     z3::expr area_percentage = sum / total_volume;
     area_percentage = area_percentage.simplify();
@@ -263,4 +265,58 @@ void synthesis::print_percentages()
     std::cout <<   "      Unknown:  " << get_area_percentage(synthesis_areas.unknown_areas) << "%" << std::endl;
     std::cout <<   "      Safe:     " << get_area_percentage(synthesis_areas.safe_areas) << "%" << std::endl;
     std::cout <<   "      Unsafe:   " << get_area_percentage(synthesis_areas.unsafe_areas) << "%" << std::endl;
+}
+
+z3::expr& synthesis::get_formula()
+{
+    return formula;
+}
+
+z3::context& synthesis::get_ctx()
+{
+    return ctx;
+}
+
+const z3::expr_vector& synthesis::get_variable_names()
+{
+    return variable_names;
+}
+
+z3::solver& synthesis::get_solver_pos()
+{
+    return solver_pos;
+}
+z3::solver& synthesis::get_solver_neg()
+{
+    return solver_neg;
+}
+
+bool synthesis::get_use_save_model()
+{
+    return use_save_model;
+}
+
+bool synthesis::get_use_split_samples()
+{
+    return use_split_samples;
+}
+
+sampling_heuristic synthesis::get_sampling_h()
+{
+    return sampling_h;
+}
+
+splitting_heuristic synthesis::get_splitting_h()
+{
+    return splitting_h;
+}
+
+const std::vector<boost::dynamic_bitset<>>& synthesis::get_bitmasks()
+{
+    return bitmasks;
+}
+
+const std::vector<boost::dynamic_bitset<>>& synthesis::get_bitmasks_flipped()
+{
+    return bitmasks_flipped;
 }

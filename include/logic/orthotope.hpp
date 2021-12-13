@@ -33,12 +33,12 @@ private:
     intervals boundaries;
 
     // implementations of virtual #polytope functions
-    z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) override;
+    z3::expr_vector get_boundaries_z3_sub() override;
     void print_sub() override;
     void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
-    std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped) override;
-    void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples) override;
-    z3::expr get_volume_sub(z3::context &ctx) override;
+    std::deque<std::unique_ptr<polytope>> split_sub() override;
+    void sample_sub() override;
+    z3::expr get_volume_sub() override;
 
 
     /** see ::splitting_heuristic for details */ 
@@ -48,10 +48,10 @@ private:
     cut_list split_bisect_single();
 
     /** see ::sampling_heuristic for details */ 
-    void sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, bool use_split_samples);
+    void sample_center();
 
     /** see ::sampling_heuristic for details */ 
-    void sample_clever(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h);
+    void sample_clever();
 
     /**
      * Recursive helper function for #cartesian_product
@@ -84,7 +84,7 @@ private:
      * @param coordinates list of coordinates to be split
      * @return list of coordinates for every new #orthotope
      */
-    std::vector<std::vector<coordinate>> split_coordinates(cut_list &cuts, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped, std::vector<coordinate> &coordinates);
+    std::vector<std::vector<coordinate>> split_coordinates(cut_list &cuts, std::vector<coordinate> &coordinates);
 
 
     /**
@@ -93,18 +93,17 @@ private:
      * @param cuts defines which dimensions to cut at which positions
      * @return new #orthotope s 
      */
-    std::deque<std::unique_ptr<polytope>> generate_orthotopes(cut_list cuts, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped);
+    std::deque<std::unique_ptr<polytope>> generate_orthotopes(cut_list cuts);
 
 public:
     /**
      * Constructor.
      * @param bs ::intervals defining the new #boundaries of the #orthotope
      * @param d depth of the #orthotope to create
-     * @param eval_synthesis pointer to #parameter_synthesis::eval
      * @param sc #safe_coordinates within the new #boundaries
      * @param uc #unsafe_coordinates within the new #boundaries
      */
-    orthotope(intervals bs, unsigned int d, evaluation *eval_synthesis, bool has_s_s = false, bool has_u_s = false, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
+    orthotope(intervals bs, unsigned int d, synthesis *s_in, bool has_s_s = false, bool has_u_s = false, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
     intervals get_boundaries();
 };
 

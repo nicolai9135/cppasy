@@ -11,12 +11,14 @@
 #include <exception>
 #include <boost/dynamic_bitset.hpp>
 
-
 // For compilers that support precompilation, includes "wx/wx.h".
 #include <wx/wxprec.h>
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
 #endif
+
+// forward declaration
+class synthesis;
 
 /**
  * Used to store points \f$x \in \mathbb{R}^n, n \in \mathbb{N}\f$. The 
@@ -54,7 +56,7 @@ class clever_sampling_not_supported : public std::exception
  * List of heuristics that can be used to split one #polytope into multiple
  * new ones.
  */
-enum splitting_heuristic 
+enum class splitting_heuristic 
 {
     /**
      * Bisects all a #polytope in all dimensions. Using this heuristic on an
@@ -73,7 +75,7 @@ const splitting_bimap_type splitting_bimap =
         ("bisect_single", splitting_heuristic::bisect_single);
 
 /** List of heuristics that can be used to take samples within a #polytope . */
-enum sampling_heuristic 
+enum class sampling_heuristic 
 {
     no_sampling,
     center,
@@ -115,12 +117,12 @@ class polytope
 {
 private:
     // used by public wrapper functions
-    virtual z3::expr_vector get_boundaries_z3_sub(z3::context &ctx, z3::expr_vector &variable_names) = 0;
+    virtual z3::expr_vector get_boundaries_z3_sub() = 0;
     virtual void print_sub() = 0;
     virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
-    virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped) = 0;
-    virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples) = 0;
-    virtual z3::expr get_volume_sub(z3::context &ctx) = 0;
+    virtual std::deque<std::unique_ptr<polytope>> split_sub() = 0;
+    virtual void sample_sub() = 0;
+    virtual z3::expr get_volume_sub() = 0;
 
 protected:
     /**
@@ -165,7 +167,7 @@ public:
      * @param variable_names list of names of the free variables
      * @return `z3` representation of the #polytope's boundaries
      */
-    z3::expr_vector get_boundaries_z3(z3::context &ctx, z3::expr_vector &variable_names);
+    z3::expr_vector get_boundaries_z3();
 
     /**
      * Wrapper for #print_sub . 
@@ -178,7 +180,7 @@ public:
      * provided #splitting_heuristic.
      * @param splitting_h #splitting_heuristic to be used
      */
-    std::deque<std::unique_ptr<polytope>> split(splitting_heuristic splitting_h, bool use_split_samples, std::vector<boost::dynamic_bitset<>> &bitmasks, std::vector<boost::dynamic_bitset<>> &bitmasks_flipped);
+    std::deque<std::unique_ptr<polytope>> split();
 
     /**
      * Takes samples at different ::coordinate s within the #polytope and stores
@@ -186,7 +188,7 @@ public:
      * @sideeffect extends #safe_coordinates and/or #unsafe_coordinates
      * @param sampling_h #sampling_heuristic to be used
      */
-    void sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples);
+    void sample();
 
     /**
      * Draws the given #axis on the given device context
@@ -203,13 +205,13 @@ public:
      * @param m model/coordinate to safe
      * @param ac indicator whether the m is a model for solver_pos or solver_neg
      */
-    void save_model(z3::model m, area_class ac, z3::expr_vector &variable_names);
+    void save_model(const z3::model &m, area_class ac);
 
-    bool coordinate_exists(z3::solver &s, area_class ac, bool use_save_model, z3::expr_vector &variable_names);
+    bool coordinate_exists(area_class ac);
 
-    z3::expr get_volume(z3::context &ctx);
+    z3::expr get_volume();
 
-    evaluation *eval;
+    synthesis *s;
 };
 
 #endif

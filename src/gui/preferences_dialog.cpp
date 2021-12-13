@@ -1,5 +1,6 @@
 #include "preferences_dialog.hpp"
 #include "smtlib_parse.hpp"
+#include "polytope.hpp"
 #include <string>
 
 preferences_dialog::preferences_dialog(main_frame *m)

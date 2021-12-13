@@ -34,7 +34,7 @@ synthesis::synthesis(options o)
         boundaries.push_back(current);
     }
     
-    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 1, &eval)));
+    synthesis_areas.unknown_areas.push_back(std::unique_ptr<polytope>(new orthotope(boundaries, 0, &eval)));
 
     // get total volume of the inital polytope
     total_volume = synthesis_areas.unknown_areas.back()->get_volume(ctx);
@@ -93,7 +93,7 @@ void synthesis::execute()
         if (current_polytope->get_depth() >= max_depth) break;
 
         // do sampling
-        current_polytope->sample(sampling_h, ctx, formula, variable_names);
+        current_polytope->sample(sampling_h, ctx, formula, variable_names, splitting_h);
 
         // prepare solver
         z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3(ctx, variable_names);

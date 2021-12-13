@@ -37,24 +37,24 @@ private:
     void print_sub() override;
     void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
     std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples) override;
-    void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names) override;
+    void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h) override;
     z3::expr get_volume_sub(z3::context &ctx) override;
 
 
-    /**
-     * see ::splitting_heuristic for details
-     */ 
+    /** see ::splitting_heuristic for details */ 
     cut_list split_bisect_all();
 
-    /**
-     * see ::sampling_heuristic for details
-     */ 
+    /** see ::splitting_heuristic for details */ 
+    cut_list split_bisect_single();
+
+    /** see ::sampling_heuristic for details */ 
     void sample_vertices_plus(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names);
 
-    /**
-     * see ::sampling_heuristic for details
-     */ 
+    /** see ::sampling_heuristic for details */ 
     void sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names);
+
+    /** see ::sampling_heuristic for details */ 
+    void sample_clever(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h);
 
     /**
      * Recursive helper function for #cartesian_product
@@ -115,8 +115,7 @@ public:
      * @param sc #safe_coordinates within the new #boundaries
      * @param uc #unsafe_coordinates within the new #boundaries
      */
-    orthotope(intervals bs, unsigned int d, evaluation *eval_synthesis, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
-
+    orthotope(intervals bs, unsigned int d, evaluation *eval_synthesis, bool has_s_s = false, bool has_u_s = false, std::vector<coordinate> sc = {}, std::vector<coordinate> uc = {});
     intervals get_boundaries();
 };
 

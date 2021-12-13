@@ -146,6 +146,7 @@ void preferences_dialog::OnSave(wxCommandEvent& event)
     m->user_settings.use_save_model = save_model_choice->GetSelection();
     m->user_settings.use_split_samples = split_samples_choice->GetSelection();
     m->user_settings.sampling_h = sampling_bimap.left.find(sampling_choice->GetString(sampling_choice->GetSelection()).ToStdString())->second;
+    m->user_settings.splitting_h = splitting_bimap.left.find(splitting_choice->GetString(splitting_choice->GetSelection()).ToStdString())->second;
 
     
     Close(true);

@@ -37,12 +37,12 @@ std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitt
     return split_sub(splitting_h, use_split_samples);
 }
 
-void polytope::sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
+void polytope::sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h)
 {
 #if EVAL > 0
     auto sampling_time_begin = std::chrono::steady_clock::now();
 #endif
-    sample_sub(sampling_h, ctx, formula, variable_names);
+    sample_sub(sampling_h, ctx, formula, variable_names, splitting_h);
 #if EVAL > 0
     auto sampling_time_end = std::chrono::steady_clock::now();
     eval->sampling_time += (sampling_time_end - sampling_time_begin);
@@ -69,19 +69,22 @@ void polytope::save_model(z3::model m, area_class ac, z3::expr_vector &variable_
 bool polytope::coordinate_exists(z3::solver &s, area_class ac, bool use_save_model, z3::expr_vector &variable_names)
 {
     bool no_sample_exists;
+    bool no_clever_sample_exists;
     if(ac == area_class::safe)
     {
         no_sample_exists = safe_coordinates.empty();
+        no_clever_sample_exists = !has_safe_sample;
     }
     else
     {
         no_sample_exists = unsafe_coordinates.empty();
+        no_clever_sample_exists = !has_unsafe_sample;
     }
 
     bool solver_result = false;
 
     // use solver if no positive coordinates available
-    if (no_sample_exists)
+    if (no_clever_sample_exists && no_sample_exists)
     {
 #if EVAL > 0
         eval->solver_count++;
@@ -116,7 +119,7 @@ bool polytope::coordinate_exists(z3::solver &s, area_class ac, bool use_save_mod
     }
 #endif
 
-    return (!no_sample_exists || solver_result);
+    return (!no_clever_sample_exists || !no_sample_exists || solver_result);
 }
 
 z3::expr polytope::get_volume(z3::context &ctx)

@@ -19,7 +19,7 @@ options parse_arguments(int argc, char* argv[])
     visible.add_options()
         ("help,h", "produce help message")
         ("boundaries-file", boost::program_options::value<std::string>(), "text file containing a list of all variables and their boundaries. The file should contain lines of the from '<variable-name> <lower-bound> <upper-bound>'")
-        ("max-depth", boost::program_options::value<unsigned int>()->default_value(1), "set maximal depth")
+        ("max-depth", boost::program_options::value<unsigned int>()->default_value(11), "set maximal depth")
         ("splitting-heuristic", boost::program_options::value<std::string>()->default_value("bisect_all"), "Choose a splitting heuristic if you want to use sampling. Options are 'bisect_all'")
         ("sampling-heuristic", boost::program_options::value<std::string>()->default_value("no_sampling"), "Choose a sampling heuristic if you want to use sampling. Options are 'center'")
         ("split-samples", "also split samples when splitting orthotopes")
@@ -32,7 +32,7 @@ options parse_arguments(int argc, char* argv[])
         ("formula-file", boost::program_options::value<std::string>(), ".smt2 file containing the formula")
     ;
 
-    // make formula-file positional (no "--formula-file=" necessary)
+    // make formula-file a positional argument(no "--formula-file=" necessary)
     boost::program_options::positional_options_description p;
     p.add("formula-file", -1);
 

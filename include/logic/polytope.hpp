@@ -40,6 +40,15 @@ class simplification_impossible : public std::exception
     }
 };
 
+/** Exception in case a certain splitting heuristic does not support clever sampling*/
+class clever_sampling_not_supported : public std::exception
+{
+    virtual const char* what() const throw()
+    {
+        return "The splitting heuristic you chose does not support 'clever_sampling'. Chose a different sampling or splitting heuristic!";
+    }
+};
+
 /**
  * List of heuristics that can be used to split one #polytope into multiple
  * new ones.
@@ -51,15 +60,16 @@ enum splitting_heuristic
      * \f$n\f$-dimensional #polytope will thus result in \f$2^n\f$ new 
      * #polytope s.
      */
-    bisect_all
-    // bisect_single
+    bisect_all,
+    bisect_single
 };
 
 typedef boost::bimap<std::string, splitting_heuristic> splitting_bimap_type;
 
 const splitting_bimap_type splitting_bimap =
     boost::assign::list_of< splitting_bimap_type::relation >
-        ("bisect_all", splitting_heuristic::bisect_all);
+        ("bisect_all", splitting_heuristic::bisect_all)
+        ("bisect_single", splitting_heuristic::bisect_single);
 
 /** List of heuristics that can be used to take samples within a #polytope . */
 enum sampling_heuristic 
@@ -67,7 +77,8 @@ enum sampling_heuristic
     /** Samples are taken on the vertices of the #polytope */
     // vertices_plus,
     no_sampling,
-    center
+    center,
+    clever
 };
 
 typedef boost::bimap<std::string, sampling_heuristic> sampling_bimap_type;
@@ -75,7 +86,8 @@ typedef boost::bimap<std::string, sampling_heuristic> sampling_bimap_type;
 const sampling_bimap_type sampling_bimap =
     boost::assign::list_of< sampling_bimap_type::relation >
         ("no_sampling", sampling_heuristic::no_sampling)
-        ("center", sampling_heuristic::center);
+        ("center", sampling_heuristic::center)
+        ("clever", sampling_heuristic::clever);
 
 enum area_class
 {
@@ -108,7 +120,7 @@ private:
     virtual void print_sub() = 0;
     virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
     virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples) = 0;
-    virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names) = 0;
+    virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h) = 0;
     virtual z3::expr get_volume_sub(z3::context &ctx) = 0;
 
 protected:
@@ -126,6 +138,7 @@ protected:
      * ``solver_pos.check()`` on this #polytope is not necessary anymore.
      */
     std::vector<coordinate> safe_coordinates;
+    bool has_safe_sample;
 
     /**
      * Vector of ::coordinate s within the #polytope which have already 
@@ -133,6 +146,7 @@ protected:
      * ``solver_neg.check()`` on this #polytope is not necessary anymore.
      */
     std::vector<coordinate> unsafe_coordinates;
+    bool has_unsafe_sample;
 
 public:
     virtual ~polytope() = default;
@@ -173,7 +187,7 @@ public:
      * @sideeffect extends #safe_coordinates and/or #unsafe_coordinates
      * @param sampling_h #sampling_heuristic to be used
      */
-    void sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names);
+    void sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h);
 
     /**
      * Draws the given #axis on the given device context

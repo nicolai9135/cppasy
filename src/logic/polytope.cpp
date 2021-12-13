@@ -37,12 +37,12 @@ std::deque<std::unique_ptr<polytope>> polytope::split(splitting_heuristic splitt
     return split_sub(splitting_h, use_split_samples);
 }
 
-void polytope::sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h)
+void polytope::sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples)
 {
 #if EVAL > 0
     auto sampling_time_begin = std::chrono::steady_clock::now();
 #endif
-    sample_sub(sampling_h, ctx, formula, variable_names, splitting_h);
+    sample_sub(sampling_h, ctx, formula, variable_names, splitting_h, use_split_samples);
 #if EVAL > 0
     auto sampling_time_end = std::chrono::steady_clock::now();
     eval->sampling_time += (sampling_time_end - sampling_time_begin);

@@ -353,15 +353,12 @@ std::vector<intervals> orthotope::cartesian_product(std::vector<intervals> seque
     return accum;
 }
 
-void orthotope::sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h)
+void orthotope::sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples)
 {
     switch (sampling_h)
     {
-    // case sampling_heuristic::vertices_plus:
-    //     sample_vertices_plus(ctx, formula, variable_names);
-    //     break;
     case sampling_heuristic::center:
-        sample_center(ctx, formula, variable_names);
+        sample_center(ctx, formula, variable_names, use_split_samples);
         break;
     case sampling_heuristic::clever:
         sample_clever(ctx, formula, variable_names, splitting_h);
@@ -371,7 +368,7 @@ void orthotope::sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::
     }
 }
 
-void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
+void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, bool use_split_samples)
 {
 
 #if EVAL > 1
@@ -429,18 +426,34 @@ void orthotope::sample_center(z3::context &ctx, z3::expr &formula, z3::expr_vect
 #if EVAL > 1
     auto sampling_insertion_time_begin = std::chrono::steady_clock::now();
 #endif
-    coordinate c;
-    for(const auto &val : dest)
+    if(use_split_samples)
     {
-        c.push_back(val);
-    }
-    if (simple.is_true())
-    {
-        safe_coordinates.push_back(c);
+        coordinate c;
+        for(const auto &val : dest)
+        {
+            c.push_back(val);
+        }
+        if (simple.is_true())
+        {
+            safe_coordinates.push_back(c);
+        }
+        else
+        {
+            unsafe_coordinates.push_back(c);
+        }
     }
     else
     {
-        unsafe_coordinates.push_back(c);
+        if (simple.is_true())
+        {
+            has_safe_sample = true;
+            has_unsafe_sample = false;
+        }
+        else
+        {
+            has_safe_sample = false;
+            has_unsafe_sample = true;
+        }
     }
 #if EVAL > 1
     auto sampling_insertion_time_end = std::chrono::steady_clock::now();
@@ -532,11 +545,6 @@ void orthotope::sample_clever(z3::context &ctx, z3::expr &formula, z3::expr_vect
         has_safe_sample = false;
         has_unsafe_sample = true;
     }
-}
-
-void orthotope::sample_vertices_plus(z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names)
-{
-
 }
 
 z3::expr orthotope::get_volume_sub(z3::context &ctx)

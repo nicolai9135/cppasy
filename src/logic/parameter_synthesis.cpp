@@ -93,7 +93,7 @@ void synthesis::execute()
         if (current_polytope->get_depth() >= max_depth) break;
 
         // do sampling
-        current_polytope->sample(sampling_h, ctx, formula, variable_names, splitting_h);
+        current_polytope->sample(sampling_h, ctx, formula, variable_names, splitting_h, use_split_samples);
 
         // prepare solver
         z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3(ctx, variable_names);

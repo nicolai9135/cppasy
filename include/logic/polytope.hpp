@@ -74,8 +74,6 @@ const splitting_bimap_type splitting_bimap =
 /** List of heuristics that can be used to take samples within a #polytope . */
 enum sampling_heuristic 
 {
-    /** Samples are taken on the vertices of the #polytope */
-    // vertices_plus,
     no_sampling,
     center,
     clever
@@ -120,7 +118,7 @@ private:
     virtual void print_sub() = 0;
     virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
     virtual std::deque<std::unique_ptr<polytope>> split_sub(splitting_heuristic splitting_h, bool use_split_samples) = 0;
-    virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h) = 0;
+    virtual void sample_sub(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples) = 0;
     virtual z3::expr get_volume_sub(z3::context &ctx) = 0;
 
 protected:
@@ -187,7 +185,7 @@ public:
      * @sideeffect extends #safe_coordinates and/or #unsafe_coordinates
      * @param sampling_h #sampling_heuristic to be used
      */
-    void sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h);
+    void sample(sampling_heuristic sampling_h, z3::context &ctx, z3::expr &formula, z3::expr_vector &variable_names, splitting_heuristic splitting_h, bool use_split_samples);
 
     /**
      * Draws the given #axis on the given device context

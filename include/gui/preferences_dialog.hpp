@@ -19,6 +19,7 @@ private:
     wxChoice *sampling_choice;
     wxChoice *split_samples_choice;
     wxChoice *save_model_choice;
+    wxChoice *execute_2in1_choice;
     wxTextCtrl *depth_ctrl;
     main_frame *m;
 public:

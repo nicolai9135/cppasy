@@ -24,6 +24,7 @@ options parse_arguments(int argc, char* argv[])
         ("sampling-heuristic", boost::program_options::value<std::string>()->default_value("no_sampling"), "Choose a sampling heuristic if you want to use sampling. Options are 'center'")
         ("split-samples", "also split samples when splitting orthotopes")
         ("save-model", "Save models found by solver. Only usefull if split-samples enabled!")
+        ("execute-2in1", "use 2in1 execution to reuse context")
     ;
 
     // hidden options
@@ -172,6 +173,15 @@ options parse_arguments(int argc, char* argv[])
     else
     {
         res.use_save_model = false;
+    }
+
+    if (vm.count("execute-2in1")) 
+    {
+        res.use_execute_2in1 = true;
+    }
+    else
+    {
+        res.use_execute_2in1 = false;
     }
 
     return res;

@@ -20,6 +20,7 @@ synthesis::synthesis(options o)
   , max_depth(o.max_depth)
   , use_save_model(o.use_save_model)
   , use_split_samples(o.use_split_samples)
+  , use_execute_2in1(o.use_execute_2in1)
   , sampling_h(o.sampling_h)
   , splitting_h(o.splitting_h)
 {
@@ -63,6 +64,10 @@ synthesis::synthesis(options o)
     solver_pos.check();
     solver_neg.check();
 
+    // create stamps for incremental solving
+    solver_pos.push();
+    solver_neg.push();
+
     bitmasks_flipped = generate_bitmasks(splitting_h);
     bitmasks = flip_bitmasks(bitmasks_flipped);
 
@@ -89,9 +94,18 @@ void synthesis::print_all_areas()
 
 void synthesis::execute()
 {
-    // create stamps for incremental solving
-    solver_pos.push();
-    solver_neg.push();
+    if(use_execute_2in1)
+    {
+        execute_2in1();
+    }
+    else
+    {
+        execute_default();
+    }
+}
+void synthesis::execute_default()
+{
+    std::cout << "using dafault" << std::endl;
 
     // main loop
     while (!synthesis_areas.unknown_areas.empty())
@@ -146,6 +160,89 @@ void synthesis::execute()
         synthesis_areas.unknown_areas.pop_front();
     }
 }
+
+void synthesis::execute_2in1()
+{
+    unsigned int current_depth;
+    std::cout << "using 2in1" << std::endl;
+
+    // main loop
+    while (!synthesis_areas.unknown_areas.empty())
+    {
+        // get first polytope in queue
+        std::unique_ptr<polytope>& current_polytope = synthesis_areas.unknown_areas.front();
+        current_depth = current_polytope->get_depth();
+
+        // end calculation if maximal depth is reached
+        if (current_depth >= max_depth) break;
+
+        // extra pop necessary when switching from odds to evens (note that an even ot odd switch is impossible because evens are always inserted at the end)
+        if (current_depth%2 == 0)
+        {
+            solver_neg.pop();
+            solver_pos.pop();
+        }
+
+        // do sampling
+        current_polytope->sample();
+
+        // prepare solver
+        z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3();
+        solver_pos.push();
+        solver_pos.add(boundaries_z3);
+        solver_neg.push();
+        solver_neg.add(boundaries_z3);
+
+        // check whether there is a unsafe coordinate whithin the current polytope
+        bool safe_coordinate_exists = current_polytope->coordinate_exists(safe);
+
+        if (safe_coordinate_exists)
+        {
+            // add boundaries of current box to neg solver
+
+            // check whether there is a safe coordinate whithin the current polytope
+            bool unsafe_coordinate_exists = current_polytope->coordinate_exists(unsafe);
+
+            if (unsafe_coordinate_exists)
+            {
+                // split current polytope
+                std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split();
+
+                // append new areas to unknown areas
+                if (current_depth%3 == 0)
+                {
+                    // delete processed element
+                    synthesis_areas.unknown_areas.pop_front();
+                    synthesis_areas.unknown_areas.insert(synthesis_areas.unknown_areas.begin(), std::make_move_iterator(new_polytopes.begin()), std::make_move_iterator(new_polytopes.end()));
+                }
+                else
+                {
+                    // delete processed element
+                    synthesis_areas.unknown_areas.pop_front();
+                    synthesis_areas.unknown_areas.insert(synthesis_areas.unknown_areas.end(), std::make_move_iterator(new_polytopes.begin()), std::make_move_iterator(new_polytopes.end()));
+                }
+            }
+            else
+            {
+                synthesis_areas.safe_areas.push_back(std::move(current_polytope));
+                // delete processed element
+                synthesis_areas.unknown_areas.pop_front();
+            }
+        }
+        else
+        {
+            synthesis_areas.unsafe_areas.push_back(std::move(current_polytope));
+            // delete processed element
+            synthesis_areas.unknown_areas.pop_front();
+        }
+        if (!(current_depth%3 == 0))
+        {
+            solver_neg.pop();
+            solver_pos.pop();
+        }
+    }
+}
+
 
 void synthesis::continue_synthesis(unsigned int increment)
 {

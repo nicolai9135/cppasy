@@ -33,7 +33,7 @@ preferences_dialog::preferences_dialog(main_frame *m)
     }
 
     // x by 2 sizer for all other options
-    wxFlexGridSizer *axis_and_depth = new wxFlexGridSizer(7, 2, 9, 25);
+    wxFlexGridSizer *axis_and_depth = new wxFlexGridSizer(8, 2, 9, 25);
 
     // print axis choice
     wxArrayString wx_variable_choices;
@@ -96,6 +96,12 @@ preferences_dialog::preferences_dialog(main_frame *m)
     axis_and_depth->Add(new wxStaticText(this, -1, "Save Model"));
     axis_and_depth->Add(save_model_choice);
 
+    // execute-2in1 choice
+    execute_2in1_choice = new wxChoice(this, -1, wxDefaultPosition, wxDefaultSize, wx_no_yes_choices);
+    execute_2in1_choice->SetSelection(m->user_settings.use_execute_2in1);
+    axis_and_depth->Add(new wxStaticText(this, -1, "Execute 2 in 1"));
+    axis_and_depth->Add(execute_2in1_choice);
+
     // define save button
     wxButton *save = new wxButton(panel, wxID_SAVE, _T("Save"));
     Bind(wxEVT_BUTTON, &preferences_dialog::OnSave, this);
@@ -146,9 +152,9 @@ void preferences_dialog::OnSave(wxCommandEvent& event)
     m->user_settings.y_name = std::get<0>(m->user_settings.initial_intervals[y_axis_choice->GetSelection()]);
     m->user_settings.use_save_model = save_model_choice->GetSelection();
     m->user_settings.use_split_samples = split_samples_choice->GetSelection();
+    m->user_settings.use_execute_2in1 = execute_2in1_choice->GetSelection();
     m->user_settings.sampling_h = sampling_bimap.left.find(sampling_choice->GetString(sampling_choice->GetSelection()).ToStdString())->second;
     m->user_settings.splitting_h = splitting_bimap.left.find(splitting_choice->GetString(splitting_choice->GetSelection()).ToStdString())->second;
-
     
     Close(true);
 }

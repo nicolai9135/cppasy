@@ -124,4 +124,5 @@ void main_frame::set_defaults()
     user_settings.sampling_h = sampling_heuristic::no_sampling;
     user_settings.use_save_model = false;
     user_settings.use_split_samples = false;
+    user_settings.use_execute_2in1 = false;
 }

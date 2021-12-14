@@ -73,6 +73,7 @@ struct options
     bool use_save_model;
     /** Indicates whether the samples should be splitted when the orthotope is */
     bool use_split_samples;
+    bool use_execute_2in1;
     /** sampling heuristic to be used */
     sampling_heuristic sampling_h;
     /** splitting heuristic to be used */
@@ -125,6 +126,7 @@ private:
     bool use_save_model;
     /** Indicates whether the samples should be splitted when the orthotope is */
     bool use_split_samples;
+    bool use_execute_2in1;
     /** sampling heuristic to be used */
     sampling_heuristic sampling_h;
     /** splitting heuristic to be used */
@@ -138,6 +140,7 @@ private:
 public:
     /** Constructor. Initializes all private members according to #options.*/
     synthesis(options o);
+    void execute();
     /**
      * Central function of this tool, performs parameter synthesis.
      * @sideeffect repeatedly pops an element from #areas::unknown_areas and (1)
@@ -145,7 +148,12 @@ public:
      * #areas::unsafe_areas OR (3) splits it and appends the new areas to 
      * #areas::unknown_areas again.
      */
-    void execute();
+    void execute_default();
+    /** 
+     * similar to #execute() but uses incremental solving to solve 2 depths 
+     * within the same context
+     */
+    void execute_2in1();
     /** Continues synthesis until through incrementing #max_depth */
     void continue_synthesis(unsigned int increment);
     /** Prints #areas::safe_areas, #areas::unsafe_areas and #areas::unknown_areas into the terminal. */

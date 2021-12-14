@@ -59,6 +59,10 @@ synthesis::synthesis(options o)
     solver_pos.add(formula);
     solver_neg.add(!formula);
 
+    // do initial check to make use of learned lemmas (-> incremental solving)
+    solver_pos.check();
+    solver_neg.check();
+
     bitmasks_flipped = generate_bitmasks(splitting_h);
     bitmasks = flip_bitmasks(bitmasks_flipped);
 

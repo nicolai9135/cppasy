@@ -14,6 +14,7 @@ synthesis::synthesis(options o)
   : formula(ctx)
   , formula_neg(ctx)
   , variable_names(ctx)
+  , boundaries_assumptions(ctx)
   , solver_pos(ctx)
   , solver_neg(ctx)
   , total_volume(ctx)
@@ -63,6 +64,9 @@ synthesis::synthesis(options o)
     solver_pos.check();
     solver_neg.check();
 
+    // init boundaries assumption
+    boundaries_assumptions.push_back(ctx.bool_const("boundaries_assumption"));
+
     bitmasks_flipped = generate_bitmasks(splitting_h);
     bitmasks = flip_bitmasks(bitmasks_flipped);
 
@@ -107,7 +111,7 @@ void synthesis::execute()
 
         // prepare solver
         z3::expr_vector boundaries_z3 = current_polytope->get_boundaries_z3();
-        solver_pos.add(boundaries_z3);
+        solver_pos.add(implies(boundaries_assumptions.back(), mk_and(boundaries_z3)));
 
         // check whether there is a unsafe coordinate whithin the current polytope
         bool safe_coordinate_exists = current_polytope->coordinate_exists(safe);
@@ -115,7 +119,7 @@ void synthesis::execute()
         if (safe_coordinate_exists)
         {
             // add boundaries of current box to neg solver
-            solver_neg.add(boundaries_z3);
+            solver_neg.add(implies(boundaries_assumptions.back(), mk_and(boundaries_z3)));
 
             // check whether there is a safe coordinate whithin the current polytope
             bool unsafe_coordinate_exists = current_polytope->coordinate_exists(unsafe);
@@ -153,10 +157,6 @@ void synthesis::continue_synthesis(unsigned int increment)
     execute();
 }
 
-areas *synthesis::get_synthesis_areas_ptr()
-{
-    return &synthesis_areas;
-}
 
 // z3::expr_vector synthesis::get_variable_names()
 // {
@@ -271,6 +271,11 @@ void synthesis::print_percentages()
     std::cout <<   "      Unsafe:   " << get_area_percentage(synthesis_areas.unsafe_areas) << "%" << std::endl;
 }
 
+areas *synthesis::get_synthesis_areas_ptr()
+{
+    return &synthesis_areas;
+}
+
 z3::expr& synthesis::get_formula()
 {
     return formula;
@@ -284,6 +289,11 @@ z3::context& synthesis::get_ctx()
 const z3::expr_vector& synthesis::get_variable_names()
 {
     return variable_names;
+}
+
+z3::expr_vector& synthesis::get_boundaries_assumptions()
+{
+    return boundaries_assumptions;
 }
 
 z3::solver& synthesis::get_solver_pos()

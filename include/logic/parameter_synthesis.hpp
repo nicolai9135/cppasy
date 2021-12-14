@@ -115,6 +115,8 @@ private:
     z3::expr formula_neg;
     /** Names of the variables. Necessary to refine boundaries. */
     z3::expr_vector variable_names;
+    /** Assumption to do incremental solving */
+    z3::expr_vector boundaries_assumptions;
     /** Solver to check whether #formula has a solution within a given #polytope. */
     z3::solver solver_pos;
     /** Solver to check whether ((not) #formula) has a solution within a given #polytope. */
@@ -150,14 +152,15 @@ public:
     void continue_synthesis(unsigned int increment);
     /** Prints #areas::safe_areas, #areas::unsafe_areas and #areas::unknown_areas into the terminal. */
     void print_all_areas();
-    areas *get_synthesis_areas_ptr();
     // z3::expr_vector get_variable_names();
     double get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_deque);
 
 
+    areas *get_synthesis_areas_ptr();
     z3::expr& get_formula();
     z3::context& get_ctx();
     const z3::expr_vector& get_variable_names();
+    z3::expr_vector& get_boundaries_assumptions();
     z3::solver& get_solver_pos();
     z3::solver& get_solver_neg();
     bool get_use_save_model();

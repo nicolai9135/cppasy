@@ -94,7 +94,7 @@ bool polytope::coordinate_exists(area_class ac)
         s->eval.solver_count++;
         auto solving_time_begin = std::chrono::steady_clock::now();
 #endif
-        solver_result = solv->check();
+        solver_result = solv->check(s->get_boundaries_assumptions());
 #if EVAL > 0
         auto solving_time_end = std::chrono::steady_clock::now();
         s->eval.solving_time += (solving_time_end - solving_time_begin);

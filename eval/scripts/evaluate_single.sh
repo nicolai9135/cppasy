@@ -102,8 +102,3 @@ to_eval="$to_eval$split_samples"
 
 echo "$to_eval"
 eval "$to_eval"
-
-output_file_name=$(printf "%02d" $2)
-echo output file name:
-echo "$output_file_name"
-

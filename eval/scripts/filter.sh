@@ -3,7 +3,11 @@
 directory_recursion () {
     # pwd; echo contains ; ls *.smt2 | wc -l; echo .smt2 files
     # pwd
+    pwd
     ls *.smt2 2>/dev/null | wc -l
+
+    /home/nicolai/RWTH/master/master_thesis/cppasy/eval/scripts/filter_folder.sh
+    
     for f in *; do
         if [ -d "$f" ]; then
             cd $f

@@ -82,7 +82,7 @@ save_model_index=$5
 execute_2in1_index=$6
 split_samples_index=$7
 
-to_eval="./cli"
+to_eval="/home/nicolai/RWTH/master/master_thesis/cppasy/eval/scripts/cli"
 to_eval="$to_eval $1 --max-depth=$2"
 
 set_splitting_heuristic $splitting_heuristic_index

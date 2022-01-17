@@ -23,6 +23,7 @@ synthesis::synthesis(options o)
   , use_execute_2in1(o.use_execute_2in1)
   , sampling_h(o.sampling_h)
   , splitting_h(o.splitting_h)
+  , initial_intervals(o.initial_intervals)
 {
     for(auto const &variable_name : o.variable_names)
     {
@@ -71,13 +72,14 @@ synthesis::synthesis(options o)
     bitmasks_flipped = generate_bitmasks(splitting_h);
     bitmasks = flip_bitmasks(bitmasks_flipped);
 
-#ifndef SAFE
-    std::cout << "WARNING: SAFETY DEACTIVATED! THIS MAY LEAD TO INCOORECT OUTPUT! Only deactivate this feature if you know what you are doing. To enable safty, recompile with setting the 'SAFE'-compile-definition" << std::endl << std::endl;
-#endif
+// #ifndef SAFE
+//     std::cout << "WARNING: SAFETY DEACTIVATED! THIS MAY LEAD TO INCOORECT OUTPUT! Only deactivate this feature if you know what you are doing. To enable safty, recompile with setting the 'SAFE'-compile-definition" << std::endl << std::endl;
+// #endif
 }
 
 void synthesis::print_all_areas()
 {
+    std::cout << std::endl;
     // print queues
     std::cout << "SAFE areas" << std::endl;
     std::cout << "==========" << std::endl;
@@ -105,8 +107,6 @@ void synthesis::execute()
 }
 void synthesis::execute_default()
 {
-    std::cout << "using dafault" << std::endl;
-
     // main loop
     while (!synthesis_areas.unknown_areas.empty())
     {
@@ -114,7 +114,7 @@ void synthesis::execute_default()
         std::unique_ptr<polytope>& current_polytope = synthesis_areas.unknown_areas.front();
 
         // end calculation if maximal depth is reached
-        if (current_polytope->get_depth() >= max_depth) break;
+        if (current_polytope->get_depth() > max_depth) break;
 
         // do sampling
         current_polytope->sample();
@@ -250,6 +250,25 @@ void synthesis::continue_synthesis(unsigned int increment)
     execute();
 }
 
+bool synthesis::splits_needed()
+{
+    max_depth = 1;
+    use_save_model = false;
+    use_split_samples = false;
+    use_execute_2in1 = false;
+    splitting_h = splitting_heuristic::bisect_all;
+    sampling_h = sampling_heuristic::no_sampling;
+
+    execute();
+
+    if (synthesis_areas.unknown_areas.empty())
+    {
+        return false;
+    }
+
+    return true;
+}
+
 areas *synthesis::get_synthesis_areas_ptr()
 {
     return &synthesis_areas;
@@ -363,9 +382,40 @@ void synthesis::print_percentages()
     std::cout << std::endl;
     std::cout <<   "    Areas" << std::endl;
     std::cout <<   "    -----" << std::endl;
-    std::cout <<   "      Unknown:  " << get_area_percentage(synthesis_areas.unknown_areas) << "%" << std::endl;
-    std::cout <<   "      Safe:     " << get_area_percentage(synthesis_areas.safe_areas) << "%" << std::endl;
-    std::cout <<   "      Unsafe:   " << get_area_percentage(synthesis_areas.unsafe_areas) << "%" << std::endl;
+    std::cout <<   "      Unknown:  " << get_area_percentage(synthesis_areas.unknown_areas) << std::endl;
+    std::cout <<   "      Safe:     " << get_area_percentage(synthesis_areas.safe_areas) << std::endl;
+    std::cout <<   "      Unsafe:   " << get_area_percentage(synthesis_areas.unsafe_areas) << std::endl;
+}
+
+void synthesis::print_percentages_parseable()
+{
+    std::cout << std::endl;
+    std::cout <<   "areas_unknown   " << get_area_percentage(synthesis_areas.unknown_areas) << std::endl;
+    std::cout <<   "areas_safe      " << get_area_percentage(synthesis_areas.safe_areas) << std::endl;
+    std::cout <<   "areas_unsafe    " << get_area_percentage(synthesis_areas.unsafe_areas) << std::endl;
+}
+
+void synthesis::print_options()
+{
+    std::cout << std::endl;
+    std::cout <<   "Options" << std::endl;
+    std::cout <<   "    Splitting Heuristic " << splitting_bimap.right.find(splitting_h)->second << std::endl;
+    std::cout <<   "    Sampling Heuristic  " << sampling_bimap.right.find(sampling_h)->second << std::endl;
+    std::cout <<   "    Save Model          " << use_save_model << std::endl;
+    std::cout <<   "    Split Samples       " << use_split_samples << std::endl;
+    std::cout <<   "    Execute 2-in-1      " << use_execute_2in1 << std::endl;
+
+    std::cout <<   "    Initial intervals   " << std::endl;
+    for(const auto &interval_string : initial_intervals)
+    {
+        std::string name = std::get<0>(interval_string);
+        std::cout <<   "      * Variable Name   " << name << std::endl;
+        std::string lower = std::get<1>(interval_string);
+        std::cout <<   "        - Lower         | " << lower << std::endl;
+        std::string upper = std::get<2>(interval_string);
+        std::cout <<   "        - Upper         | " << upper << std::endl;
+    }
+
 }
 
 z3::expr& synthesis::get_formula()

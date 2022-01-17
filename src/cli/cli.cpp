@@ -37,6 +37,14 @@ int main(int argc, char * argv[])
 
     synthesis* s = new synthesis(user_input);
 
+    if(user_input.splits_needed)
+    {
+        std::cout << s->splits_needed();
+        // s->print_options();
+        // s->print_all_areas();
+        return 0;
+    }
+
 #if EVAL > 0
     auto total_time_begin = std::chrono::steady_clock::now();
 #endif
@@ -44,8 +52,9 @@ int main(int argc, char * argv[])
 #if EVAL > 0
     auto total_time_end = std::chrono::steady_clock::now();
     s->eval.total_time += (total_time_end - total_time_begin);
-    s->eval.print();
-    s->print_percentages();
+    s->eval.print_parseable();
+    s->print_percentages_parseable();
+    s->print_options();
 #endif
     // s->print_all_areas();
 

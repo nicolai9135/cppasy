@@ -6,6 +6,7 @@
 #include <boost/program_options.hpp>
 #include <iostream>
 #include <filesystem>
+#include <string>
 
 options parse_arguments(int argc, char* argv[])
 {
@@ -20,11 +21,13 @@ options parse_arguments(int argc, char* argv[])
         ("help,h", "produce help message")
         ("boundaries-file", boost::program_options::value<std::string>(), "text file containing a list of all variables and their boundaries. The file should contain lines of the from '<variable-name> <lower-bound> <upper-bound>'")
         ("max-depth", boost::program_options::value<unsigned int>()->default_value(11), "set maximal depth")
+        ("default-boundaries", boost::program_options::value<unsigned int>()->default_value(10), "set default 'radius' of the inital orthotope")
         ("splitting-heuristic", boost::program_options::value<std::string>()->default_value("bisect_all"), "Choose a splitting heuristic if you want to use sampling. Options are 'bisect_all'")
         ("sampling-heuristic", boost::program_options::value<std::string>()->default_value("no_sampling"), "Choose a sampling heuristic if you want to use sampling. Options are 'center'")
         ("split-samples", "also split samples when splitting orthotopes")
         ("save-model", "Save models found by solver. Only usefull if split-samples enabled!")
         ("execute-2in1", "use 2in1 execution to reuse context")
+        ("splits-needed", "returns true if splits are needed to process this formula.")
     ;
 
     // hidden options
@@ -111,12 +114,22 @@ options parse_arguments(int argc, char* argv[])
         res.sanity_check_intervals();
     }
     // set boundaries to default values
-    else
+    else if (vm.count("default-boundaries")) 
     {
         res.initial_intervals = {};
         for(const auto &variable_name : res.variable_names)
         {
-            res.initial_intervals.push_back({variable_name, "-1", "2"});
+            unsigned int default_boundary = vm["default-boundaries"].as<unsigned int>();
+            std::string default_boundary_string = std::to_string(default_boundary);
+            res.initial_intervals.push_back({variable_name, "-" + default_boundary_string, default_boundary_string });
+        }
+    }
+    else 
+    {
+        res.initial_intervals = {};
+        for(const auto &variable_name : res.variable_names)
+        {
+            res.initial_intervals.push_back({variable_name, "-1", "1"});
         }
     }
 
@@ -124,7 +137,6 @@ options parse_arguments(int argc, char* argv[])
     if (vm.count("max-depth")) 
     {
         res.max_depth = vm["max-depth"].as<unsigned int>();
-        std::cout << "Maximal depth was set to " << vm["max-depth"].as<unsigned int>() << std::endl;
     } 
 
     // handle splitting-heuristic option
@@ -182,6 +194,11 @@ options parse_arguments(int argc, char* argv[])
     else
     {
         res.use_execute_2in1 = false;
+    }
+
+    if (vm.count("splits-needed")) 
+    {
+        res.splits_needed = true;
     }
 
     return res;

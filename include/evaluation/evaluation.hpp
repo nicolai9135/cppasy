@@ -21,6 +21,7 @@ struct evaluation
 
 
     void print();
+    void print_parseable();
 #endif
 #if EVAL > 1
     std::chrono::duration<long, std::ratio<1, 1000000000>> sampling_creation_time = std::chrono::seconds(0);

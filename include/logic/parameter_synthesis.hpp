@@ -74,6 +74,7 @@ struct options
     /** Indicates whether the samples should be splitted when the orthotope is */
     bool use_split_samples;
     bool use_execute_2in1;
+    bool splits_needed;
     /** sampling heuristic to be used */
     sampling_heuristic sampling_h;
     /** splitting heuristic to be used */
@@ -136,6 +137,8 @@ private:
     /** bitmasks used when splitting coordinates */
     std::vector<boost::dynamic_bitset<>> bitmasks;
     std::vector<boost::dynamic_bitset<>> bitmasks_flipped;
+    /** 3-tuple (variable, begin, end) with initial intervals */
+    std::vector<std::tuple<std::string, std::string, std::string>> initial_intervals;
 
 public:
     /** Constructor. Initializes all private members according to #options.*/
@@ -162,6 +165,7 @@ public:
     // z3::expr_vector get_variable_names();
     double get_area_percentage(std::deque<std::unique_ptr<polytope>> &my_deque);
 
+    bool splits_needed();
 
     z3::expr& get_formula();
     z3::context& get_ctx();
@@ -177,6 +181,8 @@ public:
 
 
     void print_percentages();
+    void print_percentages_parseable();
+    void print_options();
 
     /**
      * Flips a given vector of bitmasks

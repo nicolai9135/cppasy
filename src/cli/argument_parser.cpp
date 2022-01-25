@@ -28,7 +28,6 @@ options parse_arguments(int argc, char* argv[])
         ("save-model", "Save models found by solver. Only usefull if split-samples enabled!")
         ("execute-2in1", "use 2in1 execution to reuse context")
         ("splits-needed", "returns true if splits are needed to process this formula.")
-        ("print-orthotopes", "prints all (SAFE, UNSAFE and UNKNOWN) resulting orthotopes")
     ;
 
     // hidden options
@@ -200,11 +199,6 @@ options parse_arguments(int argc, char* argv[])
     if (vm.count("splits-needed")) 
     {
         res.splits_needed = true;
-    }
-
-    if (vm.count("print-orthotopes")) 
-    {
-        res.print_orthotopes = true;
     }
 
     return res;

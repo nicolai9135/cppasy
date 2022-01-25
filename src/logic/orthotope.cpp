@@ -277,7 +277,7 @@ cut_list orthotope::split_bisect_all()
 {
     cut_list cuts;
     // bisect all intervals
-    for(unsigned int dim = 0; dim < boundaries.size(); dim++)
+    for(unsigned int dim; dim < boundaries.size(); dim++)
     {
         z3::expr mid = (boundaries[dim].first + boundaries[dim].second)/2;
         cuts.push_back({dim, mid.simplify()});
@@ -524,4 +524,22 @@ z3::expr orthotope::get_volume_sub()
         res = res * interval_length;
     }
     return res;
+}
+
+void orthotope::draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis)
+{
+    double x_begin_scaled = boundaries[x_axis.index].first.as_double() * x_axis.scalar;
+    double x_end_scaled = boundaries[x_axis.index].second.as_double() * x_axis.scalar;
+    double y_begin_scaled = boundaries[y_axis.index].first.as_double() * y_axis.scalar;
+    double y_end_scaled = boundaries[y_axis.index].second.as_double() * y_axis.scalar;
+
+    const wxRealPoint top_left_real = wxRealPoint(x_begin_scaled, -y_end_scaled);
+    const wxRealPoint bottom_right_real = wxRealPoint(x_end_scaled, -y_begin_scaled);
+
+    const wxPoint top_left = wxPoint(top_left_real);
+    const wxPoint bottom_right = wxPoint(bottom_right_real);
+
+    const wxRect rectangle = wxRect(top_left, bottom_right);
+
+    dc->DrawRectangle(rectangle);
 }

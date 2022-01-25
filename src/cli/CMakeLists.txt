@@ -11,6 +11,7 @@ add_executable(cli
 
 target_link_libraries(cli ${Boost_LIBRARIES})
 target_link_libraries(cli ${Z3_LIBRARIES})
+target_link_libraries(cli ${wxWidgets_LIBRARIES})
 
 set_property(TARGET cli PROPERTY CXX_STANDARD 20)
 

@@ -75,7 +75,6 @@ struct options
     bool use_split_samples;
     bool use_execute_2in1;
     bool splits_needed;
-    bool print_orthotopes;
     /** sampling heuristic to be used */
     sampling_heuristic sampling_h;
     /** splitting heuristic to be used */

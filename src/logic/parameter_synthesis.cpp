@@ -25,6 +25,13 @@ synthesis::synthesis(options o)
   , splitting_h(o.splitting_h)
   , initial_intervals(o.initial_intervals)
 {
+    // adapt depth if bisect single is chosen
+    if(o.splitting_h == splitting_heuristic::bisect_single)
+    {
+        max_depth *= o.variable_names.size();
+    }
+
+
     for(auto const &variable_name : o.variable_names)
     {
         variable_names.push_back(ctx.real_const(variable_name.c_str()));
@@ -114,7 +121,7 @@ void synthesis::execute_default()
         std::unique_ptr<polytope>& current_polytope = synthesis_areas.unknown_areas.front();
 
         // end calculation if maximal depth is reached
-        if (current_polytope->get_depth() > max_depth) break;
+        if (current_polytope->get_depth() >= max_depth) break;
 
         // do sampling
         current_polytope->sample();
@@ -164,7 +171,6 @@ void synthesis::execute_default()
 void synthesis::execute_2in1()
 {
     unsigned int current_depth;
-    std::cout << "using 2in1" << std::endl;
 
     // main loop
     while (!synthesis_areas.unknown_areas.empty())
@@ -209,7 +215,7 @@ void synthesis::execute_2in1()
                 std::deque<std::unique_ptr<polytope>> new_polytopes = current_polytope->split();
 
                 // append new areas to unknown areas
-                if (current_depth%3 == 0)
+                if (current_depth%2 == 0)
                 {
                     // delete processed element
                     synthesis_areas.unknown_areas.pop_front();
@@ -235,7 +241,7 @@ void synthesis::execute_2in1()
             // delete processed element
             synthesis_areas.unknown_areas.pop_front();
         }
-        if (!(current_depth%3 == 0))
+        if (!(current_depth%2 == 0))
         {
             solver_neg.pop();
             solver_pos.pop();
@@ -404,6 +410,8 @@ void synthesis::print_options()
     std::cout <<   "    Save Model          " << use_save_model << std::endl;
     std::cout <<   "    Split Samples       " << use_split_samples << std::endl;
     std::cout <<   "    Execute 2-in-1      " << use_execute_2in1 << std::endl;
+    std::cout <<   "    Max depth           " << max_depth << std::endl;
+    std::cout <<   "    Dimension           " << initial_intervals.size() << std::endl;
 
     std::cout <<   "    Initial intervals   " << std::endl;
     for(const auto &interval_string : initial_intervals)

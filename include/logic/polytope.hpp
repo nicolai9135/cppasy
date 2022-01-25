@@ -12,10 +12,6 @@
 #include <boost/dynamic_bitset.hpp>
 
 // For compilers that support precompilation, includes "wx/wx.h".
-#include <wx/wxprec.h>
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
 
 // forward declaration
 class synthesis;
@@ -119,7 +115,6 @@ private:
     // used by public wrapper functions
     virtual z3::expr_vector get_boundaries_z3_sub() = 0;
     virtual void print_sub() = 0;
-    virtual void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) = 0;
     virtual std::deque<std::unique_ptr<polytope>> split_sub() = 0;
     virtual void sample_sub() = 0;
     virtual z3::expr get_volume_sub() = 0;
@@ -196,7 +191,6 @@ public:
      * @param x_axis x-axis to draw
      * @param y_axis y-axis to draw
      */
-    void draw_wxWidgets(wxDC *dc, axis x_axis, axis y_axis);
 
     /**
      * The model corresponds to a coordinate. This coordinate is appended to 

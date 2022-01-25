@@ -41,22 +41,25 @@ int main(int argc, char * argv[])
     {
         std::cout << s->splits_needed();
         // s->print_options();
-        // s->print_all_areas();
-        return 0;
+    }
+    else
+    {
+#if EVAL > 0
+        auto total_time_begin = std::chrono::steady_clock::now();
+#endif
+        s->execute();
+#if EVAL > 0
+        auto total_time_end = std::chrono::steady_clock::now();
+        s->eval.total_time += (total_time_end - total_time_begin);
+        s->eval.print_parseable();
+        s->print_percentages_parseable();
+        s->print_options();
+#endif
     }
 
-#if EVAL > 0
-    auto total_time_begin = std::chrono::steady_clock::now();
-#endif
-    s->execute();
-#if EVAL > 0
-    auto total_time_end = std::chrono::steady_clock::now();
-    s->eval.total_time += (total_time_end - total_time_begin);
-    s->eval.print_parseable();
-    s->print_percentages_parseable();
-    s->print_options();
-#endif
-    // s->print_all_areas();
-
+    if(user_input.print_orthotopes)
+    {
+        s->print_all_areas();
+    }
     return 0;
 }

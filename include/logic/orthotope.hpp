@@ -4,10 +4,6 @@
 #include "polytope.hpp"
 
 // For compilers that support precompilation, includes "wx/wx.h".
-#include <wx/wxprec.h>
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
 
 #include <boost/dynamic_bitset.hpp>
 
@@ -35,7 +31,6 @@ private:
     // implementations of virtual #polytope functions
     z3::expr_vector get_boundaries_z3_sub() override;
     void print_sub() override;
-    void draw_wxWidgets_sub(wxDC *dc, axis x_axis, axis y_axis) override;
     std::deque<std::unique_ptr<polytope>> split_sub() override;
     void sample_sub() override;
     z3::expr get_volume_sub() override;

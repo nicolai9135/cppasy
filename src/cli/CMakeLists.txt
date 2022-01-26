@@ -20,4 +20,8 @@ target_include_directories(cli PUBLIC
     "${PROJECT_SOURCE_DIR}/include/logic"
     "${PROJECT_SOURCE_DIR}/include/parse"
     "${PROJECT_SOURCE_DIR}/include/evaluation"
+    "/home/nicolai/RWTH/master/master_thesis/install/boost_1_77_0"
+    "/home/nicolai/RWTH/master/master_thesis/install/z3-master"
+    "/home/nicolai/RWTH/master/master_thesis/install/z3-master/build"
+    "/home/nicolai/RWTH/master/master_thesis/install/z3-master/src/api/c++"
 )

@@ -8,6 +8,10 @@ add_compile_definitions(EVAL=2)
 
 find_package(Boost 1.75 COMPONENTS program_options REQUIRED) 
 
+set(Z3_DIR /home/nicolai/RWTH/master/master_thesis/install/z3-master/build)
+
+set(Z3_INCLUDE_DIR /home/nicolai/RWTH/master/master_thesis/install/z3-master/build)
+set(Z3_LIBRARY_DIR /home/nicolai/RWTH/master/master_thesis/install/z3-master/build)
 find_package(Z3 REQUIRED)
 
 # set output directory for binary

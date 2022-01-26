@@ -1,0 +1,2926 @@
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/20161105-Sturm-MBO
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/20161105-Sturm-MGC
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/20170501-Heizmann-UltimateInvariantSynthesis
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/20180501-Economics-Mulligan
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/2019-ezsmt
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/2019-ezsmt/bouncingBall
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/2019-ezsmt/generator
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/2019-ezsmt/reverseFolding
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/hong
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/hycomp
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/kissing
+2
+- keeping kissing_2_1.smt2
+- keeping kissing_3_1.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/LassoRanker
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/LassoRanker/CooperatingT2
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/LassoRanker/SV-COMP
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/LassoRanker/Ultimate
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Arthan
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Arthan/1A
+1
+- keeping Arthan1A-chunk-0022.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Arthan/1C
+2
+- keeping Arthan1C-chunk-0005.smt2
+- keeping Arthan1C-chunk-0007.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Arthan/KM2
+2
+- keeping ArthanKM2-chunk-0005.smt2
+- keeping ArthanKM2-chunk-0007.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Arthan/M2
+2
+- keeping ArthanM2-chunk-0005.smt2
+- keeping ArthanM2-chunk-0009.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/asin
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/asin/8
+5
+- keeping asin-8-chunk-0018.smt2
+- keeping asin-8-chunk-0019.smt2
+- keeping asin-8-chunk-0025.smt2
+- keeping asin-8-chunk-0039.smt2
+- timeout: removing asin-8-chunk-0047.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/asin/8/vars4
+13
+- keeping asin-8-vars4-chunk-0010.smt2
+- keeping asin-8-vars4-chunk-0012.smt2
+- keeping asin-8-vars4-chunk-0014.smt2
+- keeping asin-8-vars4-chunk-0015.smt2
+- keeping asin-8-vars4-chunk-0017.smt2
+- keeping asin-8-vars4-chunk-0019.smt2
+- keeping asin-8-vars4-chunk-0020.smt2
+- keeping asin-8-vars4-chunk-0024.smt2
+- keeping asin-8-vars4-chunk-0030.smt2
+- keeping asin-8-vars4-chunk-0032.smt2
+- keeping asin-8-vars4-chunk-0035.smt2
+- keeping asin-8-vars4-chunk-0039.smt2
+- keeping asin-8-vars4-chunk-0040.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/1
+35
+- keeping atan-problem-1-chunk-0006.smt2
+- keeping atan-problem-1-chunk-0007.smt2
+- uninteresting: removing atan-problem-1-chunk-0008.smt2
+- keeping atan-problem-1-chunk-0009.smt2
+- keeping atan-problem-1-chunk-0010.smt2
+- uninteresting: removing atan-problem-1-chunk-0012.smt2
+- uninteresting: removing atan-problem-1-chunk-0016.smt2
+- uninteresting: removing atan-problem-1-chunk-0019.smt2
+- uninteresting: removing atan-problem-1-chunk-0022.smt2
+- uninteresting: removing atan-problem-1-chunk-0025.smt2
+- uninteresting: removing atan-problem-1-chunk-0026.smt2
+- uninteresting: removing atan-problem-1-chunk-0028.smt2
+- uninteresting: removing atan-problem-1-chunk-0029.smt2
+- uninteresting: removing atan-problem-1-chunk-0032.smt2
+- keeping atan-problem-1-chunk-0033.smt2
+- keeping atan-problem-1-chunk-0035.smt2
+- uninteresting: removing atan-problem-1-chunk-0038.smt2
+- uninteresting: removing atan-problem-1-chunk-0040.smt2
+- uninteresting: removing atan-problem-1-chunk-0042.smt2
+- uninteresting: removing atan-problem-1-chunk-0043.smt2
+- uninteresting: removing atan-problem-1-chunk-0044.smt2
+- uninteresting: removing atan-problem-1-chunk-0045.smt2
+- uninteresting: removing atan-problem-1-chunk-0047.smt2
+- uninteresting: removing atan-problem-1-chunk-0048.smt2
+- keeping atan-problem-1-chunk-0051.smt2
+- uninteresting: removing atan-problem-1-chunk-0052.smt2
+- keeping atan-problem-1-chunk-0053.smt2
+- uninteresting: removing atan-problem-1-chunk-0056.smt2
+- uninteresting: removing atan-problem-1-chunk-0058.smt2
+- uninteresting: removing atan-problem-1-chunk-0062.smt2
+- uninteresting: removing atan-problem-1-chunk-0065.smt2
+- uninteresting: removing atan-problem-1-chunk-0066.smt2
+- uninteresting: removing atan-problem-1-chunk-0069.smt2
+- keeping atan-problem-1-chunk-0071.smt2
+- keeping atan-problem-1-chunk-0091.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/1/weak
+14
+- keeping atan-problem-1-weak-chunk-0010.smt2
+- keeping atan-problem-1-weak-chunk-0012.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0013.smt2
+- keeping atan-problem-1-weak-chunk-0015.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0017.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0022.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0026.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0028.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0031.smt2
+- keeping atan-problem-1-weak-chunk-0032.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0035.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0039.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0043.smt2
+- uninteresting: removing atan-problem-1-weak-chunk-0044.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/2
+10
+- keeping atan-problem-2-chunk-0046.smt2
+- keeping atan-problem-2-chunk-0048.smt2
+- keeping atan-problem-2-chunk-0055.smt2
+- keeping atan-problem-2-chunk-0059.smt2
+- keeping atan-problem-2-chunk-0072.smt2
+- keeping atan-problem-2-chunk-0074.smt2
+- keeping atan-problem-2-chunk-0079.smt2
+- keeping atan-problem-2-chunk-0086.smt2
+- keeping atan-problem-2-chunk-0112.smt2
+- keeping atan-problem-2-chunk-0114.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/2/sqrt
+10
+- keeping atan-problem-2-sqrt-chunk-0008.smt2
+- keeping atan-problem-2-sqrt-chunk-0013.smt2
+- keeping atan-problem-2-sqrt-chunk-0018.smt2
+- keeping atan-problem-2-sqrt-chunk-0025.smt2
+- keeping atan-problem-2-sqrt-chunk-0031.smt2
+- keeping atan-problem-2-sqrt-chunk-0035.smt2
+- keeping atan-problem-2-sqrt-chunk-0039.smt2
+- keeping atan-problem-2-sqrt-chunk-0040.smt2
+- keeping atan-problem-2-sqrt-chunk-0041.smt2
+- keeping atan-problem-2-sqrt-chunk-0043.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/2/sqrt/weak
+30
+- keeping atan-problem-2-sqrt-weak-chunk-0008.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0025.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0027.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0029.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0031.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0038.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0042.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0043.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0044.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0046.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0048.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0050.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0051.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0053.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0062.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0063.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0066.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0069.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0071.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0073.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0075.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0077.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0078.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0080.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0081.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0082.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0083.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0086.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0087.smt2
+- keeping atan-problem-2-sqrt-weak-chunk-0088.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/2/weak
+54
+- keeping atan-problem-2-weak-chunk-0025.smt2
+- keeping atan-problem-2-weak-chunk-0062.smt2
+- keeping atan-problem-2-weak-chunk-0064.smt2
+- keeping atan-problem-2-weak-chunk-0071.smt2
+- keeping atan-problem-2-weak-chunk-0075.smt2
+- keeping atan-problem-2-weak-chunk-0081.smt2
+- keeping atan-problem-2-weak-chunk-0084.smt2
+- keeping atan-problem-2-weak-chunk-0088.smt2
+- keeping atan-problem-2-weak-chunk-0090.smt2
+- keeping atan-problem-2-weak-chunk-0095.smt2
+- keeping atan-problem-2-weak-chunk-0102.smt2
+- keeping atan-problem-2-weak-chunk-0106.smt2
+- keeping atan-problem-2-weak-chunk-0111.smt2
+- keeping atan-problem-2-weak-chunk-0124.smt2
+- keeping atan-problem-2-weak-chunk-0125.smt2
+- keeping atan-problem-2-weak-chunk-0128.smt2
+- keeping atan-problem-2-weak-chunk-0130.smt2
+- keeping atan-problem-2-weak-chunk-0131.smt2
+- keeping atan-problem-2-weak-chunk-0145.smt2
+- keeping atan-problem-2-weak-chunk-0146.smt2
+- keeping atan-problem-2-weak-chunk-0147.smt2
+- keeping atan-problem-2-weak-chunk-0150.smt2
+- keeping atan-problem-2-weak-chunk-0154.smt2
+- keeping atan-problem-2-weak-chunk-0159.smt2
+- keeping atan-problem-2-weak-chunk-0161.smt2
+- keeping atan-problem-2-weak-chunk-0162.smt2
+- keeping atan-problem-2-weak-chunk-0165.smt2
+- keeping atan-problem-2-weak-chunk-0167.smt2
+- keeping atan-problem-2-weak-chunk-0168.smt2
+- keeping atan-problem-2-weak-chunk-0171.smt2
+- keeping atan-problem-2-weak-chunk-0173.smt2
+- keeping atan-problem-2-weak-chunk-0175.smt2
+- keeping atan-problem-2-weak-chunk-0177.smt2
+- keeping atan-problem-2-weak-chunk-0180.smt2
+- keeping atan-problem-2-weak-chunk-0182.smt2
+- keeping atan-problem-2-weak-chunk-0184.smt2
+- keeping atan-problem-2-weak-chunk-0185.smt2
+- keeping atan-problem-2-weak-chunk-0202.smt2
+- keeping atan-problem-2-weak-chunk-0204.smt2
+- keeping atan-problem-2-weak-chunk-0206.smt2
+- keeping atan-problem-2-weak-chunk-0207.smt2
+- keeping atan-problem-2-weak-chunk-0211.smt2
+- keeping atan-problem-2-weak-chunk-0212.smt2
+- keeping atan-problem-2-weak-chunk-0213.smt2
+- keeping atan-problem-2-weak-chunk-0215.smt2
+- keeping atan-problem-2-weak-chunk-0216.smt2
+- keeping atan-problem-2-weak-chunk-0217.smt2
+- keeping atan-problem-2-weak-chunk-0218.smt2
+- keeping atan-problem-2-weak-chunk-0220.smt2
+- keeping atan-problem-2-weak-chunk-0222.smt2
+- keeping atan-problem-2-weak-chunk-0223.smt2
+- keeping atan-problem-2-weak-chunk-0226.smt2
+- keeping atan-problem-2-weak-chunk-0227.smt2
+- keeping atan-problem-2-weak-chunk-0229.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/2/weak2
+40
+- keeping atan-problem-2-weak2-chunk-0006.smt2
+- keeping atan-problem-2-weak2-chunk-0011.smt2
+- keeping atan-problem-2-weak2-chunk-0013.smt2
+- keeping atan-problem-2-weak2-chunk-0018.smt2
+- keeping atan-problem-2-weak2-chunk-0019.smt2
+- keeping atan-problem-2-weak2-chunk-0021.smt2
+- keeping atan-problem-2-weak2-chunk-0024.smt2
+- keeping atan-problem-2-weak2-chunk-0027.smt2
+- keeping atan-problem-2-weak2-chunk-0040.smt2
+- keeping atan-problem-2-weak2-chunk-0045.smt2
+- keeping atan-problem-2-weak2-chunk-0049.smt2
+- keeping atan-problem-2-weak2-chunk-0056.smt2
+- keeping atan-problem-2-weak2-chunk-0063.smt2
+- keeping atan-problem-2-weak2-chunk-0065.smt2
+- keeping atan-problem-2-weak2-chunk-0068.smt2
+- keeping atan-problem-2-weak2-chunk-0070.smt2
+- keeping atan-problem-2-weak2-chunk-0071.smt2
+- keeping atan-problem-2-weak2-chunk-0072.smt2
+- keeping atan-problem-2-weak2-chunk-0074.smt2
+- keeping atan-problem-2-weak2-chunk-0075.smt2
+- keeping atan-problem-2-weak2-chunk-0077.smt2
+- keeping atan-problem-2-weak2-chunk-0078.smt2
+- keeping atan-problem-2-weak2-chunk-0080.smt2
+- keeping atan-problem-2-weak2-chunk-0083.smt2
+- keeping atan-problem-2-weak2-chunk-0086.smt2
+- keeping atan-problem-2-weak2-chunk-0088.smt2
+- keeping atan-problem-2-weak2-chunk-0097.smt2
+- keeping atan-problem-2-weak2-chunk-0098.smt2
+- keeping atan-problem-2-weak2-chunk-0100.smt2
+- keeping atan-problem-2-weak2-chunk-0105.smt2
+- keeping atan-problem-2-weak2-chunk-0110.smt2
+- keeping atan-problem-2-weak2-chunk-0113.smt2
+- keeping atan-problem-2-weak2-chunk-0117.smt2
+- keeping atan-problem-2-weak2-chunk-0123.smt2
+- keeping atan-problem-2-weak2-chunk-0125.smt2
+- keeping atan-problem-2-weak2-chunk-0128.smt2
+- keeping atan-problem-2-weak2-chunk-0130.smt2
+- timeout: removing atan-problem-2-weak2-chunk-0133.smt2
+- keeping atan-problem-2-weak2-chunk-0134.smt2
+- keeping atan-problem-2-weak2-chunk-0136.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/problem/2/weakT
+23
+- keeping atan-problem-2-weakT-chunk-0008.smt2
+- keeping atan-problem-2-weakT-chunk-0009.smt2
+- keeping atan-problem-2-weakT-chunk-0010.smt2
+- keeping atan-problem-2-weakT-chunk-0012.smt2
+- keeping atan-problem-2-weakT-chunk-0015.smt2
+- keeping atan-problem-2-weakT-chunk-0018.smt2
+- keeping atan-problem-2-weakT-chunk-0019.smt2
+- keeping atan-problem-2-weakT-chunk-0021.smt2
+- keeping atan-problem-2-weakT-chunk-0023.smt2
+- keeping atan-problem-2-weakT-chunk-0025.smt2
+- keeping atan-problem-2-weakT-chunk-0026.smt2
+- keeping atan-problem-2-weakT-chunk-0029.smt2
+- keeping atan-problem-2-weakT-chunk-0032.smt2
+- keeping atan-problem-2-weakT-chunk-0033.smt2
+- keeping atan-problem-2-weakT-chunk-0035.smt2
+- keeping atan-problem-2-weakT-chunk-0036.smt2
+- keeping atan-problem-2-weakT-chunk-0040.smt2
+- keeping atan-problem-2-weakT-chunk-0043.smt2
+- keeping atan-problem-2-weakT-chunk-0044.smt2
+- keeping atan-problem-2-weakT-chunk-0046.smt2
+- keeping atan-problem-2-weakT-chunk-0048.smt2
+- keeping atan-problem-2-weakT-chunk-0058.smt2
+- keeping atan-problem-2-weakT-chunk-0060.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/vega
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/vega/3
+232
+- keeping atan-vega-3-chunk-0008.smt2
+- keeping atan-vega-3-chunk-0010.smt2
+- keeping atan-vega-3-chunk-0011.smt2
+- keeping atan-vega-3-chunk-0016.smt2
+- keeping atan-vega-3-chunk-0019.smt2
+- keeping atan-vega-3-chunk-0027.smt2
+- timeout: removing atan-vega-3-chunk-0029.smt2
+- keeping atan-vega-3-chunk-0031.smt2
+- keeping atan-vega-3-chunk-0032.smt2
+- keeping atan-vega-3-chunk-0034.smt2
+- keeping atan-vega-3-chunk-0044.smt2
+- timeout: removing atan-vega-3-chunk-0045.smt2
+- timeout: removing atan-vega-3-chunk-0046.smt2
+- keeping atan-vega-3-chunk-0047.smt2
+- keeping atan-vega-3-chunk-0048.smt2
+- keeping atan-vega-3-chunk-0050.smt2
+- keeping atan-vega-3-chunk-0051.smt2
+- keeping atan-vega-3-chunk-0052.smt2
+- keeping atan-vega-3-chunk-0053.smt2
+- keeping atan-vega-3-chunk-0054.smt2
+- keeping atan-vega-3-chunk-0057.smt2
+- keeping atan-vega-3-chunk-0058.smt2
+- timeout: removing atan-vega-3-chunk-0061.smt2
+- keeping atan-vega-3-chunk-0062.smt2
+- keeping atan-vega-3-chunk-0063.smt2
+- keeping atan-vega-3-chunk-0072.smt2
+- keeping atan-vega-3-chunk-0078.smt2
+- keeping atan-vega-3-chunk-0083.smt2
+- keeping atan-vega-3-chunk-0084.smt2
+- keeping atan-vega-3-chunk-0085.smt2
+- keeping atan-vega-3-chunk-0086.smt2
+- keeping atan-vega-3-chunk-0088.smt2
+- keeping atan-vega-3-chunk-0089.smt2
+- keeping atan-vega-3-chunk-0090.smt2
+- keeping atan-vega-3-chunk-0091.smt2
+- keeping atan-vega-3-chunk-0096.smt2
+- keeping atan-vega-3-chunk-0099.smt2
+- keeping atan-vega-3-chunk-0100.smt2
+- keeping atan-vega-3-chunk-0101.smt2
+- keeping atan-vega-3-chunk-0103.smt2
+- keeping atan-vega-3-chunk-0104.smt2
+- keeping atan-vega-3-chunk-0105.smt2
+- keeping atan-vega-3-chunk-0106.smt2
+- keeping atan-vega-3-chunk-0108.smt2
+- keeping atan-vega-3-chunk-0109.smt2
+- keeping atan-vega-3-chunk-0110.smt2
+- keeping atan-vega-3-chunk-0112.smt2
+- keeping atan-vega-3-chunk-0113.smt2
+- keeping atan-vega-3-chunk-0114.smt2
+- keeping atan-vega-3-chunk-0116.smt2
+- keeping atan-vega-3-chunk-0117.smt2
+- keeping atan-vega-3-chunk-0118.smt2
+- keeping atan-vega-3-chunk-0121.smt2
+- keeping atan-vega-3-chunk-0122.smt2
+- keeping atan-vega-3-chunk-0124.smt2
+- keeping atan-vega-3-chunk-0125.smt2
+- keeping atan-vega-3-chunk-0126.smt2
+- keeping atan-vega-3-chunk-0127.smt2
+- keeping atan-vega-3-chunk-0128.smt2
+- keeping atan-vega-3-chunk-0129.smt2
+- keeping atan-vega-3-chunk-0130.smt2
+- keeping atan-vega-3-chunk-0132.smt2
+- keeping atan-vega-3-chunk-0133.smt2
+- keeping atan-vega-3-chunk-0134.smt2
+- keeping atan-vega-3-chunk-0135.smt2
+- keeping atan-vega-3-chunk-0136.smt2
+- keeping atan-vega-3-chunk-0137.smt2
+- keeping atan-vega-3-chunk-0138.smt2
+- keeping atan-vega-3-chunk-0139.smt2
+- keeping atan-vega-3-chunk-0141.smt2
+- keeping atan-vega-3-chunk-0142.smt2
+- keeping atan-vega-3-chunk-0143.smt2
+- keeping atan-vega-3-chunk-0144.smt2
+- keeping atan-vega-3-chunk-0145.smt2
+- keeping atan-vega-3-chunk-0147.smt2
+- keeping atan-vega-3-chunk-0148.smt2
+- keeping atan-vega-3-chunk-0151.smt2
+- keeping atan-vega-3-chunk-0152.smt2
+- timeout: removing atan-vega-3-chunk-0154.smt2
+- keeping atan-vega-3-chunk-0157.smt2
+- keeping atan-vega-3-chunk-0158.smt2
+- keeping atan-vega-3-chunk-0159.smt2
+- keeping atan-vega-3-chunk-0161.smt2
+- keeping atan-vega-3-chunk-0162.smt2
+- keeping atan-vega-3-chunk-0164.smt2
+- keeping atan-vega-3-chunk-0165.smt2
+- keeping atan-vega-3-chunk-0167.smt2
+- keeping atan-vega-3-chunk-0179.smt2
+- keeping atan-vega-3-chunk-0186.smt2
+- keeping atan-vega-3-chunk-0192.smt2
+- keeping atan-vega-3-chunk-0195.smt2
+- keeping atan-vega-3-chunk-0196.smt2
+- keeping atan-vega-3-chunk-0201.smt2
+- keeping atan-vega-3-chunk-0202.smt2
+- keeping atan-vega-3-chunk-0204.smt2
+- keeping atan-vega-3-chunk-0206.smt2
+- keeping atan-vega-3-chunk-0207.smt2
+- keeping atan-vega-3-chunk-0209.smt2
+- keeping atan-vega-3-chunk-0210.smt2
+- keeping atan-vega-3-chunk-0211.smt2
+- keeping atan-vega-3-chunk-0212.smt2
+- keeping atan-vega-3-chunk-0213.smt2
+- keeping atan-vega-3-chunk-0215.smt2
+- keeping atan-vega-3-chunk-0216.smt2
+- keeping atan-vega-3-chunk-0217.smt2
+- keeping atan-vega-3-chunk-0218.smt2
+- keeping atan-vega-3-chunk-0221.smt2
+- keeping atan-vega-3-chunk-0222.smt2
+- keeping atan-vega-3-chunk-0228.smt2
+- keeping atan-vega-3-chunk-0229.smt2
+- keeping atan-vega-3-chunk-0232.smt2
+- keeping atan-vega-3-chunk-0233.smt2
+- keeping atan-vega-3-chunk-0238.smt2
+- keeping atan-vega-3-chunk-0239.smt2
+- keeping atan-vega-3-chunk-0240.smt2
+- keeping atan-vega-3-chunk-0244.smt2
+- keeping atan-vega-3-chunk-0245.smt2
+- keeping atan-vega-3-chunk-0246.smt2
+- keeping atan-vega-3-chunk-0249.smt2
+- keeping atan-vega-3-chunk-0251.smt2
+- keeping atan-vega-3-chunk-0252.smt2
+- keeping atan-vega-3-chunk-0253.smt2
+- keeping atan-vega-3-chunk-0254.smt2
+- keeping atan-vega-3-chunk-0256.smt2
+- keeping atan-vega-3-chunk-0259.smt2
+- keeping atan-vega-3-chunk-0260.smt2
+- keeping atan-vega-3-chunk-0261.smt2
+- keeping atan-vega-3-chunk-0264.smt2
+- keeping atan-vega-3-chunk-0265.smt2
+- keeping atan-vega-3-chunk-0267.smt2
+- keeping atan-vega-3-chunk-0270.smt2
+- keeping atan-vega-3-chunk-0273.smt2
+- keeping atan-vega-3-chunk-0276.smt2
+- keeping atan-vega-3-chunk-0279.smt2
+- keeping atan-vega-3-chunk-0280.smt2
+- keeping atan-vega-3-chunk-0281.smt2
+- keeping atan-vega-3-chunk-0283.smt2
+- keeping atan-vega-3-chunk-0293.smt2
+- keeping atan-vega-3-chunk-0295.smt2
+- keeping atan-vega-3-chunk-0296.smt2
+- keeping atan-vega-3-chunk-0298.smt2
+- keeping atan-vega-3-chunk-0300.smt2
+- keeping atan-vega-3-chunk-0301.smt2
+- keeping atan-vega-3-chunk-0302.smt2
+- keeping atan-vega-3-chunk-0308.smt2
+- keeping atan-vega-3-chunk-0309.smt2
+- keeping atan-vega-3-chunk-0311.smt2
+- keeping atan-vega-3-chunk-0316.smt2
+- keeping atan-vega-3-chunk-0318.smt2
+- keeping atan-vega-3-chunk-0319.smt2
+- keeping atan-vega-3-chunk-0320.smt2
+- keeping atan-vega-3-chunk-0327.smt2
+- keeping atan-vega-3-chunk-0328.smt2
+- keeping atan-vega-3-chunk-0329.smt2
+- keeping atan-vega-3-chunk-0330.smt2
+- keeping atan-vega-3-chunk-0331.smt2
+- keeping atan-vega-3-chunk-0342.smt2
+- keeping atan-vega-3-chunk-0343.smt2
+- keeping atan-vega-3-chunk-0344.smt2
+- keeping atan-vega-3-chunk-0352.smt2
+- keeping atan-vega-3-chunk-0357.smt2
+- keeping atan-vega-3-chunk-0362.smt2
+- keeping atan-vega-3-chunk-0365.smt2
+- keeping atan-vega-3-chunk-0369.smt2
+- keeping atan-vega-3-chunk-0373.smt2
+- keeping atan-vega-3-chunk-0384.smt2
+- keeping atan-vega-3-chunk-0385.smt2
+- keeping atan-vega-3-chunk-0386.smt2
+- keeping atan-vega-3-chunk-0390.smt2
+- keeping atan-vega-3-chunk-0391.smt2
+- keeping atan-vega-3-chunk-0392.smt2
+- keeping atan-vega-3-chunk-0393.smt2
+- keeping atan-vega-3-chunk-0395.smt2
+- keeping atan-vega-3-chunk-0396.smt2
+- keeping atan-vega-3-chunk-0397.smt2
+- keeping atan-vega-3-chunk-0398.smt2
+- keeping atan-vega-3-chunk-0399.smt2
+- keeping atan-vega-3-chunk-0401.smt2
+- keeping atan-vega-3-chunk-0403.smt2
+- keeping atan-vega-3-chunk-0406.smt2
+- keeping atan-vega-3-chunk-0415.smt2
+- keeping atan-vega-3-chunk-0416.smt2
+- keeping atan-vega-3-chunk-0423.smt2
+- keeping atan-vega-3-chunk-0424.smt2
+- keeping atan-vega-3-chunk-0425.smt2
+- keeping atan-vega-3-chunk-0426.smt2
+- keeping atan-vega-3-chunk-0427.smt2
+- keeping atan-vega-3-chunk-0436.smt2
+- keeping atan-vega-3-chunk-0440.smt2
+- keeping atan-vega-3-chunk-0451.smt2
+- keeping atan-vega-3-chunk-0452.smt2
+- keeping atan-vega-3-chunk-0454.smt2
+- keeping atan-vega-3-chunk-0455.smt2
+- keeping atan-vega-3-chunk-0457.smt2
+- keeping atan-vega-3-chunk-0458.smt2
+- keeping atan-vega-3-chunk-0459.smt2
+- keeping atan-vega-3-chunk-0460.smt2
+- keeping atan-vega-3-chunk-0471.smt2
+- keeping atan-vega-3-chunk-0475.smt2
+- keeping atan-vega-3-chunk-0478.smt2
+- keeping atan-vega-3-chunk-0481.smt2
+- keeping atan-vega-3-chunk-0483.smt2
+- keeping atan-vega-3-chunk-0485.smt2
+- keeping atan-vega-3-chunk-0489.smt2
+- keeping atan-vega-3-chunk-0495.smt2
+- keeping atan-vega-3-chunk-0497.smt2
+- keeping atan-vega-3-chunk-0498.smt2
+- keeping atan-vega-3-chunk-0499.smt2
+- keeping atan-vega-3-chunk-0501.smt2
+- keeping atan-vega-3-chunk-0502.smt2
+- keeping atan-vega-3-chunk-0503.smt2
+- keeping atan-vega-3-chunk-0505.smt2
+- keeping atan-vega-3-chunk-0508.smt2
+- keeping atan-vega-3-chunk-0509.smt2
+- keeping atan-vega-3-chunk-0514.smt2
+- keeping atan-vega-3-chunk-0523.smt2
+- keeping atan-vega-3-chunk-0532.smt2
+- keeping atan-vega-3-chunk-0538.smt2
+- keeping atan-vega-3-chunk-0542.smt2
+- keeping atan-vega-3-chunk-0547.smt2
+- keeping atan-vega-3-chunk-0548.smt2
+- keeping atan-vega-3-chunk-0557.smt2
+- keeping atan-vega-3-chunk-0566.smt2
+- keeping atan-vega-3-chunk-0568.smt2
+- keeping atan-vega-3-chunk-0569.smt2
+- keeping atan-vega-3-chunk-0577.smt2
+- keeping atan-vega-3-chunk-0591.smt2
+- keeping atan-vega-3-chunk-0595.smt2
+- keeping atan-vega-3-chunk-0596.smt2
+- keeping atan-vega-3-chunk-0597.smt2
+- keeping atan-vega-3-chunk-0600.smt2
+- keeping atan-vega-3-chunk-0626.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/atan/vega/3/weak
+214
+- keeping atan-vega-3-weak-chunk-0018.smt2
+- keeping atan-vega-3-weak-chunk-0029.smt2
+- keeping atan-vega-3-weak-chunk-0080.smt2
+- keeping atan-vega-3-weak-chunk-0083.smt2
+- keeping atan-vega-3-weak-chunk-0105.smt2
+- keeping atan-vega-3-weak-chunk-0108.smt2
+- keeping atan-vega-3-weak-chunk-0110.smt2
+- keeping atan-vega-3-weak-chunk-0111.smt2
+- keeping atan-vega-3-weak-chunk-0112.smt2
+- keeping atan-vega-3-weak-chunk-0113.smt2
+- keeping atan-vega-3-weak-chunk-0114.smt2
+- keeping atan-vega-3-weak-chunk-0116.smt2
+- keeping atan-vega-3-weak-chunk-0118.smt2
+- keeping atan-vega-3-weak-chunk-0120.smt2
+- keeping atan-vega-3-weak-chunk-0121.smt2
+- keeping atan-vega-3-weak-chunk-0122.smt2
+- keeping atan-vega-3-weak-chunk-0123.smt2
+- keeping atan-vega-3-weak-chunk-0126.smt2
+- keeping atan-vega-3-weak-chunk-0136.smt2
+- keeping atan-vega-3-weak-chunk-0142.smt2
+- keeping atan-vega-3-weak-chunk-0145.smt2
+- keeping atan-vega-3-weak-chunk-0148.smt2
+- keeping atan-vega-3-weak-chunk-0149.smt2
+- keeping atan-vega-3-weak-chunk-0150.smt2
+- keeping atan-vega-3-weak-chunk-0151.smt2
+- keeping atan-vega-3-weak-chunk-0152.smt2
+- keeping atan-vega-3-weak-chunk-0155.smt2
+- keeping atan-vega-3-weak-chunk-0157.smt2
+- keeping atan-vega-3-weak-chunk-0158.smt2
+- keeping atan-vega-3-weak-chunk-0159.smt2
+- keeping atan-vega-3-weak-chunk-0160.smt2
+- keeping atan-vega-3-weak-chunk-0166.smt2
+- keeping atan-vega-3-weak-chunk-0169.smt2
+- keeping atan-vega-3-weak-chunk-0172.smt2
+- keeping atan-vega-3-weak-chunk-0177.smt2
+- keeping atan-vega-3-weak-chunk-0178.smt2
+- keeping atan-vega-3-weak-chunk-0179.smt2
+- keeping atan-vega-3-weak-chunk-0180.smt2
+- keeping atan-vega-3-weak-chunk-0181.smt2
+- keeping atan-vega-3-weak-chunk-0183.smt2
+- keeping atan-vega-3-weak-chunk-0189.smt2
+- keeping atan-vega-3-weak-chunk-0190.smt2
+- keeping atan-vega-3-weak-chunk-0191.smt2
+- keeping atan-vega-3-weak-chunk-0192.smt2
+- keeping atan-vega-3-weak-chunk-0194.smt2
+- keeping atan-vega-3-weak-chunk-0197.smt2
+- keeping atan-vega-3-weak-chunk-0198.smt2
+- keeping atan-vega-3-weak-chunk-0199.smt2
+- keeping atan-vega-3-weak-chunk-0200.smt2
+- keeping atan-vega-3-weak-chunk-0201.smt2
+- keeping atan-vega-3-weak-chunk-0202.smt2
+- keeping atan-vega-3-weak-chunk-0203.smt2
+- keeping atan-vega-3-weak-chunk-0204.smt2
+- keeping atan-vega-3-weak-chunk-0205.smt2
+- keeping atan-vega-3-weak-chunk-0206.smt2
+- keeping atan-vega-3-weak-chunk-0208.smt2
+- keeping atan-vega-3-weak-chunk-0211.smt2
+- keeping atan-vega-3-weak-chunk-0214.smt2
+- keeping atan-vega-3-weak-chunk-0216.smt2
+- keeping atan-vega-3-weak-chunk-0219.smt2
+- keeping atan-vega-3-weak-chunk-0222.smt2
+- keeping atan-vega-3-weak-chunk-0223.smt2
+- keeping atan-vega-3-weak-chunk-0224.smt2
+- keeping atan-vega-3-weak-chunk-0226.smt2
+- keeping atan-vega-3-weak-chunk-0230.smt2
+- keeping atan-vega-3-weak-chunk-0250.smt2
+- keeping atan-vega-3-weak-chunk-0252.smt2
+- keeping atan-vega-3-weak-chunk-0253.smt2
+- keeping atan-vega-3-weak-chunk-0264.smt2
+- keeping atan-vega-3-weak-chunk-0267.smt2
+- keeping atan-vega-3-weak-chunk-0268.smt2
+- keeping atan-vega-3-weak-chunk-0269.smt2
+- keeping atan-vega-3-weak-chunk-0270.smt2
+- keeping atan-vega-3-weak-chunk-0271.smt2
+- keeping atan-vega-3-weak-chunk-0273.smt2
+- keeping atan-vega-3-weak-chunk-0274.smt2
+- keeping atan-vega-3-weak-chunk-0283.smt2
+- keeping atan-vega-3-weak-chunk-0287.smt2
+- keeping atan-vega-3-weak-chunk-0288.smt2
+- keeping atan-vega-3-weak-chunk-0289.smt2
+- keeping atan-vega-3-weak-chunk-0290.smt2
+- keeping atan-vega-3-weak-chunk-0291.smt2
+- keeping atan-vega-3-weak-chunk-0298.smt2
+- keeping atan-vega-3-weak-chunk-0299.smt2
+- keeping atan-vega-3-weak-chunk-0300.smt2
+- keeping atan-vega-3-weak-chunk-0301.smt2
+- keeping atan-vega-3-weak-chunk-0302.smt2
+- keeping atan-vega-3-weak-chunk-0315.smt2
+- keeping atan-vega-3-weak-chunk-0316.smt2
+- keeping atan-vega-3-weak-chunk-0320.smt2
+- keeping atan-vega-3-weak-chunk-0337.smt2
+- keeping atan-vega-3-weak-chunk-0338.smt2
+- keeping atan-vega-3-weak-chunk-0341.smt2
+- keeping atan-vega-3-weak-chunk-0346.smt2
+- keeping atan-vega-3-weak-chunk-0348.smt2
+- keeping atan-vega-3-weak-chunk-0351.smt2
+- keeping atan-vega-3-weak-chunk-0375.smt2
+- keeping atan-vega-3-weak-chunk-0386.smt2
+- keeping atan-vega-3-weak-chunk-0401.smt2
+- keeping atan-vega-3-weak-chunk-0402.smt2
+- keeping atan-vega-3-weak-chunk-0404.smt2
+- keeping atan-vega-3-weak-chunk-0405.smt2
+- keeping atan-vega-3-weak-chunk-0408.smt2
+- keeping atan-vega-3-weak-chunk-0409.smt2
+- keeping atan-vega-3-weak-chunk-0418.smt2
+- keeping atan-vega-3-weak-chunk-0420.smt2
+- keeping atan-vega-3-weak-chunk-0421.smt2
+- keeping atan-vega-3-weak-chunk-0428.smt2
+- keeping atan-vega-3-weak-chunk-0434.smt2
+- keeping atan-vega-3-weak-chunk-0441.smt2
+- keeping atan-vega-3-weak-chunk-0447.smt2
+- keeping atan-vega-3-weak-chunk-0453.smt2
+- keeping atan-vega-3-weak-chunk-0463.smt2
+- keeping atan-vega-3-weak-chunk-0467.smt2
+- keeping atan-vega-3-weak-chunk-0468.smt2
+- keeping atan-vega-3-weak-chunk-0469.smt2
+- keeping atan-vega-3-weak-chunk-0471.smt2
+- keeping atan-vega-3-weak-chunk-0473.smt2
+- keeping atan-vega-3-weak-chunk-0482.smt2
+- keeping atan-vega-3-weak-chunk-0484.smt2
+- keeping atan-vega-3-weak-chunk-0485.smt2
+- keeping atan-vega-3-weak-chunk-0486.smt2
+- keeping atan-vega-3-weak-chunk-0487.smt2
+- keeping atan-vega-3-weak-chunk-0489.smt2
+- keeping atan-vega-3-weak-chunk-0490.smt2
+- keeping atan-vega-3-weak-chunk-0492.smt2
+- keeping atan-vega-3-weak-chunk-0493.smt2
+- keeping atan-vega-3-weak-chunk-0494.smt2
+- keeping atan-vega-3-weak-chunk-0496.smt2
+- keeping atan-vega-3-weak-chunk-0497.smt2
+- keeping atan-vega-3-weak-chunk-0498.smt2
+- keeping atan-vega-3-weak-chunk-0499.smt2
+- keeping atan-vega-3-weak-chunk-0505.smt2
+- keeping atan-vega-3-weak-chunk-0506.smt2
+- keeping atan-vega-3-weak-chunk-0507.smt2
+- keeping atan-vega-3-weak-chunk-0508.smt2
+- keeping atan-vega-3-weak-chunk-0509.smt2
+- keeping atan-vega-3-weak-chunk-0521.smt2
+- keeping atan-vega-3-weak-chunk-0522.smt2
+- keeping atan-vega-3-weak-chunk-0524.smt2
+- keeping atan-vega-3-weak-chunk-0525.smt2
+- keeping atan-vega-3-weak-chunk-0526.smt2
+- keeping atan-vega-3-weak-chunk-0527.smt2
+- keeping atan-vega-3-weak-chunk-0532.smt2
+- keeping atan-vega-3-weak-chunk-0539.smt2
+- keeping atan-vega-3-weak-chunk-0541.smt2
+- keeping atan-vega-3-weak-chunk-0542.smt2
+- keeping atan-vega-3-weak-chunk-0543.smt2
+- keeping atan-vega-3-weak-chunk-0545.smt2
+- keeping atan-vega-3-weak-chunk-0547.smt2
+- keeping atan-vega-3-weak-chunk-0548.smt2
+- keeping atan-vega-3-weak-chunk-0549.smt2
+- keeping atan-vega-3-weak-chunk-0553.smt2
+- keeping atan-vega-3-weak-chunk-0554.smt2
+- keeping atan-vega-3-weak-chunk-0555.smt2
+- keeping atan-vega-3-weak-chunk-0556.smt2
+- keeping atan-vega-3-weak-chunk-0558.smt2
+- keeping atan-vega-3-weak-chunk-0560.smt2
+- keeping atan-vega-3-weak-chunk-0562.smt2
+- keeping atan-vega-3-weak-chunk-0563.smt2
+- keeping atan-vega-3-weak-chunk-0565.smt2
+- keeping atan-vega-3-weak-chunk-0566.smt2
+- keeping atan-vega-3-weak-chunk-0571.smt2
+- keeping atan-vega-3-weak-chunk-0577.smt2
+- keeping atan-vega-3-weak-chunk-0578.smt2
+- keeping atan-vega-3-weak-chunk-0579.smt2
+- keeping atan-vega-3-weak-chunk-0581.smt2
+- keeping atan-vega-3-weak-chunk-0582.smt2
+- keeping atan-vega-3-weak-chunk-0583.smt2
+- keeping atan-vega-3-weak-chunk-0584.smt2
+- keeping atan-vega-3-weak-chunk-0587.smt2
+- keeping atan-vega-3-weak-chunk-0588.smt2
+- keeping atan-vega-3-weak-chunk-0589.smt2
+- keeping atan-vega-3-weak-chunk-0590.smt2
+- keeping atan-vega-3-weak-chunk-0591.smt2
+- keeping atan-vega-3-weak-chunk-0593.smt2
+- keeping atan-vega-3-weak-chunk-0594.smt2
+- keeping atan-vega-3-weak-chunk-0600.smt2
+- keeping atan-vega-3-weak-chunk-0602.smt2
+- keeping atan-vega-3-weak-chunk-0603.smt2
+- keeping atan-vega-3-weak-chunk-0604.smt2
+- keeping atan-vega-3-weak-chunk-0609.smt2
+- keeping atan-vega-3-weak-chunk-0610.smt2
+- keeping atan-vega-3-weak-chunk-0611.smt2
+- keeping atan-vega-3-weak-chunk-0613.smt2
+- keeping atan-vega-3-weak-chunk-0616.smt2
+- keeping atan-vega-3-weak-chunk-0617.smt2
+- keeping atan-vega-3-weak-chunk-0619.smt2
+- keeping atan-vega-3-weak-chunk-0621.smt2
+- keeping atan-vega-3-weak-chunk-0622.smt2
+- keeping atan-vega-3-weak-chunk-0625.smt2
+- keeping atan-vega-3-weak-chunk-0627.smt2
+- keeping atan-vega-3-weak-chunk-0629.smt2
+- keeping atan-vega-3-weak-chunk-0633.smt2
+- keeping atan-vega-3-weak-chunk-0637.smt2
+- keeping atan-vega-3-weak-chunk-0638.smt2
+- keeping atan-vega-3-weak-chunk-0640.smt2
+- keeping atan-vega-3-weak-chunk-0641.smt2
+- keeping atan-vega-3-weak-chunk-0643.smt2
+- keeping atan-vega-3-weak-chunk-0644.smt2
+- keeping atan-vega-3-weak-chunk-0664.smt2
+- keeping atan-vega-3-weak-chunk-0687.smt2
+- keeping atan-vega-3-weak-chunk-0688.smt2
+- keeping atan-vega-3-weak-chunk-0689.smt2
+- keeping atan-vega-3-weak-chunk-0690.smt2
+- keeping atan-vega-3-weak-chunk-0691.smt2
+- keeping atan-vega-3-weak-chunk-0696.smt2
+- keeping atan-vega-3-weak-chunk-0697.smt2
+- keeping atan-vega-3-weak-chunk-0700.smt2
+- keeping atan-vega-3-weak-chunk-0702.smt2
+- keeping atan-vega-3-weak-chunk-0704.smt2
+- keeping atan-vega-3-weak-chunk-0711.smt2
+- keeping atan-vega-3-weak-chunk-0715.smt2
+- keeping atan-vega-3-weak-chunk-0716.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/bottom-plate-mixer
+2
+- keeping bottom-plate-mixer-chunk-0036.smt2
+- keeping bottom-plate-mixer-chunk-0038.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cbrt
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cbrt/3
+8
+- keeping cbrt-problem-3-chunk-0015.smt2
+- keeping cbrt-problem-3-chunk-0019.smt2
+- keeping cbrt-problem-3-chunk-0049.smt2
+- keeping cbrt-problem-3-chunk-0053.smt2
+- keeping cbrt-problem-3-chunk-0054.smt2
+- keeping cbrt-problem-3-chunk-0061.smt2
+- keeping cbrt-problem-3-chunk-0066.smt2
+- keeping cbrt-problem-3-chunk-0067.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cbrt/3/weak
+13
+- keeping cbrt-problem-3-weak-chunk-0022.smt2
+- keeping cbrt-problem-3-weak-chunk-0026.smt2
+- keeping cbrt-problem-3-weak-chunk-0058.smt2
+- keeping cbrt-problem-3-weak-chunk-0061.smt2
+- keeping cbrt-problem-3-weak-chunk-0062.smt2
+- keeping cbrt-problem-3-weak-chunk-0070.smt2
+- keeping cbrt-problem-3-weak-chunk-0075.smt2
+- keeping cbrt-problem-3-weak-chunk-0076.smt2
+- keeping cbrt-problem-3-weak-chunk-0096.smt2
+- keeping cbrt-problem-3-weak-chunk-0102.smt2
+- keeping cbrt-problem-3-weak-chunk-0104.smt2
+- keeping cbrt-problem-3-weak-chunk-0106.smt2
+- keeping cbrt-problem-3-weak-chunk-0110.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/IL
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/IL/L
+65
+- keeping Chua-1-IL-L-chunk-0014.smt2
+- keeping Chua-1-IL-L-chunk-0016.smt2
+- keeping Chua-1-IL-L-chunk-0017.smt2
+- keeping Chua-1-IL-L-chunk-0018.smt2
+- keeping Chua-1-IL-L-chunk-0019.smt2
+- keeping Chua-1-IL-L-chunk-0020.smt2
+- keeping Chua-1-IL-L-chunk-0022.smt2
+- keeping Chua-1-IL-L-chunk-0026.smt2
+- keeping Chua-1-IL-L-chunk-0027.smt2
+- keeping Chua-1-IL-L-chunk-0029.smt2
+- keeping Chua-1-IL-L-chunk-0031.smt2
+- keeping Chua-1-IL-L-chunk-0036.smt2
+- keeping Chua-1-IL-L-chunk-0037.smt2
+- keeping Chua-1-IL-L-chunk-0038.smt2
+- keeping Chua-1-IL-L-chunk-0039.smt2
+- keeping Chua-1-IL-L-chunk-0041.smt2
+- keeping Chua-1-IL-L-chunk-0044.smt2
+- keeping Chua-1-IL-L-chunk-0045.smt2
+- keeping Chua-1-IL-L-chunk-0046.smt2
+- keeping Chua-1-IL-L-chunk-0047.smt2
+- keeping Chua-1-IL-L-chunk-0052.smt2
+- keeping Chua-1-IL-L-chunk-0053.smt2
+- keeping Chua-1-IL-L-chunk-0056.smt2
+- keeping Chua-1-IL-L-chunk-0059.smt2
+- keeping Chua-1-IL-L-chunk-0060.smt2
+- keeping Chua-1-IL-L-chunk-0061.smt2
+- keeping Chua-1-IL-L-chunk-0062.smt2
+- keeping Chua-1-IL-L-chunk-0063.smt2
+- keeping Chua-1-IL-L-chunk-0067.smt2
+- keeping Chua-1-IL-L-chunk-0070.smt2
+- keeping Chua-1-IL-L-chunk-0071.smt2
+- keeping Chua-1-IL-L-chunk-0075.smt2
+- keeping Chua-1-IL-L-chunk-0077.smt2
+- keeping Chua-1-IL-L-chunk-0078.smt2
+- keeping Chua-1-IL-L-chunk-0080.smt2
+- keeping Chua-1-IL-L-chunk-0086.smt2
+- keeping Chua-1-IL-L-chunk-0087.smt2
+- keeping Chua-1-IL-L-chunk-0088.smt2
+- keeping Chua-1-IL-L-chunk-0090.smt2
+- keeping Chua-1-IL-L-chunk-0091.smt2
+- keeping Chua-1-IL-L-chunk-0092.smt2
+- keeping Chua-1-IL-L-chunk-0097.smt2
+- keeping Chua-1-IL-L-chunk-0100.smt2
+- keeping Chua-1-IL-L-chunk-0102.smt2
+- keeping Chua-1-IL-L-chunk-0103.smt2
+- keeping Chua-1-IL-L-chunk-0109.smt2
+- keeping Chua-1-IL-L-chunk-0110.smt2
+- keeping Chua-1-IL-L-chunk-0113.smt2
+- keeping Chua-1-IL-L-chunk-0114.smt2
+- keeping Chua-1-IL-L-chunk-0116.smt2
+- keeping Chua-1-IL-L-chunk-0118.smt2
+- keeping Chua-1-IL-L-chunk-0121.smt2
+- keeping Chua-1-IL-L-chunk-0122.smt2
+- keeping Chua-1-IL-L-chunk-0126.smt2
+- keeping Chua-1-IL-L-chunk-0131.smt2
+- keeping Chua-1-IL-L-chunk-0134.smt2
+- keeping Chua-1-IL-L-chunk-0138.smt2
+- keeping Chua-1-IL-L-chunk-0140.smt2
+- keeping Chua-1-IL-L-chunk-0144.smt2
+- keeping Chua-1-IL-L-chunk-0147.smt2
+- keeping Chua-1-IL-L-chunk-0150.smt2
+- keeping Chua-1-IL-L-chunk-0151.smt2
+- keeping Chua-1-IL-L-chunk-0154.smt2
+- keeping Chua-1-IL-L-chunk-0157.smt2
+- keeping Chua-1-IL-L-chunk-0161.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/IL/U
+23
+- keeping Chua-1-IL-U-chunk-0017.smt2
+- keeping Chua-1-IL-U-chunk-0021.smt2
+- keeping Chua-1-IL-U-chunk-0022.smt2
+- keeping Chua-1-IL-U-chunk-0024.smt2
+- keeping Chua-1-IL-U-chunk-0025.smt2
+- keeping Chua-1-IL-U-chunk-0028.smt2
+- keeping Chua-1-IL-U-chunk-0032.smt2
+- keeping Chua-1-IL-U-chunk-0036.smt2
+- keeping Chua-1-IL-U-chunk-0037.smt2
+- keeping Chua-1-IL-U-chunk-0038.smt2
+- keeping Chua-1-IL-U-chunk-0041.smt2
+- keeping Chua-1-IL-U-chunk-0044.smt2
+- keeping Chua-1-IL-U-chunk-0048.smt2
+- keeping Chua-1-IL-U-chunk-0049.smt2
+- keeping Chua-1-IL-U-chunk-0053.smt2
+- keeping Chua-1-IL-U-chunk-0055.smt2
+- keeping Chua-1-IL-U-chunk-0063.smt2
+- keeping Chua-1-IL-U-chunk-0067.smt2
+- keeping Chua-1-IL-U-chunk-0071.smt2
+- keeping Chua-1-IL-U-chunk-0075.smt2
+- keeping Chua-1-IL-U-chunk-0077.smt2
+- keeping Chua-1-IL-U-chunk-0078.smt2
+- keeping Chua-1-IL-U-chunk-0081.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/VC1
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/VC1/L
+63
+- keeping Chua-1-VC1-L-chunk-0017.smt2
+- keeping Chua-1-VC1-L-chunk-0018.smt2
+- keeping Chua-1-VC1-L-chunk-0019.smt2
+- keeping Chua-1-VC1-L-chunk-0020.smt2
+- keeping Chua-1-VC1-L-chunk-0022.smt2
+- keeping Chua-1-VC1-L-chunk-0026.smt2
+- keeping Chua-1-VC1-L-chunk-0027.smt2
+- keeping Chua-1-VC1-L-chunk-0029.smt2
+- keeping Chua-1-VC1-L-chunk-0031.smt2
+- keeping Chua-1-VC1-L-chunk-0036.smt2
+- keeping Chua-1-VC1-L-chunk-0037.smt2
+- keeping Chua-1-VC1-L-chunk-0038.smt2
+- keeping Chua-1-VC1-L-chunk-0039.smt2
+- keeping Chua-1-VC1-L-chunk-0041.smt2
+- keeping Chua-1-VC1-L-chunk-0043.smt2
+- keeping Chua-1-VC1-L-chunk-0045.smt2
+- keeping Chua-1-VC1-L-chunk-0046.smt2
+- keeping Chua-1-VC1-L-chunk-0047.smt2
+- keeping Chua-1-VC1-L-chunk-0052.smt2
+- keeping Chua-1-VC1-L-chunk-0053.smt2
+- keeping Chua-1-VC1-L-chunk-0054.smt2
+- keeping Chua-1-VC1-L-chunk-0057.smt2
+- keeping Chua-1-VC1-L-chunk-0060.smt2
+- keeping Chua-1-VC1-L-chunk-0061.smt2
+- keeping Chua-1-VC1-L-chunk-0062.smt2
+- keeping Chua-1-VC1-L-chunk-0063.smt2
+- keeping Chua-1-VC1-L-chunk-0064.smt2
+- keeping Chua-1-VC1-L-chunk-0068.smt2
+- keeping Chua-1-VC1-L-chunk-0071.smt2
+- keeping Chua-1-VC1-L-chunk-0072.smt2
+- keeping Chua-1-VC1-L-chunk-0076.smt2
+- keeping Chua-1-VC1-L-chunk-0078.smt2
+- keeping Chua-1-VC1-L-chunk-0079.smt2
+- keeping Chua-1-VC1-L-chunk-0081.smt2
+- keeping Chua-1-VC1-L-chunk-0087.smt2
+- keeping Chua-1-VC1-L-chunk-0088.smt2
+- keeping Chua-1-VC1-L-chunk-0089.smt2
+- keeping Chua-1-VC1-L-chunk-0090.smt2
+- keeping Chua-1-VC1-L-chunk-0092.smt2
+- keeping Chua-1-VC1-L-chunk-0093.smt2
+- keeping Chua-1-VC1-L-chunk-0098.smt2
+- keeping Chua-1-VC1-L-chunk-0101.smt2
+- keeping Chua-1-VC1-L-chunk-0103.smt2
+- keeping Chua-1-VC1-L-chunk-0104.smt2
+- keeping Chua-1-VC1-L-chunk-0110.smt2
+- keeping Chua-1-VC1-L-chunk-0112.smt2
+- keeping Chua-1-VC1-L-chunk-0114.smt2
+- keeping Chua-1-VC1-L-chunk-0115.smt2
+- keeping Chua-1-VC1-L-chunk-0118.smt2
+- keeping Chua-1-VC1-L-chunk-0121.smt2
+- keeping Chua-1-VC1-L-chunk-0122.smt2
+- keeping Chua-1-VC1-L-chunk-0126.smt2
+- keeping Chua-1-VC1-L-chunk-0131.smt2
+- keeping Chua-1-VC1-L-chunk-0134.smt2
+- keeping Chua-1-VC1-L-chunk-0138.smt2
+- keeping Chua-1-VC1-L-chunk-0140.smt2
+- keeping Chua-1-VC1-L-chunk-0144.smt2
+- keeping Chua-1-VC1-L-chunk-0147.smt2
+- keeping Chua-1-VC1-L-chunk-0150.smt2
+- keeping Chua-1-VC1-L-chunk-0151.smt2
+- keeping Chua-1-VC1-L-chunk-0154.smt2
+- keeping Chua-1-VC1-L-chunk-0157.smt2
+- keeping Chua-1-VC1-L-chunk-0161.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/VC1/U
+24
+- keeping Chua-1-VC1-U-chunk-0017.smt2
+- keeping Chua-1-VC1-U-chunk-0021.smt2
+- keeping Chua-1-VC1-U-chunk-0022.smt2
+- keeping Chua-1-VC1-U-chunk-0024.smt2
+- keeping Chua-1-VC1-U-chunk-0025.smt2
+- keeping Chua-1-VC1-U-chunk-0028.smt2
+- keeping Chua-1-VC1-U-chunk-0032.smt2
+- keeping Chua-1-VC1-U-chunk-0034.smt2
+- keeping Chua-1-VC1-U-chunk-0038.smt2
+- keeping Chua-1-VC1-U-chunk-0039.smt2
+- keeping Chua-1-VC1-U-chunk-0040.smt2
+- keeping Chua-1-VC1-U-chunk-0044.smt2
+- keeping Chua-1-VC1-U-chunk-0047.smt2
+- keeping Chua-1-VC1-U-chunk-0051.smt2
+- keeping Chua-1-VC1-U-chunk-0052.smt2
+- keeping Chua-1-VC1-U-chunk-0056.smt2
+- keeping Chua-1-VC1-U-chunk-0058.smt2
+- keeping Chua-1-VC1-U-chunk-0066.smt2
+- keeping Chua-1-VC1-U-chunk-0070.smt2
+- keeping Chua-1-VC1-U-chunk-0073.smt2
+- keeping Chua-1-VC1-U-chunk-0076.smt2
+- keeping Chua-1-VC1-U-chunk-0078.smt2
+- keeping Chua-1-VC1-U-chunk-0079.smt2
+- keeping Chua-1-VC1-U-chunk-0082.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/VC2
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/VC2/L
+25
+- keeping Chua-1-VC2-L-chunk-0017.smt2
+- keeping Chua-1-VC2-L-chunk-0018.smt2
+- keeping Chua-1-VC2-L-chunk-0019.smt2
+- keeping Chua-1-VC2-L-chunk-0021.smt2
+- keeping Chua-1-VC2-L-chunk-0022.smt2
+- keeping Chua-1-VC2-L-chunk-0024.smt2
+- keeping Chua-1-VC2-L-chunk-0025.smt2
+- keeping Chua-1-VC2-L-chunk-0028.smt2
+- keeping Chua-1-VC2-L-chunk-0032.smt2
+- keeping Chua-1-VC2-L-chunk-0036.smt2
+- keeping Chua-1-VC2-L-chunk-0037.smt2
+- keeping Chua-1-VC2-L-chunk-0038.smt2
+- keeping Chua-1-VC2-L-chunk-0041.smt2
+- keeping Chua-1-VC2-L-chunk-0044.smt2
+- keeping Chua-1-VC2-L-chunk-0048.smt2
+- keeping Chua-1-VC2-L-chunk-0049.smt2
+- keeping Chua-1-VC2-L-chunk-0053.smt2
+- keeping Chua-1-VC2-L-chunk-0055.smt2
+- keeping Chua-1-VC2-L-chunk-0063.smt2
+- keeping Chua-1-VC2-L-chunk-0067.smt2
+- keeping Chua-1-VC2-L-chunk-0071.smt2
+- keeping Chua-1-VC2-L-chunk-0075.smt2
+- keeping Chua-1-VC2-L-chunk-0077.smt2
+- keeping Chua-1-VC2-L-chunk-0078.smt2
+- keeping Chua-1-VC2-L-chunk-0081.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/1/VC2/U
+61
+- keeping Chua-1-VC2-U-chunk-0017.smt2
+- keeping Chua-1-VC2-U-chunk-0018.smt2
+- keeping Chua-1-VC2-U-chunk-0022.smt2
+- keeping Chua-1-VC2-U-chunk-0026.smt2
+- keeping Chua-1-VC2-U-chunk-0027.smt2
+- keeping Chua-1-VC2-U-chunk-0029.smt2
+- keeping Chua-1-VC2-U-chunk-0031.smt2
+- keeping Chua-1-VC2-U-chunk-0036.smt2
+- keeping Chua-1-VC2-U-chunk-0037.smt2
+- keeping Chua-1-VC2-U-chunk-0038.smt2
+- keeping Chua-1-VC2-U-chunk-0039.smt2
+- keeping Chua-1-VC2-U-chunk-0041.smt2
+- keeping Chua-1-VC2-U-chunk-0044.smt2
+- keeping Chua-1-VC2-U-chunk-0045.smt2
+- keeping Chua-1-VC2-U-chunk-0046.smt2
+- keeping Chua-1-VC2-U-chunk-0047.smt2
+- keeping Chua-1-VC2-U-chunk-0052.smt2
+- keeping Chua-1-VC2-U-chunk-0053.smt2
+- keeping Chua-1-VC2-U-chunk-0056.smt2
+- keeping Chua-1-VC2-U-chunk-0059.smt2
+- keeping Chua-1-VC2-U-chunk-0060.smt2
+- keeping Chua-1-VC2-U-chunk-0061.smt2
+- keeping Chua-1-VC2-U-chunk-0062.smt2
+- keeping Chua-1-VC2-U-chunk-0063.smt2
+- keeping Chua-1-VC2-U-chunk-0067.smt2
+- keeping Chua-1-VC2-U-chunk-0070.smt2
+- keeping Chua-1-VC2-U-chunk-0071.smt2
+- keeping Chua-1-VC2-U-chunk-0075.smt2
+- keeping Chua-1-VC2-U-chunk-0077.smt2
+- keeping Chua-1-VC2-U-chunk-0078.smt2
+- keeping Chua-1-VC2-U-chunk-0080.smt2
+- keeping Chua-1-VC2-U-chunk-0086.smt2
+- keeping Chua-1-VC2-U-chunk-0087.smt2
+- keeping Chua-1-VC2-U-chunk-0088.smt2
+- keeping Chua-1-VC2-U-chunk-0090.smt2
+- keeping Chua-1-VC2-U-chunk-0091.smt2
+- keeping Chua-1-VC2-U-chunk-0092.smt2
+- keeping Chua-1-VC2-U-chunk-0097.smt2
+- keeping Chua-1-VC2-U-chunk-0100.smt2
+- keeping Chua-1-VC2-U-chunk-0102.smt2
+- keeping Chua-1-VC2-U-chunk-0103.smt2
+- keeping Chua-1-VC2-U-chunk-0109.smt2
+- keeping Chua-1-VC2-U-chunk-0110.smt2
+- keeping Chua-1-VC2-U-chunk-0113.smt2
+- keeping Chua-1-VC2-U-chunk-0114.smt2
+- keeping Chua-1-VC2-U-chunk-0116.smt2
+- keeping Chua-1-VC2-U-chunk-0118.smt2
+- keeping Chua-1-VC2-U-chunk-0121.smt2
+- keeping Chua-1-VC2-U-chunk-0122.smt2
+- keeping Chua-1-VC2-U-chunk-0126.smt2
+- keeping Chua-1-VC2-U-chunk-0131.smt2
+- keeping Chua-1-VC2-U-chunk-0134.smt2
+- keeping Chua-1-VC2-U-chunk-0138.smt2
+- keeping Chua-1-VC2-U-chunk-0140.smt2
+- keeping Chua-1-VC2-U-chunk-0144.smt2
+- keeping Chua-1-VC2-U-chunk-0147.smt2
+- keeping Chua-1-VC2-U-chunk-0150.smt2
+- keeping Chua-1-VC2-U-chunk-0151.smt2
+- keeping Chua-1-VC2-U-chunk-0154.smt2
+- keeping Chua-1-VC2-U-chunk-0157.smt2
+- keeping Chua-1-VC2-U-chunk-0161.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/IL
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/IL/L
+51
+- keeping Chua-2-IL-L-chunk-0005.smt2
+- keeping Chua-2-IL-L-chunk-0007.smt2
+- keeping Chua-2-IL-L-chunk-0009.smt2
+- keeping Chua-2-IL-L-chunk-0011.smt2
+- keeping Chua-2-IL-L-chunk-0012.smt2
+- keeping Chua-2-IL-L-chunk-0013.smt2
+- keeping Chua-2-IL-L-chunk-0015.smt2
+- keeping Chua-2-IL-L-chunk-0016.smt2
+- keeping Chua-2-IL-L-chunk-0018.smt2
+- keeping Chua-2-IL-L-chunk-0020.smt2
+- keeping Chua-2-IL-L-chunk-0021.smt2
+- keeping Chua-2-IL-L-chunk-0022.smt2
+- keeping Chua-2-IL-L-chunk-0023.smt2
+- keeping Chua-2-IL-L-chunk-0026.smt2
+- keeping Chua-2-IL-L-chunk-0032.smt2
+- keeping Chua-2-IL-L-chunk-0034.smt2
+- keeping Chua-2-IL-L-chunk-0036.smt2
+- keeping Chua-2-IL-L-chunk-0037.smt2
+- keeping Chua-2-IL-L-chunk-0040.smt2
+- keeping Chua-2-IL-L-chunk-0043.smt2
+- keeping Chua-2-IL-L-chunk-0045.smt2
+- keeping Chua-2-IL-L-chunk-0048.smt2
+- keeping Chua-2-IL-L-chunk-0051.smt2
+- keeping Chua-2-IL-L-chunk-0055.smt2
+- keeping Chua-2-IL-L-chunk-0058.smt2
+- keeping Chua-2-IL-L-chunk-0059.smt2
+- keeping Chua-2-IL-L-chunk-0062.smt2
+- keeping Chua-2-IL-L-chunk-0063.smt2
+- keeping Chua-2-IL-L-chunk-0069.smt2
+- keeping Chua-2-IL-L-chunk-0073.smt2
+- keeping Chua-2-IL-L-chunk-0076.smt2
+- keeping Chua-2-IL-L-chunk-0079.smt2
+- keeping Chua-2-IL-L-chunk-0080.smt2
+- keeping Chua-2-IL-L-chunk-0082.smt2
+- keeping Chua-2-IL-L-chunk-0083.smt2
+- keeping Chua-2-IL-L-chunk-0084.smt2
+- keeping Chua-2-IL-L-chunk-0086.smt2
+- keeping Chua-2-IL-L-chunk-0089.smt2
+- keeping Chua-2-IL-L-chunk-0092.smt2
+- keeping Chua-2-IL-L-chunk-0093.smt2
+- keeping Chua-2-IL-L-chunk-0097.smt2
+- keeping Chua-2-IL-L-chunk-0098.smt2
+- keeping Chua-2-IL-L-chunk-0099.smt2
+- keeping Chua-2-IL-L-chunk-0101.smt2
+- keeping Chua-2-IL-L-chunk-0102.smt2
+- keeping Chua-2-IL-L-chunk-0103.smt2
+- keeping Chua-2-IL-L-chunk-0107.smt2
+- keeping Chua-2-IL-L-chunk-0108.smt2
+- keeping Chua-2-IL-L-chunk-0110.smt2
+- keeping Chua-2-IL-L-chunk-0111.smt2
+- keeping Chua-2-IL-L-chunk-0112.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/IL/U
+24
+- keeping Chua-2-IL-U-chunk-0008.smt2
+- keeping Chua-2-IL-U-chunk-0011.smt2
+- keeping Chua-2-IL-U-chunk-0012.smt2
+- keeping Chua-2-IL-U-chunk-0013.smt2
+- keeping Chua-2-IL-U-chunk-0016.smt2
+- keeping Chua-2-IL-U-chunk-0019.smt2
+- keeping Chua-2-IL-U-chunk-0023.smt2
+- keeping Chua-2-IL-U-chunk-0025.smt2
+- keeping Chua-2-IL-U-chunk-0031.smt2
+- keeping Chua-2-IL-U-chunk-0033.smt2
+- keeping Chua-2-IL-U-chunk-0034.smt2
+- keeping Chua-2-IL-U-chunk-0036.smt2
+- keeping Chua-2-IL-U-chunk-0038.smt2
+- keeping Chua-2-IL-U-chunk-0042.smt2
+- keeping Chua-2-IL-U-chunk-0051.smt2
+- keeping Chua-2-IL-U-chunk-0053.smt2
+- keeping Chua-2-IL-U-chunk-0057.smt2
+- keeping Chua-2-IL-U-chunk-0064.smt2
+- keeping Chua-2-IL-U-chunk-0067.smt2
+- keeping Chua-2-IL-U-chunk-0072.smt2
+- keeping Chua-2-IL-U-chunk-0073.smt2
+- keeping Chua-2-IL-U-chunk-0101.smt2
+- keeping Chua-2-IL-U-chunk-0116.smt2
+- keeping Chua-2-IL-U-chunk-0118.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/VC1
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/VC1/L
+52
+- keeping Chua-2-VC1-L-chunk-0021.smt2
+- keeping Chua-2-VC1-L-chunk-0023.smt2
+- keeping Chua-2-VC1-L-chunk-0025.smt2
+- keeping Chua-2-VC1-L-chunk-0027.smt2
+- keeping Chua-2-VC1-L-chunk-0028.smt2
+- keeping Chua-2-VC1-L-chunk-0029.smt2
+- keeping Chua-2-VC1-L-chunk-0031.smt2
+- keeping Chua-2-VC1-L-chunk-0032.smt2
+- keeping Chua-2-VC1-L-chunk-0034.smt2
+- keeping Chua-2-VC1-L-chunk-0036.smt2
+- keeping Chua-2-VC1-L-chunk-0037.smt2
+- keeping Chua-2-VC1-L-chunk-0038.smt2
+- keeping Chua-2-VC1-L-chunk-0039.smt2
+- keeping Chua-2-VC1-L-chunk-0042.smt2
+- keeping Chua-2-VC1-L-chunk-0048.smt2
+- keeping Chua-2-VC1-L-chunk-0050.smt2
+- keeping Chua-2-VC1-L-chunk-0052.smt2
+- keeping Chua-2-VC1-L-chunk-0053.smt2
+- keeping Chua-2-VC1-L-chunk-0056.smt2
+- keeping Chua-2-VC1-L-chunk-0059.smt2
+- timeout: removing Chua-2-VC1-L-chunk-0062.smt2
+- keeping Chua-2-VC1-L-chunk-0064.smt2
+- keeping Chua-2-VC1-L-chunk-0066.smt2
+- keeping Chua-2-VC1-L-chunk-0067.smt2
+- keeping Chua-2-VC1-L-chunk-0070.smt2
+- keeping Chua-2-VC1-L-chunk-0071.smt2
+- keeping Chua-2-VC1-L-chunk-0072.smt2
+- keeping Chua-2-VC1-L-chunk-0074.smt2
+- keeping Chua-2-VC1-L-chunk-0075.smt2
+- keeping Chua-2-VC1-L-chunk-0076.smt2
+- keeping Chua-2-VC1-L-chunk-0078.smt2
+- keeping Chua-2-VC1-L-chunk-0085.smt2
+- keeping Chua-2-VC1-L-chunk-0089.smt2
+- keeping Chua-2-VC1-L-chunk-0092.smt2
+- keeping Chua-2-VC1-L-chunk-0093.smt2
+- keeping Chua-2-VC1-L-chunk-0095.smt2
+- keeping Chua-2-VC1-L-chunk-0096.smt2
+- keeping Chua-2-VC1-L-chunk-0098.smt2
+- keeping Chua-2-VC1-L-chunk-0099.smt2
+- keeping Chua-2-VC1-L-chunk-0100.smt2
+- keeping Chua-2-VC1-L-chunk-0102.smt2
+- keeping Chua-2-VC1-L-chunk-0105.smt2
+- keeping Chua-2-VC1-L-chunk-0109.smt2
+- keeping Chua-2-VC1-L-chunk-0114.smt2
+- keeping Chua-2-VC1-L-chunk-0115.smt2
+- keeping Chua-2-VC1-L-chunk-0117.smt2
+- keeping Chua-2-VC1-L-chunk-0118.smt2
+- keeping Chua-2-VC1-L-chunk-0119.smt2
+- keeping Chua-2-VC1-L-chunk-0124.smt2
+- keeping Chua-2-VC1-L-chunk-0126.smt2
+- keeping Chua-2-VC1-L-chunk-0127.smt2
+- keeping Chua-2-VC1-L-chunk-0128.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/VC1/U
+19
+- keeping Chua-2-VC1-U-chunk-0013.smt2
+- keeping Chua-2-VC1-U-chunk-0019.smt2
+- keeping Chua-2-VC1-U-chunk-0023.smt2
+- keeping Chua-2-VC1-U-chunk-0025.smt2
+- keeping Chua-2-VC1-U-chunk-0031.smt2
+- keeping Chua-2-VC1-U-chunk-0033.smt2
+- keeping Chua-2-VC1-U-chunk-0034.smt2
+- keeping Chua-2-VC1-U-chunk-0036.smt2
+- keeping Chua-2-VC1-U-chunk-0038.smt2
+- keeping Chua-2-VC1-U-chunk-0042.smt2
+- keeping Chua-2-VC1-U-chunk-0043.smt2
+- keeping Chua-2-VC1-U-chunk-0051.smt2
+- keeping Chua-2-VC1-U-chunk-0057.smt2
+- keeping Chua-2-VC1-U-chunk-0064.smt2
+- keeping Chua-2-VC1-U-chunk-0072.smt2
+- keeping Chua-2-VC1-U-chunk-0073.smt2
+- keeping Chua-2-VC1-U-chunk-0101.smt2
+- keeping Chua-2-VC1-U-chunk-0116.smt2
+- keeping Chua-2-VC1-U-chunk-0118.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/VC2
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/VC2/L
+29
+- keeping Chua-2-VC2-L-chunk-0009.smt2
+- keeping Chua-2-VC2-L-chunk-0011.smt2
+- keeping Chua-2-VC2-L-chunk-0012.smt2
+- keeping Chua-2-VC2-L-chunk-0013.smt2
+- keeping Chua-2-VC2-L-chunk-0015.smt2
+- keeping Chua-2-VC2-L-chunk-0016.smt2
+- keeping Chua-2-VC2-L-chunk-0018.smt2
+- keeping Chua-2-VC2-L-chunk-0020.smt2
+- keeping Chua-2-VC2-L-chunk-0021.smt2
+- keeping Chua-2-VC2-L-chunk-0022.smt2
+- keeping Chua-2-VC2-L-chunk-0023.smt2
+- keeping Chua-2-VC2-L-chunk-0029.smt2
+- keeping Chua-2-VC2-L-chunk-0033.smt2
+- keeping Chua-2-VC2-L-chunk-0034.smt2
+- keeping Chua-2-VC2-L-chunk-0035.smt2
+- keeping Chua-2-VC2-L-chunk-0037.smt2
+- keeping Chua-2-VC2-L-chunk-0040.smt2
+- keeping Chua-2-VC2-L-chunk-0042.smt2
+- keeping Chua-2-VC2-L-chunk-0045.smt2
+- keeping Chua-2-VC2-L-chunk-0047.smt2
+- keeping Chua-2-VC2-L-chunk-0050.smt2
+- keeping Chua-2-VC2-L-chunk-0053.smt2
+- keeping Chua-2-VC2-L-chunk-0054.smt2
+- keeping Chua-2-VC2-L-chunk-0055.smt2
+- keeping Chua-2-VC2-L-chunk-0056.smt2
+- keeping Chua-2-VC2-L-chunk-0059.smt2
+- keeping Chua-2-VC2-L-chunk-0060.smt2
+- keeping Chua-2-VC2-L-chunk-0062.smt2
+- keeping Chua-2-VC2-L-chunk-0066.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Chua/2/VC2/U
+15
+- keeping Chua-2-VC2-U-chunk-0016.smt2
+- keeping Chua-2-VC2-U-chunk-0019.smt2
+- keeping Chua-2-VC2-U-chunk-0023.smt2
+- keeping Chua-2-VC2-U-chunk-0025.smt2
+- keeping Chua-2-VC2-U-chunk-0033.smt2
+- keeping Chua-2-VC2-U-chunk-0035.smt2
+- keeping Chua-2-VC2-U-chunk-0036.smt2
+- keeping Chua-2-VC2-U-chunk-0038.smt2
+- keeping Chua-2-VC2-U-chunk-0042.smt2
+- keeping Chua-2-VC2-U-chunk-0043.smt2
+- keeping Chua-2-VC2-U-chunk-0051.smt2
+- keeping Chua-2-VC2-U-chunk-0053.smt2
+- keeping Chua-2-VC2-U-chunk-0057.smt2
+- keeping Chua-2-VC2-U-chunk-0102.smt2
+- keeping Chua-2-VC2-U-chunk-0130.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/CMOS
+112
+- uninteresting: removing CMOS-opamp-chunk-0021.smt2
+- uninteresting: removing CMOS-opamp-chunk-0025.smt2
+- uninteresting: removing CMOS-opamp-chunk-0029.smt2
+- uninteresting: removing CMOS-opamp-chunk-0035.smt2
+- uninteresting: removing CMOS-opamp-chunk-0038.smt2
+- uninteresting: removing CMOS-opamp-chunk-0042.smt2
+- uninteresting: removing CMOS-opamp-chunk-0044.smt2
+- uninteresting: removing CMOS-opamp-chunk-0051.smt2
+- uninteresting: removing CMOS-opamp-chunk-0054.smt2
+- uninteresting: removing CMOS-opamp-chunk-0059.smt2
+- uninteresting: removing CMOS-opamp-chunk-0063.smt2
+- keeping CMOS-opamp-chunk-0065.smt2
+- uninteresting: removing CMOS-opamp-chunk-0066.smt2
+- keeping CMOS-opamp-chunk-0067.smt2
+- uninteresting: removing CMOS-opamp-chunk-0070.smt2
+- uninteresting: removing CMOS-opamp-chunk-0074.smt2
+- uninteresting: removing CMOS-opamp-chunk-0076.smt2
+- uninteresting: removing CMOS-opamp-chunk-0077.smt2
+- keeping CMOS-opamp-chunk-0080.smt2
+- uninteresting: removing CMOS-opamp-chunk-0081.smt2
+- keeping CMOS-opamp-chunk-0082.smt2
+- uninteresting: removing CMOS-opamp-chunk-0085.smt2
+- uninteresting: removing CMOS-opamp-chunk-0092.smt2
+- keeping CMOS-opamp-chunk-0094.smt2
+- uninteresting: removing CMOS-opamp-chunk-0095.smt2
+- keeping CMOS-opamp-chunk-0096.smt2
+- uninteresting: removing CMOS-opamp-chunk-0098.smt2
+- uninteresting: removing CMOS-opamp-chunk-0099.smt2
+- uninteresting: removing CMOS-opamp-chunk-0102.smt2
+- uninteresting: removing CMOS-opamp-chunk-0108.smt2
+- uninteresting: removing CMOS-opamp-chunk-0115.smt2
+- keeping CMOS-opamp-chunk-0116.smt2
+- uninteresting: removing CMOS-opamp-chunk-0122.smt2
+- uninteresting: removing CMOS-opamp-chunk-0125.smt2
+- keeping CMOS-opamp-chunk-0126.smt2
+- uninteresting: removing CMOS-opamp-chunk-0127.smt2
+- keeping CMOS-opamp-chunk-0128.smt2
+- uninteresting: removing CMOS-opamp-chunk-0130.smt2
+- uninteresting: removing CMOS-opamp-chunk-0133.smt2
+- uninteresting: removing CMOS-opamp-chunk-0135.smt2
+- keeping CMOS-opamp-chunk-0136.smt2
+- uninteresting: removing CMOS-opamp-chunk-0137.smt2
+- uninteresting: removing CMOS-opamp-chunk-0138.smt2
+- keeping CMOS-opamp-chunk-0140.smt2
+- keeping CMOS-opamp-chunk-0142.smt2
+- uninteresting: removing CMOS-opamp-chunk-0143.smt2
+- keeping CMOS-opamp-chunk-0147.smt2
+- uninteresting: removing CMOS-opamp-chunk-0148.smt2
+- keeping CMOS-opamp-chunk-0150.smt2
+- uninteresting: removing CMOS-opamp-chunk-0151.smt2
+- uninteresting: removing CMOS-opamp-chunk-0156.smt2
+- uninteresting: removing CMOS-opamp-chunk-0159.smt2
+- uninteresting: removing CMOS-opamp-chunk-0163.smt2
+- uninteresting: removing CMOS-opamp-chunk-0167.smt2
+- uninteresting: removing CMOS-opamp-chunk-0169.smt2
+- uninteresting: removing CMOS-opamp-chunk-0176.smt2
+- uninteresting: removing CMOS-opamp-chunk-0184.smt2
+- uninteresting: removing CMOS-opamp-chunk-0188.smt2
+- uninteresting: removing CMOS-opamp-chunk-0191.smt2
+- uninteresting: removing CMOS-opamp-chunk-0193.smt2
+- uninteresting: removing CMOS-opamp-chunk-0196.smt2
+- uninteresting: removing CMOS-opamp-chunk-0198.smt2
+- uninteresting: removing CMOS-opamp-chunk-0200.smt2
+- uninteresting: removing CMOS-opamp-chunk-0201.smt2
+- keeping CMOS-opamp-chunk-0203.smt2
+- uninteresting: removing CMOS-opamp-chunk-0207.smt2
+- uninteresting: removing CMOS-opamp-chunk-0211.smt2
+- uninteresting: removing CMOS-opamp-chunk-0213.smt2
+- uninteresting: removing CMOS-opamp-chunk-0217.smt2
+- uninteresting: removing CMOS-opamp-chunk-0219.smt2
+- uninteresting: removing CMOS-opamp-chunk-0227.smt2
+- uninteresting: removing CMOS-opamp-chunk-0228.smt2
+- uninteresting: removing CMOS-opamp-chunk-0231.smt2
+- uninteresting: removing CMOS-opamp-chunk-0234.smt2
+- uninteresting: removing CMOS-opamp-chunk-0238.smt2
+- uninteresting: removing CMOS-opamp-chunk-0243.smt2
+- uninteresting: removing CMOS-opamp-chunk-0248.smt2
+- uninteresting: removing CMOS-opamp-chunk-0251.smt2
+- uninteresting: removing CMOS-opamp-chunk-0255.smt2
+- uninteresting: removing CMOS-opamp-chunk-0258.smt2
+- keeping CMOS-opamp-chunk-0259.smt2
+- uninteresting: removing CMOS-opamp-chunk-0261.smt2
+- uninteresting: removing CMOS-opamp-chunk-0265.smt2
+- uninteresting: removing CMOS-opamp-chunk-0268.smt2
+- uninteresting: removing CMOS-opamp-chunk-0271.smt2
+- uninteresting: removing CMOS-opamp-chunk-0274.smt2
+- uninteresting: removing CMOS-opamp-chunk-0275.smt2
+- keeping CMOS-opamp-chunk-0278.smt2
+- uninteresting: removing CMOS-opamp-chunk-0279.smt2
+- keeping CMOS-opamp-chunk-0280.smt2
+- uninteresting: removing CMOS-opamp-chunk-0283.smt2
+- uninteresting: removing CMOS-opamp-chunk-0285.smt2
+- uninteresting: removing CMOS-opamp-chunk-0290.smt2
+- uninteresting: removing CMOS-opamp-chunk-0293.smt2
+- uninteresting: removing CMOS-opamp-chunk-0296.smt2
+- uninteresting: removing CMOS-opamp-chunk-0298.smt2
+- keeping CMOS-opamp-chunk-0299.smt2
+- uninteresting: removing CMOS-opamp-chunk-0301.smt2
+- uninteresting: removing CMOS-opamp-chunk-0302.smt2
+- uninteresting: removing CMOS-opamp-chunk-0304.smt2
+- uninteresting: removing CMOS-opamp-chunk-0306.smt2
+- uninteresting: removing CMOS-opamp-chunk-0307.smt2
+- uninteresting: removing CMOS-opamp-chunk-0309.smt2
+- uninteresting: removing CMOS-opamp-chunk-0311.smt2
+- uninteresting: removing CMOS-opamp-chunk-0313.smt2
+- uninteresting: removing CMOS-opamp-chunk-0316.smt2
+- uninteresting: removing CMOS-opamp-chunk-0318.smt2
+- uninteresting: removing CMOS-opamp-chunk-0322.smt2
+- uninteresting: removing CMOS-opamp-chunk-0326.smt2
+- uninteresting: removing CMOS-opamp-chunk-0328.smt2
+- uninteresting: removing CMOS-opamp-chunk-0333.smt2
+- uninteresting: removing CMOS-opamp-chunk-0339.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/CONVOI2
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cos
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cos/3410
+7
+- keeping cos-3410-b-chunk-0012.smt2
+- keeping cos-3410-b-chunk-0014.smt2
+- keeping cos-3410-b-chunk-0015.smt2
+- keeping cos-3410-b-chunk-0016.smt2
+- keeping cos-3410-b-chunk-0018.smt2
+- keeping cos-3410-b-chunk-0024.smt2
+- keeping cos-3410-b-chunk-0025.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cos/problem
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cos/problem/12
+2
+- keeping cos-problem-12-chunk-0004.smt2
+- keeping cos-problem-12-chunk-0006.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/cos/problem/5
+8
+- keeping cos-problem-5-chunk-0018.smt2
+- keeping cos-problem-5-chunk-0020.smt2
+- keeping cos-problem-5-chunk-0024.smt2
+- keeping cos-problem-5-chunk-0029.smt2
+- keeping cos-problem-5-chunk-0039.smt2
+- keeping cos-problem-5-chunk-0042.smt2
+- keeping cos-problem-5-chunk-0044.smt2
+- keeping cos-problem-5-chunk-0046.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp/361
+2
+- keeping exp-361-neg-4-e-chunk-0216.smt2
+- keeping exp-361-neg-6-e-chunk-0216.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp/361/6
+1
+- keeping exp-361-6-weak-chunk-0804.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp/problem
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp/problem/10
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp/problem/10/2
+99
+- keeping exp-problem-10-2-chunk-0010.smt2
+- keeping exp-problem-10-2-chunk-0012.smt2
+- keeping exp-problem-10-2-chunk-0014.smt2
+- keeping exp-problem-10-2-chunk-0015.smt2
+- keeping exp-problem-10-2-chunk-0017.smt2
+- keeping exp-problem-10-2-chunk-0018.smt2
+- keeping exp-problem-10-2-chunk-0020.smt2
+- keeping exp-problem-10-2-chunk-0024.smt2
+- keeping exp-problem-10-2-chunk-0029.smt2
+- keeping exp-problem-10-2-chunk-0085.smt2
+- keeping exp-problem-10-2-chunk-0087.smt2
+- keeping exp-problem-10-2-chunk-0092.smt2
+- keeping exp-problem-10-2-chunk-0095.smt2
+- keeping exp-problem-10-2-chunk-0100.smt2
+- keeping exp-problem-10-2-chunk-0101.smt2
+- keeping exp-problem-10-2-chunk-0106.smt2
+- keeping exp-problem-10-2-chunk-0107.smt2
+- keeping exp-problem-10-2-chunk-0112.smt2
+- keeping exp-problem-10-2-chunk-0115.smt2
+- keeping exp-problem-10-2-chunk-0120.smt2
+- keeping exp-problem-10-2-chunk-0121.smt2
+- keeping exp-problem-10-2-chunk-0123.smt2
+- keeping exp-problem-10-2-chunk-0126.smt2
+- keeping exp-problem-10-2-chunk-0130.smt2
+- keeping exp-problem-10-2-chunk-0132.smt2
+- keeping exp-problem-10-2-chunk-0137.smt2
+- keeping exp-problem-10-2-chunk-0139.smt2
+- keeping exp-problem-10-2-chunk-0141.smt2
+- keeping exp-problem-10-2-chunk-0144.smt2
+- keeping exp-problem-10-2-chunk-0147.smt2
+- keeping exp-problem-10-2-chunk-0151.smt2
+- keeping exp-problem-10-2-chunk-0164.smt2
+- keeping exp-problem-10-2-chunk-0165.smt2
+- keeping exp-problem-10-2-chunk-0171.smt2
+- keeping exp-problem-10-2-chunk-0172.smt2
+- keeping exp-problem-10-2-chunk-0174.smt2
+- keeping exp-problem-10-2-chunk-0175.smt2
+- keeping exp-problem-10-2-chunk-0176.smt2
+- keeping exp-problem-10-2-chunk-0177.smt2
+- keeping exp-problem-10-2-chunk-0180.smt2
+- keeping exp-problem-10-2-chunk-0184.smt2
+- keeping exp-problem-10-2-chunk-0185.smt2
+- keeping exp-problem-10-2-chunk-0187.smt2
+- keeping exp-problem-10-2-chunk-0188.smt2
+- keeping exp-problem-10-2-chunk-0189.smt2
+- keeping exp-problem-10-2-chunk-0190.smt2
+- keeping exp-problem-10-2-chunk-0191.smt2
+- keeping exp-problem-10-2-chunk-0192.smt2
+- keeping exp-problem-10-2-chunk-0195.smt2
+- keeping exp-problem-10-2-chunk-0197.smt2
+- keeping exp-problem-10-2-chunk-0198.smt2
+- keeping exp-problem-10-2-chunk-0203.smt2
+- keeping exp-problem-10-2-chunk-0205.smt2
+- keeping exp-problem-10-2-chunk-0208.smt2
+- keeping exp-problem-10-2-chunk-0209.smt2
+- keeping exp-problem-10-2-chunk-0210.smt2
+- keeping exp-problem-10-2-chunk-0211.smt2
+- keeping exp-problem-10-2-chunk-0215.smt2
+- keeping exp-problem-10-2-chunk-0218.smt2
+- keeping exp-problem-10-2-chunk-0222.smt2
+- keeping exp-problem-10-2-chunk-0225.smt2
+- keeping exp-problem-10-2-chunk-0226.smt2
+- keeping exp-problem-10-2-chunk-0227.smt2
+- keeping exp-problem-10-2-chunk-0228.smt2
+- keeping exp-problem-10-2-chunk-0230.smt2
+- keeping exp-problem-10-2-chunk-0234.smt2
+- keeping exp-problem-10-2-chunk-0238.smt2
+- keeping exp-problem-10-2-chunk-0240.smt2
+- keeping exp-problem-10-2-chunk-0258.smt2
+- keeping exp-problem-10-2-chunk-0261.smt2
+- keeping exp-problem-10-2-chunk-0268.smt2
+- keeping exp-problem-10-2-chunk-0269.smt2
+- keeping exp-problem-10-2-chunk-0271.smt2
+- keeping exp-problem-10-2-chunk-0301.smt2
+- timeout: removing exp-problem-10-2-chunk-0305.smt2
+- keeping exp-problem-10-2-chunk-0308.smt2
+- keeping exp-problem-10-2-chunk-0331.smt2
+- keeping exp-problem-10-2-chunk-0333.smt2
+- keeping exp-problem-10-2-chunk-0339.smt2
+- keeping exp-problem-10-2-chunk-0341.smt2
+- keeping exp-problem-10-2-chunk-0343.smt2
+- keeping exp-problem-10-2-chunk-0345.smt2
+- keeping exp-problem-10-2-chunk-0349.smt2
+- keeping exp-problem-10-2-chunk-0353.smt2
+- keeping exp-problem-10-2-chunk-0355.smt2
+- keeping exp-problem-10-2-chunk-0360.smt2
+- keeping exp-problem-10-2-chunk-0362.smt2
+- keeping exp-problem-10-2-chunk-0363.smt2
+- keeping exp-problem-10-2-chunk-0371.smt2
+- keeping exp-problem-10-2-chunk-0373.smt2
+- keeping exp-problem-10-2-chunk-0374.smt2
+- keeping exp-problem-10-2-chunk-0377.smt2
+- keeping exp-problem-10-2-chunk-0379.smt2
+- keeping exp-problem-10-2-chunk-0381.smt2
+- keeping exp-problem-10-2-chunk-0383.smt2
+- keeping exp-problem-10-2-chunk-0387.smt2
+- keeping exp-problem-10-2-chunk-0390.smt2
+- keeping exp-problem-10-2-chunk-0391.smt2
+- keeping exp-problem-10-2-chunk-0392.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp/problem/10/3
+45
+- keeping exp-problem-10-3-chunk-0010.smt2
+- keeping exp-problem-10-3-chunk-0012.smt2
+- keeping exp-problem-10-3-chunk-0014.smt2
+- keeping exp-problem-10-3-chunk-0015.smt2
+- keeping exp-problem-10-3-chunk-0017.smt2
+- keeping exp-problem-10-3-chunk-0018.smt2
+- keeping exp-problem-10-3-chunk-0020.smt2
+- keeping exp-problem-10-3-chunk-0024.smt2
+- keeping exp-problem-10-3-chunk-0028.smt2
+- keeping exp-problem-10-3-chunk-0029.smt2
+- keeping exp-problem-10-3-chunk-0052.smt2
+- keeping exp-problem-10-3-chunk-0079.smt2
+- keeping exp-problem-10-3-chunk-0085.smt2
+- keeping exp-problem-10-3-chunk-0087.smt2
+- keeping exp-problem-10-3-chunk-0091.smt2
+- keeping exp-problem-10-3-chunk-0092.smt2
+- keeping exp-problem-10-3-chunk-0095.smt2
+- keeping exp-problem-10-3-chunk-0099.smt2
+- keeping exp-problem-10-3-chunk-0100.smt2
+- keeping exp-problem-10-3-chunk-0101.smt2
+- keeping exp-problem-10-3-chunk-0106.smt2
+- keeping exp-problem-10-3-chunk-0107.smt2
+- keeping exp-problem-10-3-chunk-0111.smt2
+- keeping exp-problem-10-3-chunk-0112.smt2
+- keeping exp-problem-10-3-chunk-0115.smt2
+- keeping exp-problem-10-3-chunk-0120.smt2
+- keeping exp-problem-10-3-chunk-0121.smt2
+- keeping exp-problem-10-3-chunk-0123.smt2
+- timeout: removing exp-problem-10-3-chunk-0130.smt2
+- keeping exp-problem-10-3-chunk-0132.smt2
+- keeping exp-problem-10-3-chunk-0137.smt2
+- timeout: removing exp-problem-10-3-chunk-0139.smt2
+- timeout: removing exp-problem-10-3-chunk-0141.smt2
+- timeout: removing exp-problem-10-3-chunk-0144.smt2
+- keeping exp-problem-10-3-chunk-0147.smt2
+- keeping exp-problem-10-3-chunk-0151.smt2
+- timeout: removing exp-problem-10-3-chunk-0164.smt2
+- keeping exp-problem-10-3-chunk-0165.smt2
+- keeping exp-problem-10-3-chunk-0172.smt2
+- keeping exp-problem-10-3-chunk-0173.smt2
+- keeping exp-problem-10-3-chunk-0175.smt2
+- keeping exp-problem-10-3-chunk-0179.smt2
+- keeping exp-problem-10-3-chunk-0181.smt2
+- keeping exp-problem-10-3-chunk-0184.smt2
+- keeping exp-problem-10-3-chunk-0185.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/exp/problem/10/3/weak
+80
+- keeping exp-problem-10-3-weak-chunk-0006.smt2
+- keeping exp-problem-10-3-weak-chunk-0007.smt2
+- keeping exp-problem-10-3-weak-chunk-0008.smt2
+- keeping exp-problem-10-3-weak-chunk-0009.smt2
+- keeping exp-problem-10-3-weak-chunk-0010.smt2
+- keeping exp-problem-10-3-weak-chunk-0011.smt2
+- keeping exp-problem-10-3-weak-chunk-0013.smt2
+- keeping exp-problem-10-3-weak-chunk-0015.smt2
+- keeping exp-problem-10-3-weak-chunk-0017.smt2
+- keeping exp-problem-10-3-weak-chunk-0019.smt2
+- keeping exp-problem-10-3-weak-chunk-0021.smt2
+- keeping exp-problem-10-3-weak-chunk-0023.smt2
+- keeping exp-problem-10-3-weak-chunk-0025.smt2
+- keeping exp-problem-10-3-weak-chunk-0027.smt2
+- keeping exp-problem-10-3-weak-chunk-0029.smt2
+- keeping exp-problem-10-3-weak-chunk-0031.smt2
+- keeping exp-problem-10-3-weak-chunk-0033.smt2
+- keeping exp-problem-10-3-weak-chunk-0035.smt2
+- keeping exp-problem-10-3-weak-chunk-0040.smt2
+- keeping exp-problem-10-3-weak-chunk-0044.smt2
+- keeping exp-problem-10-3-weak-chunk-0045.smt2
+- keeping exp-problem-10-3-weak-chunk-0048.smt2
+- keeping exp-problem-10-3-weak-chunk-0051.smt2
+- keeping exp-problem-10-3-weak-chunk-0052.smt2
+- keeping exp-problem-10-3-weak-chunk-0057.smt2
+- keeping exp-problem-10-3-weak-chunk-0060.smt2
+- keeping exp-problem-10-3-weak-chunk-0061.smt2
+- keeping exp-problem-10-3-weak-chunk-0064.smt2
+- keeping exp-problem-10-3-weak-chunk-0066.smt2
+- keeping exp-problem-10-3-weak-chunk-0068.smt2
+- keeping exp-problem-10-3-weak-chunk-0071.smt2
+- keeping exp-problem-10-3-weak-chunk-0072.smt2
+- keeping exp-problem-10-3-weak-chunk-0076.smt2
+- keeping exp-problem-10-3-weak-chunk-0077.smt2
+- keeping exp-problem-10-3-weak-chunk-0079.smt2
+- keeping exp-problem-10-3-weak-chunk-0080.smt2
+- keeping exp-problem-10-3-weak-chunk-0082.smt2
+- keeping exp-problem-10-3-weak-chunk-0083.smt2
+- keeping exp-problem-10-3-weak-chunk-0084.smt2
+- keeping exp-problem-10-3-weak-chunk-0088.smt2
+- keeping exp-problem-10-3-weak-chunk-0089.smt2
+- keeping exp-problem-10-3-weak-chunk-0091.smt2
+- keeping exp-problem-10-3-weak-chunk-0093.smt2
+- keeping exp-problem-10-3-weak-chunk-0094.smt2
+- keeping exp-problem-10-3-weak-chunk-0098.smt2
+- keeping exp-problem-10-3-weak-chunk-0100.smt2
+- keeping exp-problem-10-3-weak-chunk-0102.smt2
+- keeping exp-problem-10-3-weak-chunk-0104.smt2
+- keeping exp-problem-10-3-weak-chunk-0116.smt2
+- keeping exp-problem-10-3-weak-chunk-0117.smt2
+- keeping exp-problem-10-3-weak-chunk-0122.smt2
+- keeping exp-problem-10-3-weak-chunk-0139.smt2
+- keeping exp-problem-10-3-weak-chunk-0140.smt2
+- keeping exp-problem-10-3-weak-chunk-0141.smt2
+- keeping exp-problem-10-3-weak-chunk-0142.smt2
+- keeping exp-problem-10-3-weak-chunk-0143.smt2
+- keeping exp-problem-10-3-weak-chunk-0144.smt2
+- keeping exp-problem-10-3-weak-chunk-0145.smt2
+- keeping exp-problem-10-3-weak-chunk-0146.smt2
+- keeping exp-problem-10-3-weak-chunk-0148.smt2
+- keeping exp-problem-10-3-weak-chunk-0150.smt2
+- keeping exp-problem-10-3-weak-chunk-0152.smt2
+- keeping exp-problem-10-3-weak-chunk-0154.smt2
+- keeping exp-problem-10-3-weak-chunk-0156.smt2
+- keeping exp-problem-10-3-weak-chunk-0158.smt2
+- keeping exp-problem-10-3-weak-chunk-0160.smt2
+- keeping exp-problem-10-3-weak-chunk-0161.smt2
+- keeping exp-problem-10-3-weak-chunk-0162.smt2
+- keeping exp-problem-10-3-weak-chunk-0164.smt2
+- keeping exp-problem-10-3-weak-chunk-0166.smt2
+- keeping exp-problem-10-3-weak-chunk-0168.smt2
+- keeping exp-problem-10-3-weak-chunk-0170.smt2
+- keeping exp-problem-10-3-weak-chunk-0172.smt2
+- keeping exp-problem-10-3-weak-chunk-0174.smt2
+- keeping exp-problem-10-3-weak-chunk-0176.smt2
+- keeping exp-problem-10-3-weak-chunk-0178.smt2
+- keeping exp-problem-10-3-weak-chunk-0180.smt2
+- keeping exp-problem-10-3-weak-chunk-0182.smt2
+- keeping exp-problem-10-3-weak-chunk-0190.smt2
+- keeping exp-problem-10-3-weak-chunk-0191.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/heartdipole
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/log
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/log/fun-ineq
+2
+- keeping log-fun-ineq-g-chunk-0032.smt2
+- keeping log-fun-ineq-g-chunk-0034.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Lyapunov
+24
+- keeping Lyapunov1a-chunk-0003.smt2
+- keeping Lyapunov1a-chunk-0004.smt2
+- keeping Lyapunov1a-chunk-0005.smt2
+- keeping Lyapunov1a-chunk-0007.smt2
+- keeping Lyapunov1a-chunk-0008.smt2
+- keeping Lyapunov1a-chunk-0009.smt2
+- keeping Lyapunov1a-chunk-0010.smt2
+- keeping Lyapunov1a-chunk-0011.smt2
+- keeping Lyapunov1a-chunk-0013.smt2
+- keeping Lyapunov1a-chunk-0014.smt2
+- keeping Lyapunov1a-chunk-0015.smt2
+- keeping Lyapunov1a-chunk-0016.smt2
+- keeping Lyapunov1a-chunk-0018.smt2
+- keeping Lyapunov1a-chunk-0021.smt2
+- keeping Lyapunov1a-chunk-0024.smt2
+- keeping Lyapunov1a-chunk-0025.smt2
+- keeping Lyapunov1a-chunk-0027.smt2
+- keeping Lyapunov1a-chunk-0029.smt2
+- keeping Lyapunov1a-chunk-0031.smt2
+- keeping Lyapunov1a-chunk-0032.smt2
+- keeping Lyapunov1a-chunk-0034.smt2
+- keeping Lyapunov1a-chunk-0035.smt2
+- keeping Lyapunov1a-chunk-0039.smt2
+- keeping Lyapunov1a-chunk-0042.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Nichols-Plot
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/Nichols-Plot/Inverted-Pendulum
+2
+- keeping Nichols-Plot-Inverted-Pendulum-Fails-1-6-chunk-0011.smt2
+- keeping Nichols-Plot-Inverted-Pendulum-Fails-1-6-chunk-0012.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/bench-exp-3d
+11
+- keeping polypaver-bench-exp-3d-chunk-0065.smt2
+- keeping polypaver-bench-exp-3d-chunk-0072.smt2
+- keeping polypaver-bench-exp-3d-chunk-0075.smt2
+- keeping polypaver-bench-exp-3d-chunk-0080.smt2
+- keeping polypaver-bench-exp-3d-chunk-0082.smt2
+- keeping polypaver-bench-exp-3d-chunk-0084.smt2
+- keeping polypaver-bench-exp-3d-chunk-0086.smt2
+- keeping polypaver-bench-exp-3d-chunk-0118.smt2
+- keeping polypaver-bench-exp-3d-chunk-0120.smt2
+- keeping polypaver-bench-exp-3d-chunk-0122.smt2
+- keeping polypaver-bench-exp-3d-chunk-0127.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/bench-sqrt-3d
+158
+- keeping polypaver-bench-sqrt-3d-chunk-0017.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0019.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0020.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0040.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0060.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0069.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0073.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0082.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0085.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0087.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0088.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0092.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0093.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0097.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0109.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0111.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0141.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0142.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0144.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0146.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0148.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0149.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0152.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0161.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0164.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0166.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0167.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0171.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0172.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0183.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0184.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0188.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0189.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0194.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0195.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0196.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0197.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0198.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0199.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0200.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0201.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0203.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0204.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0207.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0208.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0209.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0210.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0211.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0213.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0217.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0220.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0223.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0226.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0228.smt2
+- timeout: removing polypaver-bench-sqrt-3d-chunk-0229.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0231.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0232.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0233.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0236.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0237.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0238.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0239.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0240.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0242.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0243.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0244.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0247.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0248.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0249.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0250.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0251.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0257.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0258.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0259.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0261.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0263.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0264.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0267.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0268.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0269.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0270.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0274.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0276.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0277.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0278.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0279.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0280.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0282.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0283.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0287.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0289.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0290.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0293.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0295.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0296.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0297.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0298.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0299.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0307.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0309.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0311.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0312.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0316.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0320.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0321.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0322.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0326.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0328.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0330.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0331.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0336.smt2
+- timeout: removing polypaver-bench-sqrt-3d-chunk-0339.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0341.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0344.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0349.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0351.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0353.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0361.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0363.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0364.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0365.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0367.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0369.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0370.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0372.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0375.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0376.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0377.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0384.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0387.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0388.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0390.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0392.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0400.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0404.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0405.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0406.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0412.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0416.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0419.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0420.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0422.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0427.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0428.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0433.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0437.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0441.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0442.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0444.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0450.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0451.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0457.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0472.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0486.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0491.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0493.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0515.smt2
+- keeping polypaver-bench-sqrt-3d-chunk-0519.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/sqrt43-int
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/sqrt43-int/3vars
+27
+- keeping polypaver-sqrt43-int-3vars-chunk-0017.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0019.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0020.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0022.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0025.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0028.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0029.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0030.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0033.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0041.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0067.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0069.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0070.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0072.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0075.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0079.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0080.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0083.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0084.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0086.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0090.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0093.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0098.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0099.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0106.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0114.smt2
+- keeping polypaver-sqrt43-int-3vars-chunk-0119.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/sqrt43-int/4vars
+4
+- keeping polypaver-sqrt43-int-4vars-chunk-0023.smt2
+- keeping polypaver-sqrt43-int-4vars-chunk-0025.smt2
+- keeping polypaver-sqrt43-int-4vars-chunk-0026.smt2
+- keeping polypaver-sqrt43-int-4vars-chunk-0028.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/sqrt-circles
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/sqrt-circles/1a
+1
+- keeping polypaver-sqrt-circles-1a-chunk-0009.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/polypaver/sqrt-circles/2a
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/RL-high-pass-circuit
+4
+- keeping RL-high-pass-circuit-gain-chunk-0005.smt2
+- keeping RL-high-pass-circuit-gain-chunk-0007.smt2
+- keeping RL-high-pass-circuit-gain-chunk-0010.smt2
+- keeping RL-high-pass-circuit-gain-chunk-0011.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/344
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/344/3
+7
+- keeping sin-344-3-weak-chunk-0036.smt2
+- keeping sin-344-3-weak-chunk-0037.smt2
+- keeping sin-344-3-weak-chunk-0038.smt2
+- keeping sin-344-3-weak-chunk-0044.smt2
+- keeping sin-344-3-weak-chunk-0045.smt2
+- keeping sin-344-3-weak-chunk-0046.smt2
+- keeping sin-344-3-weak-chunk-0049.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/344/4
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/cos
+252
+- keeping sin-cos-346-b-chunk-0010.smt2
+- keeping sin-cos-346-b-chunk-0011.smt2
+- keeping sin-cos-346-b-chunk-0012.smt2
+- keeping sin-cos-346-b-chunk-0018.smt2
+- keeping sin-cos-346-b-chunk-0022.smt2
+- keeping sin-cos-346-b-chunk-0023.smt2
+- keeping sin-cos-346-b-chunk-0026.smt2
+- keeping sin-cos-346-b-chunk-0027.smt2
+- keeping sin-cos-346-b-chunk-0030.smt2
+- keeping sin-cos-346-b-chunk-0031.smt2
+- keeping sin-cos-346-b-chunk-0034.smt2
+- keeping sin-cos-346-b-chunk-0035.smt2
+- keeping sin-cos-346-b-chunk-0038.smt2
+- keeping sin-cos-346-b-chunk-0039.smt2
+- keeping sin-cos-346-b-chunk-0045.smt2
+- keeping sin-cos-346-b-chunk-0047.smt2
+- keeping sin-cos-346-b-chunk-0049.smt2
+- keeping sin-cos-346-b-chunk-0051.smt2
+- keeping sin-cos-346-b-chunk-0053.smt2
+- keeping sin-cos-346-b-chunk-0056.smt2
+- keeping sin-cos-346-b-chunk-0057.smt2
+- keeping sin-cos-346-b-chunk-0060.smt2
+- keeping sin-cos-346-b-chunk-0063.smt2
+- keeping sin-cos-346-b-chunk-0064.smt2
+- keeping sin-cos-346-b-chunk-0069.smt2
+- keeping sin-cos-346-b-chunk-0071.smt2
+- keeping sin-cos-346-b-chunk-0073.smt2
+- keeping sin-cos-346-b-chunk-0075.smt2
+- keeping sin-cos-346-b-chunk-0077.smt2
+- keeping sin-cos-346-b-chunk-0080.smt2
+- keeping sin-cos-346-b-chunk-0081.smt2
+- keeping sin-cos-346-b-chunk-0087.smt2
+- keeping sin-cos-346-b-chunk-0088.smt2
+- keeping sin-cos-346-b-chunk-0093.smt2
+- keeping sin-cos-346-b-chunk-0095.smt2
+- keeping sin-cos-346-b-chunk-0097.smt2
+- keeping sin-cos-346-b-chunk-0099.smt2
+- keeping sin-cos-346-b-chunk-0101.smt2
+- keeping sin-cos-346-b-chunk-0103.smt2
+- keeping sin-cos-346-b-chunk-0108.smt2
+- keeping sin-cos-346-b-chunk-0109.smt2
+- keeping sin-cos-346-b-chunk-0115.smt2
+- keeping sin-cos-346-b-chunk-0116.smt2
+- keeping sin-cos-346-b-chunk-0121.smt2
+- keeping sin-cos-346-b-chunk-0122.smt2
+- keeping sin-cos-346-b-chunk-0123.smt2
+- keeping sin-cos-346-b-chunk-0125.smt2
+- keeping sin-cos-346-b-chunk-0126.smt2
+- keeping sin-cos-346-b-chunk-0127.smt2
+- timeout: removing sin-cos-346-b-chunk-0128.smt2
+- keeping sin-cos-346-b-chunk-0129.smt2
+- keeping sin-cos-346-b-chunk-0130.smt2
+- keeping sin-cos-346-b-chunk-0131.smt2
+- keeping sin-cos-346-b-chunk-0132.smt2
+- keeping sin-cos-346-b-chunk-0133.smt2
+- keeping sin-cos-346-b-chunk-0134.smt2
+- keeping sin-cos-346-b-chunk-0139.smt2
+- keeping sin-cos-346-b-chunk-0140.smt2
+- keeping sin-cos-346-b-chunk-0141.smt2
+- keeping sin-cos-346-b-chunk-0142.smt2
+- keeping sin-cos-346-b-chunk-0158.smt2
+- keeping sin-cos-346-b-chunk-0159.smt2
+- keeping sin-cos-346-b-chunk-0160.smt2
+- keeping sin-cos-346-b-chunk-0162.smt2
+- keeping sin-cos-346-b-chunk-0163.smt2
+- keeping sin-cos-346-b-chunk-0164.smt2
+- timeout: removing sin-cos-346-b-chunk-0165.smt2
+- keeping sin-cos-346-b-chunk-0166.smt2
+- keeping sin-cos-346-b-chunk-0167.smt2
+- keeping sin-cos-346-b-chunk-0168.smt2
+- keeping sin-cos-346-b-chunk-0169.smt2
+- keeping sin-cos-346-b-chunk-0170.smt2
+- keeping sin-cos-346-b-chunk-0171.smt2
+- keeping sin-cos-346-b-chunk-0184.smt2
+- keeping sin-cos-346-b-chunk-0186.smt2
+- keeping sin-cos-346-b-chunk-0187.smt2
+- keeping sin-cos-346-b-chunk-0192.smt2
+- keeping sin-cos-346-b-chunk-0193.smt2
+- keeping sin-cos-346-b-chunk-0198.smt2
+- keeping sin-cos-346-b-chunk-0202.smt2
+- keeping sin-cos-346-b-chunk-0205.smt2
+- keeping sin-cos-346-b-chunk-0206.smt2
+- keeping sin-cos-346-b-chunk-0208.smt2
+- keeping sin-cos-346-b-chunk-0209.smt2
+- keeping sin-cos-346-b-chunk-0211.smt2
+- keeping sin-cos-346-b-chunk-0214.smt2
+- keeping sin-cos-346-b-chunk-0215.smt2
+- keeping sin-cos-346-b-chunk-0219.smt2
+- keeping sin-cos-346-b-chunk-0220.smt2
+- keeping sin-cos-346-b-chunk-0223.smt2
+- keeping sin-cos-346-b-chunk-0224.smt2
+- keeping sin-cos-346-b-chunk-0227.smt2
+- keeping sin-cos-346-b-chunk-0228.smt2
+- keeping sin-cos-346-b-chunk-0230.smt2
+- keeping sin-cos-346-b-chunk-0231.smt2
+- keeping sin-cos-346-b-chunk-0234.smt2
+- keeping sin-cos-346-b-chunk-0235.smt2
+- keeping sin-cos-346-b-chunk-0239.smt2
+- keeping sin-cos-346-b-chunk-0241.smt2
+- keeping sin-cos-346-b-chunk-0242.smt2
+- keeping sin-cos-346-b-chunk-0243.smt2
+- keeping sin-cos-346-b-chunk-0244.smt2
+- keeping sin-cos-346-b-chunk-0245.smt2
+- keeping sin-cos-346-b-chunk-0246.smt2
+- keeping sin-cos-346-b-chunk-0247.smt2
+- keeping sin-cos-346-b-chunk-0248.smt2
+- keeping sin-cos-346-b-chunk-0249.smt2
+- keeping sin-cos-346-b-chunk-0250.smt2
+- keeping sin-cos-346-b-chunk-0251.smt2
+- keeping sin-cos-346-b-chunk-0254.smt2
+- keeping sin-cos-346-b-chunk-0262.smt2
+- keeping sin-cos-346-b-chunk-0264.smt2
+- keeping sin-cos-346-b-chunk-0265.smt2
+- keeping sin-cos-346-b-chunk-0266.smt2
+- keeping sin-cos-346-b-chunk-0271.smt2
+- keeping sin-cos-346-b-chunk-0272.smt2
+- keeping sin-cos-346-b-chunk-0276.smt2
+- keeping sin-cos-346-b-chunk-0277.smt2
+- keeping sin-cos-346-b-chunk-0280.smt2
+- keeping sin-cos-346-b-chunk-0281.smt2
+- keeping sin-cos-346-b-chunk-0284.smt2
+- keeping sin-cos-346-b-chunk-0285.smt2
+- keeping sin-cos-346-b-chunk-0286.smt2
+- keeping sin-cos-346-b-chunk-0290.smt2
+- keeping sin-cos-346-b-chunk-0291.smt2
+- keeping sin-cos-346-b-chunk-0294.smt2
+- keeping sin-cos-346-b-chunk-0295.smt2
+- keeping sin-cos-346-b-chunk-0297.smt2
+- keeping sin-cos-346-b-chunk-0298.smt2
+- keeping sin-cos-346-b-chunk-0301.smt2
+- keeping sin-cos-346-b-chunk-0302.smt2
+- keeping sin-cos-346-b-chunk-0304.smt2
+- keeping sin-cos-346-b-chunk-0305.smt2
+- keeping sin-cos-346-b-chunk-0308.smt2
+- keeping sin-cos-346-b-chunk-0311.smt2
+- keeping sin-cos-346-b-chunk-0314.smt2
+- keeping sin-cos-346-b-chunk-0315.smt2
+- keeping sin-cos-346-b-chunk-0317.smt2
+- keeping sin-cos-346-b-chunk-0318.smt2
+- keeping sin-cos-346-b-chunk-0321.smt2
+- keeping sin-cos-346-b-chunk-0322.smt2
+- keeping sin-cos-346-b-chunk-0325.smt2
+- keeping sin-cos-346-b-chunk-0328.smt2
+- keeping sin-cos-346-b-chunk-0329.smt2
+- keeping sin-cos-346-b-chunk-0334.smt2
+- keeping sin-cos-346-b-chunk-0335.smt2
+- keeping sin-cos-346-b-chunk-0337.smt2
+- keeping sin-cos-346-b-chunk-0338.smt2
+- keeping sin-cos-346-b-chunk-0341.smt2
+- keeping sin-cos-346-b-chunk-0342.smt2
+- keeping sin-cos-346-b-chunk-0344.smt2
+- keeping sin-cos-346-b-chunk-0345.smt2
+- keeping sin-cos-346-b-chunk-0347.smt2
+- keeping sin-cos-346-b-chunk-0351.smt2
+- keeping sin-cos-346-b-chunk-0354.smt2
+- keeping sin-cos-346-b-chunk-0357.smt2
+- keeping sin-cos-346-b-chunk-0358.smt2
+- keeping sin-cos-346-b-chunk-0360.smt2
+- keeping sin-cos-346-b-chunk-0361.smt2
+- keeping sin-cos-346-b-chunk-0365.smt2
+- keeping sin-cos-346-b-chunk-0368.smt2
+- keeping sin-cos-346-b-chunk-0372.smt2
+- keeping sin-cos-346-b-chunk-0375.smt2
+- keeping sin-cos-346-b-chunk-0377.smt2
+- keeping sin-cos-346-b-chunk-0379.smt2
+- keeping sin-cos-346-b-chunk-0382.smt2
+- keeping sin-cos-346-b-chunk-0383.smt2
+- keeping sin-cos-346-b-chunk-0388.smt2
+- keeping sin-cos-346-b-chunk-0392.smt2
+- keeping sin-cos-346-b-chunk-0395.smt2
+- keeping sin-cos-346-b-chunk-0398.smt2
+- keeping sin-cos-346-b-chunk-0401.smt2
+- keeping sin-cos-346-b-chunk-0402.smt2
+- keeping sin-cos-346-b-chunk-0406.smt2
+- keeping sin-cos-346-b-chunk-0407.smt2
+- keeping sin-cos-346-b-chunk-0410.smt2
+- keeping sin-cos-346-b-chunk-0411.smt2
+- keeping sin-cos-346-b-chunk-0414.smt2
+- keeping sin-cos-346-b-chunk-0415.smt2
+- keeping sin-cos-346-b-chunk-0417.smt2
+- keeping sin-cos-346-b-chunk-0418.smt2
+- keeping sin-cos-346-b-chunk-0425.smt2
+- keeping sin-cos-346-b-chunk-0429.smt2
+- keeping sin-cos-346-b-chunk-0430.smt2
+- keeping sin-cos-346-b-chunk-0432.smt2
+- timeout: removing sin-cos-346-b-chunk-0441.smt2
+- keeping sin-cos-346-b-chunk-0448.smt2
+- keeping sin-cos-346-b-chunk-0451.smt2
+- keeping sin-cos-346-b-chunk-0454.smt2
+- keeping sin-cos-346-b-chunk-0455.smt2
+- keeping sin-cos-346-b-chunk-0457.smt2
+- keeping sin-cos-346-b-chunk-0458.smt2
+- keeping sin-cos-346-b-chunk-0462.smt2
+- keeping sin-cos-346-b-chunk-0471.smt2
+- keeping sin-cos-346-b-chunk-0472.smt2
+- keeping sin-cos-346-b-chunk-0492.smt2
+- keeping sin-cos-346-b-chunk-0494.smt2
+- keeping sin-cos-346-b-chunk-0496.smt2
+- keeping sin-cos-346-b-chunk-0497.smt2
+- keeping sin-cos-346-b-chunk-0511.smt2
+- keeping sin-cos-346-b-chunk-0513.smt2
+- keeping sin-cos-346-b-chunk-0516.smt2
+- keeping sin-cos-346-b-chunk-0518.smt2
+- keeping sin-cos-346-b-chunk-0520.smt2
+- keeping sin-cos-346-b-chunk-0521.smt2
+- keeping sin-cos-346-b-chunk-0523.smt2
+- keeping sin-cos-346-b-chunk-0528.smt2
+- keeping sin-cos-346-b-chunk-0529.smt2
+- keeping sin-cos-346-b-chunk-0532.smt2
+- keeping sin-cos-346-b-chunk-0536.smt2
+- keeping sin-cos-346-b-chunk-0537.smt2
+- keeping sin-cos-346-b-chunk-0540.smt2
+- keeping sin-cos-346-b-chunk-0543.smt2
+- keeping sin-cos-346-b-chunk-0544.smt2
+- keeping sin-cos-346-b-chunk-0547.smt2
+- keeping sin-cos-346-b-chunk-0548.smt2
+- keeping sin-cos-346-b-chunk-0552.smt2
+- keeping sin-cos-346-b-chunk-0556.smt2
+- keeping sin-cos-346-b-chunk-0559.smt2
+- keeping sin-cos-346-b-chunk-0560.smt2
+- keeping sin-cos-346-b-chunk-0562.smt2
+- keeping sin-cos-346-b-chunk-0563.smt2
+- keeping sin-cos-346-b-chunk-0565.smt2
+- keeping sin-cos-346-b-chunk-0566.smt2
+- keeping sin-cos-346-b-chunk-0568.smt2
+- keeping sin-cos-346-b-chunk-0569.smt2
+- keeping sin-cos-346-b-chunk-0572.smt2
+- keeping sin-cos-346-b-chunk-0574.smt2
+- keeping sin-cos-346-b-chunk-0575.smt2
+- keeping sin-cos-346-b-chunk-0578.smt2
+- keeping sin-cos-346-b-chunk-0583.smt2
+- keeping sin-cos-346-b-chunk-0584.smt2
+- timeout: removing sin-cos-346-b-chunk-0589.smt2
+- timeout: removing sin-cos-346-b-chunk-0593.smt2
+- keeping sin-cos-346-b-chunk-0596.smt2
+- keeping sin-cos-346-b-chunk-0599.smt2
+- timeout: removing sin-cos-346-b-chunk-0606.smt2
+- keeping sin-cos-346-b-chunk-0608.smt2
+- keeping sin-cos-346-b-chunk-0609.smt2
+- keeping sin-cos-346-b-chunk-0611.smt2
+- keeping sin-cos-346-b-chunk-0612.smt2
+- keeping sin-cos-346-b-chunk-0617.smt2
+- keeping sin-cos-346-b-chunk-0620.smt2
+- keeping sin-cos-346-b-chunk-0621.smt2
+- keeping sin-cos-346-b-chunk-0623.smt2
+- keeping sin-cos-346-b-chunk-0626.smt2
+- keeping sin-cos-346-b-chunk-0629.smt2
+- keeping sin-cos-346-b-chunk-0631.smt2
+- keeping sin-cos-346-b-chunk-0632.smt2
+- keeping sin-cos-346-b-chunk-0634.smt2
+- keeping sin-cos-346-b-chunk-0635.smt2
+- keeping sin-cos-346-b-chunk-0639.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/problem
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/problem/10
+24
+- keeping sin-problem-10-2-chunk-0010.smt2
+- keeping sin-problem-10-2-chunk-0013.smt2
+- keeping sin-problem-10-2-chunk-0015.smt2
+- keeping sin-problem-10-2-chunk-0016.smt2
+- keeping sin-problem-10-2-chunk-0018.smt2
+- keeping sin-problem-10-2-chunk-0021.smt2
+- keeping sin-problem-10-2-chunk-0022.smt2
+- keeping sin-problem-10-2-chunk-0026.smt2
+- keeping sin-problem-10-2-chunk-0028.smt2
+- keeping sin-problem-10-2-chunk-0030.smt2
+- keeping sin-problem-10-2-chunk-0031.smt2
+- keeping sin-problem-10-2-chunk-0032.smt2
+- keeping sin-problem-10-3-chunk-0010.smt2
+- keeping sin-problem-10-3-chunk-0013.smt2
+- keeping sin-problem-10-3-chunk-0015.smt2
+- keeping sin-problem-10-3-chunk-0016.smt2
+- keeping sin-problem-10-3-chunk-0018.smt2
+- keeping sin-problem-10-3-chunk-0021.smt2
+- keeping sin-problem-10-3-chunk-0022.smt2
+- keeping sin-problem-10-3-chunk-0026.smt2
+- keeping sin-problem-10-3-chunk-0028.smt2
+- keeping sin-problem-10-3-chunk-0030.smt2
+- keeping sin-problem-10-3-chunk-0031.smt2
+- keeping sin-problem-10-3-chunk-0032.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/problem/7
+50
+- keeping sin-problem-7-chunk-0027.smt2
+- keeping sin-problem-7-chunk-0042.smt2
+- keeping sin-problem-7-chunk-0053.smt2
+- keeping sin-problem-7-chunk-0054.smt2
+- keeping sin-problem-7-chunk-0059.smt2
+- keeping sin-problem-7-chunk-0066.smt2
+- keeping sin-problem-7-chunk-0072.smt2
+- keeping sin-problem-7-chunk-0073.smt2
+- keeping sin-problem-7-chunk-0077.smt2
+- keeping sin-problem-7-chunk-0078.smt2
+- keeping sin-problem-7-chunk-0079.smt2
+- keeping sin-problem-7-chunk-0080.smt2
+- keeping sin-problem-7-chunk-0082.smt2
+- keeping sin-problem-7-chunk-0085.smt2
+- keeping sin-problem-7-chunk-0086.smt2
+- keeping sin-problem-7-chunk-0087.smt2
+- keeping sin-problem-7-chunk-0089.smt2
+- keeping sin-problem-7-chunk-0090.smt2
+- keeping sin-problem-7-chunk-0091.smt2
+- keeping sin-problem-7-chunk-0092.smt2
+- keeping sin-problem-7-chunk-0095.smt2
+- keeping sin-problem-7-chunk-0096.smt2
+- keeping sin-problem-7-chunk-0100.smt2
+- keeping sin-problem-7-chunk-0102.smt2
+- keeping sin-problem-7-chunk-0104.smt2
+- keeping sin-problem-7-chunk-0106.smt2
+- keeping sin-problem-7-chunk-0108.smt2
+- keeping sin-problem-7-chunk-0109.smt2
+- keeping sin-problem-7-chunk-0112.smt2
+- keeping sin-problem-7-chunk-0113.smt2
+- keeping sin-problem-7-chunk-0114.smt2
+- keeping sin-problem-7-chunk-0120.smt2
+- keeping sin-problem-7-chunk-0121.smt2
+- keeping sin-problem-7-chunk-0124.smt2
+- keeping sin-problem-7-chunk-0125.smt2
+- timeout: removing sin-problem-7-chunk-0128.smt2
+- keeping sin-problem-7-chunk-0131.smt2
+- keeping sin-problem-7-chunk-0135.smt2
+- keeping sin-problem-7-chunk-0144.smt2
+- keeping sin-problem-7-chunk-0145.smt2
+- keeping sin-problem-7-chunk-0154.smt2
+- keeping sin-problem-7-chunk-0175.smt2
+- keeping sin-problem-7-chunk-0182.smt2
+- uninteresting: removing sin-problem-7-chunk-0204.smt2
+- uninteresting: removing sin-problem-7-chunk-0210.smt2
+- uninteresting: removing sin-problem-7-chunk-0214.smt2
+- uninteresting: removing sin-problem-7-chunk-0312.smt2
+- uninteresting: removing sin-problem-7-chunk-0316.smt2
+- keeping sin-problem-7-chunk-0341.smt2
+- uninteresting: removing sin-problem-7-chunk-0352.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/problem/7/weak
+34
+- keeping sin-problem-7-weak-chunk-0027.smt2
+- keeping sin-problem-7-weak-chunk-0060.smt2
+- keeping sin-problem-7-weak-chunk-0071.smt2
+- keeping sin-problem-7-weak-chunk-0072.smt2
+- keeping sin-problem-7-weak-chunk-0073.smt2
+- keeping sin-problem-7-weak-chunk-0075.smt2
+- keeping sin-problem-7-weak-chunk-0076.smt2
+- keeping sin-problem-7-weak-chunk-0077.smt2
+- keeping sin-problem-7-weak-chunk-0080.smt2
+- keeping sin-problem-7-weak-chunk-0081.smt2
+- keeping sin-problem-7-weak-chunk-0085.smt2
+- keeping sin-problem-7-weak-chunk-0088.smt2
+- keeping sin-problem-7-weak-chunk-0090.smt2
+- keeping sin-problem-7-weak-chunk-0091.smt2
+- keeping sin-problem-7-weak-chunk-0093.smt2
+- keeping sin-problem-7-weak-chunk-0096.smt2
+- keeping sin-problem-7-weak-chunk-0098.smt2
+- keeping sin-problem-7-weak-chunk-0100.smt2
+- keeping sin-problem-7-weak-chunk-0101.smt2
+- keeping sin-problem-7-weak-chunk-0103.smt2
+- keeping sin-problem-7-weak-chunk-0104.smt2
+- keeping sin-problem-7-weak-chunk-0109.smt2
+- keeping sin-problem-7-weak-chunk-0110.smt2
+- keeping sin-problem-7-weak-chunk-0114.smt2
+- keeping sin-problem-7-weak-chunk-0115.smt2
+- keeping sin-problem-7-weak-chunk-0118.smt2
+- keeping sin-problem-7-weak-chunk-0120.smt2
+- keeping sin-problem-7-weak-chunk-0122.smt2
+- keeping sin-problem-7-weak-chunk-0123.smt2
+- keeping sin-problem-7-weak-chunk-0126.smt2
+- keeping sin-problem-7-weak-chunk-0127.smt2
+- keeping sin-problem-7-weak-chunk-0128.smt2
+- keeping sin-problem-7-weak-chunk-0132.smt2
+- keeping sin-problem-7-weak-chunk-0134.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/problem/7/weak2
+26
+- keeping sin-problem-7-weak2-chunk-0023.smt2
+- keeping sin-problem-7-weak2-chunk-0045.smt2
+- keeping sin-problem-7-weak2-chunk-0046.smt2
+- keeping sin-problem-7-weak2-chunk-0049.smt2
+- keeping sin-problem-7-weak2-chunk-0050.smt2
+- keeping sin-problem-7-weak2-chunk-0051.smt2
+- keeping sin-problem-7-weak2-chunk-0052.smt2
+- keeping sin-problem-7-weak2-chunk-0055.smt2
+- keeping sin-problem-7-weak2-chunk-0056.smt2
+- keeping sin-problem-7-weak2-chunk-0057.smt2
+- keeping sin-problem-7-weak2-chunk-0059.smt2
+- keeping sin-problem-7-weak2-chunk-0062.smt2
+- keeping sin-problem-7-weak2-chunk-0066.smt2
+- keeping sin-problem-7-weak2-chunk-0068.smt2
+- keeping sin-problem-7-weak2-chunk-0070.smt2
+- keeping sin-problem-7-weak2-chunk-0073.smt2
+- keeping sin-problem-7-weak2-chunk-0075.smt2
+- keeping sin-problem-7-weak2-chunk-0078.smt2
+- keeping sin-problem-7-weak2-chunk-0079.smt2
+- keeping sin-problem-7-weak2-chunk-0081.smt2
+- keeping sin-problem-7-weak2-chunk-0085.smt2
+- keeping sin-problem-7-weak2-chunk-0086.smt2
+- keeping sin-problem-7-weak2-chunk-0092.smt2
+- keeping sin-problem-7-weak2-chunk-0094.smt2
+- keeping sin-problem-7-weak2-chunk-0099.smt2
+- keeping sin-problem-7-weak2-chunk-0101.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/problem/8
+19
+- keeping sin-problem-8-chunk-0025.smt2
+- keeping sin-problem-8-chunk-0027.smt2
+- keeping sin-problem-8-chunk-0029.smt2
+- keeping sin-problem-8-chunk-0033.smt2
+- keeping sin-problem-8-chunk-0038.smt2
+- keeping sin-problem-8-chunk-0043.smt2
+- keeping sin-problem-8-chunk-0044.smt2
+- keeping sin-problem-8-chunk-0045.smt2
+- keeping sin-problem-8-chunk-0046.smt2
+- keeping sin-problem-8-chunk-0049.smt2
+- keeping sin-problem-8-chunk-0050.smt2
+- keeping sin-problem-8-chunk-0053.smt2
+- keeping sin-problem-8-chunk-0054.smt2
+- keeping sin-problem-8-chunk-0057.smt2
+- keeping sin-problem-8-chunk-0058.smt2
+- keeping sin-problem-8-chunk-0062.smt2
+- keeping sin-problem-8-chunk-0063.smt2
+- keeping sin-problem-8-chunk-0067.smt2
+- keeping sin-problem-8-chunk-0068.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sin/problem/8/weak
+29
+- keeping sin-problem-8-weak-chunk-0019.smt2
+- keeping sin-problem-8-weak-chunk-0025.smt2
+- keeping sin-problem-8-weak-chunk-0027.smt2
+- keeping sin-problem-8-weak-chunk-0029.smt2
+- keeping sin-problem-8-weak-chunk-0033.smt2
+- keeping sin-problem-8-weak-chunk-0038.smt2
+- keeping sin-problem-8-weak-chunk-0043.smt2
+- keeping sin-problem-8-weak-chunk-0044.smt2
+- keeping sin-problem-8-weak-chunk-0045.smt2
+- keeping sin-problem-8-weak-chunk-0046.smt2
+- keeping sin-problem-8-weak-chunk-0049.smt2
+- keeping sin-problem-8-weak-chunk-0050.smt2
+- keeping sin-problem-8-weak-chunk-0053.smt2
+- keeping sin-problem-8-weak-chunk-0054.smt2
+- keeping sin-problem-8-weak-chunk-0057.smt2
+- keeping sin-problem-8-weak-chunk-0058.smt2
+- keeping sin-problem-8-weak-chunk-0060.smt2
+- keeping sin-problem-8-weak-chunk-0061.smt2
+- keeping sin-problem-8-weak-chunk-0062.smt2
+- keeping sin-problem-8-weak-chunk-0063.smt2
+- keeping sin-problem-8-weak-chunk-0067.smt2
+- keeping sin-problem-8-weak-chunk-0068.smt2
+- keeping sin-problem-8-weak-chunk-0071.smt2
+- keeping sin-problem-8-weak-chunk-0072.smt2
+- keeping sin-problem-8-weak-chunk-0073.smt2
+- keeping sin-problem-8-weak-chunk-0075.smt2
+- keeping sin-problem-8-weak-chunk-0076.smt2
+- keeping sin-problem-8-weak-chunk-0077.smt2
+- keeping sin-problem-8-weak-chunk-0081.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/1mcosq
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/1mcosq/7
+49
+- keeping sqrt-1mcosq-7-chunk-0017.smt2
+- keeping sqrt-1mcosq-7-chunk-0018.smt2
+- keeping sqrt-1mcosq-7-chunk-0019.smt2
+- keeping sqrt-1mcosq-7-chunk-0023.smt2
+- keeping sqrt-1mcosq-7-chunk-0024.smt2
+- keeping sqrt-1mcosq-7-chunk-0025.smt2
+- keeping sqrt-1mcosq-7-chunk-0026.smt2
+- keeping sqrt-1mcosq-7-chunk-0028.smt2
+- keeping sqrt-1mcosq-7-chunk-0029.smt2
+- keeping sqrt-1mcosq-7-chunk-0030.smt2
+- keeping sqrt-1mcosq-7-chunk-0038.smt2
+- keeping sqrt-1mcosq-7-chunk-0040.smt2
+- keeping sqrt-1mcosq-7-chunk-0041.smt2
+- keeping sqrt-1mcosq-7-chunk-0046.smt2
+- keeping sqrt-1mcosq-7-chunk-0050.smt2
+- keeping sqrt-1mcosq-7-chunk-0052.smt2
+- keeping sqrt-1mcosq-7-chunk-0054.smt2
+- keeping sqrt-1mcosq-7-chunk-0070.smt2
+- keeping sqrt-1mcosq-7-chunk-0074.smt2
+- keeping sqrt-1mcosq-7-chunk-0075.smt2
+- keeping sqrt-1mcosq-7-chunk-0076.smt2
+- keeping sqrt-1mcosq-7-chunk-0077.smt2
+- keeping sqrt-1mcosq-7-chunk-0078.smt2
+- keeping sqrt-1mcosq-7-chunk-0081.smt2
+- keeping sqrt-1mcosq-7-chunk-0083.smt2
+- keeping sqrt-1mcosq-7-chunk-0090.smt2
+- keeping sqrt-1mcosq-7-chunk-0094.smt2
+- keeping sqrt-1mcosq-7-chunk-0102.smt2
+- keeping sqrt-1mcosq-7-chunk-0109.smt2
+- keeping sqrt-1mcosq-7-chunk-0111.smt2
+- keeping sqrt-1mcosq-7-chunk-0114.smt2
+- keeping sqrt-1mcosq-7-chunk-0115.smt2
+- keeping sqrt-1mcosq-7-chunk-0116.smt2
+- keeping sqrt-1mcosq-7-chunk-0117.smt2
+- keeping sqrt-1mcosq-7-chunk-0118.smt2
+- keeping sqrt-1mcosq-7-chunk-0127.smt2
+- keeping sqrt-1mcosq-7-chunk-0129.smt2
+- keeping sqrt-1mcosq-7-chunk-0131.smt2
+- keeping sqrt-1mcosq-7-chunk-0133.smt2
+- keeping sqrt-1mcosq-7-chunk-0137.smt2
+- keeping sqrt-1mcosq-7-chunk-0141.smt2
+- keeping sqrt-1mcosq-7-chunk-0154.smt2
+- keeping sqrt-1mcosq-7-chunk-0156.smt2
+- keeping sqrt-1mcosq-7-chunk-0158.smt2
+- keeping sqrt-1mcosq-7-chunk-0160.smt2
+- keeping sqrt-1mcosq-7-chunk-0165.smt2
+- keeping sqrt-1mcosq-7-chunk-0217.smt2
+- keeping sqrt-1mcosq-7-chunk-0219.smt2
+- keeping sqrt-1mcosq-7-chunk-0221.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/1mcosq/8
+183
+- keeping sqrt-1mcosq-8-chunk-0018.smt2
+- keeping sqrt-1mcosq-8-chunk-0023.smt2
+- keeping sqrt-1mcosq-8-chunk-0030.smt2
+- keeping sqrt-1mcosq-8-chunk-0038.smt2
+- keeping sqrt-1mcosq-8-chunk-0041.smt2
+- keeping sqrt-1mcosq-8-chunk-0042.smt2
+- keeping sqrt-1mcosq-8-chunk-0043.smt2
+- keeping sqrt-1mcosq-8-chunk-0045.smt2
+- keeping sqrt-1mcosq-8-chunk-0048.smt2
+- keeping sqrt-1mcosq-8-chunk-0049.smt2
+- keeping sqrt-1mcosq-8-chunk-0051.smt2
+- keeping sqrt-1mcosq-8-chunk-0052.smt2
+- keeping sqrt-1mcosq-8-chunk-0054.smt2
+- keeping sqrt-1mcosq-8-chunk-0056.smt2
+- keeping sqrt-1mcosq-8-chunk-0057.smt2
+- keeping sqrt-1mcosq-8-chunk-0059.smt2
+- keeping sqrt-1mcosq-8-chunk-0060.smt2
+- keeping sqrt-1mcosq-8-chunk-0061.smt2
+- keeping sqrt-1mcosq-8-chunk-0066.smt2
+- keeping sqrt-1mcosq-8-chunk-0067.smt2
+- keeping sqrt-1mcosq-8-chunk-0068.smt2
+- keeping sqrt-1mcosq-8-chunk-0070.smt2
+- keeping sqrt-1mcosq-8-chunk-0074.smt2
+- keeping sqrt-1mcosq-8-chunk-0075.smt2
+- keeping sqrt-1mcosq-8-chunk-0078.smt2
+- keeping sqrt-1mcosq-8-chunk-0079.smt2
+- keeping sqrt-1mcosq-8-chunk-0081.smt2
+- keeping sqrt-1mcosq-8-chunk-0082.smt2
+- keeping sqrt-1mcosq-8-chunk-0084.smt2
+- keeping sqrt-1mcosq-8-chunk-0085.smt2
+- keeping sqrt-1mcosq-8-chunk-0089.smt2
+- keeping sqrt-1mcosq-8-chunk-0094.smt2
+- keeping sqrt-1mcosq-8-chunk-0096.smt2
+- keeping sqrt-1mcosq-8-chunk-0098.smt2
+- keeping sqrt-1mcosq-8-chunk-0100.smt2
+- keeping sqrt-1mcosq-8-chunk-0101.smt2
+- keeping sqrt-1mcosq-8-chunk-0102.smt2
+- keeping sqrt-1mcosq-8-chunk-0110.smt2
+- keeping sqrt-1mcosq-8-chunk-0113.smt2
+- keeping sqrt-1mcosq-8-chunk-0115.smt2
+- keeping sqrt-1mcosq-8-chunk-0120.smt2
+- keeping sqrt-1mcosq-8-chunk-0122.smt2
+- keeping sqrt-1mcosq-8-chunk-0123.smt2
+- keeping sqrt-1mcosq-8-chunk-0124.smt2
+- keeping sqrt-1mcosq-8-chunk-0126.smt2
+- keeping sqrt-1mcosq-8-chunk-0133.smt2
+- keeping sqrt-1mcosq-8-chunk-0142.smt2
+- keeping sqrt-1mcosq-8-chunk-0143.smt2
+- keeping sqrt-1mcosq-8-chunk-0147.smt2
+- keeping sqrt-1mcosq-8-chunk-0149.smt2
+- keeping sqrt-1mcosq-8-chunk-0164.smt2
+- keeping sqrt-1mcosq-8-chunk-0178.smt2
+- keeping sqrt-1mcosq-8-chunk-0179.smt2
+- keeping sqrt-1mcosq-8-chunk-0188.smt2
+- keeping sqrt-1mcosq-8-chunk-0191.smt2
+- keeping sqrt-1mcosq-8-chunk-0205.smt2
+- keeping sqrt-1mcosq-8-chunk-0215.smt2
+- keeping sqrt-1mcosq-8-chunk-0219.smt2
+- keeping sqrt-1mcosq-8-chunk-0229.smt2
+- keeping sqrt-1mcosq-8-chunk-0244.smt2
+- keeping sqrt-1mcosq-8-chunk-0259.smt2
+- keeping sqrt-1mcosq-8-chunk-0260.smt2
+- keeping sqrt-1mcosq-8-chunk-0272.smt2
+- keeping sqrt-1mcosq-8-chunk-0302.smt2
+- keeping sqrt-1mcosq-8-chunk-0303.smt2
+- keeping sqrt-1mcosq-8-chunk-0305.smt2
+- keeping sqrt-1mcosq-8-chunk-0310.smt2
+- keeping sqrt-1mcosq-8-chunk-0313.smt2
+- keeping sqrt-1mcosq-8-chunk-0314.smt2
+- keeping sqrt-1mcosq-8-chunk-0316.smt2
+- keeping sqrt-1mcosq-8-chunk-0319.smt2
+- keeping sqrt-1mcosq-8-chunk-0320.smt2
+- keeping sqrt-1mcosq-8-chunk-0322.smt2
+- keeping sqrt-1mcosq-8-chunk-0325.smt2
+- keeping sqrt-1mcosq-8-chunk-0328.smt2
+- keeping sqrt-1mcosq-8-chunk-0331.smt2
+- keeping sqrt-1mcosq-8-chunk-0334.smt2
+- keeping sqrt-1mcosq-8-chunk-0338.smt2
+- keeping sqrt-1mcosq-8-chunk-0339.smt2
+- keeping sqrt-1mcosq-8-chunk-0341.smt2
+- keeping sqrt-1mcosq-8-chunk-0343.smt2
+- keeping sqrt-1mcosq-8-chunk-0349.smt2
+- keeping sqrt-1mcosq-8-chunk-0352.smt2
+- keeping sqrt-1mcosq-8-chunk-0358.smt2
+- keeping sqrt-1mcosq-8-chunk-0368.smt2
+- keeping sqrt-1mcosq-8-chunk-0369.smt2
+- keeping sqrt-1mcosq-8-chunk-0372.smt2
+- keeping sqrt-1mcosq-8-chunk-0375.smt2
+- keeping sqrt-1mcosq-8-chunk-0380.smt2
+- keeping sqrt-1mcosq-8-chunk-0397.smt2
+- keeping sqrt-1mcosq-8-chunk-0400.smt2
+- keeping sqrt-1mcosq-8-chunk-0450.smt2
+- keeping sqrt-1mcosq-8-chunk-0460.smt2
+- keeping sqrt-1mcosq-8-chunk-0462.smt2
+- keeping sqrt-1mcosq-8-chunk-0464.smt2
+- keeping sqrt-1mcosq-8-chunk-0466.smt2
+- keeping sqrt-1mcosq-8-chunk-0469.smt2
+- keeping sqrt-1mcosq-8-chunk-0470.smt2
+- keeping sqrt-1mcosq-8-chunk-0471.smt2
+- keeping sqrt-1mcosq-8-chunk-0472.smt2
+- keeping sqrt-1mcosq-8-chunk-0473.smt2
+- keeping sqrt-1mcosq-8-chunk-0474.smt2
+- keeping sqrt-1mcosq-8-chunk-0475.smt2
+- keeping sqrt-1mcosq-8-chunk-0479.smt2
+- keeping sqrt-1mcosq-8-chunk-0480.smt2
+- keeping sqrt-1mcosq-8-chunk-0481.smt2
+- keeping sqrt-1mcosq-8-chunk-0482.smt2
+- keeping sqrt-1mcosq-8-chunk-0490.smt2
+- keeping sqrt-1mcosq-8-chunk-0496.smt2
+- keeping sqrt-1mcosq-8-chunk-0506.smt2
+- keeping sqrt-1mcosq-8-chunk-0509.smt2
+- keeping sqrt-1mcosq-8-chunk-0513.smt2
+- keeping sqrt-1mcosq-8-chunk-0517.smt2
+- keeping sqrt-1mcosq-8-chunk-0519.smt2
+- keeping sqrt-1mcosq-8-chunk-0520.smt2
+- keeping sqrt-1mcosq-8-chunk-0521.smt2
+- keeping sqrt-1mcosq-8-chunk-0524.smt2
+- keeping sqrt-1mcosq-8-chunk-0527.smt2
+- keeping sqrt-1mcosq-8-chunk-0528.smt2
+- keeping sqrt-1mcosq-8-chunk-0530.smt2
+- keeping sqrt-1mcosq-8-chunk-0533.smt2
+- keeping sqrt-1mcosq-8-chunk-0534.smt2
+- keeping sqrt-1mcosq-8-chunk-0536.smt2
+- keeping sqrt-1mcosq-8-chunk-0539.smt2
+- keeping sqrt-1mcosq-8-chunk-0540.smt2
+- keeping sqrt-1mcosq-8-chunk-0541.smt2
+- keeping sqrt-1mcosq-8-chunk-0545.smt2
+- keeping sqrt-1mcosq-8-chunk-0547.smt2
+- keeping sqrt-1mcosq-8-chunk-0549.smt2
+- keeping sqrt-1mcosq-8-chunk-0552.smt2
+- keeping sqrt-1mcosq-8-chunk-0554.smt2
+- keeping sqrt-1mcosq-8-chunk-0557.smt2
+- keeping sqrt-1mcosq-8-chunk-0558.smt2
+- keeping sqrt-1mcosq-8-chunk-0559.smt2
+- keeping sqrt-1mcosq-8-chunk-0562.smt2
+- keeping sqrt-1mcosq-8-chunk-0564.smt2
+- keeping sqrt-1mcosq-8-chunk-0565.smt2
+- keeping sqrt-1mcosq-8-chunk-0567.smt2
+- keeping sqrt-1mcosq-8-chunk-0570.smt2
+- keeping sqrt-1mcosq-8-chunk-0573.smt2
+- keeping sqrt-1mcosq-8-chunk-0579.smt2
+- keeping sqrt-1mcosq-8-chunk-0583.smt2
+- keeping sqrt-1mcosq-8-chunk-0584.smt2
+- keeping sqrt-1mcosq-8-chunk-0591.smt2
+- keeping sqrt-1mcosq-8-chunk-0593.smt2
+- keeping sqrt-1mcosq-8-chunk-0594.smt2
+- keeping sqrt-1mcosq-8-chunk-0598.smt2
+- keeping sqrt-1mcosq-8-chunk-0601.smt2
+- keeping sqrt-1mcosq-8-chunk-0615.smt2
+- keeping sqrt-1mcosq-8-chunk-0616.smt2
+- keeping sqrt-1mcosq-8-chunk-0623.smt2
+- keeping sqrt-1mcosq-8-chunk-0626.smt2
+- keeping sqrt-1mcosq-8-chunk-0627.smt2
+- keeping sqrt-1mcosq-8-chunk-0631.smt2
+- keeping sqrt-1mcosq-8-chunk-0649.smt2
+- keeping sqrt-1mcosq-8-chunk-0650.smt2
+- keeping sqrt-1mcosq-8-chunk-0651.smt2
+- keeping sqrt-1mcosq-8-chunk-0654.smt2
+- keeping sqrt-1mcosq-8-chunk-0656.smt2
+- keeping sqrt-1mcosq-8-chunk-0658.smt2
+- keeping sqrt-1mcosq-8-chunk-0660.smt2
+- keeping sqrt-1mcosq-8-chunk-0664.smt2
+- keeping sqrt-1mcosq-8-chunk-0665.smt2
+- keeping sqrt-1mcosq-8-chunk-0699.smt2
+- keeping sqrt-1mcosq-8-chunk-0701.smt2
+- keeping sqrt-1mcosq-8-chunk-0702.smt2
+- keeping sqrt-1mcosq-8-chunk-0703.smt2
+- keeping sqrt-1mcosq-8-chunk-0706.smt2
+- keeping sqrt-1mcosq-8-chunk-0712.smt2
+- keeping sqrt-1mcosq-8-chunk-0717.smt2
+- keeping sqrt-1mcosq-8-chunk-0721.smt2
+- keeping sqrt-1mcosq-8-chunk-0722.smt2
+- keeping sqrt-1mcosq-8-chunk-0724.smt2
+- keeping sqrt-1mcosq-8-chunk-0725.smt2
+- keeping sqrt-1mcosq-8-chunk-0726.smt2
+- keeping sqrt-1mcosq-8-chunk-0728.smt2
+- keeping sqrt-1mcosq-8-chunk-0729.smt2
+- keeping sqrt-1mcosq-8-chunk-0731.smt2
+- keeping sqrt-1mcosq-8-chunk-0732.smt2
+- keeping sqrt-1mcosq-8-chunk-0733.smt2
+- keeping sqrt-1mcosq-8-chunk-0736.smt2
+- keeping sqrt-1mcosq-8-chunk-0737.smt2
+- keeping sqrt-1mcosq-8-chunk-0738.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/circles
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/circles/2
+8
+- keeping sqrt-circles-2-chunk-0002.smt2
+- keeping sqrt-circles-2-chunk-0005.smt2
+- keeping sqrt-circles-2-chunk-0006.smt2
+- keeping sqrt-circles-2-chunk-0007.smt2
+- keeping sqrt-circles-2-chunk-0010.smt2
+- keeping sqrt-circles-2-chunk-0011.smt2
+- keeping sqrt-circles-2-chunk-0012.smt2
+- keeping sqrt-circles-2-chunk-0014.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/circles/3
+1
+- keeping sqrt-circles-3-chunk-0007.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/problem
+45
+- keeping sqrt-problem-Melquiond2-chunk-0010.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0011.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0013.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0014.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0018.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0023.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0024.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0025.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0030.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0031.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0034.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0036.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0041.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0042.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0043.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0046.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0049.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0050.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0054.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0059.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0060.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0063.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0064.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0065.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0068.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0069.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0071.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0072.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0075.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0076.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0077.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0078.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0082.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0083.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0084.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0090.smt2
+- keeping sqrt-problem-Melquiond2-chunk-0093.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0017.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0018.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0019.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0020.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0021.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0022.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0026.smt2
+- keeping sqrt-problem-Melquiond3-chunk-0029.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/problem/12vars3
+13
+- keeping sqrt-problem-12vars3-chunk-0010.smt2
+- keeping sqrt-problem-12vars3-chunk-0012.smt2
+- keeping sqrt-problem-12vars3-chunk-0013.smt2
+- keeping sqrt-problem-12vars3-chunk-0015.smt2
+- keeping sqrt-problem-12vars3-chunk-0017.smt2
+- keeping sqrt-problem-12vars3-chunk-0020.smt2
+- keeping sqrt-problem-12vars3-chunk-0023.smt2
+- keeping sqrt-problem-12vars3-chunk-0030.smt2
+- keeping sqrt-problem-12vars3-chunk-0032.smt2
+- keeping sqrt-problem-12vars3-chunk-0035.smt2
+- keeping sqrt-problem-12vars3-chunk-0037.smt2
+- keeping sqrt-problem-12vars3-chunk-0043.smt2
+- keeping sqrt-problem-12vars3-chunk-0049.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/problem/13
+5
+- keeping sqrt-problem-13-chunk-0013.smt2
+- keeping sqrt-problem-13-chunk-0016.smt2
+- keeping sqrt-problem-13-chunk-0018.smt2
+- keeping sqrt-problem-13-chunk-0019.smt2
+- keeping sqrt-problem-13-chunk-0021.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/problem/13/sqrt1
+17
+- keeping sqrt-problem-13-sqrt1-chunk-0009.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0011.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0012.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0014.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0016.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0019.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0021.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0027.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0032.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0037.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0039.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0041.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0044.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0047.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0051.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0053.smt2
+- keeping sqrt-problem-13-sqrt1-chunk-0065.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/meti-tarski/sqrt/problem/13/vars5
+5
+- keeping sqrt-problem-13-vars5-chunk-0018.smt2
+- keeping sqrt-problem-13-vars5-chunk-0021.smt2
+- keeping sqrt-problem-13-vars5-chunk-0023.smt2
+- keeping sqrt-problem-13-vars5-chunk-0024.smt2
+- keeping sqrt-problem-13-vars5-chunk-0026.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/UltimateAutomizer
+0
+Invalid file path. The specified formula-file is not a regular file.
+/home/nicolai.radke/master_thesis/cppasy-main/eval/scripts/filter_folder.sh: line 24: [[: execute '$ ./cli --help' for usage information: syntax error: invalid arithmetic operator (error token is "'$ ./cli --help' for usage information")
+- keeping *.smt2
+/home/nicolai.radke/master_thesis/benchmarks/filtered_03/zankl
+11
+- keeping gen-03.smt2
+- keeping gen-04.smt2
+- keeping gen-05.smt2
+- keeping gen-06.smt2
+- keeping gen-07.smt2
+- keeping gen-08.smt2
+- keeping gen-09.smt2
+- keeping gen-10.smt2
+- keeping gen-16.smt2
+- keeping gen-18.smt2
+- keeping gen-19.smt2

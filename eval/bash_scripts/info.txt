@@ -1,0 +1,3 @@
+first evaluation command:
+
+nohup ./evaluate.sh ../../../benchmarks/test_chosen/ 12 15 > evaluate_selection_test.txt &

@@ -277,7 +277,7 @@ cut_list orthotope::split_bisect_all()
 {
     cut_list cuts;
     // bisect all intervals
-    for(unsigned int dim; dim < boundaries.size(); dim++)
+    for(unsigned int dim = 0; dim < boundaries.size(); dim++)
     {
         z3::expr mid = (boundaries[dim].first + boundaries[dim].second)/2;
         cuts.push_back({dim, mid.simplify()});

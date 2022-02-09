@@ -19,15 +19,16 @@ options parse_arguments(int argc, char* argv[])
     boost::program_options::options_description visible("Allowed options");
     visible.add_options()
         ("help,h", "produce help message")
-        ("boundaries-file", boost::program_options::value<std::string>(), "text file containing a list of all variables and their boundaries. The file should contain lines of the from '<variable-name> <lower-bound> <upper-bound>'")
-        ("max-depth", boost::program_options::value<unsigned int>()->default_value(11), "set maximal depth")
-        ("default-boundaries", boost::program_options::value<unsigned int>()->default_value(10), "set default 'radius' of the inital orthotope")
-        ("splitting-heuristic", boost::program_options::value<std::string>()->default_value("bisect_all"), "Choose a splitting heuristic if you want to use sampling. Options are 'bisect_all'")
-        ("sampling-heuristic", boost::program_options::value<std::string>()->default_value("no_sampling"), "Choose a sampling heuristic if you want to use sampling. Options are 'center'")
-        ("split-samples", "also split samples when splitting orthotopes")
-        ("save-model", "Save models found by solver. Only usefull if split-samples enabled!")
-        ("execute-2in1", "use 2in1 execution to reuse context")
-        ("splits-needed", "returns true if splits are needed to process this formula.")
+        ("boundaries-file", boost::program_options::value<std::string>(), "Text file containing a list of all variables and their boundaries. The file should contain lines of the from '<variable-name> <lower-bound> <upper-bound>'.")
+        ("default-boundaries", boost::program_options::value<unsigned int>()->default_value(10), "Set default 'radius' of the inital orthotope.")
+        ("splitting-heuristic", boost::program_options::value<std::string>()->default_value("bisect_all"), "Select a splitting heuristic. Options are 'bisect_all' and 'bisect_single'")
+        ("sampling-heuristic", boost::program_options::value<std::string>()->default_value("no_sampling"), "Select a sampling heuristic. Options are 'no_sampling', 'center', and 'clever'")
+        ("max-depth", boost::program_options::value<unsigned int>()->default_value(10), "Set maximal depth.")
+        ("save-model", "Save models found by solver. Only useful if 'split-samples' enabled.")
+        ("incremental", "Enable incremenal solving.")
+        ("split-samples", "Also carry samples when splitting orthotopes.")
+        ("splits-needed", "Returns true if splits are needed to process this formula.")
+        ("print-orthotopes", "Prints all (SAFE, UNSAFE and UNKNOWN) resulting orthotopes.")
     ;
 
     // hidden options
@@ -187,7 +188,7 @@ options parse_arguments(int argc, char* argv[])
         res.use_save_model = false;
     }
 
-    if (vm.count("execute-2in1")) 
+    if (vm.count("incremental")) 
     {
         res.use_execute_2in1 = true;
     }
@@ -199,6 +200,11 @@ options parse_arguments(int argc, char* argv[])
     if (vm.count("splits-needed")) 
     {
         res.splits_needed = true;
+    }
+
+    if (vm.count("print-orthotopes")) 
+    {
+        res.print_orthotopes = true;
     }
 
     return res;

@@ -53,7 +53,7 @@ preferences_dialog::preferences_dialog(main_frame *m)
     // depth choice
     depth_ctrl = new wxTextCtrl(this, -1);
     depth_ctrl->AppendText(std::to_string(m->user_settings.max_depth));
-    axis_and_depth->Add(new wxStaticText(this, -1, "depth"));
+    axis_and_depth->Add(new wxStaticText(this, -1, "Depth"));
     axis_and_depth->Add(depth_ctrl);
 
     // splitting-heuristic choice
@@ -99,7 +99,7 @@ preferences_dialog::preferences_dialog(main_frame *m)
     // execute-2in1 choice
     execute_2in1_choice = new wxChoice(this, -1, wxDefaultPosition, wxDefaultSize, wx_no_yes_choices);
     execute_2in1_choice->SetSelection(m->user_settings.use_execute_2in1);
-    axis_and_depth->Add(new wxStaticText(this, -1, "Execute 2 in 1"));
+    axis_and_depth->Add(new wxStaticText(this, -1, "Incremental"));
     axis_and_depth->Add(execute_2in1_choice);
 
     // define save button

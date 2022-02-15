@@ -34,11 +34,17 @@ def create_combination_list():
                     current_combination += str(sah)
                     current_combination += str(sm)
                     current_combination += str(e2)
-                    if sah == 1 or sm == 1:
-                        current_combination += "1"
+                    if sah == 1:
+                        current_combination_0 = current_combination + "0"
+                        current_combination_1 = current_combination + "1"
+                        combination_list.append(current_combination_0)
+                        combination_list.append(current_combination_1)
                     else:
-                        current_combination += "0"
-                    combination_list.append(current_combination)
+                        if sm == 1:
+                            current_combination += "1"
+                        else:
+                            current_combination += "0"
+                        combination_list.append(current_combination)
     return combination_list
 
 def get_dirs():
@@ -197,3 +203,11 @@ for result_table_relative_list in result_tables_relative_list:
     sorted_mean = sort_table(mean, 6, combination_list)
     print("Sorted Mean:")
     print(sorted_mean)
+    short = np.delete(sorted_mean, [1,2,3,4,8,9,10,11,12,13], 1)
+    print(short)
+
+print(combination_list)
+print(len(combination_list))
+print(len(res_sph_0))
+print(len(res_sph_1))
+print(dirs)

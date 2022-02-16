@@ -158,7 +158,8 @@ combination_list = create_full_combination_list()
 
 all_depth_tp_list = []
 
-for current_depth in range(max_depth):
+# for current_depth in range(max_depth):
+for current_depth in [6]:
     print("-------------------------------------------------------------------------------")
     print("current_depth = ", current_depth)
 
@@ -181,6 +182,14 @@ for current_depth in range(max_depth):
     
     mean = np.mean(single_depth_data, axis=0)
     print("Mean Shape: ", np.shape(mean))
+
+    # get only solver-skip data (6-9)
+    solver_skip = np.delete(mean, [0,1,2,3,4,5,10,11,12], axis=0)
+    print("Solver Skip Shape: ", np.shape(solver_skip))
+
+    # get only times without coordinate splitting (0-4)
+    time_dist = np.delete(mean, [5,6,7,8,9,10,11,12], axis=0)
+    print("Time Distribution Shape: ", np.shape(time_dist))
     
     # get only time (0) , and percentage (10)
     time_percentage = np.delete(mean, [1,2,3,4,5,6,7,8,9,11,12], axis=0)
@@ -191,6 +200,8 @@ for current_depth in range(max_depth):
         all_depth_tp_list.append(time_percentage)
 
 all_depth_tp = np.array(all_depth_tp_list)
-print(np.shape(all_depth_tp))
-print(all_depth_tp)
-np.save("time_percentage.npy", all_depth_tp)
+# np.save("time_percentage.npy", all_depth_tp)
+# np.save("time_dist.npy", time_dist)
+np.save("solver_skip.npy", solver_skip)
+print(np.shape(solver_skip))
+

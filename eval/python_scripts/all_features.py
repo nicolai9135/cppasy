@@ -61,7 +61,7 @@ def timed_out(directory, combination_list, current_depth):
 def get_partial_table(directory, combination_list, current_depth, feature_string):
 
     # prepare resulting table
-    partial_table = np.empty((len(combination_list), 2), dtype=np.float32)
+    partial_table = np.empty((len(combination_list), 2), dtype=np.float128)
 
     # fill 1st col with combinations
     for i in range(len(combination_list)):
@@ -79,7 +79,15 @@ def get_partial_table(directory, combination_list, current_depth, feature_string
             eval_file = open(rootdir + "/" + directory + "/" + combination + "/" + str(current_depth).zfill(2) + ".txt")
             for current_line in eval_file:
                 if feature_string in current_line:
-                    partial_table[combination_index, 1] = float(re.findall(r"[-+]?(?:\d*\.\d+|\d+)", current_line)[0])
+                    if ('areas' in current_line) and ('e-' in current_line):
+                        np_string_array = np.array( re.findall('[\s=]+([+-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+))$', current_line) )
+                        partial_table[combination_index, 1] = (np_string_array.astype(dtype=np.float128))[0]
+#                         print("found ", current_line)
+#                         print("extracted ", np_string_array)
+#                         print("inserted ", partial_table[combination_index, 1])
+                    else:
+                        np_string_array = np.array( re.findall(r"[-+]?(?:\d*\.\d+|\d+)", current_line) )
+                        partial_table[combination_index, 1] = (np_string_array.astype(dtype=np.float128))[0]
 
     return partial_table
 
@@ -92,7 +100,7 @@ def get_full_table(directory, combination_list, current_depth):
     max_depth_reached = timed_out(directory, combination_list, current_depth)
     if current_depth > max_depth_reached:
         timeout_bool = 1
-        return np.array(full_table_list, dtype=np.float32), timeout_bool
+        return np.array(full_table_list, dtype=np.float128), timeout_bool
 
     # 00
     full_table_list.append(get_partial_table(directory, combination_list, current_depth, "time_total"))
@@ -178,8 +186,11 @@ for current_depth in range(max_depth):
     time_percentage = np.delete(mean, [1,2,3,4,5,6,7,8,9,11,12], axis=0)
     print("Time Percentage Shape: ", np.shape(time_percentage))
     if current_depth < 7:
+        print("current depth ", current_depth)
+        print(time_percentage)
         all_depth_tp_list.append(time_percentage)
 
 all_depth_tp = np.array(all_depth_tp_list)
 print(np.shape(all_depth_tp))
+print(all_depth_tp)
 np.save("time_percentage.npy", all_depth_tp)

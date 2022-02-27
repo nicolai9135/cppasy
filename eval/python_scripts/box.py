@@ -137,4 +137,9 @@ for x in [0,1]:
     # add arrow at end of y axis
     ax.plot(0, 2.25, "^k", transform=ax.get_yaxis_transform(), clip_on=False)
 
+    if x == 0:
+        plt.savefig("bp0.pdf")
+    else:
+        plt.savefig("bp1.pdf")
+
     plt.show()

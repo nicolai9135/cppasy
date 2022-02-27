@@ -13,6 +13,7 @@ rwthbordeaux='#A11035'
 rwthlightpetrol='#7DA4A7'
 rwthlightorange='#FDD48F'
 rwthgray='#9C9E9F'
+rwthlightviolett='#A8859E'
 
 def create_combination_list(x):
     if x == 0:
@@ -45,10 +46,10 @@ def get_style(timeslice_index):
         c_color = rwthgray
         c_label = 'Unspecified'
     if timeslice_index == 1:
-        c_color = rwthlightgreen
+        c_color = rwthlightpetrol
         c_label = 'Solving'
     if timeslice_index == 2:
-        c_color = rwthlightblue
+        c_color = rwthlightviolett
         c_label = 'Model Saving'
     if timeslice_index == 3:
         c_color = rwthlightbordeaux
@@ -146,6 +147,12 @@ for x in [0,1]:
     handles, labels = plt.gca().get_legend_handles_labels()
     order = [0,4,3,2,1]
     plt.legend([handles[idx] for idx in order], [labels[idx] for idx in order], loc="lower left")
+
+    if x == 0:
+        plt.savefig("td0.pdf")
+    else:
+        plt.savefig("td1.pdf")
+
 
     plt.show()
         

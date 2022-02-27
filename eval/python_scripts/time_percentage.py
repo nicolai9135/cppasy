@@ -76,7 +76,7 @@ print(tp_data)
 
 for combination_index in [1,2,3,4,5,0,6,7,8,-1]:
     if combination_index == -1:
-        plt.scatter([],[], marker='o', c=rwthgray, label='other')
+        plt.scatter([],[], marker='o', c=rwthgray, label='Other')
     else:
         combination = combination_list[combination_index]
         
@@ -105,7 +105,7 @@ for combination_index in [1,2,3,4,5,0,6,7,8,-1]:
 
 ax = plt.gca()
 
-ax.set_ylabel('classified area in %')
+ax.set_ylabel('classified area (%)')
 ax.set_xlabel('time (ms)')
 
 # set axis limits
@@ -120,6 +120,9 @@ ax.spines['right'].set_visible(False)
 ax.plot(1, 50, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
 
 plt.legend(loc="lower right")
+
+plt.savefig("tp.pdf")
+
 
 # plot diagram
 plt.show()
